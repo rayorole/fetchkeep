@@ -1,0 +1,20 @@
+node_modules/
+dist/
+coverage/
+*.tgz
+.env
+.env.*
+# local stores, private fetched content, credentials
+.fetchkeep/
+fetchkeep-data/
+*.db
+*.db-wal
+*.db-shm
+cookies*.json
+*.cookies
+browser-profile*/
+.playwright/
+# benchmark: raw runs stay local unless explicitly published under bench/results/
+bench/runs/
+bench/.tools/
+bench/.cache/
