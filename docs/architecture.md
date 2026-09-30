@@ -56,7 +56,11 @@ executed by the core; JavaScript runs only inside an optional, separately instal
 Readability is excellent on articles but can drop tables, code and navigation-organised documentation. The
 extractor runs both and keeps Readability's output only when it retains most of the structural text and does not
 lose tables or code blocks; otherwise it uses a structural main-content extractor (`main`/`article`/`[role=main]`,
-boilerplate stripping). The chosen strategy is reported in `extraction.strategy`.
+boilerplate stripping). The chosen strategy is reported as `strategy`.
+
+GFM rules (tables, strikethrough, task lists, fenced code with language) are implemented as Turndown rules in
+`src/core/extract/markdown.ts`: the published GFM plugins depend on DOM APIs linkedom lacks (`HTMLTableElement.rows`,
+CSSOM) and silently flatten tables to text.
 
 ### ADR-5 Blocks are the unit of citation
 Extracted content is split into ordered blocks (heading, paragraph, list, table, code, quote). The document
