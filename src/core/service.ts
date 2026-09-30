@@ -1,3 +1,4 @@
+import { extractWithOllama, type ExtractInput } from "./ai/ollama.js";
 import { sliceMarkdown } from "./budget.js";
 import { runCrawl, type CrawlInput } from "./crawl.js";
 import type { FetchkeepConfig } from "./config.js";
@@ -174,6 +175,11 @@ export class Fetchkeep {
   /** Bounded crawl; see {@link runCrawl}. */
   crawl(input: CrawlInput): Promise<Envelope> {
     return runCrawl(this, input);
+  }
+
+  /** Experimental schema-based extraction with a local Ollama model; see {@link extractWithOllama}. */
+  extract(input: ExtractInput): Promise<Envelope> {
+    return extractWithOllama(this, input);
   }
 
   read(input: ReadInput): Envelope {

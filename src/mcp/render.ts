@@ -53,6 +53,20 @@ export function renderEnvelope(env: Envelope): string {
     for (const p of data.pages as { url: string; depth: number; state: string; reason?: string; ref?: string }[]) {
       lines.push(`  [${p.state}] d${p.depth} ${p.url}${p.ref ? ` ${p.ref}` : ""}${p.reason ? ` (${p.reason})` : ""}`);
     }
+  } else if (env.tool === "web_extract" && data && typeof data.model === "string") {
+    const usage = data.usage as { promptTokens: number | null; outputTokens: number | null; durationMs: number } | undefined;
+    lines.push(`model: ${data.model}` + (usage ? ` (prompt ${usage.promptTokens ?? "?"} tokens, output ${usage.outputTokens ?? "?"} tokens, ${usage.durationMs} ms)` : ""));
+    if (Array.isArray(data.fields)) {
+      // Quotes come from the page; they are listed inside the untrusted section together with the values.
+      const body: string[] = [];
+      for (const f of data.fields as { name: string; status: string; citations: { ref: string; quote?: string }[]; unmatchedQuotes?: string[] }[]) {
+        lines.push(`field ${f.name}: ${f.status}${f.citations.length ? ` ${f.citations.map((c) => c.ref).join(" ")}` : ""}`);
+        for (const c of f.citations) body.push(`${f.name} ${c.ref}: "${c.quote ?? ""}"`);
+        for (const q of f.unmatchedQuotes ?? []) body.push(`${f.name} (not found in source): "${q}"`);
+      }
+      body.push("", JSON.stringify(data.values, null, 2));
+      lines.push("", `${OPEN} kind="extracted-values">`, fence(body.join("\n")), CLOSE);
+    }
   } else if (env.tool === "doctor" && data && Array.isArray(data.checks)) {
     lines.push(`fetchkeep ${String(data.version)} on ${String(data.platform)}`);
     for (const c of data.checks as { name: string; ok: boolean; detail: string }[]) lines.push(`${c.ok ? "ok  " : "FAIL"} ${c.name}: ${c.detail}`);
