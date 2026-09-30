@@ -44,6 +44,11 @@ export class NetworkPolicy {
     });
   }
 
+  /** True when no private destination is allowed at all (no allowPrivateNetwork, allowHosts or allowCidrs). */
+  get strict(): boolean {
+    return !this.allowPrivateNetwork && this.hostPatterns.length === 0 && this.cidrs.length === 0;
+  }
+
   isHostAllowlisted(hostname: string): boolean {
     const host = stripBrackets(hostname).toLowerCase();
     return this.hostPatterns.some((p) => (p.startsWith("*.") ? host.endsWith(p.slice(1)) || host === p.slice(2) : host === p));
