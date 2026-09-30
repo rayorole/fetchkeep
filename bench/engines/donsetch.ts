@@ -92,14 +92,16 @@ export class DonsetchAdapter implements EngineAdapter {
   async fetch(url: string, timeoutMs: number): Promise<FetchOutput> {
     const res = await this.session!.call("web_fetch", { url, deadline_ms: timeoutMs, max_chars: 1_000_000, archive: "off" }, timeoutMs + 15_000);
     const meta = (res.structured ?? {}) as { code?: string; status?: number; url?: string; content_ok?: boolean; escalation?: { tier?: string; action?: string }[] };
-    const escalated = (meta.escalation ?? []).some((e) => e.tier === "2" || /browser|ghost/i.test(e.action ?? ""));
+    // DonSeTch reports its escalation ladder only on some responses; leave `escalated` unset when it is absent.
+    const escalated = meta.escalation ? meta.escalation.some((e) => e.tier === "2" || /browser|ghost/i.test(e.action ?? "")) : undefined;
     if (res.isError) {
       const out: FetchOutput = { ok: false, markdown: "", error: { kind: errorKind(meta.code, res.text), code: meta.code ?? "error", message: res.text.slice(0, 500) }, raw: res };
       if (typeof meta.status === "number") out.httpStatus = meta.status;
       if (meta.escalation) out.attempts = meta.escalation.length;
       return out;
     }
-    const out: FetchOutput = { ok: meta.content_ok !== false, markdown: res.text, raw: res, escalated };
+    const out: FetchOutput = { ok: meta.content_ok !== false, markdown: res.text, raw: res };
+    if (escalated !== undefined) out.escalated = escalated;
     if (meta.url) out.finalUrl = meta.url;
     if (meta.content_ok === false) out.error = { kind: "engine_error", code: "content_not_ok", message: "content_ok=false" };
     return out;
