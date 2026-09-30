@@ -34,12 +34,16 @@ describe("shouldEscalate", () => {
   it("escalates empty SPA shells, JS-required notices and HTTP challenge statuses", () => {
     expect(shouldEscalate(doc(SPA), null).escalate).toBe(true);
     expect(shouldEscalate(doc(`<html><body><p>Please enable JavaScript to continue.</p><script>x()</script></body></html>`), null).escalate).toBe(true);
+    // Content embedded as inline data and rendered by script (quotes.toscrape.com/js style).
+    expect(shouldEscalate(doc(`<html><body><h1>Quotes</h1><div class="c"></div><script>var data = ${JSON.stringify("q".repeat(1500))};</script></body></html>`), null).escalate).toBe(true);
     const err403 = new FetchkeepError("http_error", "HTTP 403", { details: { status: 403 } });
     expect(shouldEscalate(null, err403)).toMatchObject({ escalate: true });
   });
   it("keeps complete server-rendered pages and ordinary errors on HTTP", () => {
     expect(shouldEscalate(doc(ARTICLE), null).escalate).toBe(false);
     expect(shouldEscalate(doc("<html><body><p>Tiny static page without scripts.</p></body></html>"), null).escalate).toBe(false);
+    // A small page with one analytics tag (e.g. example.com) is complete.
+    expect(shouldEscalate(doc(`<html><body><h1>Example</h1><p>${"Short but complete page. ".repeat(6)}</p><script src="/s.js"></script></body></html>`), null).escalate).toBe(false);
     const err404 = new FetchkeepError("http_error", "HTTP 404", { details: { status: 404 } });
     expect(shouldEscalate(null, err404).escalate).toBe(false);
     expect(shouldEscalate(null, new FetchkeepError("blocked_by_policy", "no")).escalate).toBe(false);

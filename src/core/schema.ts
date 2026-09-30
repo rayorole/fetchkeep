@@ -40,6 +40,8 @@ export const RenderSignals = z.object({
   bodyTextChars: z.number(),
   extractedChars: z.number(),
   scriptCount: z.number(),
+  externalScriptCount: z.number(),
+  inlineScriptChars: z.number(),
   appRootEmpty: z.boolean(),
   noscriptWarning: z.boolean(),
 });

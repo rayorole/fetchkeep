@@ -200,7 +200,23 @@ function collectSignals(document: Document): RenderSignals {
   for (const el of document.querySelectorAll(APP_ROOTS)) {
     if (normalizeText(el.textContent ?? "").length < 200) appRootEmpty = true;
   }
-  return { bodyTextChars: bodyText.length, extractedChars: 0, scriptCount: scripts.length, appRootEmpty, noscriptWarning };
+  let external = 0;
+  let inlineChars = 0;
+  for (const s of scripts) {
+    const type = (s.getAttribute("type") ?? "").toLowerCase();
+    if (type && !/javascript|module|json/.test(type)) continue;
+    if (s.hasAttribute("src")) external++;
+    else inlineChars += (s.textContent ?? "").length;
+  }
+  return {
+    bodyTextChars: bodyText.length,
+    extractedChars: 0,
+    scriptCount: scripts.length,
+    externalScriptCount: external,
+    inlineScriptChars: inlineChars,
+    appRootEmpty,
+    noscriptWarning,
+  };
 }
 
 interface PageMeta {
