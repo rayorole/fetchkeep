@@ -44,13 +44,13 @@ export function renderEnvelope(env: Envelope): string {
     const body = (data.results as Record<string, unknown>[])
       .map((r, i) => {
         const head = `[${i + 1}] ${String(r.title ?? "")}\n    ${String(r.url ?? "")}${r.ref ? `\n    ref: ${String(r.ref)}` : ""}`;
-  } else if (env.tool === "doctor" && data && Array.isArray(data.checks)) {
-    lines.push(`fetchkeep ${String(data.version)} on ${String(data.platform)}`);
-    for (const c of data.checks as { name: string; ok: boolean; detail: string }[]) lines.push(`${c.ok ? "ok  " : "FAIL"} ${c.name}: ${c.detail}`);
-  } else if (data && env.tool !== "web_read" && env.tool !== "web_fetch") {
+        return `${head}\n    ${String(r.snippet ?? "").replace(/\s+/g, " ")}`;
       })
       .join("\n");
     if (body) lines.push("", `${OPEN} kind="search-results">`, fence(body), CLOSE);
+  } else if (env.tool === "doctor" && data && Array.isArray(data.checks)) {
+    lines.push(`fetchkeep ${String(data.version)} on ${String(data.platform)}`);
+    for (const c of data.checks as { name: string; ok: boolean; detail: string }[]) lines.push(`${c.ok ? "ok  " : "FAIL"} ${c.name}: ${c.detail}`);
   } else if (data && env.tool !== "web_read" && env.tool !== "web_fetch") {
     lines.push("", "data:", fence(JSON.stringify(data, null, 2)));
   }
