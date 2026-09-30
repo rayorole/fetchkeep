@@ -1,0 +1,17 @@
+{
+  "success": true,
+  "data": {
+    "markdown": "Internal Server Error\n=====================",
+    "metadata": {
+      "scrapeId": "01a0f382-ef6b-75e1-a548-a80f9bdd79b4",
+      "sourceURL": "http://172.31.172.243:44735/fail/500",
+      "url": "http://172.31.172.243:44735/fail/500",
+      "statusCode": 500,
+      "error": "Internal Server Error",
+      "contentType": "text/html",
+      "proxyUsed": "basic",
+      "creditsUsed": 1,
+      "concurrencyLimited": false
+    }
+  }
+}

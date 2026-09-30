@@ -1,0 +1,6 @@
+{
+  "name": "full",
+  "description": "Complete retrieval comparison: all fixture and live fetch/crawl cases in one run and one standalone report.",
+  "cases": ["fx-*", "live-*"],
+  "repetitions": 3
+}

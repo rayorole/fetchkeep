@@ -5,6 +5,7 @@
  * Every figure is computed from the run's records. Missing data is rendered as `n/a` (CSV: empty cell) with
  * its sample count, never as zero. Percentiles use the nearest-rank method.
  */
+import { Buffer } from "node:buffer";
 import { readFile, writeFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import type { BenchCase, ColdStartRecord, CrawlRecord, EngineName, FootprintRecord, ResourceRecord, RunMeta, RunRecord } from "./types.ts";
@@ -389,8 +390,8 @@ function renderHtmlBlocks(blocks: readonly Block[]): string {
         out.push(
           b.rows.length === 0
             ? `<p class="muted">(no rows)</p>`
-            : `<div class="tw"><table><thead><tr>${b.head.map((c) => `<th>${inlineHtml(c)}</th>`).join("")}</tr></thead><tbody>${b.rows
-                .map((r) => `<tr>${r.map((c) => `<td>${inlineHtml(c)}</td>`).join("")}</tr>`)
+            : `<div class="tw" tabindex="0" role="region" aria-label="Scrollable data table"><table><thead><tr>${b.head.map((c) => `<th scope="col">${inlineHtml(c)}</th>`).join("")}</tr></thead><tbody>${b.rows
+                .map((r) => `<tr>${r.map((c, i) => i === 0 ? `<th scope="row">${inlineHtml(c)}</th>` : `<td>${inlineHtml(c)}</td>`).join("")}</tr>`)
                 .join("")}</tbody></table></div>`,
         );
         break;
@@ -398,7 +399,7 @@ function renderHtmlBlocks(blocks: readonly Block[]): string {
         out.push(`<pre>${escapeHtml(b.text)}</pre>`);
         break;
       case "html":
-        out.push(b.html);
+        out.push(`<div class="chart-wrap" tabindex="0" role="region" aria-label="Scrollable chart">${b.html}</div>`);
         break;
     }
   }
@@ -415,11 +416,11 @@ interface Bar {
 }
 
 function svgBarChart(title: string, bars: readonly Bar[], opts: { max?: number } = {}): string {
-  const labelW = 190;
-  const barArea = 330;
-  const textW = 260;
-  const rowH = 24;
-  const top = 30;
+  const labelW = 210;
+  const barArea = 310;
+  const textW = 280;
+  const rowH = 32;
+  const top = 38;
   const width = labelW + barArea + textW;
   const height = top + Math.max(1, bars.length) * rowH + 8;
   const max = opts.max ?? Math.max(0, ...bars.map((b) => b.value ?? 0));
@@ -1016,7 +1017,7 @@ function buildBlocks(ctx: Ctx): Block[] {
 
 // ---------------------------------------------------------------- HTML per-case inspection
 
-async function rawPreview(dir: string, r: RunRecord): Promise<string> {
+async function rawPreview(dir: string, r: RunRecord | CrawlRecord): Promise<string> {
   if (!r.rawPath) return "(no raw output recorded)";
   const text = await readOptional(resolve(dir, r.rawPath));
   if (text === null) return `(raw file not found: ${r.rawPath})`;
@@ -1028,18 +1029,22 @@ async function rawPreview(dir: string, r: RunRecord): Promise<string> {
 
 async function caseInspectionHtml(ctx: Ctx): Promise<string> {
   const { data } = ctx;
-  const ids = fetchCaseIds(data);
+  const ids = uniq([...fetchCaseIds(data), ...data.crawl.map((r) => r.caseId)]);
   const infos = ids.map((id) => caseInfo(data, id));
   const datasets = uniq(infos.map((i) => i.dataset)).filter(Boolean).sort();
   const categories = uniq(infos.map((i) => i.category)).filter(Boolean).sort();
   const opt = (v: string) => `<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`;
   const parts: string[] = [
-    `<h2 id="per-case-inspection">Per-case inspection</h2>`,
-    `<p>Scores are per case, aggregated over repetitions (quality means over ok tasks; latency p50 nearest rank over ok tasks). Raw Markdown is repetition 1, first ${RAW_PREVIEW_CHARS} characters.</p>`,
-    `<div class="filters"><label>Dataset <select id="f-dataset"><option value="">all</option>${datasets.map(opt).join("")}</select></label>`,
-    `<label>Category <select id="f-category"><option value="">all</option>${categories.map(opt).join("")}</select></label>`,
-    `<label>Split <select id="f-split"><option value="">all</option><option value="heldout">held-out</option><option value="dev">dev</option></select></label>`,
-    `<span id="f-count" class="muted"></span></div>`,
+    `<h2>Case inspector</h2>`,
+    `<p>Fetch scores aggregate repetitions: quality means and nearest-rank latency over ok tasks. Fetch previews show repetition 1; crawl previews show each repetition. Each embedded preview includes up to ${RAW_PREVIEW_CHARS} characters; full raw files are not embedded.</p>`,
+    `<form id="case-filters" class="filters interactive" role="search" aria-label="Filter benchmark cases">`,
+    `<label class="search-field">Search cases <input id="f-search" type="search" placeholder="Case, URL, profile, error or preview" autocomplete="off"></label>`,
+    `<label>Dataset <select id="f-dataset"><option value="">All datasets</option>${datasets.map(opt).join("")}</select></label>`,
+    `<label>Category <select id="f-category"><option value="">All categories</option>${categories.map(opt).join("")}</select></label>`,
+    `<label>Split <select id="f-split"><option value="">All splits</option><option value="heldout">Held-out</option><option value="dev">Dev</option><option value="none">Not split (crawl)</option></select></label>`,
+    `<button type="reset">Reset filters</button></form>`,
+    `<p id="f-count" class="muted" role="status" aria-live="polite">${infos.length} cases</p>`,
+    `<p id="f-empty" class="empty-state" hidden>No cases match these filters. Clear the search or reset filters to see every case.</p>`,
   ];
   for (const info of infos) {
     const profiles = data.profiles.filter((pr) => data.records.some((r) => r.caseId === info.id && r.profile === pr));
@@ -1071,63 +1076,212 @@ async function caseInspectionHtml(ctx: Ctx): Promise<string> {
           `<pre>${escapeHtml(body)}</pre></details>`,
       );
     }
+    const crawl = data.crawl.filter((r) => r.caseId === info.id);
+    for (const r of crawl) {
+      const preview = await rawPreview(data.dir, r);
+      details.push(
+        `<details><summary>${escapeHtml(r.profile)} — crawl output (repetition ${r.repetition}, ${escapeHtml(r.outcome)})</summary>` +
+          (r.error ? `<p class="err">${escapeHtml(`${r.error.kind}: ${r.error.message}`)}</p>` : "") +
+          (r.naReason ? `<p>${escapeHtml(r.naReason)}</p>` : "") +
+          `<p>Missing pages: ${escapeHtml(r.missingPages.join(", ") || "none")}</p>` +
+          `<p>Unexpected pages: ${escapeHtml(r.unexpectedPages.join(", ") || "none")}</p>` +
+          `<pre>${escapeHtml(preview)}</pre></details>`,
+      );
+    }
+    const split = info.kind === "crawl" ? "none" : info.heldOut ? "heldout" : "dev";
     const meta = [
-      `dataset: ${info.dataset}`, `category: ${info.category}`, info.heldOut ? "held-out" : "dev", info.expectError ? "expects an error" : "",
-    ].filter(Boolean).join(" · ");
+      info.dataset, info.category, split === "none" ? "not split" : info.heldOut ? "held-out" : "dev", info.expectError ? "expects an error" : "",
+    ].filter(Boolean).join(" / ");
     parts.push(
-      `<section class="case" data-dataset="${escapeHtml(info.dataset)}" data-category="${escapeHtml(info.category)}" data-split="${info.heldOut ? "heldout" : "dev"}">` +
-        `<h3>${escapeHtml(info.id)}</h3><p class="muted">${escapeHtml(meta)}${info.url ? ` · <span class="url">${escapeHtml(info.url)}</span>` : ""}</p>` +
+      `<section class="case" data-dataset="${escapeHtml(info.dataset)}" data-category="${escapeHtml(info.category)}" data-split="${split}">` +
+        `<h3>${escapeHtml(info.id)}</h3><p class="muted">${escapeHtml(meta)}${info.url ? ` / <span class="url">${escapeHtml(info.url)}</span>` : ""}</p>` +
         (info.description ? `<p>${escapeHtml(info.description)}</p>` : "") +
-        `<div class="tw"><table><thead><tr>${["profile", "outcomes", "usable", "passage recall", "boilerplate", "token F1", "headings", "tables", "code", "correct error", "latency p50", "chars", "errors / reasons"]
-          .map((c) => `<th>${escapeHtml(c)}</th>`)
-          .join("")}</tr></thead><tbody>${rows.join("")}</tbody></table></div>${details.join("")}</section>`,
+        (rows.length ? `<div class="tw" tabindex="0" role="region" aria-label="Case scores"><table><thead><tr>${["profile", "outcomes", "usable", "passage recall", "boilerplate", "token F1", "headings", "tables", "code", "correct error", "latency p50", "chars", "errors / reasons"]
+          .map((c) => `<th scope="col">${escapeHtml(c)}</th>`)
+          .join("")}</tr></thead><tbody>${rows.join("")}</tbody></table></div>` : "") +
+        (crawl.length ? renderHtmlBlocks(crawlBlocks({ ...data, crawl })) : "") +
+        `${details.join("")}</section>`,
     );
   }
   return parts.join("\n");
 }
 
+/** A compact HTML-only view; the full tables and all exported aggregates stay unchanged. */
+function comparisonHtml(ctx: Ctx): string {
+  if (!ctx.data.records.length) return `<p>No fetch tasks were recorded. <a href="#crawl">Read the crawl results</a> and inspect individual crawl outputs below.</p>`;
+  const parts = [
+    `<form id="comparison-filters" class="interactive" aria-label="Compare fetch results">`,
+    `<div class="filters"><label>Dataset <select id="c-dataset">${ctx.datasetsPresent.map((d) => `<option value="${d}">${d === "fixture" ? "Local fixtures" : "Live websites"}</option>`).join("")}</select></label>`,
+    `<label>Split <select id="c-split"><option value="all">All splits</option><option value="heldOut">Held-out</option><option value="dev">Dev</option></select></label>`,
+    `<label>Coverage <select id="c-scope"><option value="all">All tasks (coverage varies)</option><option value="common">Common cases (like-for-like)</option></select></label>`,
+    `<label>Order profiles <select id="c-sort"><option value="recorded">As recorded</option><option value="usable">Usable: high to low</option><option value="recall">Recall: high to low</option><option value="latency">Warm p50: low to high</option></select></label>`,
+    `<button type="reset">Reset comparison</button></div>`,
+    `<details class="profile-selection"><summary>Choose profiles</summary><fieldset class="profile-filters"><legend>Show profiles</legend>${ctx.data.profiles.filter((pr) => ctx.data.records.some((r) => r.profile === pr)).map((pr) =>
+      `<label><input type="checkbox" name="profile" value="${escapeHtml(pr)}" checked> ${escapeHtml(pr)}</label>`).join("")}</fieldset></details></form>`,
+    `<p id="c-count" class="muted interactive" role="status" aria-live="polite"></p>`,
+    `<p id="c-empty" class="empty-state" hidden>No profiles match this selection. Choose another dataset or split, or reset the comparison.</p>`,
+  ];
+  for (const dataset of ctx.datasetsPresent) {
+    const common = commonCases(ctx.data, dataset);
+    const commonIds = new Set(common.cases);
+    for (const split of SPLITS) {
+      for (const scope of ["all", "common"] as const) {
+        const records = ctx.data.records.filter((r) =>
+          r.dataset === dataset && (split === "all" || (split === "heldOut") === (r.heldOut === true)) &&
+          (scope === "all" || commonIds.has(r.caseId)));
+        const profiles = (scope === "common" ? common.profiles : ctx.data.profiles)
+          .filter((pr) => records.some((r) => r.profile === pr));
+        const rows = profiles.map((profile, index) => {
+          const recs = records.filter((r) => r.profile === profile);
+          const stats = computeStats(recs, ctx.data.cases);
+          const note = naReasons(recs);
+          return `<tr data-profile="${escapeHtml(profile)}" data-recorded="${index}" data-usable="${stats.usable.value ?? ""}" data-recall="${stats.passageRecall.value ?? ""}" data-latency="${stats.latencyWarmP50.value ?? ""}">` +
+            `<th scope="row">${escapeHtml(profile)}${note ? `<span class="row-note">${escapeHtml(note)}</span>` : ""}</th>` +
+            `<td>${stats.nTasks}<span class="row-note">${stats.nOk} ok / ${stats.nError} error<br>${stats.nUnavailable} unavailable / ${stats.nNa} N/A</span></td>` +
+            `<td>${fRate(stats.usable)}</td><td>${fScore(stats.passageRecall)}</td><td>${fMs(stats.latencyWarmP50)}</td></tr>`;
+        });
+        const initial = dataset === ctx.datasetsPresent[0] && split === "all" && scope === "all";
+        const cohort = uniq(records.map((r) => r.caseId)).length;
+        const label = `${dataset === "fixture" ? "Local fixtures" : "Live websites"} / ${split === "all" ? "all splits" : split === "heldOut" ? "held-out" : "dev"} / ${scope === "all" ? "all tasks" : "common cases"}`;
+        parts.push(
+          `<div class="comparison-pane" data-dataset="${dataset}" data-split="${split}" data-scope="${scope}"${initial ? "" : " hidden"}>` +
+          `<div class="tw" tabindex="0" role="region" aria-label="Fetch comparison"><table class="comparison-table"><caption>${escapeHtml(label)} / ${cohort} cases</caption><thead><tr><th scope="col">Profile</th><th scope="col">Tasks &amp; outcomes</th><th scope="col">Usable rate</th><th scope="col">Passage recall</th><th scope="col">Warm p50</th></tr></thead><tbody>${rows.join("")}</tbody></table></div>` +
+          `<p class="cohort-note">${scope === "common"
+            ? `Common cases were attempted by every profile that attempted this dataset (${escapeHtml(common.profiles.join(", ") || "none")}); the split then narrows that fixed cohort.`
+            : "Each profile includes every recorded task in this selection. Coverage can differ; use common cases for a like-for-like comparison."}</p></div>`,
+        );
+      }
+    }
+  }
+  parts.push(`<p class="cohort-note">Controls change only this comparison. Missing values sort last, never as zero. Hiding a profile does not change the common-case cohort or any denominator. Rates use attempted tasks (ok + error), excluding unavailable and N/A; usable rate also excludes expected-error cases. Quality and latency use applicable ok samples. <code>n/a (n=0)</code> means no sample.</p>`);
+  return parts.join("\n");
+}
+
 const CSS = `
-body{font:14px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;margin:0 auto;max-width:1400px;padding:16px 24px;color:#1b1f24;background:#fff}
-h1{font-size:22px}h2{font-size:18px;margin-top:32px;border-bottom:1px solid #d0d7de;padding-bottom:4px}h3{font-size:15px;margin-top:20px}
-.tw{overflow-x:auto}table{border-collapse:collapse;margin:8px 0;font-size:13px}th,td{border:1px solid #d0d7de;padding:3px 7px;text-align:left;vertical-align:top}
-th{background:#f6f8fa}tbody tr:nth-child(even){background:#fbfcfd}code{background:#f0f2f4;padding:0 3px;border-radius:3px}
-pre{background:#f6f8fa;border:1px solid #d0d7de;padding:8px;white-space:pre-wrap;word-break:break-word;max-height:480px;overflow:auto;font-size:12px}
-.muted{color:#57606a}.err{color:#a40e26;font-size:12px}.url{word-break:break-all}nav ul{columns:3;font-size:13px}
-.chart{display:block;margin:10px 0;max-width:100%;height:auto}.chart .ct{font-weight:600;font-size:13px}.chart .cl,.chart .cv,.chart .cn{font-size:12px}
-.chart .cb{fill:#3b6fb6}.chart .cn{fill:#8c959f;font-style:italic}.filters{display:flex;gap:16px;align-items:center;margin:8px 0;flex-wrap:wrap}
-section.case{border-top:1px solid #eaeef2;padding-top:6px}details{margin:4px 0}summary{cursor:pointer}
+:root{color-scheme:light;--ink:#17283d;--muted:#50647a;--blue:#1958a6;--teal:#146c65;--pale:#f1f6fc;--line:#d8e2ee;--paper:#fff;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper)}
+*{box-sizing:border-box}body{margin:0;font-size:16px;line-height:1.6}::selection{background:#d6e8ff;color:var(--ink)}a{color:var(--blue);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}input{accent-color:var(--blue);caret-color:var(--blue)}:focus-visible{outline:3px solid var(--blue);outline-offset:4px}[hidden]{display:none!important}.interactive{display:none}.js .interactive{display:block}
+.skip-link{position:fixed;top:8px;left:16px;z-index:10;padding:10px 16px;background:white;transform:translateY(-180%)}.skip-link:focus{transform:none}.report-layout{display:grid;grid-template-columns:232px minmax(0,1fr);max-width:1800px;margin:auto}.sidebar{position:sticky;top:0;height:100vh;overflow-y:auto;padding:32px 18px;background:var(--pale);border-right:1px solid var(--line)}.sidebar-title{font-size:18px;font-weight:700;margin:0 12px 4px}.sidebar-description{font-size:13px;color:var(--muted);margin:0 12px 24px}.sidebar ul{list-style:none;margin:0;padding:0}.sidebar a{display:block;padding:7px 12px;border-radius:5px;text-decoration:none;font-size:14px;line-height:1.4;color:var(--muted)}.sidebar a:hover,.sidebar a[aria-current="location"]{background:#e0ebf9;color:var(--blue)}.sidebar a[aria-current="location"]{font-weight:650}
+main{min-width:0;padding:44px 48px 80px}header{padding-bottom:24px;border-bottom:1px solid var(--line);margin-bottom:32px}h1{font-size:32px;line-height:1.2;letter-spacing:-.025em;margin:0 0 14px;font-weight:700}h2{font-size:24px;line-height:1.3;letter-spacing:-.015em;margin:0 0 18px}h3{font-size:18px;line-height:1.4;margin:28px 0 12px}p{margin:12px 0;max-width:78ch}li{max-width:90ch}li+li{margin-top:6px}h1,h2,h3,td,th,.run-identity{overflow-wrap:anywhere}.report-section{margin-top:48px;padding-top:28px;border-top:1px solid var(--line);scroll-margin-top:24px}#overview{border:0;padding:0;margin-top:0}.run-identity{margin:0;color:var(--muted);font-size:15px}.run-identity strong{color:var(--ink)}.run-volume{font-size:15px;margin-top:10px}.method-note{background:var(--pale);padding:14px 18px;border-radius:6px;margin:18px 0 24px;max-width:90ch}.method-note p{margin:0}.method-note p+p{margin-top:8px}.exports{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0 0}.exports a,button{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:8px 13px;border:1px solid #aec3de;border-radius:5px;background:white;color:var(--blue);font-weight:600;font-size:14px;text-decoration:none;cursor:pointer}.exports a:hover,button:hover{background:#eaf2fd;border-color:var(--blue)}button:active,.exports a:active{background:#dceaff}
+.tw,.chart-wrap{overflow:auto;max-width:100%;scrollbar-color:#9aafc8 var(--pale);margin:16px 0 24px}.tw{border:1px solid var(--line);border-radius:6px}table{border-collapse:separate;border-spacing:0;width:100%;font-size:14px;line-height:1.5;font-variant-numeric:tabular-nums}th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);min-width:100px;max-width:520px}thead th{background:var(--pale);font-size:13px;font-weight:650;white-space:normal;color:var(--muted)}tbody th{font-weight:600;min-width:165px}tbody tr:last-child>*{border-bottom:0}tbody tr:nth-child(even){background:#f9fbfe}tbody tr:hover{background:#edf4fc}.comparison-table{min-width:760px}.comparison-table td{white-space:nowrap}.comparison-table th:first-child{width:25%}.comparison-table td:nth-child(3){color:var(--teal);font-weight:600}.row-note{display:block;margin-top:4px;max-width:36ch;font-size:12px;font-weight:400;line-height:1.5;color:var(--muted);white-space:normal}.cohort-note{font-size:14px;color:var(--muted)}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.875em;background:#eaf0f7;padding:2px 4px;border-radius:3px;overflow-wrap:anywhere}pre{background:var(--pale);border:1px solid var(--line);border-radius:6px;padding:18px;white-space:pre-wrap;overflow-wrap:anywhere;max-height:480px;overflow:auto;font:13px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace;tab-size:2}.muted{color:var(--muted)}.err{color:#a32734;overflow-wrap:anywhere}.url{overflow-wrap:anywhere}.chart{display:block;width:800px;max-width:100%;min-width:700px;height:auto;margin:0;color:var(--ink)}.chart text{fill:var(--ink);font-family:inherit}.chart .ct{font-weight:650;font-size:15px}.chart .cl,.chart .cv,.chart .cn{font-size:13px}.chart .cb{fill:var(--teal)}.chart .cn{fill:var(--muted);font-style:italic}
+.filters,.js .filters{display:flex;gap:16px;align-items:end;flex-wrap:wrap;margin:18px 0}.filters label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:var(--muted)}.filters select,.filters input{min-height:44px;padding:9px 12px;color:var(--ink);background:white;border:1px solid #9eb1c9;border-radius:5px;font-size:14px;max-width:100%}.filters input::placeholder{color:#64758a;opacity:1}.filters .search-field{flex:1 1 290px}.filters button{min-height:44px}.profile-filters{padding:12px 0 4px;margin:0;border:0;display:flex;flex-wrap:wrap;gap:8px 20px}.profile-filters legend{font-size:13px;font-weight:600;color:var(--muted);padding:0;margin-bottom:8px}.profile-filters label{display:flex;gap:7px;align-items:center;font-size:14px;overflow-wrap:anywhere;min-height:30px}.profile-filters input{width:17px;height:17px;flex-shrink:0}.empty-state{padding:20px;background:var(--pale);border:1px dashed #9eb1c9;border-radius:6px;max-width:none}.case{border-top:1px solid var(--line);padding:4px 0 24px}.case h3{margin-top:24px}details{margin:8px 0;border-bottom:1px solid var(--line)}summary{padding:12px 0;cursor:pointer;font-size:14px;font-weight:600;color:var(--blue);overflow-wrap:anywhere}summary:hover{color:var(--ink)}details[open]{padding-bottom:16px}.report-footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+@media(min-width:1600px){main{padding-left:64px;padding-right:64px}}@media(max-width:1100px){.report-layout{grid-template-columns:200px minmax(0,1fr)}main{padding:32px 28px 64px}.sidebar{padding:28px 10px}.sidebar a{font-size:13px}}@media(max-width:760px){.report-layout{display:block}.sidebar{height:auto;position:sticky;z-index:5;padding:8px 12px;border-right:0;border-bottom:1px solid var(--line);overflow:visible}.sidebar-title,.sidebar-description{display:none}.sidebar ul{display:flex;overflow-x:auto;gap:4px;padding:4px}.sidebar li{flex:0 0 auto;margin:0}.sidebar a{padding:10px 12px;font-size:14px;white-space:nowrap}main{padding:28px 18px 48px}h1{font-size:28px}h2{font-size:22px}.report-section{margin-top:36px;padding-top:24px;scroll-margin-top:90px}.filters{gap:12px}.filters label{flex:1 1 145px;min-width:0}.filters select{width:100%}.filters .search-field{flex-basis:100%}.method-note{padding:14px}th,td{padding:10px 12px}.exports a{flex:1 1 auto}}
+@media print{@page{size:landscape;margin:12mm}body{font-size:10pt;color:#000}.report-layout{display:block}.sidebar,.skip-link,.interactive,.js .interactive,.exports,#f-count,#f-empty,#c-count,#c-empty{display:none!important}main{padding:0}header{padding-bottom:12px;margin-bottom:20px}h1{font-size:24pt}h2{font-size:18pt}h3{font-size:12pt}.report-section{margin-top:24px;padding-top:16px}.tw{overflow:visible;border:0}.chart-wrap{overflow:visible}.chart{min-width:0;max-width:100%;break-inside:avoid}table,.comparison-table{table-layout:fixed;min-width:0;font-size:7pt;width:100%}th,td,tbody th{min-width:0;padding:5px;overflow-wrap:anywhere}.comparison-table td{white-space:normal}thead{display:table-header-group}tr{break-inside:avoid}.row-note{font-size:7pt}pre{max-height:none;overflow:visible;font-size:8pt}details> :not(summary){display:block!important}summary{color:#000;break-after:avoid}h2,h3{break-after:avoid}.case[hidden]{display:block!important}a{color:#000;text-decoration:none}.method-note{padding:10px}.report-footer{margin-top:24px}}
+caption{text-align:left;padding:12px 14px;font-size:14px;font-weight:600;background:white;border-bottom:1px solid var(--line)}.profile-selection{border:0;margin:0}.profile-selection summary{padding:4px 0}.profile-selection[open]{padding-bottom:8px}#c-count{font-size:13px;margin:8px 0}.filters.interactive{display:none}.js .filters.interactive{display:flex}@media print{.js .filters.interactive{display:none}.profile-selection{display:none}}
+p,li{overflow-wrap:anywhere}
 `;
 
 const JS = `
 (function(){
-  var ds=document.getElementById('f-dataset'),cat=document.getElementById('f-category'),sp=document.getElementById('f-split'),cnt=document.getElementById('f-count');
-  if(!ds)return;
-  function apply(){
-    var shown=0,all=document.querySelectorAll('section.case');
-    for(var i=0;i<all.length;i++){var s=all[i];
-      var ok=(!ds.value||s.getAttribute('data-dataset')===ds.value)&&(!cat.value||s.getAttribute('data-category')===cat.value)&&(!sp.value||s.getAttribute('data-split')===sp.value);
-      s.hidden=!ok;if(ok)shown++;}
-    cnt.textContent=shown+' of '+all.length+' cases shown';
+  document.documentElement.classList.add('js');
+  var ds=document.getElementById('f-dataset'),cat=document.getElementById('f-category'),sp=document.getElementById('f-split'),search=document.getElementById('f-search'),cnt=document.getElementById('f-count');
+  var cases=Array.from(document.querySelectorAll('section.case')).map(function(node){return {node:node,text:node.textContent.toLowerCase()};});
+  function applyCases(){
+    var shown=0,query=search.value.trim().toLowerCase();
+    cases.forEach(function(item){
+      var s=item.node,ok=(!ds.value||s.dataset.dataset===ds.value)&&(!cat.value||s.dataset.category===cat.value)&&(!sp.value||s.dataset.split===sp.value)&&(!query||item.text.includes(query));
+      s.hidden=!ok;if(ok)shown++;
+    });
+    cnt.textContent=shown+' of '+cases.length+' cases shown';
+    document.getElementById('f-empty').hidden=shown!==0;
   }
-  ds.addEventListener('change',apply);cat.addEventListener('change',apply);sp.addEventListener('change',apply);apply();
+  var caseForm=document.getElementById('case-filters');
+  caseForm.addEventListener('submit',function(event){event.preventDefault();});
+  caseForm.addEventListener('input',applyCases);
+  caseForm.addEventListener('change',applyCases);
+  caseForm.addEventListener('reset',function(){setTimeout(applyCases,0);});
+  applyCases();
+  var compare=document.getElementById('comparison-filters');
+  if(compare){
+    var dataset=document.getElementById('c-dataset'),split=document.getElementById('c-split'),scope=document.getElementById('c-scope'),sort=document.getElementById('c-sort');
+    var panes=Array.from(document.querySelectorAll('.comparison-pane'));
+    function applyComparison(){
+      var selected=Array.from(compare.querySelectorAll('input[name="profile"]:checked')).map(function(input){return input.value;});
+      var shown=0;
+      panes.forEach(function(pane){
+        pane.hidden=pane.dataset.dataset!==dataset.value||pane.dataset.split!==split.value||pane.dataset.scope!==scope.value;
+        if(pane.hidden)return;
+        var body=pane.querySelector('tbody'),rows=Array.from(body.rows),key=sort.value;
+        rows.sort(function(a,b){
+          var av=a.dataset[key],bv=b.dataset[key];
+          if(av===''&&bv==='')return Number(a.dataset.recorded)-Number(b.dataset.recorded);
+          if(av==='')return 1;if(bv==='')return -1;
+          var difference=Number(av)-Number(bv);
+          return (key==='usable'||key==='recall'?-difference:difference)||Number(a.dataset.recorded)-Number(b.dataset.recorded);
+        });
+        rows.forEach(function(row){row.hidden=!selected.includes(row.dataset.profile);if(!row.hidden)shown++;body.appendChild(row);});
+      });
+      document.getElementById('c-count').textContent=shown+' profiles shown. '+sort.options[sort.selectedIndex].text+'.';
+      document.getElementById('c-empty').hidden=shown!==0;
+    }
+    compare.addEventListener('submit',function(event){event.preventDefault();});
+    compare.addEventListener('change',applyComparison);
+    compare.addEventListener('reset',function(){setTimeout(applyComparison,0);});
+    applyComparison();
+  }
+  var links=Array.from(document.querySelectorAll('.sidebar a'));
+  if('IntersectionObserver' in window){
+    var observer=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){if(entry.isIntersecting){links.forEach(function(link){
+        if(link.hash==='#'+entry.target.id)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');
+      });}});
+    },{rootMargin:'0px 0px -70% 0px'});
+    document.querySelectorAll('main>.report-section').forEach(function(section){observer.observe(section);});
+  }
+  var closedForPrint=[];
+  window.addEventListener('beforeprint',function(){closedForPrint=Array.from(document.querySelectorAll('details:not([open])'));closedForPrint.forEach(function(detail){detail.open=true;});});
+  window.addEventListener('afterprint',function(){closedForPrint.forEach(function(detail){detail.open=false;});closedForPrint=[];});
 })();
 `;
 
-function renderHtml(title: string, blocks: readonly Block[], inspection: string): string {
-  const toc = blocks
-    .filter((b): b is Extract<Block, { kind: "h" }> => b.kind === "h" && b.level === 2)
-    .map((b) => `<li><a href="#${slug(b.text)}">${escapeHtml(b.text)}</a></li>`)
-    .join("");
+function renderHtml(title: string, blocks: readonly Block[], inspection: string, ctx: Ctx, exports: readonly [string, string][]): string {
+  const sections: { title: string; blocks: Block[] }[] = [];
+  for (const block of blocks) {
+    if (block.kind === "h" && block.level === 1) continue;
+    if (block.kind === "h" && block.level === 2) sections.push({ title: block.text, blocks: [] });
+    else sections[sections.length - 1]?.blocks.push(block);
+  }
+  const order = [
+    ...(ctx.data.records.length ? ["Results", "Crawl"] : ["Crawl", "Results"]),
+    "Quality detail", "Latency", "Per-case inspection", "Resources", "Cold start", "Footprint",
+    "Fetchkeep-specific features", "Unsupported / N/A / unavailable", "How to read this",
+    "Summary of what was run", "Environment", "Engines", "Reproduce",
+  ];
+  const labels: Record<string, string> = {
+    Results: "Full fetch results", "Per-case inspection": "Case inspector",
+    "Fetchkeep-specific features": "Citation checks", "Unsupported / N/A / unavailable": "Availability & limitations",
+    "How to read this": "Methodology & trade-offs", "Summary of what was run": "Run configuration",
+  };
+  const toc = [
+    `<li><a href="#overview" aria-current="location">Overview &amp; comparison</a></li>`,
+    ...order.map((name) => `<li><a href="#${slug(name)}">${escapeHtml(labels[name] ?? name)}</a></li>`),
+  ].join("");
+  const content = order.map((name) => {
+    if (name === "Per-case inspection") return `<section class="report-section" id="${slug(name)}">${inspection}</section>`;
+    const section = sections.find((s) => s.title === name);
+    if (!section) return "";
+    return `<section class="report-section" id="${slug(name)}"><h2>${escapeHtml(labels[name] ?? name)}</h2>${renderHtmlBlocks(section.blocks)}</section>`;
+  }).join("\n");
+  const m = ctx.data.meta;
+  const downloads = exports.filter(([name]) => name.endsWith(".csv")).map(([name, csv]) =>
+    `<a download="${escapeHtml(name)}" href="data:text/csv;charset=utf-8;base64,${Buffer.from(csv, "utf8").toString("base64")}">Download ${escapeHtml(name)}</a>`).join("");
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${escapeHtml(title)}</title><style>${CSS}</style></head>
-<body>
-${renderHtmlBlocks(blocks.slice(0, 1))}
-<nav><ul>${toc}<li><a href="#per-case-inspection">Per-case inspection</a></li></ul></nav>
-${renderHtmlBlocks(blocks.slice(1))}
-${inspection}
-<script>${JS}</script>
-</body></html>
+<body><a class="skip-link" href="#main">Skip to report</a>
+<div class="report-layout"><nav class="sidebar" aria-label="Report sections"><p class="sidebar-title">Fetchkeep</p><p class="sidebar-description">Benchmark report</p><ul>${toc}</ul></nav>
+<main id="main"><header><h1>Benchmark report</h1>
+<p class="run-identity"><strong>${escapeHtml(m.suite)}</strong> / Run ${escapeHtml(m.runId)}<br>Started <time>${escapeHtml(m.startedAt)}</time></p>
+<p class="run-volume">${ctx.data.records.length} fetch tasks across ${fetchCaseIds(ctx.data).length} cases; ${ctx.data.crawl.length} crawl tasks across ${uniq(ctx.data.crawl.map((r) => r.caseId)).length} cases. ${ctx.data.profiles.length} recorded profiles.</p>
+<div class="exports" aria-label="Embedded CSV downloads">${downloads}</div></header>
+<section class="report-section" id="overview"><h2>${ctx.data.records.length ? "Compare this run" : "Crawl results overview"}</h2>
+<div class="method-note"><p>No overall winner: compare coverage, quality and latency together. Fixtures are synthetic; live sites and transport overheads vary. <a href="#how-to-read-this">Methodology &amp; trade-offs</a>.</p></div>
+${comparisonHtml(ctx)}
+${ctx.data.records.length && ctx.data.crawl.length ? `<p><a href="#crawl">Read crawl coverage, missing pages and stop reasons</a>. Fetch controls do not filter crawl results.</p>` : ""}
+<noscript><p>JavaScript is disabled. Full results and embedded CSV downloads remain available below; enable JavaScript to filter and sort.</p></noscript></section>
+${content}
+<footer class="report-footer">Standalone snapshot. CSV downloads and displayed raw previews are embedded in this file; no server or network connection is needed. Source paths identify the original run and are not required to read this report.</footer>
+</main></div><script>${JS}</script></body></html>
 `;
 }
 
@@ -1145,7 +1299,7 @@ export async function generateReport(runDir: string): Promise<{ files: string[] 
   if (data.crawl.length) outputs.push(["crawl.csv", crawlCsv(data)]);
   outputs.push(["report.md", renderMarkdown(blocks)]);
   const title = `Fetchkeep benchmark report — ${data.meta.suite} — ${data.meta.runId}`;
-  outputs.push(["report.html", renderHtml(title, blocks, await caseInspectionHtml(ctx))]);
+  outputs.push(["report.html", renderHtml(title, blocks, await caseInspectionHtml(ctx), ctx, outputs)]);
   const files: string[] = [];
   for (const [name, content] of outputs) {
     const path = join(dir, name);

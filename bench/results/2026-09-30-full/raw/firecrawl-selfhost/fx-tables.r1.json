@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "data": {
+    "markdown": "We use cookies to measure audience engagement. Accept all cookies\n\nRegional rainfall, first half of the year\n=========================================\n\nMonthly totals in millimetres, measured at three stations operated by the valley water board.\n\n|     |     |     |     |\n| --- | --- | --- | --- |Rainfall by station\n| Month | Upper Ford | Millbrook | Estuary |\n| --- | --- | --- | --- |\n| January | 112 | 98  | 74  |\n| February | 87  | 90  | 61  |\n| March | 101 | 84  | 70  |\n| April | 64  | 59  | 42  |\n| May | 55  | 60  | 38  |\n| June | 47  | 41  | 29  |\n\nStation metadata\n----------------\n\n| Station | Elevation | Opened |\n| --- | --- | --- |\n| Upper Ford | 412 m | 1961 |\n| Millbrook | not recorded |     |\n| Estuary | 3 m | 1988 |\n\nTotals for Millbrook in March were estimated from a neighbouring gauge after a sensor fault.",
+    "metadata": {
+      "language": "en",
+      "title": "Regional rainfall | Northwind Journal",
+      "scrapeId": "01a0f37d-856d-7425-9e88-88e6d95b61e7",
+      "sourceURL": "http://172.31.172.243:44735/data/rainfall.html",
+      "url": "http://172.31.172.243:44735/data/rainfall.html",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "proxyUsed": "basic",
+      "creditsUsed": 1,
+      "concurrencyLimited": false
+    }
+  }
+}

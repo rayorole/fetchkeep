@@ -1,0 +1,1142 @@
+[
+  {
+    "kind": "fetch",
+    "dataset": "fixture",
+    "id": "fx-article-basic",
+    "url": "http://172.31.172.243:44735/articles/tide-gauge.html",
+    "category": "article",
+    "description": "News article with cookie banner, navigation, sidebar with ads and footer.",
+    "mustContain": [
+      "spent the summer replacing a tide gauge",
+      "logs readings every six minutes",
+      "We did not want to lose even one tide cycle of data",
+      "fund maintenance for the next ten years"
+    ],
+    "mustNotContain": [
+      "Subscribe for four dollars a month",
+      "We use cookies to measure audience engagement",
+      "Copyright Northwind Media Group",
+      "Ten gadgets you will regret buying",
+      "Advertisement: Premium noise-cancelling headphones"
+    ],
+    "headings": [
+      "Harbor town rebuilds its tide gauge after sixty years",
+      "Why a small gauge matters"
+    ],
+    "gold": "gold/fx-article-basic.txt"
+  },
+  {
+    "kind": "fetch",
+    "dataset": "fixture",
+    "id": "fx-article-long",
+    "url": "http://172.31.172.243:44735/articles/frost-ledger.html",
+    "category": "article",
+    "heldOut": true,
+    "description": "Longer article with subsections, a list and a figure caption.",
+    "mustContain": [
+      "written down the date of the first autumn frost",
+      "Every entry lists the variety that was picked last",
+      "agrees with the station to within four days",
+      "Nobody, she said, is going to paint over it"
+    ],
+    "mustNotContain": [
+      "Subscribe for four dollars a month",
+      "We use cookies to measure audience engagement",
+      "Copyright Northwind Media Group",
+      "Ten gadgets you will regret buying",
+      "Advertisement: Premium noise-cancelling headphones"
+    ],
+    "headings": [
+      "The orchard that keeps a ledger of frost",
+      "A record written on wood",
+      "Comparing the door with instruments",
+      "What the family plans next"
+    ],
+    "gold": "gold/fx-article-long.txt"
+  },
+  {
+    "kind": "fetch",
+    "dataset": "fixture",
+    "id": "fx-docs-install",
+    "url": "http://172.31.172.243:44735/docs/install.html",
+    "category": "docs",
+    "description": "Documentation page with sidebar navigation, table of contents, admonition, table and two code blocks.",
+    "mustContain": [
+      "Tidewater ships as a single binary",
+      "older releases required a separate runtime",
+      "include its output when you report a problem"
+    ],
+    "mustNotContain": [
+      "Overview of Tidewater",
+      "Star us on the code forge",
+      "Edit this page on the code forge",
+      "maintained by volunteers of the Tidewater Collective"
+    ],
+    "headings": [
+      "Installing the toolchain",
+      "Download",
+      "Installer options",
+      "Verify the installation"
+    ],
+    "tables": [
+      {
+        "rows": [
+          [
+            "Option",
+            "Default",
+            "Description"
+          ],
+          [
+            "--prefix",
+            "/usr/local",
+            "Directory that receives the binary"
+          ],
+          [
+            "--no-modify-path",
+            "off",
+            "Do not edit shell profile files"
+          ]
+        ]
+      }
+    ],
+    "code": [
+      "curl -fsSL https://example.org/tidewater/install.sh | sh\ntidewater --version",
+      "import tidewater\n\nprint(tidewater.version())\nassert tidewater.ping() == \"pong\""
+    ],
+    "gold": "gold/fx-docs-install.txt"
+  },
+  {
+    "kind": "fetch",
+    "dataset": "fixture",
+    "id": "fx-docs-tabs",
+    "url": "http://172.31.172.243:44735/docs/config.html",
+    "category": "docs",
+    "heldOut": true,
+    "description": "Docs page with tabbed code samples (pre without code element), a key table and an ordered list.",
+    "mustContain": [
+      "reads tidewater.toml from the project root",
+      "Values that cannot be parsed stop startup",
+      "Environment variables"
+    ],
+    "mustNotContain": [
+      "Overview of Tidewater",
+      "Star us on the code forge",
+      "Edit this page on the code forge",
+      "maintained by volunteers of the Tidewater Collective"
+    ],
+    "headings": [
+      "Configuration reference",
+      "Keys",
+      "Precedence"
+    ],
+    "tables": [
+      {
+        "rows": [
+          [
+            "server.port",
+            "integer",
+            "8080"
+          ],
+          [
+            "log.format",
+            "string",
+            "text"
+          ]
+        ]
+      }
+    ],
+    "code": [
+      "[server]\nport = 8080\nworkers = 4",
+      "export TIDEWATER_SERVER_PORT=8080\nexport TIDEWATER_SERVER_WORKERS=4"
+    ],
+    "gold": "gold/fx-docs-tabs.txt"
+  },
+  {
+    "kind": "fetch",
+    "dataset": "fixture",
+    "id": "fx-tables",
+    "url": "http://172.31.172.243:44735/data/rainfall.html",
+    "category": "table",
+    "description": "Two data tables (thead/tbody, caption, header row without thead, colspan) inside news chrome.",
+    "mustContain": [
+      "measured at three stations operated by the valley water board",
+      "estimated from a neighbouring gauge after a sensor fault"
+    ],
+    "mustNotContain": [
+      "Subscribe for four dollars a month",
+      "We use cookies to measure audience engagement",
+      "Copyright Northwind Media Group",
+      "Ten gadgets you will regret buying",
+      "Advertisement: Premium noise-cancelling headphones"
+    ],
+    "tables": [
+      {
+        "rows": [
+          [
+            "Month",
+            "Upper Ford",
+            "Millbrook",
+            "Estuary"
+          ],
+          [
+            "January",
+            "112",
+            "98",
+            "74"
+          ],
+          [
+            "June",
+            "47",
+            "41",
+            "29"
+          ]
+        ]
+      },
+      {
+        "rows": [
+          [
+            "Station",
+            "Elevation",
+            "Opened"
+          ],
+          [
+            "Upper Ford",
+            "412 m",
+            "1961"
+          ],
+          [
+            "Estuary",
+            "3 m",
+            "1988"
+          ]
+        ]
+      }
+    ],
+    "gold": "gold/fx-tables.txt"
+  },
+  {
+    "kind": "fetch",
+    "dataset": "fixture",
+    "id": "fx-table-financial",
+    "url": "http://172.31.172.243:44735/data/ferry-results.html",
+    "category": "table",
+    "heldOut": true,
+    "description": "Financial table with thousands separators, percentages and bold cells.",
+    "mustContain": [
+      "fuel costs rose faster than fares",
+      "vote on a fare adjustment at the annual meeting"
+    ],
+    "mustNotContain": [
+      "Subscribe for four dollars a month",
+      "We use cookies to measure audience engagement",
+      "Copyright Northwind Media Group",
+      "Ten gadgets you will regret buying",
+      "Advertisement: Premium noise-cancelling headphones"
+    ],
+    "tables": [
+      {
+        "rows": [
+          [
+            "Line item",
+            "Q1",
+            "Q2",
+            "Change"
+          ],
+          [
+            "Fuel",
+            "402,100",
+            "497,900",
+            "+23.8%"
+          ],
+          [
+            "Operating surplus",
+            "290,900",
+            "371,200",
+            "+27.6%"
+          ]
+        ]
+      }
+    ],
+    "gold": "gold/fx-table-financial.txt"
+  },
+  {
+    "kind": "fetch",
+    "dataset": "fixture",
+    "id": "fx-code",
+    "url": "http://172.31.172.243:44735/tutorials/state-machine.html",
+    "category": "code",
+    "description": "Tutorial with inline code, HTML entities inside code, a pre block without a code element and several languages.",
+    "mustContain": [
+      "builds a tiny parser for lines",
+      "Quotes switch into a mode where spaces are kept",
+      "handles them with one extra state"
+    ],
+    "mustNotContain": [
+      "Overview of Tidewater",
+      "Star us on the code forge",
+      "Edit this page on the code forge",
+      "maintained by volunteers of the Tidewater Collective"
+    ],
+    "headings": [
+      "Parsing log lines with a state machine",
+      "The token type",
+      "The loop",
+      "Testing it"
+    ],
+    "code": [
+      "enum Token<'a> {\n    Key(&'a str),\n    Value(&'a str),\n}",
+      "for ch in line.chars() {\n    match (state, ch) {\n        (State::Key, '=') => state = State::Value,\n        _ => buf.push(ch),\n    }\n}",
+      "const out = parse('level=warn msg=\"disk almost full\"');\nconsole.assert(out.msg === \"disk almost full\");"
+    ],
+    "gold": "gold/fx-code.txt"
+  },
+  {
+    "kind": "fetch",
+    "dataset": "fixture",
+    "id": "fx-nav-heavy",
+    "url": "http://172.31.172.243:44735/portal/recall.html",
+    "category": "nav-heavy",
+    "description": "Short notice inside a portal with a 96-link mega menu, breadcrumbs, related products and a 60-link footer; no main/article elements.",
+    "mustContain": [
+      "base can overheat when the kettle is switched on without water",
+      "You do not need a receipt",
+      "carry a green dot on the base"
+    ],
+    "mustNotContain": [
+      "Catalogue aisle 3-7",
+      "Store locator region 42",
+      "Free delivery on orders over fifty pounds",
+      "Folding travel hair dryer"
+    ],
+    "headings": [
+      "Product recall: travel kettle model TK-200"
+    ],
+    "gold": "gold/fx-nav-heavy.txt"
+  },
+  {
+    "kind": "fetch",
+    "dataset": "fixture",
+    "id": "fx-js-spa",
+    "url": "http://172.31.172.243:44735/js/spa.html",
+    "category": "js",
+    "requiresJs": true,
+    "description": "Empty single-page-app shell; content and table arrive via fetch() from a JSON endpoint.",
+    "mustContain": [
+      "Winter sailings run daily except on public holidays",
+      "Vehicles must check in thirty minutes before departure"
+    ],
+    "mustNotContain": [
+      "You need to enable JavaScript to run this app"
+    ],
+    "headings": [
+      "Island ferry timetable"
+    ],
+    "tables": [
+      {
+        "rows": [
+          [
+            "Departure",
+            "Destination",
+            "Pier"
+          ],
+          [
+            "09:40",
+            "Heron Key",
+            "Pier 1"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "kind": "fetch",
+    "dataset": "fixture",
+    "id": "fx-js-hydrate",
+    "url": "http://172.31.172.243:44735/js/hydrate.html",
+    "category": "js",
+    "description": "Server-rendered article; JavaScript only adds comments. HTTP alone should be sufficient for the article.",
+    "mustContain": [
+      "borrow seeds from a cabinet in the tool shed",
+      "forty varieties donated by a retired market gardener"
+    ],
+    "mustNotContain": [
+      "Subscribe for four dollars a month",
+      "We use cookies to measure audience engagement",
+      "Copyright Northwind Media Group",
+      "Ten gadgets you will regret buying",
+      "Advertisement: Premium noise-cancelling headphones"
+    ],
+    "headings": [
+      "Community garden opens a seed library"
+    ],
+    "gold": "gold/fx-js-hydrate.txt"
+  },
+  {
+    "kind": "fetch",
+    "dataset": "fixture",
+    "id": "fx-js-inline-data",
+    "url": "http://172.31.172.243:44735/js/next-data.html",
+    "category": "js",
+    "requiresJs": true,
+    "heldOut": true,
+    "description": "Framework-style page: content is embedded as JSON and rendered by an inline script (no network request).",
+    "mustContain": [
+      "A short post on a quay used for mooring ships",
+      "A ramp that lets boats move between land and water"
+    ],
+    "mustNotContain": [],
+    "headings": [
+      "Glossary of harbour terms"
+    ]
+  },
+  {
+    "kind": "fetch",
+    "dataset": "fixture",
+    "id": "fx-pdf",
+    "url": "http://172.31.172.243:44735/files/annual-report.pdf",
+    "category": "pdf",
+    "description": "Two-page text PDF with headings.",
+    "mustContain": [
+      "supplied drinking water to eleven thousand households",
+      "Leakage fell for the third consecutive year",
+      "replace the Millbrook pumping station"
+    ],
+    "mustNotContain": []
+  },
+  {
+    "kind": "fetch",
+    "dataset": "fixture",
+    "id": "fx-pdf-3page",
+    "url": "http://172.31.172.243:44735/files/ferry-safety.pdf",
+    "category": "pdf",
+    "heldOut": true,
+    "description": "Three-page text PDF.",
+    "mustContain": [
+      "Life jackets are stored under every seat",
+      "Muster station B is next to the cafe",
+      "follow the instructions of the crew"
+    ],
+    "mustNotContain": []
+  },
+  {
+    "kind": "fetch",
+    "dataset": "fixture",
+    "id": "fx-plain-text",
+    "url": "http://172.31.172.243:44735/files/notice.txt",
+    "category": "plain",
+    "description": "text/plain document.",
+    "mustContain": [
+      "north breakwater will be closed to pedestrians",
+      "Anglers may use the south pier"
+    ],
+    "mustNotContain": []
+  },
+  {
+    "kind": "fetch",
+    "dataset": "fixture",
+    "id": "fx-encoding-latin1",
+    "url": "http://172.31.172.243:44735/enc/latin1.html",
+    "category": "encoding",
+    "heldOut": true,
+    "description": "windows-1252 page declared only in the Content-Type header (served by the fixture server).",
+    "mustContain": [
+      "Crème brûlée",
+      "café on the quay",
+      "costs €4"
+    ],
+    "mustNotContain": []
+  },
+  {
+    "kind": "fetch",
+    "dataset": "fixture",
+    "id": "fx-redirect-chain",
+    "url": "http://172.31.172.243:44735/go/old-tide",
+    "category": "redirect",
+    "description": "301 → 302 → article; the final URL must be the article.",
+    "mustContain": [
+      "spent the summer replacing a tide gauge"
+    ],
+    "mustNotContain": []
+  },
+  {
+    "kind": "fetch",
+    "dataset": "fixture",
+    "id": "fx-404",
+    "url": "http://172.31.172.243:44735/missing/page.html",
+    "category": "failure",
+    "expectError": true,
+    "description": "404 Not Found.",
+    "mustContain": [],
+    "mustNotContain": []
+  },
+  {
+    "kind": "fetch",
+    "dataset": "fixture",
+    "id": "fx-500",
+    "url": "http://172.31.172.243:44735/fail/500",
+    "category": "failure",
+    "expectError": true,
+    "description": "500 Internal Server Error.",
+    "mustContain": [],
+    "mustNotContain": []
+  },
+  {
+    "kind": "fetch",
+    "dataset": "fixture",
+    "id": "fx-redirect-loop",
+    "url": "http://172.31.172.243:44735/loop/a",
+    "category": "failure",
+    "expectError": true,
+    "description": "Infinite redirect loop.",
+    "mustContain": [],
+    "mustNotContain": []
+  },
+  {
+    "kind": "fetch",
+    "dataset": "fixture",
+    "id": "fx-slow",
+    "url": "http://172.31.172.243:44735/slow/2500",
+    "category": "latency",
+    "description": "Page that takes 2.5 s to respond (within every deadline).",
+    "mustContain": [
+      "This page was deliberately slow"
+    ],
+    "mustNotContain": []
+  },
+  {
+    "id": "fx-crawl-estuary",
+    "kind": "crawl",
+    "dataset": "fixture",
+    "url": "http://172.31.172.243:44735/crawl/",
+    "description": "15-page site: robots.txt disallows /crawl/private/, one page only in the sitemap, a duplicate-content page, a redirect (/crawl/tides/old-tables → tables.html), tracking-parameter and fragment variants, an external link and a page beyond depth 3.",
+    "maxPages": 30,
+    "maxDepth": 3,
+    "expectedPages": [
+      "/crawl/",
+      "/crawl/birds/",
+      "/crawl/birds/curlew.html",
+      "/crawl/birds/redshank.html",
+      "/crawl/birds/avocet.html",
+      "/crawl/birds/avocet-eggs.html",
+      "/crawl/plants/",
+      "/crawl/plants/samphire.html",
+      "/crawl/plants/sea-lavender.html",
+      "/crawl/plants/samphire-copy.html",
+      "/crawl/tides/",
+      "/crawl/tides/tables.html",
+      "/crawl/hidden/lighthouse.html"
+    ],
+    "forbiddenPages": [
+      "/crawl/private/notes.html",
+      "/crawl/birds/avocet-deep.html"
+    ]
+  },
+  {
+    "id": "live-example-com",
+    "kind": "fetch",
+    "dataset": "live",
+    "url": "https://example.com/",
+    "category": "plain",
+    "description": "Minimal smoke page: tiny static HTML document, should round-trip trivially.",
+    "heldOut": false,
+    "requiresJs": false,
+    "mustContain": [
+      "This domain is for use in documentation examples without needing permission."
+    ],
+    "annotatedAt": "2026-09-30",
+    "verification": "raw HTML text match (curl snapshot 2026-09-30); passages checked to lie inside a single text node; headings/tables/code checked against parsed h*/table/pre elements"
+  },
+  {
+    "id": "live-wikipedia-markdown",
+    "kind": "fetch",
+    "dataset": "live",
+    "url": "https://en.wikipedia.org/wiki/Markdown",
+    "category": "article",
+    "description": "Wikipedia article with heavy chrome (sidebar, TOC, language list, infobox) around prose.",
+    "heldOut": false,
+    "requiresJs": false,
+    "mustContain": [
+      "This was addressed in 2014 when long-standing Markdown contributors released",
+      "Gruber avoided using curly braces in Markdown to unofficially reserve them",
+      "Gruber created the Markdown language in 2004 with Swartz as his \"sounding board\"."
+    ],
+    "mustNotContain": [
+      "Jump to content",
+      "Random article",
+      "Toggle the table of contents"
+    ],
+    "headings": [
+      "History",
+      "Rise and divergence",
+      "GitHub Flavored Markdown"
+    ],
+    "annotatedAt": "2026-09-30",
+    "verification": "raw HTML text match (curl snapshot 2026-09-30); passages checked to lie inside a single text node; headings/tables/code checked against parsed h*/table/pre elements"
+  },
+  {
+    "id": "live-paulgraham-great-work",
+    "kind": "fetch",
+    "dataset": "live",
+    "url": "https://paulgraham.com/greatwork.html",
+    "category": "article",
+    "description": "Long-form essay in legacy table layout with an image-map nav and image title.",
+    "heldOut": true,
+    "requiresJs": false,
+    "mustContain": [
+      "If you collected lists of techniques for doing great work in a lot",
+      "The following recipe assumes you're very ambitious.",
+      "The way to figure out what to work on is by working."
+    ],
+    "annotatedAt": "2026-09-30",
+    "verification": "raw HTML text match (curl snapshot 2026-09-30); passages checked to lie inside a single text node; headings/tables/code checked against parsed h*/table/pre elements"
+  },
+  {
+    "id": "live-rust-blog-1-0",
+    "kind": "fetch",
+    "dataset": "live",
+    "url": "https://blog.rust-lang.org/2015/05/15/Rust-1.0/",
+    "category": "news",
+    "description": "Static-site news announcement with long contributor list and site footer.",
+    "heldOut": false,
+    "requiresJs": false,
+    "mustContain": [
+      "Today we are very proud to announce the",
+      "The 1.0 release marks the end of that churn.",
+      "Rust has been an open-source project from the start."
+    ],
+    "mustNotContain": [
+      "Logo Policy and Media Guide",
+      "Security Disclosures",
+      "Maintained by the Rust Team. See a typo?"
+    ],
+    "headings": [
+      "Announcing Rust 1.0",
+      "Cargo and crates.io",
+      "Open Source and Open Governance"
+    ],
+    "annotatedAt": "2026-09-30",
+    "verification": "raw HTML text match (curl snapshot 2026-09-30); passages checked to lie inside a single text node; headings/tables/code checked against parsed h*/table/pre elements"
+  },
+  {
+    "id": "live-mdn-array-map",
+    "kind": "fetch",
+    "dataset": "live",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map",
+    "category": "docs",
+    "description": "MDN reference page: mega-menu nav, sidebar, many code examples.",
+    "heldOut": false,
+    "requiresJs": false,
+    "mustContain": [
+      "The indices of empty slots are still empty in the returned array",
+      "A new array with each element being the result of the callback function.",
+      "The callback can have side effects."
+    ],
+    "mustNotContain": [
+      "Skip to main content",
+      "Advertise with us",
+      "Check out the video course from Scrimba, our partner"
+    ],
+    "headings": [
+      "Syntax",
+      "Description",
+      "Mapping an array of numbers to an array of square roots"
+    ],
+    "code": [
+      "const roots = numbers.map((num) => Math.sqrt(num));"
+    ],
+    "annotatedAt": "2026-09-30",
+    "verification": "raw HTML text match (curl snapshot 2026-09-30); passages checked to lie inside a single text node; headings/tables/code checked against parsed h*/table/pre elements"
+  },
+  {
+    "id": "live-python-json",
+    "kind": "fetch",
+    "dataset": "live",
+    "url": "https://docs.python.org/3/library/json.html",
+    "category": "docs",
+    "description": "Sphinx docs page with doctest code blocks, sidebar TOC, and duplicated header/footer nav.",
+    "heldOut": false,
+    "requiresJs": false,
+    "mustContain": [
+      "Be cautious when parsing JSON data from untrusted sources.",
+      "Limiting the size of data to be parsed is recommended.",
+      "Regardless, for maximum interoperability, you may wish to voluntarily adhere to the restriction yourself."
+    ],
+    "mustNotContain": [
+      "Report a bug",
+      "Show source",
+      "The Python Software Foundation is a non-profit corporation."
+    ],
+    "headings": [
+      "Basic Usage",
+      "Encoders and Decoders",
+      "Standard Compliance and Interoperability"
+    ],
+    "code": [
+      ">>> json.dumps([1, 2, 3, {'4': 5, '6': 7}], separators=(',', ':'))"
+    ],
+    "annotatedAt": "2026-09-30",
+    "verification": "raw HTML text match (curl snapshot 2026-09-30); passages checked to lie inside a single text node; headings/tables/code checked against parsed h*/table/pre elements"
+  },
+  {
+    "id": "live-nodejs-path",
+    "kind": "fetch",
+    "dataset": "live",
+    "url": "https://nodejs.org/api/path.html",
+    "category": "docs",
+    "description": "Node.js API docs: very long module sidebar, stability banners, version history tables.",
+    "heldOut": true,
+    "requiresJs": false,
+    "mustContain": [
+      "segments together using the platform-specific separator as a delimiter",
+      "On Windows Node.js follows the concept of per-drive working directory.",
+      "This behavior can be observed when using a drive path without a backslash."
+    ],
+    "mustNotContain": [
+      "Asynchronous context tracking",
+      "Single executable applications"
+    ],
+    "headings": [
+      "Windows vs. POSIX"
+    ],
+    "code": [
+      "path.join('/foo', 'bar', 'baz/asdf', 'quux', '..');"
+    ],
+    "annotatedAt": "2026-09-30",
+    "verification": "raw HTML text match (curl snapshot 2026-09-30); passages checked to lie inside a single text node; headings/tables/code checked against parsed h*/table/pre elements"
+  },
+  {
+    "id": "live-rust-book-control-flow",
+    "kind": "fetch",
+    "dataset": "live",
+    "url": "https://doc.rust-lang.org/book/ch03-05-control-flow.html",
+    "category": "docs",
+    "description": "mdBook chapter: prose interleaved with many code and console-output blocks.",
+    "heldOut": false,
+    "requiresJs": false,
+    "mustContain": [
+      "Rust will not automatically try to convert non-Boolean types to a Boolean.",
+      "Loop labels must begin with a single quote.",
+      "This program has four possible paths it can take."
+    ],
+    "mustNotContain": [
+      "Press ? to show this help",
+      "Press Esc to hide this help"
+    ],
+    "headings": [
+      "Control Flow",
+      "Repetition with Loops",
+      "Returning Values from Loops"
+    ],
+    "code": [
+      "println!(\"number was something other than zero\");"
+    ],
+    "annotatedAt": "2026-09-30",
+    "verification": "raw HTML text match (curl snapshot 2026-09-30); passages checked to lie inside a single text node; headings/tables/code checked against parsed h*/table/pre elements"
+  },
+  {
+    "id": "live-react-thinking-in-react",
+    "kind": "fetch",
+    "dataset": "live",
+    "url": "https://react.dev/learn/thinking-in-react",
+    "category": "docs",
+    "description": "Next.js-rendered docs with interactive sandboxes, large sidebar and footer.",
+    "heldOut": false,
+    "requiresJs": false,
+    "mustContain": [
+      "To implement a UI in React, you will usually follow the same five steps.",
+      "Imagine that you already have a JSON API and a mockup from a designer.",
+      "This means only the search text and the value of the checkbox are state!"
+    ],
+    "mustNotContain": [
+      "Copyright © Meta Platforms, Inc",
+      "Meet the Team",
+      "Docs Contributors"
+    ],
+    "headings": [
+      "Thinking in React",
+      "Step 1: Break the UI into a component hierarchy",
+      "Step 5: Add inverse data flow"
+    ],
+    "code": [
+      "const [filterText, setFilterText] = useState('');"
+    ],
+    "annotatedAt": "2026-09-30",
+    "verification": "raw HTML text match (curl snapshot 2026-09-30); passages checked to lie inside a single text node; headings/tables/code checked against parsed h*/table/pre elements"
+  },
+  {
+    "id": "live-wikipedia-chemical-elements",
+    "kind": "fetch",
+    "dataset": "live",
+    "url": "https://en.wikipedia.org/wiki/List_of_chemical_elements",
+    "category": "table",
+    "description": "Large sortable wikitable (118 rows, 16 columns) with footnote cells and complex headers. Expected rows are leading cells; the element-name cell is a wiki link, compare its link text.",
+    "heldOut": false,
+    "requiresJs": false,
+    "mustContain": [
+      "the list below organizes the elements by the number of protons in their atoms"
+    ],
+    "mustNotContain": [
+      "Jump to content",
+      "Random article"
+    ],
+    "tables": [
+      {
+        "rows": [
+          [
+            "1",
+            "H",
+            "Hydrogen"
+          ],
+          [
+            "2",
+            "He",
+            "Helium"
+          ]
+        ]
+      }
+    ],
+    "annotatedAt": "2026-09-30",
+    "verification": "raw HTML text match (curl snapshot 2026-09-30); passages checked to lie inside a single text node; headings/tables/code checked against parsed h*/table/pre elements"
+  },
+  {
+    "id": "live-rfc9110-http-semantics",
+    "kind": "fetch",
+    "dataset": "live",
+    "url": "https://www.rfc-editor.org/rfc/rfc9110.html",
+    "category": "table",
+    "description": "Very large RFC HTML (~1.2 MB) with many registry tables; tests size handling and table fidelity.",
+    "heldOut": false,
+    "requiresJs": false,
+    "mustContain": [
+      "The Hypertext Transfer Protocol (HTTP) is a stateless application-level protocol"
+    ],
+    "tables": [
+      {
+        "rows": [
+          [
+            "W/\"1\"",
+            "W/\"2\"",
+            "no match",
+            "no match"
+          ],
+          [
+            "\"1\"",
+            "\"1\"",
+            "match",
+            "match"
+          ]
+        ]
+      },
+      {
+        "rows": [
+          [
+            "GET",
+            "Transfer a current representation of the target resource."
+          ],
+          [
+            "HEAD",
+            "Same as GET, but do not transfer the response content."
+          ]
+        ]
+      }
+    ],
+    "annotatedAt": "2026-09-30",
+    "verification": "raw HTML text match (curl snapshot 2026-09-30); passages checked to lie inside a single text node; headings/tables/code checked against parsed h*/table/pre elements"
+  },
+  {
+    "id": "live-iana-http-status-codes",
+    "kind": "fetch",
+    "dataset": "live",
+    "url": "https://www.iana.org/assignments/http-status-codes",
+    "category": "table",
+    "description": "IANA registry: one long three-column table plus site header/footer link tables.",
+    "heldOut": true,
+    "requiresJs": false,
+    "mustContain": [
+      "4xx: Client Error - The request contains bad syntax or cannot be fulfilled"
+    ],
+    "mustNotContain": [
+      "Number Registries",
+      "Time Zone Database"
+    ],
+    "headings": [
+      "Hypertext Transfer Protocol (HTTP) Status Code Registry"
+    ],
+    "tables": [
+      {
+        "rows": [
+          [
+            "200",
+            "OK"
+          ],
+          [
+            "201",
+            "Created"
+          ]
+        ]
+      }
+    ],
+    "annotatedAt": "2026-09-30",
+    "verification": "raw HTML text match (curl snapshot 2026-09-30); passages checked to lie inside a single text node; headings/tables/code checked against parsed h*/table/pre elements"
+  },
+  {
+    "id": "live-books-toscrape",
+    "kind": "fetch",
+    "dataset": "live",
+    "url": "https://books.toscrape.com/",
+    "category": "nav-heavy",
+    "description": "Scraping sandbox catalogue: 50-link category sidebar dominates text around a product grid.",
+    "heldOut": false,
+    "requiresJs": false,
+    "mustContain": [
+      "This is a demo website for web scraping purposes.",
+      "Prices and ratings here were randomly assigned and have no real meaning."
+    ],
+    "mustNotContain": [
+      "Sequential Art",
+      "Womens Fiction",
+      "Food and Drink"
+    ],
+    "annotatedAt": "2026-09-30",
+    "verification": "raw HTML text match (curl snapshot 2026-09-30); passages checked to lie inside a single text node; headings/tables/code checked against parsed h*/table/pre elements"
+  },
+  {
+    "id": "live-python-library-index",
+    "kind": "fetch",
+    "dataset": "live",
+    "url": "https://docs.python.org/3/library/index.html",
+    "category": "nav-heavy",
+    "description": "Docs index page that is mostly a long link list; tests keeping list content while dropping chrome.",
+    "heldOut": true,
+    "requiresJs": false,
+    "mustContain": [
+      "This library reference manual describes the standard library distributed with Python.",
+      "Functions creating iterators for efficient looping"
+    ],
+    "mustNotContain": [
+      "Report a bug",
+      "The Python Software Foundation is a non-profit corporation."
+    ],
+    "annotatedAt": "2026-09-30",
+    "verification": "raw HTML text match (curl snapshot 2026-09-30); passages checked to lie inside a single text node; headings/tables/code checked against parsed h*/table/pre elements"
+  },
+  {
+    "id": "live-quotes-toscrape-js",
+    "kind": "fetch",
+    "dataset": "live",
+    "url": "https://quotes.toscrape.com/js/",
+    "category": "js",
+    "description": "Quotes injected by inline script; raw HTML has only an empty placeholder.",
+    "heldOut": false,
+    "requiresJs": true,
+    "mustContain": [
+      "The world as we have created it is a process of our thinking.",
+      "It is our choices, Harry, that show what we truly are",
+      "A day without sunshine is like, you know, night."
+    ],
+    "mustNotContain": [
+      "Made with",
+      "Quotes by: GoodReads.com"
+    ],
+    "annotatedAt": "2026-09-30",
+    "verification": "rendered-only: passages absent from raw HTML visible text but present in the inline <script> data array; mustNotContain checked in raw HTML"
+  },
+  {
+    "id": "live-quotes-toscrape-js-delayed",
+    "kind": "fetch",
+    "dataset": "live",
+    "url": "https://quotes.toscrape.com/js-delayed/",
+    "category": "js",
+    "description": "Same quotes but injected after a 10 s setTimeout; tests waiting for late content.",
+    "heldOut": true,
+    "requiresJs": true,
+    "mustContain": [
+      "Try not to become a man of success. Rather become a man of value.",
+      "I have not failed. I've just found 10,000 ways that won't work.",
+      "The person, be it gentleman or lady, who has not pleasure in a good novel"
+    ],
+    "mustNotContain": [
+      "Quotes by: GoodReads.com"
+    ],
+    "annotatedAt": "2026-09-30",
+    "verification": "rendered-only: passages absent from raw HTML visible text but present in the inline <script> data array; mustNotContain checked in raw HTML"
+  },
+  {
+    "id": "live-crates-io-serde",
+    "kind": "fetch",
+    "dataset": "live",
+    "url": "https://crates.io/crates/serde",
+    "category": "js",
+    "description": "SvelteKit SPA: raw HTML is an empty shell; crate description and README load via API after JS runs. Note: crates.io answers 404 unless the request sends Accept: text/html.",
+    "heldOut": false,
+    "requiresJs": true,
+    "mustContain": [
+      "serializing Rust data structures efficiently and generically.",
+      "Serde is one of the most widely used Rust libraries"
+    ],
+    "annotatedAt": "2026-09-30",
+    "verification": "rendered-only: passages absent from raw HTML visible text but present in the crates.io API JSON (/api/v1/crates/serde) and the README HTML the SPA loads from static.crates.io; mustNotContain checked in raw HTML"
+  },
+  {
+    "id": "live-arxiv-attention-pdf",
+    "kind": "fetch",
+    "dataset": "live",
+    "url": "https://arxiv.org/pdf/1706.03762v7",
+    "category": "pdf",
+    "description": "Two-column-free academic PDF with text layer, math, author footnote symbols and rotated arXiv stamp.",
+    "heldOut": false,
+    "requiresJs": false,
+    "mustContain": [
+      "Attention Is All You Need",
+      "We propose a new simple network architecture, the Transformer,",
+      "based solely on attention mechanisms, dispensing with recurrence and convolutions"
+    ],
+    "annotatedAt": "2026-09-30",
+    "verification": "PDF text layer: passages found in both pdfminer.six and PyMuPDF extractions of the downloaded PDF"
+  },
+  {
+    "id": "live-rfc9309-pdf",
+    "kind": "fetch",
+    "dataset": "live",
+    "url": "https://www.rfc-editor.org/rfc/rfc9309.pdf",
+    "category": "pdf",
+    "description": "xml2rfc v3 PDF rendering of an RFC (text layer, page headers/footers).",
+    "heldOut": true,
+    "requiresJs": false,
+    "mustContain": [
+      "These rules are not a form of access authorization.",
+      "The Robots Exclusion Protocol is not a substitute for valid content security measures.",
+      "Listing paths in the robots.txt file exposes them publicly and thus makes the paths discoverable."
+    ],
+    "annotatedAt": "2026-09-30",
+    "verification": "PDF text layer: passages found in both pdfminer.six and PyMuPDF extractions of the downloaded PDF"
+  },
+  {
+    "id": "live-rfc9309-txt",
+    "kind": "fetch",
+    "dataset": "live",
+    "url": "https://www.rfc-editor.org/rfc/rfc9309.txt",
+    "category": "plain",
+    "description": "text/plain RFC with fixed-width layout, ASCII tables and page breaks; should pass through unchanged.",
+    "heldOut": false,
+    "requiresJs": false,
+    "mustContain": [
+      "Crawlers MUST try to parse each line of the robots.txt file.",
+      "Crawlers MUST use the parseable rules.",
+      "The parsing limit MUST be at least 500 kibibytes [KiB]."
+    ],
+    "annotatedAt": "2026-09-30",
+    "verification": "raw text/plain match (whitespace-normalized)"
+  },
+  {
+    "id": "live-github-flask-readme",
+    "kind": "fetch",
+    "dataset": "live",
+    "url": "https://github.com/pallets/flask",
+    "category": "code",
+    "description": "GitHub repository page: README rendered inside heavy app chrome (file tree, sidebar, footer).",
+    "heldOut": false,
+    "requiresJs": false,
+    "mustContain": [
+      "It is designed to make getting started quick and easy",
+      "It is up to the developer to choose the tools and libraries",
+      "has become one of the most popular Python web application frameworks."
+    ],
+    "mustNotContain": [
+      "You signed in with another tab or window.",
+      "Footer navigation"
+    ],
+    "headings": [
+      "Flask",
+      "A Simple Example"
+    ],
+    "code": [
+      "from flask import Flask"
+    ],
+    "annotatedAt": "2026-09-30",
+    "verification": "raw HTML text match (curl snapshot 2026-09-30); passages checked to lie inside a single text node; headings/tables/code checked against parsed h*/table/pre elements"
+  },
+  {
+    "id": "live-go-effective-go",
+    "kind": "fetch",
+    "dataset": "live",
+    "url": "https://go.dev/doc/effective_go",
+    "category": "docs",
+    "description": "Very long single-page guide with dozens of code blocks and a dropdown mega-nav.",
+    "heldOut": false,
+    "requiresJs": false,
+    "mustContain": [
+      "Formatting issues are the most contentious but the least consequential.",
+      "Go has no line length limit. Don't worry about overflowing a punched card.",
+      "Line comments are the norm; block comments appear mostly as package comments"
+    ],
+    "mustNotContain": [
+      "Skip to Main Content",
+      "Common problems companies solve with Go"
+    ],
+    "headings": [
+      "Effective Go",
+      "Formatting",
+      "Semicolons",
+      "Control structures"
+    ],
+    "code": [
+      "for key, value := range oldMap {"
+    ],
+    "annotatedAt": "2026-09-30",
+    "verification": "raw HTML text match (curl snapshot 2026-09-30); passages checked to lie inside a single text node; headings/tables/code checked against parsed h*/table/pre elements"
+  },
+  {
+    "id": "live-hn-dropbox-thread",
+    "kind": "fetch",
+    "dataset": "live",
+    "url": "https://news.ycombinator.com/item?id=8863",
+    "category": "forum",
+    "description": "Archived Hacker News thread (2007 Dropbox launch): nested comment table layout, fixed content.",
+    "heldOut": false,
+    "requiresJs": false,
+    "mustContain": [
+      "you can already build such a system yourself quite trivially by getting an FTP account",
+      "there are some unannounced viral parts i didn't get to show in there",
+      "I saw your short demo at BarCamp and I must say Dropbox looks great!"
+    ],
+    "mustNotContain": [
+      "Guidelines | FAQ | Lists | API | Security | Legal | Apply to YC | Contact"
+    ],
+    "annotatedAt": "2026-09-30",
+    "verification": "raw HTML text match (curl snapshot 2026-09-30); passages checked to lie inside a single text node; headings/tables/code checked against parsed h*/table/pre elements"
+  },
+  {
+    "id": "live-hn-guidelines",
+    "kind": "fetch",
+    "dataset": "live",
+    "url": "https://news.ycombinator.com/newsguidelines.html",
+    "category": "reference",
+    "description": "Evergreen minimal-markup page (table layout, no headings semantics beyond bold, many tiny inline links).",
+    "heldOut": false,
+    "requiresJs": false,
+    "mustContain": [
+      "Anything that good hackers would find interesting.",
+      "Please submit the original source.",
+      "Be kind. Don't be snarky. Converse curiously; don't cross-examine."
+    ],
+    "annotatedAt": "2026-09-30",
+    "verification": "raw HTML text match (curl snapshot 2026-09-30); passages checked to lie inside a single text node; headings/tables/code checked against parsed h*/table/pre elements"
+  },
+  {
+    "id": "live-crawl-quotes",
+    "kind": "crawl",
+    "dataset": "live",
+    "url": "https://quotes.toscrape.com/",
+    "description": "Paginated quotes site (robots.txt permits crawling). 15 pages, depth 1.",
+    "maxPages": 15,
+    "maxDepth": 1,
+    "expectedPages": [
+      "https://quotes.toscrape.com/",
+      "https://quotes.toscrape.com/page/2/",
+      "https://quotes.toscrape.com/login"
+    ],
+    "forbiddenPages": [],
+    "annotatedAt": "2026-09-30"
+  }
+]

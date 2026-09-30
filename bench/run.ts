@@ -1,7 +1,7 @@
 /**
  * Benchmark entry point.
  *
- *   npm run bench -- --engines fetchkeep,firecrawl,donsetch --suite smoke|fetch|crawl [options]
+ *   npm run bench -- --engines fetchkeep,firecrawl,donsetch --suite smoke|fetch|crawl|full [options]
  *
  * Options:
  *   --engines <list>        engines or individual profiles (fetchkeep-http, firecrawl-selfhost, …)

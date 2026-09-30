@@ -1,0 +1,65 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_99b61bc18f2ea107",
+    "version": 1,
+    "ref": "fk:d_99b61bc18f2ea107@1",
+    "requestedUrl": "http://172.31.172.243:44735/js/spa.html",
+    "finalUrl": "http://172.31.172.243:44735/js/spa.html",
+    "title": "Island ferry timetable",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T18:13:49.013Z",
+    "contentHash": "c3db44f46a30ee4feadde4ebe7a577339fd7ce572802fcff618cf2aadb94ef37",
+    "rawHash": "f7045f8544b0b38faa30a80bbeb678d70e30dbfdfbc71c431c09507541a2d5e0",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "chromium",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Island ferry timetable\n\nWinter sailings run daily except on public holidays.\n\n| Departure | Destination | Pier |\n| --- | --- | --- |\n| 07:15 | Gull Island | Pier 2 |\n| 09:40 | Heron Key | Pier 1 |\n| 13:05 | Gull Island | Pier 2 |\n\nVehicles must check in thirty minutes before departure."
+  },
+  "backend": {
+    "mode": "chromium",
+    "used": "chromium",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "chromium",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 1054.7488230000017
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 288,
+    "returnedChars": 288,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "browserLaunchMs": 0,
+    "navigateMs": 1021.5,
+    "renderMs": 1048.3,
+    "extractMs": 2.3,
+    "subrequests": 2,
+    "subrequestsBlocked": 0,
+    "totalMs": 1055.2
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_99b61bc18f2ea107@1",
+    "url": "http://172.31.172.243:44735/js/spa.html",
+    "title": "Island ferry timetable",
+    "fetchedAt": "2026-09-30T18:13:49.013Z",
+    "version": 1,
+    "contentHash": "c3db44f46a30ee4feadde4ebe7a577339fd7ce572802fcff618cf2aadb94ef37"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "success": true,
+  "data": {
+    "markdown": "Slow page\n=========\n\nThis page was deliberately slow to respond, by 2500 milliseconds.",
+    "metadata": {
+      "title": "Slow page",
+      "scrapeId": "01a0f37d-4cfa-710a-a536-25daf9b3ab1f",
+      "sourceURL": "http://172.31.172.243:44735/slow/2500",
+      "url": "http://172.31.172.243:44735/slow/2500",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "proxyUsed": "basic",
+      "creditsUsed": 1,
+      "concurrencyLimited": false
+    }
+  }
+}

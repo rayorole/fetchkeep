@@ -3,6 +3,22 @@
 All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
+## [0.1.2] - 2026-09-30
+
+### Changed
+
+- CLI human output now uses Chalk with grouped Commander help, compact retrieval summaries, readable search,
+  library, crawl and doctor results, and stacked help for narrow terminals. Color respects TTY/NO_COLOR;
+  terminal control sequences are removed from human output. Piped Markdown, JSON and MCP contracts are unchanged.
+- Benchmark HTML is a standalone offline reader with results-first comparison, profile/dataset/split filters,
+  sortable metrics, searchable fetch/crawl cases, embedded CSV downloads, responsive navigation and print layout.
+- Installation guide includes npm upgrades, npx, source installation and Windows/PATH troubleshooting.
+
+### Added
+
+- `full` benchmark suite runs all fetch and crawl cases in one report, three repetitions per profile.
+- Regression coverage for terminal escape sequences, no-color behavior, redirected content and citation visibility.
+
 ## [0.1.1] - 2026-09-30
 
 ### Added
@@ -59,3 +75,4 @@ First release.
 
 [0.1.0]: https://github.com/rayorole/fetchkeep/releases/tag/v0.1.0
 [0.1.1]: https://github.com/rayorole/fetchkeep/releases/tag/v0.1.1
+[0.1.2]: https://github.com/rayorole/fetchkeep/releases/tag/v0.1.2

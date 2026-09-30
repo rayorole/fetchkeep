@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "data": {
+    "markdown": "Configuration reference\n=======================\n\nTidewater reads `tidewater.toml` from the project root. Every key can also be set with an environment variable.\n\n\\[server\\]\nport = 8080\nworkers = 4\n\n    export TIDEWATER_SERVER_PORT=8080\n    export TIDEWATER_SERVER_WORKERS=4\n\nKeys\n----\n\n| Key | Type | Default |\n| --- | --- | --- |\n| server.port | integer | 8080 |\n| server.workers | integer | number of CPU cores |\n| log.format | string | text |\n\nPrecedence\n----------\n\n1.  Command line flags\n2.  Environment variables\n3.  The configuration file\n4.  Built-in defaults\n\nValues that cannot be parsed stop startup with an error that names the offending key.",
+    "metadata": {
+      "title": "Configuration reference - Tidewater Docs",
+      "language": "en",
+      "scrapeId": "01a0f382-c67e-743e-941c-53060d517d45",
+      "sourceURL": "http://172.31.172.243:44735/docs/config.html",
+      "url": "http://172.31.172.243:44735/docs/config.html",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "proxyUsed": "basic",
+      "creditsUsed": 1,
+      "concurrencyLimited": false
+    }
+  }
+}

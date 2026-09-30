@@ -1,0 +1,33 @@
+{
+  "status": "error",
+  "tool": "web_fetch",
+  "timings": {
+    "totalMs": 2.3
+  },
+  "warnings": [],
+  "backend": {
+    "mode": "auto",
+    "used": null,
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "http",
+        "outcome": "failed",
+        "reason": "HTTP 404 from http://172.31.172.243:44735/missing/page.html",
+        "errorCode": "http_error",
+        "durationMs": 2.202281999983825,
+        "httpStatus": 404
+      }
+    ]
+  },
+  "error": {
+    "code": "http_error",
+    "message": "HTTP 404 from http://172.31.172.243:44735/missing/page.html",
+    "retryable": false,
+    "details": {
+      "status": 404,
+      "finalUrl": "http://172.31.172.243:44735/missing/page.html",
+      "redirects": []
+    }
+  }
+}

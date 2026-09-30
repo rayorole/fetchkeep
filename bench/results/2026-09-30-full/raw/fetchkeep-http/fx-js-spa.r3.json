@@ -1,0 +1,62 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_99b61bc18f2ea107",
+    "version": 1,
+    "ref": "fk:d_99b61bc18f2ea107@1",
+    "requestedUrl": "http://172.31.172.243:44735/js/spa.html",
+    "finalUrl": "http://172.31.172.243:44735/js/spa.html",
+    "title": "Loading…",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T18:18:58.802Z",
+    "contentHash": "58ff7ca1aaeec6aea39c878c8801911a3228f1b0071dae3addd7f576fda7e4f3",
+    "rawHash": "a3b49c09cbf64da43da9c39b1c74f02de450920e0be1be5e5ff291dffa01cd78",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "http",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Loading…"
+  },
+  "backend": {
+    "mode": "http",
+    "used": "http",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "http",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 2.157736000022851
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 10,
+    "returnedChars": 10,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "firstByteMs": 1.4,
+    "downloadMs": 1.5,
+    "extractMs": 0.7,
+    "totalMs": 2.4
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_99b61bc18f2ea107@1",
+    "url": "http://172.31.172.243:44735/js/spa.html",
+    "title": "Loading…",
+    "fetchedAt": "2026-09-30T18:18:58.802Z",
+    "version": 1,
+    "contentHash": "58ff7ca1aaeec6aea39c878c8801911a3228f1b0071dae3addd7f576fda7e4f3"
+  }
+}

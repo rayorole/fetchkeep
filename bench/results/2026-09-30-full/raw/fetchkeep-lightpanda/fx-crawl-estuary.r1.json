@@ -1,0 +1,134 @@
+{
+  "status": "success",
+  "tool": "web_crawl",
+  "data": {
+    "crawlId": "c_c6ffdeb22bce",
+    "rootUrl": "http://172.31.172.243:44735/crawl/",
+    "stopReason": "depth_limit",
+    "options": {
+      "url": "http://172.31.172.243:44735/crawl/",
+      "maxPages": 30,
+      "maxDepth": 3,
+      "sameOrigin": true,
+      "include": [],
+      "exclude": [],
+      "respectRobots": true,
+      "delayMs": 500,
+      "sitemap": "include",
+      "mode": "lightpanda",
+      "concurrency": 2,
+      "pageTimeoutMs": 30000
+    },
+    "counts": {
+      "fetched": 14,
+      "saved": 13,
+      "unchanged": 1,
+      "failed": 0,
+      "duplicates": 1,
+      "skippedRobots": 1,
+      "skippedScope": 1,
+      "beyondDepth": 1,
+      "queued": 0,
+      "known": 15
+    },
+    "pages": [
+      {
+        "url": "http://172.31.172.243:44735/crawl/",
+        "depth": 0,
+        "state": "done",
+        "ref": "fk:d_d0a1e941f6be206c@1"
+      },
+      {
+        "url": "http://172.31.172.243:44735/crawl/birds/",
+        "depth": 1,
+        "state": "done",
+        "ref": "fk:d_a0204f3a4ff13c06@1"
+      },
+      {
+        "url": "http://172.31.172.243:44735/crawl/hidden/lighthouse.html",
+        "depth": 1,
+        "state": "done",
+        "ref": "fk:d_7ecdf3ee5c1ec1f7@1"
+      },
+      {
+        "url": "http://172.31.172.243:44735/crawl/plants/",
+        "depth": 1,
+        "state": "done",
+        "ref": "fk:d_967454ae3409932d@1"
+      },
+      {
+        "url": "http://172.31.172.243:44735/crawl/tides/",
+        "depth": 1,
+        "state": "done",
+        "ref": "fk:d_4eedf9776b8047c5@1"
+      },
+      {
+        "url": "http://172.31.172.243:44735/crawl/private/notes.html",
+        "depth": 1,
+        "state": "skipped",
+        "reason": "robots_disallowed"
+      },
+      {
+        "url": "http://172.31.172.243:44735/crawl/birds/curlew.html",
+        "depth": 2,
+        "state": "done",
+        "ref": "fk:d_e8e2cb20ec40e784@1"
+      },
+      {
+        "url": "http://172.31.172.243:44735/crawl/birds/redshank.html",
+        "depth": 2,
+        "state": "done",
+        "ref": "fk:d_9240c9ceb40e1b20@1"
+      },
+      {
+        "url": "http://172.31.172.243:44735/crawl/birds/avocet.html",
+        "depth": 2,
+        "state": "done",
+        "ref": "fk:d_4ffe66532834418a@1"
+      },
+      {
+        "url": "http://172.31.172.243:44735/crawl/plants/samphire.html",
+        "depth": 2,
+        "state": "done",
+        "ref": "fk:d_78023c03b37e6a12@1"
+      },
+      {
+        "url": "http://172.31.172.243:44735/crawl/plants/sea-lavender.html",
+        "depth": 2,
+        "state": "done",
+        "ref": "fk:d_7071e51583b2c28d@1"
+      },
+      {
+        "url": "http://172.31.172.243:44735/crawl/plants/samphire-copy.html",
+        "depth": 2,
+        "state": "done",
+        "reason": "duplicate_of http://172.31.172.243:44735/crawl/plants/samphire.html",
+        "ref": "fk:d_785c44af2417b232@1"
+      },
+      {
+        "url": "http://172.31.172.243:44735/crawl/tides/tables.html",
+        "depth": 2,
+        "state": "done",
+        "ref": "fk:d_0b5b827f3b0b6b7a@1"
+      },
+      {
+        "url": "http://172.31.172.243:44735/crawl/tides/old-tables",
+        "depth": 2,
+        "state": "done",
+        "ref": "fk:d_0b5b827f3b0b6b7a@1"
+      },
+      {
+        "url": "http://172.31.172.243:44735/crawl/birds/avocet-eggs.html",
+        "depth": 3,
+        "state": "done",
+        "ref": "fk:d_9c8fb1c00f3fb01b@1"
+      }
+    ]
+  },
+  "timings": {
+    "totalMs": 7019.8
+  },
+  "warnings": [
+    "sitemaps read: http://172.31.172.243:44735/crawl/sitemap.xml (3 URLs)"
+  ]
+}
