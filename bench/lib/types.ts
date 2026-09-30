@@ -16,8 +16,10 @@ export interface FetchCase {
   url: string;
   category: string;
   description: string;
-  /** Held-out cases are excluded from development tuning and reported separately. */
+  /** Historical grouping, now exposed regression cases; not evidence of unseen validation. */
   heldOut?: boolean;
+  /** Fresh validation is separately selected with val-* IDs, never included by the original full suite. */
+  validation?: boolean;
   /** Needs JavaScript to show its content. */
   requiresJs?: boolean;
   /** The correct outcome is an error (404, redirect loop, blocked…). */
@@ -113,6 +115,8 @@ export interface FetchOutput {
   /** Engine-specific citation handle, if any. */
   citationRef?: string;
   error?: EngineError;
+  /** Engine-reported milliseconds only; absent phases are unavailable, never inferred from wall time. */
+  timings?: Record<string, number>;
   /** Usage cost as reported by the engine (e.g. credits). */
   cost?: { unit: string; amount: number; estimated: boolean };
   raw: unknown;
@@ -182,6 +186,8 @@ export interface RunRecord {
   naReason?: string;
   startedAt: string;
   latencyMs: number | null;
+  /** Engine-reported phase/total timings; absent in historical records and unsupported engines. */
+  timings?: Record<string, number>;
   output?: { chars: number; tokens: number; title?: string; finalUrl?: string; backend?: string; escalated?: boolean; attempts?: number };
   error?: EngineError;
   scores?: Record<string, number | null>;

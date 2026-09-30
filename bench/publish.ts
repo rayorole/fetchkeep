@@ -8,7 +8,7 @@
  * this repository) are published in full. Local state (stores, caches) is never copied.
  */
 import { createHash } from "node:crypto";
-import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
+import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { basename, join, relative } from "node:path";
 import { parseArgs } from "node:util";
 import { generateReport } from "./lib/report.ts";
@@ -21,8 +21,13 @@ if (!values.run) {
 }
 const src = values.run;
 const dest = join(BENCH, "results", values.name ?? basename(src));
-rmSync(dest, { recursive: true, force: true });
-mkdirSync(dest, { recursive: true });
+if (existsSync(dest)) throw new Error(`refusing to overwrite an existing result: ${dest}; choose a new --name`);
+mkdirSync(join(dest, "raw"), { recursive: true });
+if (existsSync(join(src, "workloads.json"))) {
+  for (const file of ["workloads.json", "workloads.md"]) cpSync(join(src, file), join(dest, file));
+  process.stderr.write(`published separate workload evidence ${dest}\n`);
+  process.exit(0);
+}
 
 for (const f of ["meta.json", "cases.json", "records.jsonl", "crawl.jsonl", "coldstart.json", "resources.json", "footprint.json"]) {
   if (existsSync(join(src, f))) cpSync(join(src, f), join(dest, f));

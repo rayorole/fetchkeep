@@ -8,17 +8,19 @@
 import { Buffer } from "node:buffer";
 import { readFile, writeFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
+import { analyze, inSplit, type AnalysisSplit, type Evidence } from "./analysis.ts";
+import { BOOTSTRAP_DRAWS, BOOTSTRAP_SEED, validationCase, type Estimate } from "./statistics.ts";
 import type { BenchCase, ColdStartRecord, CrawlRecord, EngineName, FootprintRecord, ResourceRecord, RunMeta, RunRecord } from "./types.ts";
 
 type Dataset = "fixture" | "live";
-type Split = "all" | "heldOut" | "dev";
+type Split = AnalysisSplit;
 
 const DATASETS: readonly Dataset[] = ["fixture", "live"];
-const SPLITS: readonly Split[] = ["all", "heldOut", "dev"];
+const SPLITS: readonly Split[] = ["all", "heldOut", "dev", "validation"];
 const RAW_PREVIEW_CHARS = 4000;
 const PERCENTILE_METHOD =
   "Percentiles use the nearest-rank method: sort the latencies of `ok` tasks ascending and take the value at rank ceil(p/100 × n). " +
-  "`first` = repetition 1 (includes any per-URL cold work such as the first request to a host); `warm` = repetitions ≥ 2.";
+  "`first` = the first pass over each case (repetition 1), not a new process per case; `warm` = later passes (repetitions ≥ 2). Persistent MCP sessions span the run and browser launch is lazy. Unpaired per-profile latency cohorts can differ; use the paired section for same-case, same-repetition comparisons.";
 
 // ---------------------------------------------------------------- loading
 
@@ -447,6 +449,7 @@ interface Ctx {
   engineOf: (profile: string) => EngineName | string;
   statsFor: (profile: string, dataset: Dataset, split: Split) => Stats;
   datasetsPresent: Dataset[];
+  evidence: Evidence;
 }
 
 function makeCtx(data: RunData): Ctx {
@@ -458,6 +461,7 @@ function makeCtx(data: RunData): Ctx {
   const cache = new Map<string, Stats>();
   return {
     data,
+    evidence: analyze(data.records, data.cases, data.profiles),
     engineOf: (profile) => engines.get(profile) ?? "unknown",
     statsFor: (profile, dataset, split) => {
       const key = `${profile}\u0000${dataset}\u0000${split}`;
@@ -465,7 +469,7 @@ function makeCtx(data: RunData): Ctx {
       if (!s) {
         s = computeStats(
           data.records.filter(
-            (r) => r.profile === profile && r.dataset === dataset && (split === "all" || (split === "heldOut") === (r.heldOut === true)),
+            (r) => r.profile === profile && r.dataset === dataset && inSplit(r, split),
           ),
           data.cases,
         );
@@ -659,7 +663,7 @@ function leaderSentence(
   const margin = Math.abs(best.a.value - second.a.value);
   const close = opts.relative ? margin <= 0.1 * Math.abs(second.a.value) : margin < 0.05;
   const qualifiers: string[] = [];
-  if (close) qualifiers.push(opts.relative ? "within 10% of the runner-up, not a meaningful difference" : "margin below 0.05 (5 points), not a meaningful difference");
+  if (close) qualifiers.push(opts.relative ? "descriptive margin within 10% of the runner-up; not a significance test" : "descriptive margin below 0.05; not a significance test");
   if (minN < 10) qualifiers.push(`small sample (n=${minN})`);
   return `${label}: ${best.profile} ${opts.fmt(best.a)} vs next-best ${second.profile} ${opts.fmt(second.a)}${qualifiers.length ? ` — ${qualifiers.join("; ")}` : ""}.`;
 }
@@ -674,8 +678,8 @@ function tradeoffBlocks(ctx: Ctx): Block[] {
       leaderSentence("Passage recall", rows((s) => s.passageRecall), { higherBetter: true, fmt: fScore }),
       leaderSentence("Boilerplate exclusion", rows((s) => s.boilerplate), { higherBetter: true, fmt: fScore }),
       leaderSentence("Token F1", rows((s) => s.tokenF1), { higherBetter: true, fmt: fScore }),
-      leaderSentence("Warm p50 latency", rows((s) => s.latencyWarmP50), { higherBetter: false, fmt: fMs, relative: true }),
-      leaderSentence("First-request p50 latency", rows((s) => s.latencyFirstP50), { higherBetter: false, fmt: fMs, relative: true }),
+      leaderSentence("Unpaired warm p50 latency", rows((s) => s.latencyWarmP50), { higherBetter: false, fmt: fMs, relative: true }),
+      leaderSentence("Unpaired first-pass p50 latency", rows((s) => s.latencyFirstP50), { higherBetter: false, fmt: fMs, relative: true }),
     ].filter((x): x is string => x !== null);
     blocks.push(h(3, `Trade-offs on ${d} tasks (derived from this run only)`));
     blocks.push(items.length ? list(items) : p("No profile produced comparable aggregates on this dataset."));
@@ -689,7 +693,7 @@ function tradeoffBlocks(ctx: Ctx): Block[] {
       });
       const lead = [
         leaderSentence("usable", per.map((x) => ({ profile: x.profile, a: x.s.usable })), { higherBetter: true, fmt: fRate }),
-        leaderSentence("warm p50", per.map((x) => ({ profile: x.profile, a: x.s.latencyWarmP50 })), { higherBetter: false, fmt: fMs, relative: true }),
+        leaderSentence("unpaired warm p50", per.map((x) => ({ profile: x.profile, a: x.s.latencyWarmP50 })), { higherBetter: false, fmt: fMs, relative: true }),
       ].filter((x): x is string => x !== null).join(" ");
       catRows.push([
         cat,
@@ -701,7 +705,7 @@ function tradeoffBlocks(ctx: Ctx): Block[] {
         lead || "no comparable data",
       ]);
     }
-    blocks.push(p(`Per workload (category) on ${d}: usable rate and warm p50 per profile. Leaders are named only with the margin and sample size; small n means the ranking can flip on a re-run.`));
+    blocks.push(p(`Per workload (category) on ${d}: usable rate and unpaired warm p50 per profile. These are descriptive leaders, not significance claims: success cohorts can differ and repeated attempts are not independent cases. Consult the case-cluster intervals and paired comparison before drawing a speed conclusion.`));
     blocks.push(table(["category", ...profiles, "leaders (usable rate; warm p50)"], catRows));
   }
   return blocks;
@@ -810,6 +814,46 @@ function crawlBlocks(data: RunData): Block[] {
   ];
 }
 
+function estimateText(e: Estimate, unit = ""): string {
+  if (e.value === null) return `n/a (0 cases, 0 attempts)`;
+  const bounds = e.low === null || e.high === null ? "CI n/a: fewer than 2 cases" : `95% CI ${round(e.low, 3)}–${round(e.high, 3)}${unit}`;
+  return `${round(e.value, 3)}${unit} [${bounds}] (${e.cases} cases, ${e.attempts} attempts)`;
+}
+
+function evidenceBlocks(evidence: Evidence): Block[] {
+  return [
+    h(2, "Uncertainty"),
+    p(`95% percentile case-cluster bootstrap intervals use ${BOOTSTRAP_DRAWS} deterministic resamples (seed ${BOOTSTRAP_SEED}). Each resampled case carries all its repetitions; attempts are not independent cases. Point estimates retain the original attempt-weighted metric. Intervals describe this case corpus, not all websites. Fewer than two eligible cases gives CI n/a; a degenerate interval is not proof of certainty. Warm means repetition ≥2. All split/metric estimates are exported in uncertainty.csv and evidence.json.`),
+    table(["profile", "dataset", "metric", "estimate and interval"], evidence.uncertainty
+      .filter((r) => r.split === "all" && ["usable", "success", "warmP50", "warmP95", "passageRecall", "tokenF1"].includes(r.metric))
+      .map((r) => [r.profile, r.dataset, r.metric, estimateText(r.estimate, r.metric.startsWith("warm") ? " ms" : "")])),
+    h(2, "Paired latency"),
+    p("Each pair matches the same case AND repetition for exactly two profiles. Latency uses only common-success warm pairs; errored, unavailable and unmatched slots never become latency samples. This survivor cohort can hide failures, so the table alongside reports matched-attempt errors and usable rates, including failures. Paired quality uses non-expected-error slots with scores for both engines. A−B is the median per-pair latency difference; A/B is the median per-pair ratio, not a ratio of marginal medians. Negative differences or ratios below one favor A. The ratio excludes zero B latencies and has its own sample count. Profiles without a match report n/a."),
+    table(["A", "B", "dataset", "A matched warm p50", "B matched warm p50", "paired A−B", "paired A/B"], evidence.paired.map((r) =>
+      [r.a, r.b, r.dataset, estimateText(r.aWarmP50, " ms"), estimateText(r.bWarmP50, " ms"), estimateText(r.warmDeltaP50, " ms"), estimateText(r.warmRatioP50)])),
+    table(["A", "B", "dataset", "matched cases / attempts", "A / B errors", "A / B unmatched attempts", "A usable", "B usable", "usable A−B"], evidence.paired.map((r) =>
+      [r.a, r.b, r.dataset, `${r.matchedCases} / ${r.matchedAttempts}`, `${r.aErrors} / ${r.bErrors}`, `${r.onlyAAttempted} / ${r.onlyBAttempted}`, estimateText(r.aUsable), estimateText(r.bUsable), estimateText(r.usableDifference)])),
+    h(2, "Phase timings"),
+    p("Engine-reported milliseconds on successful warm tasks only. MCP wall latency is measured independently by the runner. Phase medians are not additive and may have different sample cohorts. totalMs includes phases; firstByteMs is nested inside downloadMs. Canonical browser phases are non-overlapping. Aggregated phases include measured attempts only: failed/uninstrumented work, policy checks and transport overhead remain unassigned. No residual is fabricated as a phase. Missing phases, absent historical fields and competitors without phase telemetry are n/a, not zero."),
+    table(["profile", "dataset", "phase", "warm p50 and interval", "observed / eligible attempts"], evidence.phases.map((r) =>
+      [r.profile, r.dataset, `${r.phase}: ${r.definition}`, estimateText(r.estimate, " ms"), `${r.estimate.attempts} / ${r.eligibleAttempts}`])),
+  ];
+}
+
+function evidenceExports(evidence: Evidence): [string, string][] {
+  const fields = (e: Estimate) => [e.value, e.low, e.high, e.cases, e.attempts];
+  const pairedMetrics = ["aUsable", "bUsable", "usableDifference", "aWarmP50", "bWarmP50", "warmDeltaP50", "warmRatioP50"] as const;
+  return [
+    ["evidence.json", JSON.stringify({ method: "95% percentile case-cluster bootstrap", draws: BOOTSTRAP_DRAWS, seed: BOOTSTRAP_SEED, ...evidence }, null, 2) + "\n"],
+    ["uncertainty.csv", toCsv(["profile", "dataset", "split", "metric", "value", "ci_low", "ci_high", "cases", "attempts"],
+      evidence.uncertainty.map((r) => [r.profile, r.dataset, r.split, r.metric, ...fields(r.estimate)]))],
+    ["paired.csv", toCsv(["a", "b", "dataset", "matched_cases", "matched_attempts", "a_errors", "b_errors", "only_a_attempted", "only_b_attempted", "metric", "value", "ci_low", "ci_high", "cases", "attempts"],
+      evidence.paired.flatMap((r) => pairedMetrics.map((metric) => [r.a, r.b, r.dataset, r.matchedCases, r.matchedAttempts, r.aErrors, r.bErrors, r.onlyAAttempted, r.onlyBAttempted, metric, ...fields(r[metric])])) )],
+    ["phases.csv", toCsv(["profile", "dataset", "phase", "definition", "eligible_attempts", "p50_ms", "ci_low", "ci_high", "cases", "attempts"],
+      evidence.phases.map((r) => [r.profile, r.dataset, r.phase, r.definition, r.eligibleAttempts, ...fields(r.estimate)]))],
+  ];
+}
+
 function buildBlocks(ctx: Ctx): Block[] {
   const { data } = ctx;
   const m = data.meta;
@@ -881,20 +925,27 @@ function buildBlocks(ctx: Ctx): Block[] {
     blocks.push(p(`All ${d} tasks per profile (includes cases only some profiles could run):`));
     blocks.push(resultsTable(ctx, (pr) => ctx.statsFor(pr, d, "all"), profiles));
   }
-  blocks.push(h(3, "Held-out subset"));
-  blocks.push(p("Held-out cases were excluded from development tuning. Compare with the dev subset: a large gap suggests overfitting to the dev cases."));
+  blocks.push(h(3, "Regression and fresh validation subsets"));
+  blocks.push(p("Legacy heldOut flags are retained for historical grouping, but those cases have been inspected and are now exposed regression cases, not unseen evidence. Only separately selected val-* cases belong to the fresh validation cohort; benchmark provenance, not a flag alone, establishes whether a run was untuned."));
   for (const d of DATASETS) {
     const held = profilesWithRecords(ctx, d, "heldOut");
     if (held.length === 0) {
-      if (d === "fixture") blocks.push(p("No held-out fixture tasks in this run."));
+      if (d === "fixture") blocks.push(p("No legacy held-out regression fixture tasks in this run."));
       continue;
     }
-    blocks.push(p(`${d} — held-out:`));
+    blocks.push(p(`${d} — legacy held-out (exposed regression):`));
     blocks.push(resultsTable(ctx, (pr) => ctx.statsFor(pr, d, "heldOut"), held));
     const dev = profilesWithRecords(ctx, d, "dev");
-    blocks.push(p(`${d} — dev (not held out):`));
+    blocks.push(p(`${d} — development regression (excluding validation):`));
     blocks.push(resultsTable(ctx, (pr) => ctx.statsFor(pr, d, "dev"), dev));
   }
+  for (const d of DATASETS) {
+    const validation = profilesWithRecords(ctx, d, "validation");
+    if (!validation.length) continue;
+    blocks.push(p(`${d} — fresh validation (val-* only):`));
+    blocks.push(resultsTable(ctx, (pr) => ctx.statsFor(pr, d, "validation"), validation));
+  }
+  blocks.push(...evidenceBlocks(ctx.evidence));
 
   blocks.push(h(2, "Quality detail"));
   blocks.push(...charts.recall);
@@ -1041,7 +1092,7 @@ async function caseInspectionHtml(ctx: Ctx): Promise<string> {
     `<label class="search-field">Search cases <input id="f-search" type="search" placeholder="Case, URL, profile, error or preview" autocomplete="off"></label>`,
     `<label>Dataset <select id="f-dataset"><option value="">All datasets</option>${datasets.map(opt).join("")}</select></label>`,
     `<label>Category <select id="f-category"><option value="">All categories</option>${categories.map(opt).join("")}</select></label>`,
-    `<label>Split <select id="f-split"><option value="">All splits</option><option value="heldout">Held-out</option><option value="dev">Dev</option><option value="none">Not split (crawl)</option></select></label>`,
+    `<label>Split <select id="f-split"><option value="">All splits</option><option value="heldout">Legacy held-out regression</option><option value="dev">Development regression</option><option value="validation">Fresh validation</option><option value="none">Not split (crawl)</option></select></label>`,
     `<button type="reset">Reset filters</button></form>`,
     `<p id="f-count" class="muted" role="status" aria-live="polite">${infos.length} cases</p>`,
     `<p id="f-empty" class="empty-state" hidden>No cases match these filters. Clear the search or reset filters to see every case.</p>`,
@@ -1088,9 +1139,9 @@ async function caseInspectionHtml(ctx: Ctx): Promise<string> {
           `<pre>${escapeHtml(preview)}</pre></details>`,
       );
     }
-    const split = info.kind === "crawl" ? "none" : info.heldOut ? "heldout" : "dev";
+    const split = info.kind === "crawl" ? "none" : validationCase(info.id) ? "validation" : info.heldOut ? "heldout" : "dev";
     const meta = [
-      info.dataset, info.category, split === "none" ? "not split" : info.heldOut ? "held-out" : "dev", info.expectError ? "expects an error" : "",
+      info.dataset, info.category, split === "none" ? "not split" : split === "validation" ? "fresh validation" : info.heldOut ? "legacy held-out regression" : "development regression", info.expectError ? "expects an error" : "",
     ].filter(Boolean).join(" / ");
     parts.push(
       `<section class="case" data-dataset="${escapeHtml(info.dataset)}" data-category="${escapeHtml(info.category)}" data-split="${split}">` +
@@ -1112,7 +1163,7 @@ function comparisonHtml(ctx: Ctx): string {
   const parts = [
     `<form id="comparison-filters" class="interactive" aria-label="Compare fetch results">`,
     `<div class="filters"><label>Dataset <select id="c-dataset">${ctx.datasetsPresent.map((d) => `<option value="${d}">${d === "fixture" ? "Local fixtures" : "Live websites"}</option>`).join("")}</select></label>`,
-    `<label>Split <select id="c-split"><option value="all">All splits</option><option value="heldOut">Held-out</option><option value="dev">Dev</option></select></label>`,
+    `<label>Split <select id="c-split"><option value="all">All splits</option><option value="heldOut">Legacy held-out regression</option><option value="dev">Development regression</option><option value="validation">Fresh validation</option></select></label>`,
     `<label>Coverage <select id="c-scope"><option value="all">All tasks (coverage varies)</option><option value="common">Common cases (like-for-like)</option></select></label>`,
     `<label>Order profiles <select id="c-sort"><option value="recorded">As recorded</option><option value="usable">Usable: high to low</option><option value="recall">Recall: high to low</option><option value="latency">Warm p50: low to high</option></select></label>`,
     `<button type="reset">Reset comparison</button></div>`,
@@ -1127,7 +1178,7 @@ function comparisonHtml(ctx: Ctx): string {
     for (const split of SPLITS) {
       for (const scope of ["all", "common"] as const) {
         const records = ctx.data.records.filter((r) =>
-          r.dataset === dataset && (split === "all" || (split === "heldOut") === (r.heldOut === true)) &&
+          r.dataset === dataset && inSplit(r, split) &&
           (scope === "all" || commonIds.has(r.caseId)));
         const profiles = (scope === "common" ? common.profiles : ctx.data.profiles)
           .filter((pr) => records.some((r) => r.profile === pr));
@@ -1142,7 +1193,7 @@ function comparisonHtml(ctx: Ctx): string {
         });
         const initial = dataset === ctx.datasetsPresent[0] && split === "all" && scope === "all";
         const cohort = uniq(records.map((r) => r.caseId)).length;
-        const label = `${dataset === "fixture" ? "Local fixtures" : "Live websites"} / ${split === "all" ? "all splits" : split === "heldOut" ? "held-out" : "dev"} / ${scope === "all" ? "all tasks" : "common cases"}`;
+        const label = `${dataset === "fixture" ? "Local fixtures" : "Live websites"} / ${split === "all" ? "all splits" : split === "heldOut" ? "legacy held-out regression" : split === "validation" ? "fresh validation" : "development regression"} / ${scope === "all" ? "all tasks" : "common cases"}`;
         parts.push(
           `<div class="comparison-pane" data-dataset="${dataset}" data-split="${split}" data-scope="${scope}"${initial ? "" : " hidden"}>` +
           `<div class="tw" tabindex="0" role="region" aria-label="Fetch comparison"><table class="comparison-table"><caption>${escapeHtml(label)} / ${cohort} cases</caption><thead><tr><th scope="col">Profile</th><th scope="col">Tasks &amp; outcomes</th><th scope="col">Usable rate</th><th scope="col">Passage recall</th><th scope="col">Warm p50</th></tr></thead><tbody>${rows.join("")}</tbody></table></div>` +
@@ -1243,7 +1294,7 @@ function renderHtml(title: string, blocks: readonly Block[], inspection: string,
   }
   const order = [
     ...(ctx.data.records.length ? ["Results", "Crawl"] : ["Crawl", "Results"]),
-    "Quality detail", "Latency", "Per-case inspection", "Resources", "Cold start", "Footprint",
+    "Quality detail", "Latency", "Uncertainty", "Paired latency", "Phase timings", "Per-case inspection", "Resources", "Cold start", "Footprint",
     "Fetchkeep-specific features", "Unsupported / N/A / unavailable", "How to read this",
     "Summary of what was run", "Environment", "Engines", "Reproduce",
   ];
@@ -1263,8 +1314,8 @@ function renderHtml(title: string, blocks: readonly Block[], inspection: string,
     return `<section class="report-section" id="${slug(name)}"><h2>${escapeHtml(labels[name] ?? name)}</h2>${renderHtmlBlocks(section.blocks)}</section>`;
   }).join("\n");
   const m = ctx.data.meta;
-  const downloads = exports.filter(([name]) => name.endsWith(".csv")).map(([name, csv]) =>
-    `<a download="${escapeHtml(name)}" href="data:text/csv;charset=utf-8;base64,${Buffer.from(csv, "utf8").toString("base64")}">Download ${escapeHtml(name)}</a>`).join("");
+  const downloads = exports.filter(([name]) => name.endsWith(".csv") || name.endsWith(".json")).map(([name, body]) =>
+    `<a download="${escapeHtml(name)}" href="data:${name.endsWith(".json") ? "application/json" : "text/csv"};charset=utf-8;base64,${Buffer.from(body, "utf8").toString("base64")}">Download ${escapeHtml(name)}</a>`).join("");
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${escapeHtml(title)}</title><style>${CSS}</style></head>
@@ -1273,7 +1324,7 @@ function renderHtml(title: string, blocks: readonly Block[], inspection: string,
 <main id="main"><header><h1>Benchmark report</h1>
 <p class="run-identity"><strong>${escapeHtml(m.suite)}</strong> / Run ${escapeHtml(m.runId)}<br>Started <time>${escapeHtml(m.startedAt)}</time></p>
 <p class="run-volume">${ctx.data.records.length} fetch tasks across ${fetchCaseIds(ctx.data).length} cases; ${ctx.data.crawl.length} crawl tasks across ${uniq(ctx.data.crawl.map((r) => r.caseId)).length} cases. ${ctx.data.profiles.length} recorded profiles.</p>
-<div class="exports" aria-label="Embedded CSV downloads">${downloads}</div></header>
+<div class="exports" aria-label="Embedded evidence downloads">${downloads}</div></header>
 <section class="report-section" id="overview"><h2>${ctx.data.records.length ? "Compare this run" : "Crawl results overview"}</h2>
 <div class="method-note"><p>No overall winner: compare coverage, quality and latency together. Fixtures are synthetic; live sites and transport overheads vary. <a href="#how-to-read-this">Methodology &amp; trade-offs</a>.</p></div>
 ${comparisonHtml(ctx)}
@@ -1295,6 +1346,7 @@ export async function generateReport(runDir: string): Promise<{ files: string[] 
   const outputs: [string, string][] = [
     ["summary.csv", summaryCsv(ctx)],
     ["cases.csv", casesCsv(ctx)],
+    ...evidenceExports(ctx.evidence),
   ];
   if (data.crawl.length) outputs.push(["crawl.csv", crawlCsv(data)]);
   outputs.push(["report.md", renderMarkdown(blocks)]);
