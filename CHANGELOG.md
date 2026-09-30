@@ -17,7 +17,10 @@ All notable changes to this project are documented here. The format follows
 ### Fixed
 
 - Rendered extraction preserves nested open shadow roots and assigned slots without duplicating unassigned light
-  DOM or modifying the live page. Closed roots and arbitrary late asynchronous content remain unsupported.
+  DOM or modifying the live page. Closed roots remain inaccessible; updates after content stabilizes are not guaranteed.
+- Script-driven empty pages use the remaining shared deadline rather than a short fixed readiness cap, fixing
+  the original ten-second delayed-quotes case. Navigation/footer text no longer signals readiness; short static
+  documents do not incur the extended wait.
 - Benchmark citation verification checks the exact persisted block-text span, fixing false negatives for quotes
   spanning inline Markdown formatting. Historical benchmark artifacts remain unchanged.
 

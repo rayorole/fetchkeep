@@ -5,6 +5,7 @@ export interface ContentSnapshot {
   signature: number;
   meaningful: boolean;
   pending: boolean;
+  scripted: boolean;
   html: string;
 }
 
@@ -21,7 +22,7 @@ export function inspectDocument(serialize: boolean): ContentSnapshot {
     }
     return node.childNodes;
   };
-  const result: ContentSnapshot = { signature: 2166136261, meaningful: false, pending: false, html: "" };
+  const result: ContentSnapshot = { signature: 2166136261, meaningful: false, pending: false, scripted: false, html: "" };
   if (serialize) {
     // Most pages have no shadow roots: keep their native serialization and avoid cloning the DOM.
     const walker = document.createTreeWalker(document.documentElement, 1);
@@ -48,6 +49,7 @@ export function inspectDocument(serialize: boolean): ContentSnapshot {
     return result;
   }
 
+  result.scripted = document.querySelector("script:not([type]), script[type=''], script[type='module'], script[type='text/javascript'], script[type='application/javascript']") !== null;
   let chars = 0;
   let hasCode = false;
   let hasParagraph = false;
@@ -67,24 +69,25 @@ export function inspectDocument(serialize: boolean): ContentSnapshot {
     if (node.nodeType !== 1) continue;
     const el = node as Element;
     if (/^(script|style|noscript|template|svg)$/i.test(el.localName) || el.hasAttribute("hidden") || el.getAttribute("aria-hidden") === "true") continue;
+    if (/^(header|footer|nav|aside)$/i.test(el.localName) || /^(banner|navigation|contentinfo|complementary)$/.test(el.getAttribute("role") ?? "")) continue;
     if (el.getAttribute("aria-busy") === "true" || el.getAttribute("role") === "progressbar") result.pending = true;
     if ((el.localName === "pre" || el.localName === "code") && el.textContent?.trim()) hasCode = true;
     if (el.localName === "p") hasParagraph = true;
     const childNodes = children(el);
     for (let i = childNodes.length - 1; i >= 0; i--) nodes.push(childNodes[i]!);
   }
-  result.meaningful = chars >= 80 || hasCode || (hasParagraph && chars >= 40);
+  result.meaningful = chars >= 80 || hasCode || (hasParagraph && (primary !== null ? chars > 0 : chars >= 40));
   return result;
 }
 
 /**
  * settleMs is a minimum observation window after load, not a second sleep after network-idle.
- * Content must be meaningful, free of non-hidden loading markers and unchanged for 100ms to finish early.
- * Sparse/loading pages get at most max(settleMs, 2000)ms, bounded by the request deadline. No observer persists.
+ * Script-driven empty pages and visible loading states may need the remaining request deadline.
+ * Static short pages need only stable content and the minimum window; navigation/footer text is not readiness.
  */
 export async function waitForContent(snapshot: () => Promise<ContentSnapshot>, req: RenderRequest): Promise<void> {
   const started = performance.now();
-  const budget = Math.min(Math.max(req.settleMs, 2000), Math.max(0, req.deadline - Date.now() - 250));
+  const budget = Math.max(0, req.deadline - Date.now() - 250);
   let previous: number | undefined;
   let stableSince = started;
   while (performance.now() - started < budget) {
@@ -93,7 +96,7 @@ export async function waitForContent(snapshot: () => Promise<ContentSnapshot>, r
     const now = performance.now();
     if (previous !== state.signature) stableSince = now;
     previous = state.signature;
-    if (now - started >= req.settleMs && state.meaningful && !state.pending && now - stableSince >= 100) return;
+    if (now - started >= req.settleMs && (state.meaningful || !state.scripted) && !state.pending && now - stableSince >= 100) return;
     const remaining = Math.min(budget - (now - started), req.deadline - Date.now() - 250);
     if (remaining <= 0) break;
     await sleep(Math.min(100, remaining), undefined, { signal: req.signal });

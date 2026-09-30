@@ -53,9 +53,14 @@ idleness. `browser.settleMs` is the **minimum observation time**, not an additio
 The default is 500 ms; setting it to zero removes that minimum, not the bounded readiness check.
 
 A snapshot can proceed when meaningful primary/composed content is stable for 100 ms and no obvious loading
-indicator remains. Sparse or loading content is observed for at most `max(settleMs, 2000)` ms, shortened by the
-shared request deadline with a 250 ms serialization reserve. Background requests do not themselves hold up a
-complete page. This cannot predict arbitrary late timers or guarantee that every asynchronous task has finished.
+indicator remains. Navigation, headers and footers do not count as primary content. Short static documents need
+only the minimum stable observation window. Script-driven pages without meaningful content, and pages with
+loading indicators, may use the **remaining request deadline**, with a 250 ms serialization reserve. This covers
+the original ten-second delayed-content case without a site-specific timeout or a blanket ten-second sleep.
+
+Background requests do not themselves hold up a complete page. This cannot predict a later update after
+meaningful content has already stabilized, or guarantee that every asynchronous task has finished. A genuinely
+empty script-driven page may consume its deadline; lower `timeoutMs` when that latency is unacceptable.
 
 Serialization includes nested **open** shadow roots and assigned slot content, without duplicating unassigned
 light-DOM children or modifying the live page. Closed shadow roots remain inaccessible. Stored snapshots represent

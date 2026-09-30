@@ -1,6 +1,6 @@
 {
   "name": "validation-corrected",
-  "description": "Validation rerun after correcting one missing brace in the nested-shadow fixture. Product code and expectations are unchanged; the first run remains published and must not be presented as eight valid unseen cases.",
+  "description": "Rerun after correcting one missing brace in the nested-shadow fixture. Expectations and scoring are unchanged. The final readiness policy also fixes the historical ten-second timer case, not a new validation failure. The first run is preserved; this rerun is not a newly blinded holdout.",
   "kind": "fetch",
   "cases": ["val-*"],
   "repetitions": 7

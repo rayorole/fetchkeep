@@ -11,6 +11,28 @@ export function readinessCases(service: () => Fetchkeep, url: (path: string) => 
     expect(env.content!.text).not.toContain("Loading reference");
   });
 
+  it("waits for the original ten-second timer case instead of treating navigation and footer as content", async () => {
+    const env = await service().fetch({ url: url("/readiness/long-delayed"), mode, timeoutMs: 20_000 });
+    expect(env.status, JSON.stringify(env.error)).toBe("success");
+    expect(env.content!.text).toContain("# Late observations");
+    expect(env.content!.text).toContain("seventeen nesting pairs after asynchronous initialization");
+  });
+
+  it("returns a legitimate short static document within a short deadline", async () => {
+    const env = await service().fetch({ url: url("/readiness/short-static"), mode, timeoutMs: 1500 });
+    expect(env.status, JSON.stringify(env.error)).toBe("success");
+    expect(env.content!.text).toContain("Closed on Tuesday.");
+  });
+
+  it("bounds permanent loading by the consumer deadline and recovers on the next request", async () => {
+    const started = performance.now();
+    const env = await service().fetch({ url: url("/readiness/never-ready"), mode, timeoutMs: 1500 });
+    expect(performance.now() - started).toBeLessThan(4000);
+    if (env.status === "error") expect(env.error?.code).toBe("timeout");
+    else expect(env.content!.text).toContain("Loading reference");
+    expect((await service().fetch({ url: url("/readiness/short-static"), mode })).content!.text).toContain("Closed on Tuesday.");
+  });
+
   it("honors the explicit settle window even when initial content is already meaningful", async () => {
     const env = await service().fetch({ url: url("/readiness/settle"), mode });
     expect(env.status, JSON.stringify(env.error)).toBe("success");
