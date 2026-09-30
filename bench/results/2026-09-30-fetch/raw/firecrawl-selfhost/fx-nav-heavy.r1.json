@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "data": {
+    "markdown": "Free delivery on orders over fifty pounds\n\nProduct recall: travel kettle model TK-200\n==========================================\n\nWe are recalling the TK-200 travel kettle because the base can overheat when the kettle is switched on without water.\n\nStop using the kettle and return it to any branch for a full refund. You do not need a receipt.\n\nKettles sold after the first of March carry a green dot on the base and are not affected.\n\n### Customers also viewed\n\n*   Stainless steel water bottle\n*   Folding travel hair dryer",
+    "metadata": {
+      "language": "en",
+      "title": "Recall notice - Harbour Stores",
+      "scrapeId": "01a0f33d-5391-769f-a98f-94ec4f90d973",
+      "sourceURL": "http://172.31.172.243:39953/portal/recall.html",
+      "url": "http://172.31.172.243:39953/portal/recall.html",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "proxyUsed": "basic",
+      "creditsUsed": 1,
+      "concurrencyLimited": false
+    }
+  }
+}

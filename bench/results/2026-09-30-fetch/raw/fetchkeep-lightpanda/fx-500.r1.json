@@ -1,0 +1,32 @@
+{
+  "status": "error",
+  "tool": "web_fetch",
+  "timings": {
+    "totalMs": 517.5
+  },
+  "warnings": [],
+  "backend": {
+    "mode": "lightpanda",
+    "used": null,
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "lightpanda",
+        "outcome": "failed",
+        "reason": "HTTP 500 from http://172.31.172.243:39953/fail/500 (lightpanda)",
+        "errorCode": "http_error",
+        "durationMs": 517.1157819999935,
+        "httpStatus": 500
+      }
+    ]
+  },
+  "error": {
+    "code": "http_error",
+    "message": "HTTP 500 from http://172.31.172.243:39953/fail/500 (lightpanda)",
+    "retryable": true,
+    "details": {
+      "status": 500,
+      "finalUrl": "http://172.31.172.243:39953/fail/500"
+    }
+  }
+}

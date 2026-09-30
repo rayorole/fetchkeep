@@ -1,0 +1,72 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_3bc11c6fb38cded7",
+    "version": 1,
+    "ref": "fk:d_3bc11c6fb38cded7@1",
+    "requestedUrl": "http://172.31.172.243:39953/js/next-data.html",
+    "finalUrl": "http://172.31.172.243:39953/js/next-data.html",
+    "title": "Glossary",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T16:56:32.190Z",
+    "contentHash": "2784a730b3e46ee20376cddd99aa1e2c2ddcdf0efda3472292c1ce260a966e23",
+    "rawHash": "f55e9a61e3dadfc1e7c6c3703c06f827e7925e1a9a896f794d983cfb71b4fbe4",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "chromium",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Glossary of harbour terms\n\nBollard\n\nA short post on a quay used for mooring ships.\n\nFender\n\nA cushion that protects a hull from the quay wall.\n\nSlipway\n\nA ramp that lets boats move between land and water."
+  },
+  "backend": {
+    "mode": "auto",
+    "used": "chromium",
+    "escalated": true,
+    "attempts": [
+      {
+        "backend": "http",
+        "outcome": "insufficient",
+        "reason": "empty single-page-app root and only 8 chars extracted",
+        "httpStatus": 200,
+        "durationMs": 1.5984570000437088
+      },
+      {
+        "backend": "chromium",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 1065.7325809999602
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 206,
+    "returnedChars": 206,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "browserLaunchMs": 0,
+    "navigateMs": 1020.4,
+    "renderMs": 1061.5,
+    "extractMs": 1.2,
+    "subrequests": 1,
+    "subrequestsBlocked": 0,
+    "totalMs": 1067.8
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_3bc11c6fb38cded7@1",
+    "url": "http://172.31.172.243:39953/js/next-data.html",
+    "title": "Glossary",
+    "fetchedAt": "2026-09-30T16:56:32.190Z",
+    "version": 1,
+    "contentHash": "2784a730b3e46ee20376cddd99aa1e2c2ddcdf0efda3472292c1ce260a966e23"
+  }
+}

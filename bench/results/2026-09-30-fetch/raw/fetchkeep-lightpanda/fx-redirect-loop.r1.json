@@ -1,0 +1,27 @@
+{
+  "status": "error",
+  "tool": "web_fetch",
+  "timings": {
+    "totalMs": 27.7
+  },
+  "warnings": [],
+  "backend": {
+    "mode": "lightpanda",
+    "used": null,
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "lightpanda",
+        "outcome": "failed",
+        "reason": "Lightpanda render failed: TooManyRedirects at http://172.31.172.243:39953/loop/a",
+        "errorCode": "browser_failed",
+        "durationMs": 27.60037000000011
+      }
+    ]
+  },
+  "error": {
+    "code": "browser_failed",
+    "message": "Lightpanda render failed: TooManyRedirects at http://172.31.172.243:39953/loop/a",
+    "retryable": true
+  }
+}

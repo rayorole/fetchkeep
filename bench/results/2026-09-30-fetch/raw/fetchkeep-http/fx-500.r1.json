@@ -1,0 +1,33 @@
+{
+  "status": "error",
+  "tool": "web_fetch",
+  "timings": {
+    "totalMs": 1.2
+  },
+  "warnings": [],
+  "backend": {
+    "mode": "http",
+    "used": null,
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "http",
+        "outcome": "failed",
+        "reason": "HTTP 500 from http://172.31.172.243:39953/fail/500",
+        "errorCode": "http_error",
+        "durationMs": 1.061574000006658,
+        "httpStatus": 500
+      }
+    ]
+  },
+  "error": {
+    "code": "http_error",
+    "message": "HTTP 500 from http://172.31.172.243:39953/fail/500",
+    "retryable": true,
+    "details": {
+      "status": 500,
+      "finalUrl": "http://172.31.172.243:39953/fail/500",
+      "redirects": []
+    }
+  }
+}

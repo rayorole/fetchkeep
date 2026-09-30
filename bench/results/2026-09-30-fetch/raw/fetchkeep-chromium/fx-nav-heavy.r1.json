@@ -1,0 +1,65 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_4e7eb77e0865c2bf",
+    "version": 1,
+    "ref": "fk:d_4e7eb77e0865c2bf@1",
+    "requestedUrl": "http://172.31.172.243:39953/portal/recall.html",
+    "finalUrl": "http://172.31.172.243:39953/portal/recall.html",
+    "title": "Recall notice - Harbour Stores",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T16:51:10.738Z",
+    "contentHash": "4027b7cf0e699efacbc2c478a8a296359cdf47c70be19e6e5e0e12f062fc8cda",
+    "rawHash": "e2bbc60e054b17ac80f51ca636369abeb5ecec1333aef2ac6f94bc509f0d5f46",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "chromium",
+    "saved": true,
+    "unchanged": false
+  },
+  "content": {
+    "format": "markdown",
+    "text": "Free delivery on orders over fifty pounds\n\n[Home](http://172.31.172.243:39953/) / [Help centre](http://172.31.172.243:39953/help) / Recalls\n\n# Product recall: travel kettle model TK-200\n\nWe are recalling the TK-200 travel kettle because the base can overheat when the kettle is switched on without water.\n\nStop using the kettle and return it to any branch for a full refund. You do not need a receipt.\n\nKettles sold after the first of March carry a green dot on the base and are not affected.\n\n### Customers also viewed\n\n- Stainless steel water bottle\n- Folding travel hair dryer"
+  },
+  "backend": {
+    "mode": "chromium",
+    "used": "chromium",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "chromium",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 1428.9155419999997
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 579,
+    "returnedChars": 579,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "browserLaunchMs": 0,
+    "navigateMs": 1024.2,
+    "renderMs": 1076.4,
+    "extractMs": 29.5,
+    "subrequests": 1,
+    "subrequestsBlocked": 0,
+    "totalMs": 1437.8
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_4e7eb77e0865c2bf@1",
+    "url": "http://172.31.172.243:39953/portal/recall.html",
+    "title": "Recall notice - Harbour Stores",
+    "fetchedAt": "2026-09-30T16:51:10.738Z",
+    "version": 1,
+    "contentHash": "4027b7cf0e699efacbc2c478a8a296359cdf47c70be19e6e5e0e12f062fc8cda"
+  }
+}

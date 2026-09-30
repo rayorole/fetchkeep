@@ -1,0 +1,93 @@
+[
+  {
+    "profile": "fetchkeep-http",
+    "engine": "fetchkeep",
+    "component": "npm tarball",
+    "bytes": 122972,
+    "method": "npm pack"
+  },
+  {
+    "profile": "fetchkeep-http",
+    "engine": "fetchkeep",
+    "component": "node_modules (fetchkeep + runtime deps, no browser)",
+    "bytes": 101278426,
+    "method": "npm install <tarball> --omit=dev; du -sb node_modules"
+  },
+  {
+    "profile": "fetchkeep-chromium",
+    "engine": "fetchkeep",
+    "component": "playwright-core package",
+    "bytes": 13453369,
+    "method": "du -sb node_modules/playwright-core"
+  },
+  {
+    "profile": "fetchkeep-lightpanda",
+    "engine": "fetchkeep",
+    "component": "puppeteer-core (+deps not shared)",
+    "bytes": 5981213,
+    "method": "du -sb node_modules/puppeteer-core (dependencies excluded)"
+  },
+  {
+    "profile": "fetchkeep-chromium",
+    "engine": "fetchkeep",
+    "component": "Chromium headless shell",
+    "bytes": 272533063,
+    "method": "du -sb ~/.cache/ms-playwright/chromium_headless_shell-*"
+  },
+  {
+    "profile": "fetchkeep-lightpanda",
+    "engine": "fetchkeep",
+    "component": "Lightpanda binary",
+    "bytes": 181265952,
+    "method": "du -sb <lightpanda>"
+  },
+  {
+    "profile": "donsetch",
+    "engine": "donsetch",
+    "component": "npm package (binary + libonnxruntime)",
+    "bytes": 46883975,
+    "method": "du -sb node_modules/donsetch"
+  },
+  {
+    "profile": "donsetch",
+    "engine": "donsetch",
+    "component": "Chromium (full, for tier-2 escalation)",
+    "bytes": 410251304,
+    "method": "du -sb ~/.cache/ms-playwright/chromium-* (Playwright full Chromium)"
+  },
+  {
+    "profile": "firecrawl-selfhost",
+    "engine": "firecrawl",
+    "component": "docker image firecrawl-api",
+    "bytes": 1292439393,
+    "method": "Docker Engine API /images/{id}/json Size"
+  },
+  {
+    "profile": "firecrawl-selfhost",
+    "engine": "firecrawl",
+    "component": "docker image firecrawl-nuq-postgres",
+    "bytes": 456315864,
+    "method": "Docker Engine API /images/{id}/json Size"
+  },
+  {
+    "profile": "firecrawl-selfhost",
+    "engine": "firecrawl",
+    "component": "docker image redis:alpine",
+    "bytes": 118840064,
+    "method": "Docker Engine API /images/{id}/json Size"
+  },
+  {
+    "profile": "firecrawl-selfhost",
+    "engine": "firecrawl",
+    "component": "docker image rabbitmq:3-management",
+    "bytes": 251501716,
+    "method": "Docker Engine API /images/{id}/json Size"
+  },
+  {
+    "profile": "firecrawl-selfhost",
+    "engine": "firecrawl",
+    "component": "docker image firecrawl-playwright-service",
+    "bytes": 2080421880,
+    "method": "Docker Engine API /images/{id}/json Size"
+  }
+]

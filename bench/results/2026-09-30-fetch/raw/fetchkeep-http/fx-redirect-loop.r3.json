@@ -1,0 +1,75 @@
+{
+  "status": "error",
+  "tool": "web_fetch",
+  "timings": {
+    "totalMs": 6.3
+  },
+  "warnings": [],
+  "backend": {
+    "mode": "http",
+    "used": null,
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "http",
+        "outcome": "failed",
+        "reason": "Exceeded 10 redirects",
+        "errorCode": "too_many_redirects",
+        "durationMs": 6.24297399999341
+      }
+    ]
+  },
+  "error": {
+    "code": "too_many_redirects",
+    "message": "Exceeded 10 redirects",
+    "retryable": false,
+    "details": {
+      "redirects": [
+        {
+          "url": "http://172.31.172.243:39953/loop/a",
+          "status": 302
+        },
+        {
+          "url": "http://172.31.172.243:39953/loop/b",
+          "status": 302
+        },
+        {
+          "url": "http://172.31.172.243:39953/loop/a",
+          "status": 302
+        },
+        {
+          "url": "http://172.31.172.243:39953/loop/b",
+          "status": 302
+        },
+        {
+          "url": "http://172.31.172.243:39953/loop/a",
+          "status": 302
+        },
+        {
+          "url": "http://172.31.172.243:39953/loop/b",
+          "status": 302
+        },
+        {
+          "url": "http://172.31.172.243:39953/loop/a",
+          "status": 302
+        },
+        {
+          "url": "http://172.31.172.243:39953/loop/b",
+          "status": 302
+        },
+        {
+          "url": "http://172.31.172.243:39953/loop/a",
+          "status": 302
+        },
+        {
+          "url": "http://172.31.172.243:39953/loop/b",
+          "status": 302
+        },
+        {
+          "url": "http://172.31.172.243:39953/loop/a",
+          "status": 302
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_af8d544bab91b8a0",
+    "version": 1,
+    "ref": "fk:d_af8d544bab91b8a0@1",
+    "requestedUrl": "http://172.31.172.243:39953/data/rainfall.html",
+    "finalUrl": "http://172.31.172.243:39953/data/rainfall.html",
+    "title": "Regional rainfall | Northwind Journal",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T16:51:47.265Z",
+    "contentHash": "3105b0c042f6088ac9c9045fdb00a9e72f3eddc111f745d6626dec473f70984e",
+    "rawHash": "8632d88b38c7773ea8c8d441d80c49f8f7b7f4f49ffb63254d0a38d36da0a359",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "lightpanda",
+    "saved": true,
+    "unchanged": false
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Regional rainfall, first half of the year\n\nMonthly totals in millimetres, measured at three stations operated by the valley water board.\n\nRainfall by station\n\n| Month | Upper Ford | Millbrook | Estuary |\n| --- | --- | --- | --- |\n| January | 112 | 98 | 74 |\n| February | 87 | 90 | 61 |\n| March | 101 | 84 | 70 |\n| April | 64 | 59 | 42 |\n| May | 55 | 60 | 38 |\n| June | 47 | 41 | 29 |\n\n## Station metadata\n\n| Station | Elevation | Opened |\n| --- | --- | --- |\n| Upper Ford | 412 m | 1961 |\n| Millbrook | not recorded |  |\n| Estuary | 3 m | 1988 |\n\nTotals for Millbrook in March were estimated from a neighbouring gauge after a sensor fault."
+  },
+  "backend": {
+    "mode": "lightpanda",
+    "used": "lightpanda",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "lightpanda",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 524.7202980000002
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 641,
+    "returnedChars": 641,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "browserLaunchMs": 0,
+    "navigateMs": 504.2,
+    "renderMs": 515.6,
+    "extractMs": 7.7,
+    "subrequests": 1,
+    "subrequestsBlocked": 0,
+    "totalMs": 525.7
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_af8d544bab91b8a0@1",
+    "url": "http://172.31.172.243:39953/data/rainfall.html",
+    "title": "Regional rainfall | Northwind Journal",
+    "fetchedAt": "2026-09-30T16:51:47.265Z",
+    "version": 1,
+    "contentHash": "3105b0c042f6088ac9c9045fdb00a9e72f3eddc111f745d6626dec473f70984e"
+  }
+}

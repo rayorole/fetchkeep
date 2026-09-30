@@ -1,0 +1,1 @@
+case_id,dataset,category,held_out,profile,n,ok,usable_rate,passage_recall,tables,code,headings,latency_p50,chars_mean,error_kinds,na_reason
