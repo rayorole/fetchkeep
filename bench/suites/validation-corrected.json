@@ -1,0 +1,7 @@
+{
+  "name": "validation-corrected",
+  "description": "Validation rerun after correcting one missing brace in the nested-shadow fixture. Product code and expectations are unchanged; the first run remains published and must not be presented as eight valid unseen cases.",
+  "kind": "fetch",
+  "cases": ["val-*"],
+  "repetitions": 7
+}

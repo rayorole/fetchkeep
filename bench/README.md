@@ -100,6 +100,11 @@ have now been inspected during optimization: their grouping is retained for hist
 after inspection, those cases must also be treated as regression inputs for any subsequent tuning. Results must
 identify the dataset hash and source revision rather than claim an indefinitely untouched holdout.
 
+The first `2026-09-30-validation` run uncovered a missing brace in the nested-shadow fixture script, not a product
+defect. That run remains published. `validation-corrected` identifies the rerun after fixing only that brace:
+product code, expectations and scoring are unchanged. Do not present the broken first run as eight valid unseen
+cases, or the corrected rerun as independently authored after the first results.
+
 Hosted services cannot reach the local fixture server (it is deliberately not exposed to the internet), so hosted
 profiles are N/A for fixture cases.
 
