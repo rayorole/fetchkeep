@@ -1,0 +1,7 @@
+{
+  "name": "crawl",
+  "description": "Bounded crawls: the local 15-page fixture graph with known expected pages, and one small live crawl.",
+  "kind": "crawl",
+  "cases": ["fx-crawl-*", "live-crawl-*"],
+  "repetitions": 2
+}

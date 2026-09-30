@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Parsing log lines with a state machine - Tidewater Docs</title></head>
+<body><header class="docs-top"><a href="/">Tidewater Docs</a> <input type="search" placeholder="Search the Tidewater documentation"> <a href="https://example.org/gh">Star us on the code forge</a></header><div class="docs-layout"><nav class="docs-sidebar" aria-label="Documentation"><ul><li><a href="/docs/">Overview of Tidewater</a></li>
+<li><a href="/docs/install">Installing the toolchain</a></li><li><a href="/docs/config">Configuration reference</a></li>
+<li><a href="/docs/cli">Command line interface</a></li></ul></nav><main class="docs-content"><h1>Parsing log lines with a state machine</h1>
+<p>This tutorial builds a tiny parser for lines such as <code>level=warn msg="disk almost full"</code>.</p>
+<h2>The token type</h2>
+<pre><code class="language-rust">enum Token&lt;'a&gt; {
+    Key(&amp;'a str),
+    Value(&amp;'a str),
+}</code></pre>
+<h2>The loop</h2>
+<p>Each character moves the parser between three states. Quotes switch into a mode where spaces are kept.</p>
+<pre>for ch in line.chars() {
+    match (state, ch) {
+        (State::Key, '=') =&gt; state = State::Value,
+        _ =&gt; buf.push(ch),
+    }
+}</pre>
+<h2>Testing it</h2>
+<pre><code class="language-js">const out = parse('level=warn msg="disk almost full"');
+console.assert(out.msg === "disk almost full");</code></pre>
+<p>Escaped quotes inside values are left as an exercise; the reference solution handles them with one extra state.</p></main>
+<aside class="toc"><p>On this page</p><ul><li><a href="#a">Jump to section</a></li></ul></aside></div><footer><p>Edit this page on the code forge</p><p>Tidewater is maintained by volunteers of the Tidewater Collective.</p></footer></body></html>

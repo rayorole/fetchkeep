@@ -1,0 +1,7 @@
+{
+  "name": "smoke",
+  "description": "Quick end-to-end check of every engine: one article, one docs page with table and code, one JavaScript page, one expected failure and one live page.",
+  "kind": "fetch",
+  "cases": ["fx-article-basic", "fx-docs-install", "fx-js-spa", "fx-404", "live-example-com"],
+  "repetitions": 1
+}

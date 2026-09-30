@@ -1,0 +1,7 @@
+{
+  "name": "fetch",
+  "description": "All single-page fetch cases: deterministic local fixtures (synthetic) and the live public-website manifest.",
+  "kind": "fetch",
+  "cases": ["fx-*", "live-*"],
+  "repetitions": 3
+}

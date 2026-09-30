@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Configuration reference - Tidewater Docs</title></head>
+<body><header class="docs-top"><a href="/">Tidewater Docs</a> <input type="search" placeholder="Search the Tidewater documentation"> <a href="https://example.org/gh">Star us on the code forge</a></header><div class="docs-layout"><nav class="docs-sidebar" aria-label="Documentation"><ul><li><a href="/docs/">Overview of Tidewater</a></li>
+<li><a href="/docs/install">Installing the toolchain</a></li><li><a href="/docs/config">Configuration reference</a></li>
+<li><a href="/docs/cli">Command line interface</a></li></ul></nav><main class="docs-content"><h1>Configuration reference</h1>
+<p>Tidewater reads <code>tidewater.toml</code> from the project root. Every key can also be set with an environment variable.</p>
+<div class="tabs"><div class="tab" data-lang="toml"><pre class="highlight-source-toml">[server]
+port = 8080
+workers = 4</pre></div>
+<div class="tab" data-lang="shell"><pre><code class="lang-shell">export TIDEWATER_SERVER_PORT=8080
+export TIDEWATER_SERVER_WORKERS=4</code></pre></div></div>
+<h2>Keys</h2>
+<table><thead><tr><th>Key</th><th>Type</th><th>Default</th></tr></thead><tbody>
+<tr><td>server.port</td><td>integer</td><td>8080</td></tr>
+<tr><td>server.workers</td><td>integer</td><td>number of CPU cores</td></tr>
+<tr><td>log.format</td><td>string</td><td>text</td></tr></tbody></table>
+<h2>Precedence</h2>
+<ol><li>Command line flags</li><li>Environment variables</li><li>The configuration file</li><li>Built-in defaults</li></ol>
+<p>Values that cannot be parsed stop startup with an error that names the offending key.</p></main>
+<aside class="toc"><p>On this page</p><ul><li><a href="#a">Jump to section</a></li></ul></aside></div><footer><p>Edit this page on the code forge</p><p>Tidewater is maintained by volunteers of the Tidewater Collective.</p></footer></body></html>
