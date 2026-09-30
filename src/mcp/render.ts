@@ -48,6 +48,11 @@ export function renderEnvelope(env: Envelope): string {
       })
       .join("\n");
     if (body) lines.push("", `${OPEN} kind="search-results">`, fence(body), CLOSE);
+  } else if (env.tool === "web_crawl" && data && Array.isArray(data.pages)) {
+    lines.push(`crawl: ${String(data.crawlId)} stop_reason: ${String(data.stopReason)}`, `counts: ${JSON.stringify(data.counts)}`);
+    for (const p of data.pages as { url: string; depth: number; state: string; reason?: string; ref?: string }[]) {
+      lines.push(`  [${p.state}] d${p.depth} ${p.url}${p.ref ? ` ${p.ref}` : ""}${p.reason ? ` (${p.reason})` : ""}`);
+    }
   } else if (env.tool === "doctor" && data && Array.isArray(data.checks)) {
     lines.push(`fetchkeep ${String(data.version)} on ${String(data.platform)}`);
     for (const c of data.checks as { name: string; ok: boolean; detail: string }[]) lines.push(`${c.ok ? "ok  " : "FAIL"} ${c.name}: ${c.detail}`);

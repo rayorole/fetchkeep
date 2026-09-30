@@ -87,6 +87,19 @@ describe("versions and citations", () => {
     expect(full.content!.text.endsWith(rest.content!.text)).toBe(true);
   });
 
+  it("saves a first fetch that arrives through a redirect and resolves the alias", async () => {
+    const { home: h2, cleanup: c2 } = tempHome();
+    const fresh = testService(h2);
+    try {
+      const env = ok(await fresh.fetch({ url: u("/alias") }));
+      expect(env.document).toMatchObject({ version: 1, finalUrl: u("/doc"), requestedUrl: u("/alias") });
+      expect(fresh.store.resolveDocId(u("/alias"))).toBe(env.document!.id);
+    } finally {
+      await fresh.close();
+      c2();
+    }
+  });
+
   it("returns structured not_found errors", () => {
     expect(fk.read({ target: "https://never-fetched.example/" }).error?.code).toBe("not_found");
     expect(fk.read({ target: u("/doc"), version: 99 }).error?.code).toBe("not_found");

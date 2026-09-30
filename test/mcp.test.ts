@@ -38,7 +38,7 @@ describe("MCP stdio contract (SDK client)", () => {
   it("lists the core tools with input schemas", async () => {
     const { tools } = await client.listTools();
     const names = tools.map((t) => t.name);
-    expect(names).toEqual(expect.arrayContaining(["web_fetch", "web_read", "web_search"]));
+    expect(names).toEqual(expect.arrayContaining(["web_fetch", "web_read", "web_search", "web_crawl"]));
     const fetch = tools.find((t) => t.name === "web_fetch")!;
     expect(fetch.inputSchema.required).toEqual(["url"]);
     expect(client.getInstructions()).toContain("untrusted-web-content");
