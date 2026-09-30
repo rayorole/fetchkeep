@@ -44,6 +44,15 @@ export async function runDoctor(fk: Fetchkeep): Promise<Envelope> {
     ok: true,
     detail: fk.config.search.searxng ? `SearXNG at ${fk.config.search.searxng.url}` : "not configured (optional; local search always works)",
   });
+  for (const name of ["chromium", "lightpanda"] as const) {
+    const enabled = fk.browsers.enabled().includes(name);
+    if (!enabled) {
+      checks.push({ name: `browser:${name}`, ok: true, detail: "disabled (optional; HTTP mode needs no browser)" });
+      continue;
+    }
+    const a = await fk.browsers.availability(name);
+    checks.push({ name: `browser:${name}${name === "lightpanda" ? " (experimental)" : ""}`, ok: a.available, detail: a.detail });
+  }
   checks.push({
     name: "ollama",
     ok: true,

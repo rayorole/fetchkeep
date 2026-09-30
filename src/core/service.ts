@@ -12,6 +12,8 @@ import type { WebSearchProvider } from "./search/provider.js";
 import { SearxngProvider } from "./search/searxng.js";
 import { Store, docIdFor, parseRef, versionRef, type StoredVersion } from "./store/store.js";
 import { USER_AGENT } from "../version.js";
+import type { BrowserProvider } from "../browser/provider.js";
+import { Browsers } from "../browser/registry.js";
 
 export interface FetchInput {
   url: string;
@@ -49,6 +51,8 @@ export interface SearchInput {
 
 export interface ServiceDeps {
   webSearch?: WebSearchProvider | null;
+  /** Replaces the configured browser providers (tests, embedding). */
+  browserProviders?: BrowserProvider[];
 }
 
 /** The shared façade used by the CLI and the MCP server. Every public method returns an {@link Envelope}. */
@@ -56,13 +60,17 @@ export class Fetchkeep {
   readonly config: FetchkeepConfig;
   readonly policy: NetworkPolicy;
   readonly http: HttpClient;
+  readonly browsers: Browsers;
+  readonly userAgent: string;
   private storeInstance: Store | null = null;
   private readonly webSearch: WebSearchProvider | null;
 
   constructor(config: FetchkeepConfig, deps: ServiceDeps = {}) {
     this.config = config;
     this.policy = new NetworkPolicy(config.network);
-    this.http = new HttpClient(this.policy, config.userAgent ?? USER_AGENT);
+    this.userAgent = config.userAgent ?? USER_AGENT;
+    this.http = new HttpClient(this.policy, this.userAgent);
+    this.browsers = new Browsers(config.browser, this.policy, deps.browserProviders);
     this.webSearch = deps.webSearch !== undefined ? deps.webSearch : config.search.searxng ? new SearxngProvider(config.search.searxng) : null;
   }
 
@@ -72,6 +80,7 @@ export class Fetchkeep {
   }
 
   async close(): Promise<void> {
+    await this.browsers.close();
     await this.http.close();
     this.storeInstance?.close();
     this.storeInstance = null;
@@ -82,11 +91,16 @@ export class Fetchkeep {
     return signal ? AbortSignal.any([t, signal]) : t;
   }
 
-  /** Validates the URL and runs the backend(s) for it. Never throws; failures are returned in `error`. */
-  async retrievePage(url: string, mode: FetchMode, signal: AbortSignal): Promise<RetrieveResult> {
+  /** Validates the URL and runs the backend(s) for it within `timeoutMs`. Never throws; failures are returned in `error`. */
+  async retrievePage(url: string, mode: FetchMode, timeoutMs: number, parent?: AbortSignal): Promise<RetrieveResult> {
+    const deadline = Date.now() + timeoutMs;
+    const signal = this.deadline(timeoutMs, parent);
     try {
       this.policy.checkUrl(url);
-      return await retrieve({ http: this.http }, { url, mode, signal, limits: this.config.limits });
+      return await retrieve(
+        { http: this.http, browsers: this.browsers, policy: this.policy, userAgent: this.userAgent, settleMs: this.config.browser.settleMs },
+        { url, mode, signal, deadline, limits: this.config.limits },
+      );
     } catch (err) {
       return { page: null, backend: { mode, used: null, escalated: false, attempts: [] }, error: toFetchkeepError(err, signal), warnings: [] };
     }
@@ -94,9 +108,9 @@ export class Fetchkeep {
 
   async fetch(input: FetchInput): Promise<Envelope> {
     const started = performance.now();
-    const signal = this.deadline(input.timeoutMs, input.signal);
     const mode = input.mode ?? "auto";
-    const { page, backend, error, warnings } = await this.retrievePage(input.url, mode, signal);
+    const { page, backend, error, warnings } = await this.retrievePage(input.url, mode, input.timeoutMs ?? this.config.timeoutMs, input.signal);
+    const signal = input.signal;
     if (!page) {
       return errorEnvelope("web_fetch", error, { backend, warnings, timings: roundTimings({ totalMs: performance.now() - started }) }, signal);
     }

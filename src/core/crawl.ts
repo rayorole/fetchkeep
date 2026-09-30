@@ -179,8 +179,7 @@ export async function runCrawl(fk: Fetchkeep, input: CrawlInput): Promise<Envelo
   const processOne = async (item: CrawlUrlRecord) => {
     const origin = new URL(item.url).origin;
     await pace(origin);
-    const pageSignal = AbortSignal.any([signal, AbortSignal.timeout(opts.pageTimeoutMs)]);
-    const { page, error } = await fk.retrievePage(item.url, opts.mode, pageSignal);
+    const { page, error } = await fk.retrievePage(item.url, opts.mode, opts.pageTimeoutMs, signal);
     if (signal.aborted) return; // leave it queued for resume
     counts.fetched++;
     if (!page) {
