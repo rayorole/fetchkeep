@@ -1,0 +1,68 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_a1442895d2538147",
+    "version": 1,
+    "ref": "fk:d_a1442895d2538147@1",
+    "requestedUrl": "http://172.31.172.243:45387/validation/nested-shadow.html",
+    "finalUrl": "http://172.31.172.243:45387/validation/nested-shadow.html",
+    "title": "Depth logger",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T19:26:38.898Z",
+    "contentHash": "e18d5544b80fae2dd38b97645b2f067d7eb1c54a66b43a46d83e479d1cef1dcb",
+    "rawHash": "2ff9292c331ba6aca83d234f81718a7baf6219699b1cb05fdb970919ed9e0b45",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "chromium",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Depth logger"
+  },
+  "backend": {
+    "mode": "chromium",
+    "used": "chromium",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "chromium",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 2109.141619000002
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 14,
+    "returnedChars": 14,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "launchMs": 51.3,
+    "navigateMs": 46.8,
+    "readinessMs": 2001.7,
+    "serializeMs": 2.9,
+    "renderMs": 2102.7,
+    "extractMs": 0.7,
+    "subrequests": 1,
+    "subrequestsBlocked": 0,
+    "saveMs": 0.3,
+    "totalMs": 2109.6
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_a1442895d2538147@1",
+    "url": "http://172.31.172.243:45387/validation/nested-shadow.html",
+    "title": "Depth logger",
+    "fetchedAt": "2026-09-30T19:26:38.898Z",
+    "version": 1,
+    "contentHash": "e18d5544b80fae2dd38b97645b2f067d7eb1c54a66b43a46d83e479d1cef1dcb"
+  }
+}

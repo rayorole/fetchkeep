@@ -1,0 +1,63 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_ccfc1ad33bc828f8",
+    "version": 1,
+    "ref": "fk:d_ccfc1ad33bc828f8@1",
+    "requestedUrl": "http://172.31.172.243:45387/validation/inline-evidence.html",
+    "finalUrl": "http://172.31.172.243:45387/validation/inline-evidence.html",
+    "title": "Archive recovery notes",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T19:27:10.269Z",
+    "contentHash": "49458b1ff3b3d311925a05b8b5df83b58c0237ce6a91a8806ae005dc1d0fc687",
+    "rawHash": "8098bf1f76d798403546a984c3679168fd9232a254620ab2f6074e50c65a7b67",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "http",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Archive recovery notes\n\nThe operator reads `archive.lock` before opening the **recovery journal**.\n\nA successful restore preserves the original timestamp and the owner’s signature.\n\nNever replace a verified snapshot with an incomplete copy."
+  },
+  "backend": {
+    "mode": "auto",
+    "used": "http",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "http",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 2.1728730000031646
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 242,
+    "returnedChars": 242,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "firstByteMs": 0.9,
+    "downloadMs": 1,
+    "extractMs": 1.1,
+    "saveMs": 0.2,
+    "totalMs": 2.6
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_ccfc1ad33bc828f8@1",
+    "url": "http://172.31.172.243:45387/validation/inline-evidence.html",
+    "title": "Archive recovery notes",
+    "fetchedAt": "2026-09-30T19:27:10.269Z",
+    "version": 1,
+    "contentHash": "49458b1ff3b3d311925a05b8b5df83b58c0237ce6a91a8806ae005dc1d0fc687"
+  }
+}

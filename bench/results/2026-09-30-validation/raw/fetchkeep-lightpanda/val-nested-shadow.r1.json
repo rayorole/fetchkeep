@@ -1,0 +1,68 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_a1442895d2538147",
+    "version": 1,
+    "ref": "fk:d_a1442895d2538147@1",
+    "requestedUrl": "http://172.31.172.243:45387/validation/nested-shadow.html",
+    "finalUrl": "http://172.31.172.243:45387/validation/nested-shadow.html",
+    "title": "Depth logger",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T19:25:18.790Z",
+    "contentHash": "e18d5544b80fae2dd38b97645b2f067d7eb1c54a66b43a46d83e479d1cef1dcb",
+    "rawHash": "2ff9292c331ba6aca83d234f81718a7baf6219699b1cb05fdb970919ed9e0b45",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "lightpanda",
+    "saved": true,
+    "unchanged": false
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Depth logger"
+  },
+  "backend": {
+    "mode": "lightpanda",
+    "used": "lightpanda",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "lightpanda",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 2039.8431500000006
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 14,
+    "returnedChars": 14,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "launchMs": 12.8,
+    "navigateMs": 22.7,
+    "readinessMs": 2000,
+    "serializeMs": 1,
+    "renderMs": 2036.5,
+    "extractMs": 1.5,
+    "subrequests": 1,
+    "subrequestsBlocked": 0,
+    "saveMs": 0.6,
+    "totalMs": 2040.7
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_a1442895d2538147@1",
+    "url": "http://172.31.172.243:45387/validation/nested-shadow.html",
+    "title": "Depth logger",
+    "fetchedAt": "2026-09-30T19:25:18.790Z",
+    "version": 1,
+    "contentHash": "e18d5544b80fae2dd38b97645b2f067d7eb1c54a66b43a46d83e479d1cef1dcb"
+  }
+}

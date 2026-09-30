@@ -1,0 +1,11 @@
+{
+  "text": "# Glacier measurements\nhttp://172.31.172.243:45387/validation/background-clock.html\n\nThe survey team measures the terminus from the same brass marker every August.\n\nMeasurements are corrected for the slope of the valley floor before publication.\n\nArchived field notebooks remain available at the regional geology library.",
+  "structured": {
+    "changed": "new",
+    "content_kind": "Page",
+    "content_ok": true,
+    "lang": "en",
+    "url": "http://172.31.172.243:45387/validation/background-clock.html"
+  },
+  "isError": false
+}

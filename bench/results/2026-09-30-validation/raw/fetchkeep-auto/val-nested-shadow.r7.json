@@ -1,0 +1,77 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_a1442895d2538147",
+    "version": 1,
+    "ref": "fk:d_a1442895d2538147@1",
+    "requestedUrl": "http://172.31.172.243:45387/validation/nested-shadow.html",
+    "finalUrl": "http://172.31.172.243:45387/validation/nested-shadow.html",
+    "title": "Depth logger",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T19:27:26.065Z",
+    "contentHash": "e18d5544b80fae2dd38b97645b2f067d7eb1c54a66b43a46d83e479d1cef1dcb",
+    "rawHash": "2ff9292c331ba6aca83d234f81718a7baf6219699b1cb05fdb970919ed9e0b45",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "chromium",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Depth logger"
+  },
+  "backend": {
+    "mode": "auto",
+    "used": "chromium",
+    "escalated": true,
+    "attempts": [
+      {
+        "backend": "http",
+        "outcome": "insufficient",
+        "reason": "only 12 chars extracted from a script-driven page (1 scripts)",
+        "httpStatus": 200,
+        "durationMs": 1.9570810000004712
+      },
+      {
+        "backend": "chromium",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 2091.0835729999817
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 14,
+    "returnedChars": 14,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "firstByteMs": 1.1,
+    "downloadMs": 1.2,
+    "extractMs": 1.9,
+    "launchMs": 51.4,
+    "navigateMs": 30.7,
+    "readinessMs": 2001.6,
+    "serializeMs": 2.4,
+    "renderMs": 2086.1,
+    "subrequests": 1,
+    "subrequestsBlocked": 0,
+    "saveMs": 0.2,
+    "totalMs": 2093.5
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_a1442895d2538147@1",
+    "url": "http://172.31.172.243:45387/validation/nested-shadow.html",
+    "title": "Depth logger",
+    "fetchedAt": "2026-09-30T19:27:26.065Z",
+    "version": 1,
+    "contentHash": "e18d5544b80fae2dd38b97645b2f067d7eb1c54a66b43a46d83e479d1cef1dcb"
+  }
+}

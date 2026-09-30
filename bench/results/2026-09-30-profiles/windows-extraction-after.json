@@ -1,0 +1,347 @@
+{
+  "node": "v24.15.0",
+  "platform": "win32",
+  "entry": "C:\\code\\projects\\fetchkeep\\bench\\runs\\optimized-37-dist\\src\\core\\extract\\html.js",
+  "at": "2026-09-30T19:14:53.088Z",
+  "command": "node bench/extraction.ts --entry bench/runs/optimized-37-dist/src/core/extract/html.js --out bench/runs/extraction-after.json --compare bench/runs/extraction-before.json --repetitions 15",
+  "method": "Synthetic extraction-only workload, one process, interleaved documents; first pass discarded. Full ExtractedDocument hashes include Markdown, typed blocks, citations offsets/hashes, links and metadata. No network or persistence; not end-to-end fetch latency.",
+  "peakRssMb": 403.99609375,
+  "summary": [
+    {
+      "name": "small-semantic",
+      "bytes": 19571,
+      "n": 14,
+      "medianMs": 20.586100000000442,
+      "p95Ms": 32.29539999999997
+    },
+    {
+      "name": "large-semantic",
+      "bytes": 457051,
+      "n": 14,
+      "medianMs": 372.34449999999924,
+      "p95Ms": 650.4495999999999
+    },
+    {
+      "name": "ambiguous-article",
+      "bytes": 31164,
+      "n": 14,
+      "medianMs": 13.315399999999954,
+      "p95Ms": 104.01960000000008
+    },
+    {
+      "name": "sparse-semantic",
+      "bytes": 602,
+      "n": 14,
+      "medianMs": 0.9472999999998137,
+      "p95Ms": 1.6562000000003536
+    }
+  ],
+  "measurements": [
+    {
+      "name": "small-semantic",
+      "repetition": 0,
+      "ms": 91.11630000000002
+    },
+    {
+      "name": "large-semantic",
+      "repetition": 0,
+      "ms": 569.6094
+    },
+    {
+      "name": "ambiguous-article",
+      "repetition": 0,
+      "ms": 24.087299999999914
+    },
+    {
+      "name": "sparse-semantic",
+      "repetition": 0,
+      "ms": 1.8481999999999061
+    },
+    {
+      "name": "small-semantic",
+      "repetition": 1,
+      "ms": 32.29539999999997
+    },
+    {
+      "name": "large-semantic",
+      "repetition": 1,
+      "ms": 419.6291000000001
+    },
+    {
+      "name": "ambiguous-article",
+      "repetition": 1,
+      "ms": 17.834299999999985
+    },
+    {
+      "name": "sparse-semantic",
+      "repetition": 1,
+      "ms": 1.5455999999999221
+    },
+    {
+      "name": "small-semantic",
+      "repetition": 2,
+      "ms": 25.471399999999903
+    },
+    {
+      "name": "large-semantic",
+      "repetition": 2,
+      "ms": 411.89879999999994
+    },
+    {
+      "name": "ambiguous-article",
+      "repetition": 2,
+      "ms": 104.01960000000008
+    },
+    {
+      "name": "sparse-semantic",
+      "repetition": 2,
+      "ms": 0.9333999999998923
+    },
+    {
+      "name": "small-semantic",
+      "repetition": 3,
+      "ms": 19.700500000000375
+    },
+    {
+      "name": "large-semantic",
+      "repetition": 3,
+      "ms": 341.99980000000005
+    },
+    {
+      "name": "ambiguous-article",
+      "repetition": 3,
+      "ms": 12.952600000000075
+    },
+    {
+      "name": "sparse-semantic",
+      "repetition": 3,
+      "ms": 0.9472999999998137
+    },
+    {
+      "name": "small-semantic",
+      "repetition": 4,
+      "ms": 19.821199999999862
+    },
+    {
+      "name": "large-semantic",
+      "repetition": 4,
+      "ms": 399.72119999999995
+    },
+    {
+      "name": "ambiguous-article",
+      "repetition": 4,
+      "ms": 13.315399999999954
+    },
+    {
+      "name": "sparse-semantic",
+      "repetition": 4,
+      "ms": 1.5014999999998508
+    },
+    {
+      "name": "small-semantic",
+      "repetition": 5,
+      "ms": 21.81780000000026
+    },
+    {
+      "name": "large-semantic",
+      "repetition": 5,
+      "ms": 345.4632999999999
+    },
+    {
+      "name": "ambiguous-article",
+      "repetition": 5,
+      "ms": 11.840200000000095
+    },
+    {
+      "name": "sparse-semantic",
+      "repetition": 5,
+      "ms": 0.8984000000000378
+    },
+    {
+      "name": "small-semantic",
+      "repetition": 6,
+      "ms": 19.36050000000023
+    },
+    {
+      "name": "large-semantic",
+      "repetition": 6,
+      "ms": 387.0232000000001
+    },
+    {
+      "name": "ambiguous-article",
+      "repetition": 6,
+      "ms": 12.931900000000041
+    },
+    {
+      "name": "sparse-semantic",
+      "repetition": 6,
+      "ms": 1.6562000000003536
+    },
+    {
+      "name": "small-semantic",
+      "repetition": 7,
+      "ms": 22.674199999999928
+    },
+    {
+      "name": "large-semantic",
+      "repetition": 7,
+      "ms": 498.09249999999975
+    },
+    {
+      "name": "ambiguous-article",
+      "repetition": 7,
+      "ms": 13.072699999999713
+    },
+    {
+      "name": "sparse-semantic",
+      "repetition": 7,
+      "ms": 1.3744999999998981
+    },
+    {
+      "name": "small-semantic",
+      "repetition": 8,
+      "ms": 20.558399999999892
+    },
+    {
+      "name": "large-semantic",
+      "repetition": 8,
+      "ms": 372.34449999999924
+    },
+    {
+      "name": "ambiguous-article",
+      "repetition": 8,
+      "ms": 55.52589999999964
+    },
+    {
+      "name": "sparse-semantic",
+      "repetition": 8,
+      "ms": 1.193199999999706
+    },
+    {
+      "name": "small-semantic",
+      "repetition": 9,
+      "ms": 20.586100000000442
+    },
+    {
+      "name": "large-semantic",
+      "repetition": 9,
+      "ms": 371.2279000000008
+    },
+    {
+      "name": "ambiguous-article",
+      "repetition": 9,
+      "ms": 12.516300000000228
+    },
+    {
+      "name": "sparse-semantic",
+      "repetition": 9,
+      "ms": 0.9747999999999593
+    },
+    {
+      "name": "small-semantic",
+      "repetition": 10,
+      "ms": 20.75330000000031
+    },
+    {
+      "name": "large-semantic",
+      "repetition": 10,
+      "ms": 351.84479999999985
+    },
+    {
+      "name": "ambiguous-article",
+      "repetition": 10,
+      "ms": 13.407400000000052
+    },
+    {
+      "name": "sparse-semantic",
+      "repetition": 10,
+      "ms": 0.8586999999997715
+    },
+    {
+      "name": "small-semantic",
+      "repetition": 11,
+      "ms": 19.740499999999884
+    },
+    {
+      "name": "large-semantic",
+      "repetition": 11,
+      "ms": 355.35019999999986
+    },
+    {
+      "name": "ambiguous-article",
+      "repetition": 11,
+      "ms": 13.48449999999957
+    },
+    {
+      "name": "sparse-semantic",
+      "repetition": 11,
+      "ms": 0.8921000000000276
+    },
+    {
+      "name": "small-semantic",
+      "repetition": 12,
+      "ms": 20.622800000000097
+    },
+    {
+      "name": "large-semantic",
+      "repetition": 12,
+      "ms": 650.4495999999999
+    },
+    {
+      "name": "ambiguous-article",
+      "repetition": 12,
+      "ms": 13.826399999999921
+    },
+    {
+      "name": "sparse-semantic",
+      "repetition": 12,
+      "ms": 1.0596999999997934
+    },
+    {
+      "name": "small-semantic",
+      "repetition": 13,
+      "ms": 24.216600000000653
+    },
+    {
+      "name": "large-semantic",
+      "repetition": 13,
+      "ms": 360.8714
+    },
+    {
+      "name": "ambiguous-article",
+      "repetition": 13,
+      "ms": 12.145300000000134
+    },
+    {
+      "name": "sparse-semantic",
+      "repetition": 13,
+      "ms": 0.9040999999997439
+    },
+    {
+      "name": "small-semantic",
+      "repetition": 14,
+      "ms": 20.0033999999996
+    },
+    {
+      "name": "large-semantic",
+      "repetition": 14,
+      "ms": 513.0565999999999
+    },
+    {
+      "name": "ambiguous-article",
+      "repetition": 14,
+      "ms": 15.081000000000131
+    },
+    {
+      "name": "sparse-semantic",
+      "repetition": 14,
+      "ms": 0.8653000000003885
+    }
+  ],
+  "outputHashes": {
+    "small-semantic": "bc49543d753336944e55d09d18c8b26cd5f89fcd144b453455ed56c77be9ac61",
+    "large-semantic": "d8dd45a88a56aedf8a85bfea46bc1e374b939d888e548bfbf8b81a4c25ab4229",
+    "ambiguous-article": "c2dcf2e5fc9fb02ca5203cc4fbbe813b07e5770f32e63874d191256779a5d2f5",
+    "sparse-semantic": "f454409f339c0de110611e6fa905e59526c9a2373a485a2578a7a3a74666b34e"
+  }
+}

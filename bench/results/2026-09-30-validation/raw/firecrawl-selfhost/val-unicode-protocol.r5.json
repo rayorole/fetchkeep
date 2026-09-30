@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "data": {
+    "markdown": "Station protocol\n================\n\nLa température est relevée à midi dans l’abri météorologique.\n\n観測記録は毎週金曜日に保存されます。\n\n> Never round a raw measurement before archiving it.\n\n    station = \"Ålesund\"\n    threshold = 0.125",
+    "metadata": {
+      "language": "en",
+      "title": "Station protocol",
+      "scrapeId": "01a0f3c8-a5a4-73d1-b698-9e2a739cb5c1",
+      "sourceURL": "http://172.31.172.243:45387/validation/unicode-protocol.html",
+      "url": "http://172.31.172.243:45387/validation/unicode-protocol.html",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "proxyUsed": "basic",
+      "creditsUsed": 1,
+      "concurrencyLimited": false
+    }
+  }
+}

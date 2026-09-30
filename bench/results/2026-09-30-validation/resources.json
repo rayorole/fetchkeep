@@ -1,0 +1,66 @@
+[
+  {
+    "profile": "fetchkeep-http",
+    "engine": "fetchkeep",
+    "scope": "process-tree",
+    "cpuSeconds": 1.2,
+    "peakRssMb": 135,
+    "idleRssMb": 94.3,
+    "samples": 638
+  },
+  {
+    "profile": "fetchkeep-chromium",
+    "engine": "fetchkeep",
+    "scope": "process-tree",
+    "cpuSeconds": 13.08,
+    "peakRssMb": 656.7,
+    "idleRssMb": 94.6,
+    "samples": 636
+  },
+  {
+    "profile": "fetchkeep-lightpanda",
+    "engine": "fetchkeep",
+    "scope": "process-tree",
+    "cpuSeconds": 3.4,
+    "peakRssMb": 170.2,
+    "idleRssMb": 94.2,
+    "samples": 633
+  },
+  {
+    "profile": "fetchkeep-auto",
+    "engine": "fetchkeep",
+    "scope": "process-tree",
+    "cpuSeconds": 5.33,
+    "peakRssMb": 665.7,
+    "idleRssMb": 94.5,
+    "samples": 630
+  },
+  {
+    "profile": "firecrawl-selfhost",
+    "engine": "firecrawl",
+    "scope": "docker-stack",
+    "cpuSeconds": 62.74,
+    "peakRssMb": 3628.3,
+    "idleRssMb": 3584.3,
+    "samples": 628
+  },
+  {
+    "profile": "donsetch",
+    "engine": "donsetch",
+    "scope": "process-tree",
+    "cpuSeconds": 7.18,
+    "peakRssMb": 1536,
+    "idleRssMb": 15.4,
+    "samples": 627
+  },
+  {
+    "profile": "firecrawl-hosted",
+    "engine": "firecrawl",
+    "scope": "remote",
+    "cpuSeconds": null,
+    "peakRssMb": null,
+    "idleRssMb": null,
+    "samples": 0,
+    "note": "engine not started"
+  }
+]

@@ -1,0 +1,68 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_b517e93b85d5019c",
+    "version": 1,
+    "ref": "fk:d_b517e93b85d5019c@1",
+    "requestedUrl": "http://172.31.172.243:45387/validation/reference-table.html",
+    "finalUrl": "http://172.31.172.243:45387/validation/reference-table.html",
+    "title": "Pressure sampler reference",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T19:26:43.456Z",
+    "contentHash": "6c960d62e44ceb3db1e29f1b00133466930c0753980584df84950b8bab741667",
+    "rawHash": "e5b27c0738e91162f2c9d07ded907d9175042e5df0d7c7795ffa22b41a4a430c",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "chromium",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Pressure sampler reference\n\nUse the sampler only after the reference chamber reaches ambient temperature.\n\n## Parameters\n\n| Field | Type | Meaning |\n| --- | --- | --- |\n| interval | integer | Seconds between samples |\n| unit | string | Output pressure unit |\n\n## Example\n\n```js\nasync function sample(sensor) {\n  const value = await sensor.read();\n  return { value, unit: \"kPa\" };\n}\n```\n\nStore the raw reading before applying any calibration correction.\n\n[Calibration procedure](http://172.31.172.243:45387/calibration.html)"
+  },
+  "backend": {
+    "mode": "chromium",
+    "used": "chromium",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "chromium",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 649.8100700000068
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 525,
+    "returnedChars": 525,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "launchMs": 61.1,
+    "navigateMs": 39.8,
+    "readinessMs": 539,
+    "serializeMs": 3.3,
+    "renderMs": 643.2,
+    "extractMs": 2.8,
+    "subrequests": 1,
+    "subrequestsBlocked": 0,
+    "saveMs": 0.2,
+    "totalMs": 650.3
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_b517e93b85d5019c@1",
+    "url": "http://172.31.172.243:45387/validation/reference-table.html",
+    "title": "Pressure sampler reference",
+    "fetchedAt": "2026-09-30T19:26:43.456Z",
+    "version": 1,
+    "contentHash": "6c960d62e44ceb3db1e29f1b00133466930c0753980584df84950b8bab741667"
+  }
+}

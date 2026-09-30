@@ -1,0 +1,63 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_1883bac89448dfd2",
+    "version": 1,
+    "ref": "fk:d_1883bac89448dfd2@1",
+    "requestedUrl": "http://172.31.172.243:45387/validation/short-notice.html",
+    "finalUrl": "http://172.31.172.243:45387/validation/short-notice.html",
+    "title": "Bridge notice",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T19:26:27.009Z",
+    "contentHash": "085e86137b1786c5d4b6ef6594002f477f74ebc132668786fdb0d6d0a5698f52",
+    "rawHash": "552550bfd63fd8a7d9aa3ae98cc77cd3f03caa4d3a253bbe68e32738deb10476",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "http",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Bridge notice\n\nThe footbridge is closed on Tuesday for a cable inspection.\n\nUse the signed path beside the mill."
+  },
+  "backend": {
+    "mode": "http",
+    "used": "http",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "http",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 7.557439999989583
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 114,
+    "returnedChars": 114,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "firstByteMs": 6.2,
+    "downloadMs": 6.3,
+    "extractMs": 1.2,
+    "saveMs": 0.6,
+    "totalMs": 8.3
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_1883bac89448dfd2@1",
+    "url": "http://172.31.172.243:45387/validation/short-notice.html",
+    "title": "Bridge notice",
+    "fetchedAt": "2026-09-30T19:26:27.009Z",
+    "version": 1,
+    "contentHash": "085e86137b1786c5d4b6ef6594002f477f74ebc132668786fdb0d6d0a5698f52"
+  }
+}

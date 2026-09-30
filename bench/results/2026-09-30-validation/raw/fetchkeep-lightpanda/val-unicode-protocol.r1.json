@@ -1,0 +1,68 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_89cb67fcab81c7ff",
+    "version": 1,
+    "ref": "fk:d_89cb67fcab81c7ff@1",
+    "requestedUrl": "http://172.31.172.243:45387/validation/unicode-protocol.html",
+    "finalUrl": "http://172.31.172.243:45387/validation/unicode-protocol.html",
+    "title": "Station protocol",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T19:25:06.562Z",
+    "contentHash": "42b7c30b086af3759c563dc3ab8dff4f0cc5ae6a0ade4a011f9b58f93e17266b",
+    "rawHash": "3c09f370182f0cabbd305ca08811ea930ca7a6092fb1c4413ca0cf76edb8e8f3",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "lightpanda",
+    "saved": true,
+    "unchanged": false
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Station protocol\n\nLa température est relevée à midi dans l’abri météorologique.\n\n観測記録は毎週金曜日に保存されます。\n\n> Never round a raw measurement before archiving it.\n\n```\nstation = \"Ålesund\"\nthreshold = 0.125\n```"
+  },
+  "backend": {
+    "mode": "lightpanda",
+    "used": "lightpanda",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "lightpanda",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 552.718017000001
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 202,
+    "returnedChars": 202,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "launchMs": 14.9,
+    "navigateMs": 3.4,
+    "readinessMs": 511.1,
+    "serializeMs": 2.3,
+    "renderMs": 531.7,
+    "extractMs": 18.2,
+    "subrequests": 1,
+    "subrequestsBlocked": 0,
+    "saveMs": 2.1,
+    "totalMs": 555.4
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_89cb67fcab81c7ff@1",
+    "url": "http://172.31.172.243:45387/validation/unicode-protocol.html",
+    "title": "Station protocol",
+    "fetchedAt": "2026-09-30T19:25:06.562Z",
+    "version": 1,
+    "contentHash": "42b7c30b086af3759c563dc3ab8dff4f0cc5ae6a0ade4a011f9b58f93e17266b"
+  }
+}

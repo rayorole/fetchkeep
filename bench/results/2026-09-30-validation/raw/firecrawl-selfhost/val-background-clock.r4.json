@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "data": {
+    "markdown": "Glacier measurements\n====================\n\nThe survey team measures the terminus from the same brass marker every August.\n\nMeasurements are corrected for the slope of the valley floor before publication.\n\nArchived field notebooks remain available at the regional geology library.",
+    "metadata": {
+      "title": "Glacier measurements",
+      "language": "en",
+      "scrapeId": "01a0f3c8-20f5-728e-8155-5f39953ab55b",
+      "sourceURL": "http://172.31.172.243:45387/validation/background-clock.html",
+      "url": "http://172.31.172.243:45387/validation/background-clock.html",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "proxyUsed": "basic",
+      "creditsUsed": 1,
+      "concurrencyLimited": false
+    }
+  }
+}
