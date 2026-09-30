@@ -1,4 +1,4 @@
-import { lookup as dnsLookup } from "node:dns";
+import { lookup as dnsLookup, promises as dnsPromises } from "node:dns";
 import type { LookupAddress, LookupAllOptions, LookupOneOptions } from "node:dns";
 import ipaddr from "ipaddr.js";
 import { FetchkeepError } from "./errors.js";
@@ -96,9 +96,7 @@ export class NetworkPolicy {
       this.assertAddress(host, host);
       return [host];
     }
-    const addrs = await new Promise<LookupAddress[]>((resolve, reject) =>
-      dnsLookup(host, { all: true, verbatim: true }, (err, res) => (err ? reject(err) : resolve(res))),
-    );
+    const addrs = await dnsPromises.lookup(host, { all: true, verbatim: true });
     return this.filterResolved(host, addrs).map((a) => a.address);
   }
 

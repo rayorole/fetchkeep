@@ -65,16 +65,18 @@ describe("NetworkPolicy.checkUrl", () => {
 describe("NetworkPolicy.lookup", () => {
   it("refuses hostnames that resolve to loopback", async () => {
     const policy = new NetworkPolicy();
-    const err = await new Promise<unknown>((resolve) => policy.lookup("localhost", { all: true }, (e) => resolve(e)));
+    const { promise, resolve } = Promise.withResolvers<unknown>();
+    policy.lookup("localhost", { all: true }, (e) => resolve(e));
+    const err = await promise;
     expect(err).toBeInstanceOf(FetchkeepError);
     expect((err as FetchkeepError).code).toBe("blocked_by_policy");
   });
 
   it("returns only checked addresses when the host is allow-listed", async () => {
     const policy = new NetworkPolicy({ allowHosts: ["localhost"] });
-    const addr = await new Promise<string>((resolve, reject) =>
-      policy.lookup("localhost", { family: 4 }, (e, a) => (e ? reject(e) : resolve(a as string))),
-    );
+    const { promise, resolve, reject } = Promise.withResolvers<string>();
+    policy.lookup("localhost", { family: 4 }, (e, a) => (e ? reject(e) : resolve(a as string)));
+    const addr = await promise;
     expect(addr).toBe("127.0.0.1");
   });
 });

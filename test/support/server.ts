@@ -1,6 +1,7 @@
 import { createServer } from "node:http";
 import type { IncomingMessage, ServerResponse } from "node:http";
 import type { AddressInfo } from "node:net";
+import { once } from "node:events";
 
 export type Handler = (req: IncomingMessage, res: ServerResponse, url: URL) => void | Promise<void>;
 
@@ -26,17 +27,20 @@ export async function startServer(routes: Record<string, Handler>): Promise<Test
       res.writeHead(500).end(String(err));
     });
   });
-  await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", resolve));
+  const listening = once(server, "listening");
+  server.listen(0, "127.0.0.1");
+  await listening;
   const port = (server.address() as AddressInfo).port;
   return {
     url: `http://127.0.0.1:${port}`,
     port,
     hits,
-    close: () =>
-      new Promise<void>((resolve) => {
-        server.closeAllConnections();
-        server.close(() => resolve());
-      }),
+    close: async () => {
+      const closed = once(server, "close");
+      server.closeAllConnections();
+      server.close();
+      await closed;
+    },
   };
 }
 
