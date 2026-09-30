@@ -8,19 +8,12 @@ The workflow requires a stable `vX.Y.Z` tag matching `package.json`, with its co
 
 The clean-install smoke accesses npm and example.com. A network outage fails the release rather than publishing an unverified package. Rerun failed jobs after resolving the outage. An already-published version will fail publication instead of being silently skipped.
 
-## One-time owner setup (required)
+## Trusted publisher configuration
 
-At setup time `fetchkeep` returned npm 404 and the local npm session was unauthenticated. Repository automation cannot create the npm-side trust relationship without the package owner's account.
+The owner has published `fetchkeep@0.1.0` and configured npm trusted publishing. Bootstrap is complete:
+do not manually republish that version. Future releases use the workflow.
 
-1. Sign in to the intended npm owner account with 2FA: `npm login`, then `npm whoami`.
-2. Bootstrap the package once. Download the already verified [v0.1.0 tarball and checksum](https://github.com/rayorole/fetchkeep/releases/tag/v0.1.0), verify SHA-256, then run:
-
-   ```sh
-   npm publish ./fetchkeep-0.1.0.tgz --access public
-   ```
-
-   This is the one-time authenticated publish that creates package settings. Confirm the name is still available; a 404 at setup is not a name reservation. Do not put login credentials or tokens into GitHub.
-3. In npm → `fetchkeep` → Settings → Trusted publishing, add GitHub Actions:
+The npm package's Settings → Trusted publishing entry must match:
 
    | Field | Value |
    |---|---|
@@ -30,8 +23,11 @@ At setup time `fetchkeep` returned npm 404 and the local npm session was unauthe
    | Environment name | `npm` |
    | Allowed actions | Enable direct `npm publish` |
 
-4. In GitHub → Settings → Environments → `npm`, optionally require a release reviewer and restrict deployment tags to `v*`. Keep the environment name identical to npm's configuration. Protect `main` and release tags against unauthorized changes.
-5. After the first successful OIDC release, disable token-based publishing in npm package settings if no other publisher needs it. Keep account recovery/2FA configured.
+The GitHub `npm` environment permits `v*` tags. Optionally require a release reviewer. Keep its name identical
+to npm's configuration and protect `main` and release tags against unauthorized changes.
+
+After the first successful OIDC release, disable token-based publishing in npm package settings if no other
+publisher needs it. Keep account recovery/2FA configured; do not put login credentials or tokens into GitHub.
 
 Trusted publishing requires GitHub-hosted runners, Node >=22.14 and npm >=11.5.1. The publish job uses Node 24 and checks its npm version. Source: [npm trusted publishing documentation](https://docs.npmjs.com/trusted-publishers/).
 
@@ -51,4 +47,4 @@ Trusted publishing requires GitHub-hosted runners, Node >=22.14 and npm >=11.5.1
    Replace the example version with the exact package version. Creating a draft or pushing the tag alone does not publish npm; publishing the GitHub release does.
 3. Approve the `npm` environment deployment if configured. Inspect the Publish npm workflow and registry provenance, then verify `npm view fetchkeep version` and install the exact version in a clean environment.
 
-The existing v0.1.0 release predates this workflow and will not trigger it retroactively. Bootstrap v0.1.0 manually as above; use the workflow starting with the next version. Do not move the existing tag or recreate its release just to trigger CI.
+The v0.1.0 release predates this workflow. OIDC publishing starts with v0.1.1. Do not move existing tags or recreate old releases to trigger CI.

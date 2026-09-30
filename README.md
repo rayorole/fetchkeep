@@ -15,7 +15,7 @@ returns citations you can re-read later — through a CLI and an MCP server.
 - **Honest results.** One response envelope for CLI and MCP with status (`success` / `partial` / `error`),
   backend attempts, timings, truncation and actionable errors.
 
-Status: v0.1.0. Apache-2.0.
+Status: v0.1.1. Apache-2.0.
 
 ## Install
 
@@ -23,12 +23,12 @@ Requires Node.js ≥ 22.19 (current LTS lines 22 and 24). No native build step: 
 `node:sqlite`.
 
 ```sh
-npm install -g https://github.com/rayorole/fetchkeep/releases/download/v0.1.0/fetchkeep-0.1.0.tgz
+npm install -g fetchkeep
 fetchkeep doctor
 ```
 
-Fetchkeep is not published to the npm registry yet; the release tarball above is the npm-ready package. From a
-checkout: `npm ci && npm run build && npm link`. The install pulls no browser and requires no compiler.
+The package is available on the npm registry. From a checkout: `npm ci && npm run build && npm link`.
+The install pulls no browser and requires no compiler.
 
 ## Quick start
 

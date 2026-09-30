@@ -3,13 +3,18 @@
 All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
-## Unreleased
+## [0.1.1] - 2026-09-30
 
 ### Added
 
 - Stable GitHub release-triggered npm publishing with tag/version and main-ancestry gates, Linux/Windows
   Node 22/24 verification, clean-install smoke checks, OIDC trusted publishing and provenance.
 - Maintainer instructions for one-time npm package bootstrap and trusted-publisher configuration.
+
+### Changed
+
+- Installation instructions now use the npm registry following the initial v0.1.0 publication.
+- No retrieval behavior changes.
 
 ## [0.1.0] - 2026-09-30
 
@@ -53,3 +58,4 @@ First release.
   local fake server, not a real installed model. The npm registry package is not published.
 
 [0.1.0]: https://github.com/rayorole/fetchkeep/releases/tag/v0.1.0
+[0.1.1]: https://github.com/rayorole/fetchkeep/releases/tag/v0.1.1
