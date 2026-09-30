@@ -1,0 +1,11 @@
+{
+  "text": "# Regional rainfall | Northwind Journal\nhttp://172.31.172.243:40121/data/rainfall.html\n\n# Regional rainfall, first half of the year\n\nMonthly totals in millimetres, measured at three stations operated by the valley water board.\n\n| Month | Upper Ford | Millbrook | Estuary |\n| --- | --- | --- | --- |\n| January | 112 | 98 | 74 |\n| February | 87 | 90 | 61 |\n| March | 101 | 84 | 70 |\n| April | 64 | 59 | 42 |\n| May | 55 | 60 | 38 |\n| June | 47 | 41 | 29 |\n\n## Station metadata\n\n| Station | Elevation | Opened |\n| --- | --- | --- |\n| Upper Ford | 412 m | 1961 |\n| Millbrook | not recorded |  |\n| Estuary | 3 m | 1988 |\n\nTotals for Millbrook in March were estimated from a neighbouring gauge after a sensor fault.",
+  "structured": {
+    "changed": "new",
+    "content_kind": "Table",
+    "content_ok": true,
+    "lang": "en",
+    "url": "http://172.31.172.243:40121/data/rainfall.html"
+  },
+  "isError": false
+}

@@ -1,5 +1,18 @@
 # Measured results — 2026-09-30
 
+## v0.1.3 evidence status
+
+The version bump includes verified implementation changes. The seven-repetition
+[intermediate full report](2026-09-30-improvements/report.md) and
+[standalone HTML](2026-09-30-improvements/report.html) measure source `35c1701`, **not the final v0.1.3 code**.
+That intermediate policy still missed the original ten-second delayed-JavaScript case. The later fix at
+`baf2b28` retrieved all three annotated passages on both Chromium and Lightpanda and reopened exact saved
+citations. Native browser regression coverage passed 26/26; Windows Chromium passed 14/14.
+
+A separate final-source benchmark sweep was started before the requested merge/version bump; its results
+are not claimed here until publication. Lightpanda's React output still has a code-line formatting gap in the
+intermediate run; strict code scoring retains that failure. HTTP and Chromium preserve the annotated line.
+
 ## Component profiles and MCP workflows — issues #37–40
 
 These are separate workloads, **not substitutes for end-to-end live retrieval**. Production changes are in
@@ -66,13 +79,13 @@ case-population confidence intervals.
 
 ### Validation provenance
 
-The eight-case corpus was frozen before the optimized implementation was exercised. The first
+The eight-case corpus was frozen before its first validation run. The first
 [validation report](2026-09-30-validation/report.md) is retained, including its failure evidence. One authored
 fixture, `val-nested-shadow`, had a missing closing brace: its JavaScript could not execute, so that case is invalid
 as a product-quality measurement in the first run. The single-brace correction changes neither product code,
 expectations nor scoring and has a separately named `validation-corrected` suite. Seven other cases were valid
-in the original run. Neither the corrected rerun nor previously inspected historical holdouts are independent
-external evidence.
+in the original run. The final-source rerun also includes the separately verified fix for the original historical
+ten-second site. Neither that rerun nor previously inspected historical holdouts are independent external evidence.
 
 The original validation records `fetchkeepDirty: true` because completed, untracked result
 directories existed under `bench/results/` in the native worktree. The observed worktree status contained only

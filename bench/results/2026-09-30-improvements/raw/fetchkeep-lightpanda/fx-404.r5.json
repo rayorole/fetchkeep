@@ -1,0 +1,32 @@
+{
+  "status": "error",
+  "tool": "web_fetch",
+  "timings": {
+    "totalMs": 2021.8
+  },
+  "warnings": [],
+  "backend": {
+    "mode": "lightpanda",
+    "used": null,
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "lightpanda",
+        "outcome": "failed",
+        "reason": "HTTP 404 from http://172.31.172.243:40121/missing/page.html (lightpanda)",
+        "errorCode": "http_error",
+        "durationMs": 2021.596782000037,
+        "httpStatus": 404
+      }
+    ]
+  },
+  "error": {
+    "code": "http_error",
+    "message": "HTTP 404 from http://172.31.172.243:40121/missing/page.html (lightpanda)",
+    "retryable": false,
+    "details": {
+      "status": 404,
+      "finalUrl": "http://172.31.172.243:40121/missing/page.html"
+    }
+  }
+}

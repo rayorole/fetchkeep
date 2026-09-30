@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "data": {
+    "markdown": "404 Not Found\n=============",
+    "metadata": {
+      "title": "Not found",
+      "scrapeId": "01a0f3e2-a157-7295-b1d7-f5cccb016516",
+      "sourceURL": "http://172.31.172.243:40121/missing/page.html",
+      "url": "http://172.31.172.243:40121/missing/page.html",
+      "statusCode": 404,
+      "error": "Not Found",
+      "contentType": "text/html",
+      "proxyUsed": "basic",
+      "creditsUsed": 1,
+      "concurrencyLimited": false
+    }
+  }
+}

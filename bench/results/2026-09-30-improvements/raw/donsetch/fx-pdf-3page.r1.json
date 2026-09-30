@@ -1,0 +1,15 @@
+{
+  "text": "# Passenger Safety Briefing\nhttp://172.31.172.243:40121/files/ferry-safety.pdf\n\nLife jackets are stored under every seat on the upper deck. Children under twelve must wear a life jacket on open decks.\n\n## Muster stations\n\nMuster station B is next to the cafe on the main deck.\n\nIn an emergency, follow the instructions of the crew at all times.",
+  "structured": {
+    "changed": "new",
+    "content_kind": "Page",
+    "content_ok": true,
+    "lang": "en",
+    "pdf": {
+      "ocr_pages": 0,
+      "pages": 3
+    },
+    "url": "http://172.31.172.243:40121/files/ferry-safety.pdf"
+  },
+  "isError": false
+}

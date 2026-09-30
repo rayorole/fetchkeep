@@ -1,0 +1,63 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_3801228723c34124",
+    "version": 1,
+    "ref": "fk:d_3801228723c34124@1",
+    "requestedUrl": "http://172.31.172.243:40121/data/ferry-results.html",
+    "finalUrl": "http://172.31.172.243:40121/data/ferry-results.html",
+    "title": "Quarterly results for the ferry cooperative | Northwind Journal",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T19:41:55.946Z",
+    "contentHash": "247a21ea2a85f495df7cb408024e6750bc53ba457c16032c7f5feb8f2d4b2543",
+    "rawHash": "16745df4db35c3c44be33c08b45660f308af814827ef3f9fcf3993942f930a3c",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "http",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Quarterly results for the ferry cooperative\n\nThe cooperative carried more passengers than in any previous quarter, but fuel costs rose faster than fares.\n\n| Line item | Q1 | Q2 | Change |\n| --- | --- | --- | --- |\n| Passenger fares | 1,204,000 | 1,388,500 | +15.3% |\n| Fuel | 402,100 | 497,900 | +23.8% |\n| Crew wages | 511,000 | 519,400 | +1.6% |\n| **Operating surplus** | 290,900 | 371,200 | +27.6% |\n\nMembers will vote on a fare adjustment at the annual meeting."
+  },
+  "backend": {
+    "mode": "http",
+    "used": "http",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "http",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 4.078374000033364
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 467,
+    "returnedChars": 467,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "firstByteMs": 1.8,
+    "downloadMs": 1.9,
+    "extractMs": 2.1,
+    "saveMs": 0.2,
+    "totalMs": 4.6
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_3801228723c34124@1",
+    "url": "http://172.31.172.243:40121/data/ferry-results.html",
+    "title": "Quarterly results for the ferry cooperative | Northwind Journal",
+    "fetchedAt": "2026-09-30T19:41:55.946Z",
+    "version": 1,
+    "contentHash": "247a21ea2a85f495df7cb408024e6750bc53ba457c16032c7f5feb8f2d4b2543"
+  }
+}

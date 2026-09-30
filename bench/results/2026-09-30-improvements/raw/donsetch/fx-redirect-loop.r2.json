@@ -1,0 +1,25 @@
+{
+  "text": "blocked: http://172.31.172.243:40121/loop/a returned HTTP 302\n\nNext action: server rejected the request : retrying later sometimes works",
+  "structured": {
+    "code": "content.extract",
+    "escalation": [
+      {
+        "action": "domain-profile",
+        "ms": 0,
+        "outcome": "cold",
+        "tier": "route"
+      },
+      {
+        "action": "http-fetch",
+        "ms": 7,
+        "outcome": "Blocked status=302",
+        "tier": "1"
+      }
+    ],
+    "next_action": "server rejected the request : retrying later sometimes works",
+    "status": 302,
+    "url": "http://172.31.172.243:40121/loop/a",
+    "verdict": "Blocked"
+  },
+  "isError": true
+}

@@ -1,0 +1,68 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_afe849b9fdd03966",
+    "version": 1,
+    "ref": "fk:d_afe849b9fdd03966@1",
+    "requestedUrl": "http://172.31.172.243:40121/articles/frost-ledger.html",
+    "finalUrl": "http://172.31.172.243:40121/articles/frost-ledger.html",
+    "title": "The orchard that keeps a ledger of frost | Northwind Journal",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T19:51:40.444Z",
+    "contentHash": "4aa0f219c7741e95bd9b6db22f19d258a1a37b300b84d891928f4b5f99f51cc1",
+    "rawHash": "3e42fbc0af111f5168c49264f20cdbac3ee5abf06bd9d147861db58f3559dfa2",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "readability",
+    "backend": "lightpanda",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# The orchard that keeps a ledger of frost\n\nFor three generations the Aldana family has written down the date of the first autumn frost on the inside of a barn door. The oldest entry, in faded pencil, reads the fourteenth of October.\n\n## A record written on wood\n\nHistorians visiting the farm photographed every entry. Some years have two dates, because a warm spell melted the first frost and the family decided it did not count.\n\n- Entries begin in the spring of the first planting.\n- Every entry lists the variety that was picked last.\n- Three years are missing because the barn was being repaired.\n\n## Comparing the door with instruments\n\nA regional weather station opened twelve kilometres away decades later. Where the two overlap, the door agrees with the station to within four days in most years.\n\n![Pencil marks on a barn door](http://172.31.172.243:40121/img/door.png)\n\nPencil marks on the barn door, photographed in autumn.\n\n### What the family plans next\n\nThe youngest Aldana has started a spreadsheet, but the door will stay. Nobody, she said, is going to paint over it."
+  },
+  "backend": {
+    "mode": "lightpanda",
+    "used": "lightpanda",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "lightpanda",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 521.4233530000784
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 1084,
+    "returnedChars": 1084,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "launchMs": 8.4,
+    "navigateMs": 1.6,
+    "readinessMs": 507.3,
+    "serializeMs": 0.6,
+    "renderMs": 517.9,
+    "extractMs": 2.3,
+    "subrequests": 1,
+    "subrequestsBlocked": 0,
+    "saveMs": 0.2,
+    "totalMs": 521.7
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_afe849b9fdd03966@1",
+    "url": "http://172.31.172.243:40121/articles/frost-ledger.html",
+    "title": "The orchard that keeps a ledger of frost | Northwind Journal",
+    "fetchedAt": "2026-09-30T19:51:40.444Z",
+    "version": 1,
+    "contentHash": "4aa0f219c7741e95bd9b6db22f19d258a1a37b300b84d891928f4b5f99f51cc1"
+  }
+}

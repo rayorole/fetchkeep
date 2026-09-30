@@ -1,0 +1,141 @@
+profile,dataset,phase,definition,eligible_attempts,p50_ms,ci_low,ci_high,cases,attempts
+fetchkeep-http,fixture,downloadMs,"HTTP network and body decoding, including redirects",102,1.2,1.1,1.5,17,102
+fetchkeep-http,fixture,firstByteMs,HTTP first byte (nested within downloadMs; not additive),102,1.1,1,1.3,17,102
+fetchkeep-http,fixture,launchMs,Browser launch/acquire,102,,,,0,0
+fetchkeep-http,fixture,navigateMs,Browser navigation,102,,,,0,0
+fetchkeep-http,fixture,readinessMs,Bounded content readiness,102,,,,0,0
+fetchkeep-http,fixture,serializeMs,DOM serialization,102,,,,0,0
+fetchkeep-http,fixture,extractMs,Content extraction,102,2.8,1.9,3.8,17,102
+fetchkeep-http,fixture,renderMs,Browser render total (overlaps browser phases; not additive),102,,,,0,0
+fetchkeep-http,fixture,saveMs,Local persistence,102,0.2,0.2,0.2,17,102
+fetchkeep-http,fixture,totalMs,Engine total (includes phases; do not sum with them),102,4.8,4,6.8,17,102
+fetchkeep-chromium,fixture,downloadMs,"HTTP network and body decoding, including redirects",102,1.8,1.6,1.8,3,18
+fetchkeep-chromium,fixture,firstByteMs,HTTP first byte (nested within downloadMs; not additive),102,1.6,1.5,1.6,3,18
+fetchkeep-chromium,fixture,launchMs,Browser launch/acquire,102,30.4,29.3,31.1,14,84
+fetchkeep-chromium,fixture,navigateMs,Browser navigation,102,17.3,15.9,22.8,14,84
+fetchkeep-chromium,fixture,readinessMs,Bounded content readiness,102,523.4,521.4,525.5,14,84
+fetchkeep-chromium,fixture,serializeMs,DOM serialization,102,2.3,2.3,2.4,14,84
+fetchkeep-chromium,fixture,extractMs,Content extraction,102,3,2.5,4.1,17,102
+fetchkeep-chromium,fixture,renderMs,Browser render total (overlaps browser phases; not additive),102,576.8,572.2,586,14,84
+fetchkeep-chromium,fixture,saveMs,Local persistence,102,0.2,0.2,0.2,17,102
+fetchkeep-chromium,fixture,totalMs,Engine total (includes phases; do not sum with them),102,582.5,574.2,591.1,17,102
+fetchkeep-lightpanda,fixture,downloadMs,"HTTP network and body decoding, including redirects",102,1.9,1.7,2,3,18
+fetchkeep-lightpanda,fixture,firstByteMs,HTTP first byte (nested within downloadMs; not additive),102,1.8,1.4,1.8,3,18
+fetchkeep-lightpanda,fixture,launchMs,Browser launch/acquire,102,10.4,9.9,10.8,14,84
+fetchkeep-lightpanda,fixture,navigateMs,Browser navigation,102,2.2,1.9,2.7,14,84
+fetchkeep-lightpanda,fixture,readinessMs,Bounded content readiness,102,508,507.6,508.5,14,84
+fetchkeep-lightpanda,fixture,serializeMs,DOM serialization,102,0.7,0.7,0.7,14,84
+fetchkeep-lightpanda,fixture,extractMs,Content extraction,102,2.7,2.2,3.2,17,102
+fetchkeep-lightpanda,fixture,renderMs,Browser render total (overlaps browser phases; not additive),102,522.7,521.3,525.6,14,84
+fetchkeep-lightpanda,fixture,saveMs,Local persistence,102,0.2,0.2,0.2,17,102
+fetchkeep-lightpanda,fixture,totalMs,Engine total (includes phases; do not sum with them),102,530.8,527.1,535.8,17,102
+fetchkeep-auto,fixture,downloadMs,"HTTP network and body decoding, including redirects",102,1.2,1.2,1.5,17,102
+fetchkeep-auto,fixture,firstByteMs,HTTP first byte (nested within downloadMs; not additive),102,1.1,1,1.2,17,102
+fetchkeep-auto,fixture,launchMs,Browser launch/acquire,102,37.5,35.7,51.6,2,12
+fetchkeep-auto,fixture,navigateMs,Browser navigation,102,20.6,17.1,20.6,2,12
+fetchkeep-auto,fixture,readinessMs,Bounded content readiness,102,523.3,517.4,523.3,2,12
+fetchkeep-auto,fixture,serializeMs,DOM serialization,102,2.3,2.2,2.3,2,12
+fetchkeep-auto,fixture,extractMs,Content extraction,102,2.6,1.8,3.5,17,102
+fetchkeep-auto,fixture,renderMs,Browser render total (overlaps browser phases; not additive),102,593.4,592.5,593.4,2,12
+fetchkeep-auto,fixture,saveMs,Local persistence,102,0.2,0.2,0.2,17,102
+fetchkeep-auto,fixture,totalMs,Engine total (includes phases; do not sum with them),102,5.2,3.8,7.7,17,102
+firecrawl-selfhost,fixture,downloadMs,"HTTP network and body decoding, including redirects",97,,,,0,0
+firecrawl-selfhost,fixture,firstByteMs,HTTP first byte (nested within downloadMs; not additive),97,,,,0,0
+firecrawl-selfhost,fixture,launchMs,Browser launch/acquire,97,,,,0,0
+firecrawl-selfhost,fixture,navigateMs,Browser navigation,97,,,,0,0
+firecrawl-selfhost,fixture,readinessMs,Bounded content readiness,97,,,,0,0
+firecrawl-selfhost,fixture,serializeMs,DOM serialization,97,,,,0,0
+firecrawl-selfhost,fixture,extractMs,Content extraction,97,,,,0,0
+firecrawl-selfhost,fixture,renderMs,Browser render total (overlaps browser phases; not additive),97,,,,0,0
+firecrawl-selfhost,fixture,saveMs,Local persistence,97,,,,0,0
+firecrawl-selfhost,fixture,totalMs,Engine total (includes phases; do not sum with them),97,,,,0,0
+firecrawl-hosted,fixture,downloadMs,"HTTP network and body decoding, including redirects",0,,,,0,0
+firecrawl-hosted,fixture,firstByteMs,HTTP first byte (nested within downloadMs; not additive),0,,,,0,0
+firecrawl-hosted,fixture,launchMs,Browser launch/acquire,0,,,,0,0
+firecrawl-hosted,fixture,navigateMs,Browser navigation,0,,,,0,0
+firecrawl-hosted,fixture,readinessMs,Bounded content readiness,0,,,,0,0
+firecrawl-hosted,fixture,serializeMs,DOM serialization,0,,,,0,0
+firecrawl-hosted,fixture,extractMs,Content extraction,0,,,,0,0
+firecrawl-hosted,fixture,renderMs,Browser render total (overlaps browser phases; not additive),0,,,,0,0
+firecrawl-hosted,fixture,saveMs,Local persistence,0,,,,0,0
+firecrawl-hosted,fixture,totalMs,Engine total (includes phases; do not sum with them),0,,,,0,0
+donsetch,fixture,downloadMs,"HTTP network and body decoding, including redirects",102,,,,0,0
+donsetch,fixture,firstByteMs,HTTP first byte (nested within downloadMs; not additive),102,,,,0,0
+donsetch,fixture,launchMs,Browser launch/acquire,102,,,,0,0
+donsetch,fixture,navigateMs,Browser navigation,102,,,,0,0
+donsetch,fixture,readinessMs,Bounded content readiness,102,,,,0,0
+donsetch,fixture,serializeMs,DOM serialization,102,,,,0,0
+donsetch,fixture,extractMs,Content extraction,102,,,,0,0
+donsetch,fixture,renderMs,Browser render total (overlaps browser phases; not additive),102,,,,0,0
+donsetch,fixture,saveMs,Local persistence,102,,,,0,0
+donsetch,fixture,totalMs,Engine total (includes phases; do not sum with them),102,,,,0,0
+fetchkeep-http,live,downloadMs,"HTTP network and body decoding, including redirects",144,253.3,113.2,353.6,24,144
+fetchkeep-http,live,firstByteMs,HTTP first byte (nested within downloadMs; not additive),144,167.4,97.2,342.3,24,144
+fetchkeep-http,live,launchMs,Browser launch/acquire,144,,,,0,0
+fetchkeep-http,live,navigateMs,Browser navigation,144,,,,0,0
+fetchkeep-http,live,readinessMs,Bounded content readiness,144,,,,0,0
+fetchkeep-http,live,serializeMs,DOM serialization,144,,,,0,0
+fetchkeep-http,live,extractMs,Content extraction,144,95.1,33.3,158.2,24,144
+fetchkeep-http,live,renderMs,Browser render total (overlaps browser phases; not additive),144,,,,0,0
+fetchkeep-http,live,saveMs,Local persistence,144,0.3,0.3,0.4,24,144
+fetchkeep-http,live,totalMs,Engine total (includes phases; do not sum with them),144,370.5,262,488.6,24,144
+fetchkeep-chromium,live,downloadMs,"HTTP network and body decoding, including redirects",144,275.2,254.4,306.1,3,18
+fetchkeep-chromium,live,firstByteMs,HTTP first byte (nested within downloadMs; not additive),144,235.2,84.2,267.6,3,18
+fetchkeep-chromium,live,launchMs,Browser launch/acquire,144,31.6,30.2,32.6,21,126
+fetchkeep-chromium,live,navigateMs,Browser navigation,144,595,398.7,847.1,21,126
+fetchkeep-chromium,live,readinessMs,Bounded content readiness,144,538,530.7,543.9,21,126
+fetchkeep-chromium,live,serializeMs,DOM serialization,144,8.4,6,12.5,21,126
+fetchkeep-chromium,live,extractMs,Content extraction,144,114.5,46.6,190.5,24,144
+fetchkeep-chromium,live,renderMs,Browser render total (overlaps browser phases; not additive),144,1287.8,976.3,1435.8,21,126
+fetchkeep-chromium,live,saveMs,Local persistence,144,0.3,0.3,0.4,24,144
+fetchkeep-chromium,live,totalMs,Engine total (includes phases; do not sum with them),144,1333.3,1140.3,1529.9,24,144
+fetchkeep-lightpanda,live,downloadMs,"HTTP network and body decoding, including redirects",144,294.3,215.6,320.2,3,18
+fetchkeep-lightpanda,live,firstByteMs,HTTP first byte (nested within downloadMs; not additive),144,206.8,81.8,254.7,3,18
+fetchkeep-lightpanda,live,launchMs,Browser launch/acquire,144,10.8,10.3,11.2,21,126
+fetchkeep-lightpanda,live,navigateMs,Browser navigation,144,475,189.8,611.6,21,126
+fetchkeep-lightpanda,live,readinessMs,Bounded content readiness,144,538,523.7,547.6,21,126
+fetchkeep-lightpanda,live,serializeMs,DOM serialization,144,3.1,1.4,7.3,21,126
+fetchkeep-lightpanda,live,extractMs,Content extraction,144,105,44.5,142.7,24,144
+fetchkeep-lightpanda,live,renderMs,Browser render total (overlaps browser phases; not additive),144,1056.4,765.5,1226.2,21,126
+fetchkeep-lightpanda,live,saveMs,Local persistence,144,0.3,0.3,0.4,24,144
+fetchkeep-lightpanda,live,totalMs,Engine total (includes phases; do not sum with them),144,1213,1053.4,1414.7,24,144
+fetchkeep-auto,live,downloadMs,"HTTP network and body decoding, including redirects",144,248.2,113.3,354.4,24,144
+fetchkeep-auto,live,firstByteMs,HTTP first byte (nested within downloadMs; not additive),144,163,103,327.5,24,144
+fetchkeep-auto,live,launchMs,Browser launch/acquire,144,56.2,42.3,56.2,3,18
+fetchkeep-auto,live,navigateMs,Browser navigation,144,828.2,489.2,854.8,3,18
+fetchkeep-auto,live,readinessMs,Bounded content readiness,144,520.2,516.4,1095.7,3,18
+fetchkeep-auto,live,serializeMs,DOM serialization,144,3.1,2.7,4.4,3,18
+fetchkeep-auto,live,extractMs,Content extraction,144,92.8,31.7,153.5,24,144
+fetchkeep-auto,live,renderMs,Browser render total (overlaps browser phases; not additive),144,1474.1,1411.9,1717.2,3,18
+fetchkeep-auto,live,saveMs,Local persistence,144,0.3,0.3,0.4,24,144
+fetchkeep-auto,live,totalMs,Engine total (includes phases; do not sum with them),144,422.1,280,663.5,24,144
+firecrawl-selfhost,live,downloadMs,"HTTP network and body decoding, including redirects",138,,,,0,0
+firecrawl-selfhost,live,firstByteMs,HTTP first byte (nested within downloadMs; not additive),138,,,,0,0
+firecrawl-selfhost,live,launchMs,Browser launch/acquire,138,,,,0,0
+firecrawl-selfhost,live,navigateMs,Browser navigation,138,,,,0,0
+firecrawl-selfhost,live,readinessMs,Bounded content readiness,138,,,,0,0
+firecrawl-selfhost,live,serializeMs,DOM serialization,138,,,,0,0
+firecrawl-selfhost,live,extractMs,Content extraction,138,,,,0,0
+firecrawl-selfhost,live,renderMs,Browser render total (overlaps browser phases; not additive),138,,,,0,0
+firecrawl-selfhost,live,saveMs,Local persistence,138,,,,0,0
+firecrawl-selfhost,live,totalMs,Engine total (includes phases; do not sum with them),138,,,,0,0
+firecrawl-hosted,live,downloadMs,"HTTP network and body decoding, including redirects",0,,,,0,0
+firecrawl-hosted,live,firstByteMs,HTTP first byte (nested within downloadMs; not additive),0,,,,0,0
+firecrawl-hosted,live,launchMs,Browser launch/acquire,0,,,,0,0
+firecrawl-hosted,live,navigateMs,Browser navigation,0,,,,0,0
+firecrawl-hosted,live,readinessMs,Bounded content readiness,0,,,,0,0
+firecrawl-hosted,live,serializeMs,DOM serialization,0,,,,0,0
+firecrawl-hosted,live,extractMs,Content extraction,0,,,,0,0
+firecrawl-hosted,live,renderMs,Browser render total (overlaps browser phases; not additive),0,,,,0,0
+firecrawl-hosted,live,saveMs,Local persistence,0,,,,0,0
+firecrawl-hosted,live,totalMs,Engine total (includes phases; do not sum with them),0,,,,0,0
+donsetch,live,downloadMs,"HTTP network and body decoding, including redirects",138,,,,0,0
+donsetch,live,firstByteMs,HTTP first byte (nested within downloadMs; not additive),138,,,,0,0
+donsetch,live,launchMs,Browser launch/acquire,138,,,,0,0
+donsetch,live,navigateMs,Browser navigation,138,,,,0,0
+donsetch,live,readinessMs,Bounded content readiness,138,,,,0,0
+donsetch,live,serializeMs,DOM serialization,138,,,,0,0
+donsetch,live,extractMs,Content extraction,138,,,,0,0
+donsetch,live,renderMs,Browser render total (overlaps browser phases; not additive),138,,,,0,0
+donsetch,live,saveMs,Local persistence,138,,,,0,0
+donsetch,live,totalMs,Engine total (includes phases; do not sum with them),138,,,,0,0

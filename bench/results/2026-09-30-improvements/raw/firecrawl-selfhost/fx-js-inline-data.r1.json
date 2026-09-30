@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "data": {
+    "markdown": "Glossary of harbour terms\n=========================\n\nBollard\n\nA short post on a quay used for mooring ships.\n\nFender\n\nA cushion that protects a hull from the quay wall.\n\nSlipway\n\nA ramp that lets boats move between land and water.",
+    "metadata": {
+      "title": "Glossary",
+      "language": "en",
+      "scrapeId": "01a0f3cb-58e6-7479-afcc-ce870828a8fc",
+      "sourceURL": "http://172.31.172.243:40121/js/next-data.html",
+      "url": "http://172.31.172.243:40121/js/next-data.html",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "proxyUsed": "basic",
+      "creditsUsed": 1,
+      "concurrencyLimited": false
+    }
+  }
+}

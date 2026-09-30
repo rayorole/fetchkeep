@@ -1,0 +1,63 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_5adff197ebb4aacd",
+    "version": 1,
+    "ref": "fk:d_5adff197ebb4aacd@1",
+    "requestedUrl": "http://172.31.172.243:40121/files/notice.txt",
+    "finalUrl": "http://172.31.172.243:40121/files/notice.txt",
+    "title": "HARBOUR NOTICE 17",
+    "contentType": "text/plain",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T19:41:23.254Z",
+    "contentHash": "c43ba641d0a6588c431fccfb0bb63d4970cdbb59abd7c283bdb369daa4589647",
+    "rawHash": "56eb3877ff7c664270207f03466293a553b5793d1292176e6af82d86ae68a97e",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "text",
+    "backend": "http",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "HARBOUR NOTICE 17\n\nThe north breakwater will be closed to pedestrians from Monday for resurfacing.\n\nAnglers may use the south pier during the works."
+  },
+  "backend": {
+    "mode": "http",
+    "used": "http",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "http",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 1.0739449999528006
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 148,
+    "returnedChars": 148,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "firstByteMs": 0.8,
+    "downloadMs": 1,
+    "extractMs": 0.1,
+    "saveMs": 0.2,
+    "totalMs": 1.5
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_5adff197ebb4aacd@1",
+    "url": "http://172.31.172.243:40121/files/notice.txt",
+    "title": "HARBOUR NOTICE 17",
+    "fetchedAt": "2026-09-30T19:41:23.254Z",
+    "version": 1,
+    "contentHash": "c43ba641d0a6588c431fccfb0bb63d4970cdbb59abd7c283bdb369daa4589647"
+  }
+}

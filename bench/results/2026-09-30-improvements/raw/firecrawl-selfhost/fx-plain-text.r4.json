@@ -1,0 +1,16 @@
+{
+  "success": true,
+  "data": {
+    "markdown": "HARBOUR NOTICE 17\n\nThe north breakwater will be closed to pedestrians from Monday for resurfacing.\n\nAnglers may use the south pier during the works.\n",
+    "metadata": {
+      "scrapeId": "01a0f3da-7087-720f-8ae3-5fd4d1170188",
+      "sourceURL": "http://172.31.172.243:40121/files/notice.txt",
+      "url": "http://172.31.172.243:40121/files/notice.txt",
+      "statusCode": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "proxyUsed": "basic",
+      "creditsUsed": 1,
+      "concurrencyLimited": false
+    }
+  }
+}

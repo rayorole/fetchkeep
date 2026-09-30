@@ -1,0 +1,68 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_1df0cc9426cc24cf",
+    "version": 1,
+    "ref": "fk:d_1df0cc9426cc24cf@1",
+    "requestedUrl": "http://172.31.172.243:40121/slow/2500",
+    "finalUrl": "http://172.31.172.243:40121/slow/2500",
+    "title": "Slow page",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T19:42:34.816Z",
+    "contentHash": "c9e99b416f2ea358d1ad9c5603d42ae48646068b04910fcdf3a8d18115eb7e21",
+    "rawHash": "9cb2cb9b85876d9a3940168ad95a00f5910ace10df45368478b319abe18cf1f2",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "lightpanda",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Slow page\n\nThis page was deliberately slow to respond, by 2500 milliseconds."
+  },
+  "backend": {
+    "mode": "lightpanda",
+    "used": "lightpanda",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "lightpanda",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 3023.971197000006
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 78,
+    "returnedChars": 78,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "launchMs": 10.6,
+    "navigateMs": 2502.9,
+    "readinessMs": 506.7,
+    "serializeMs": 0.9,
+    "renderMs": 3021.2,
+    "extractMs": 0.9,
+    "subrequests": 1,
+    "subrequestsBlocked": 0,
+    "saveMs": 0.3,
+    "totalMs": 3024.5
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_1df0cc9426cc24cf@1",
+    "url": "http://172.31.172.243:40121/slow/2500",
+    "title": "Slow page",
+    "fetchedAt": "2026-09-30T19:42:34.816Z",
+    "version": 1,
+    "contentHash": "c9e99b416f2ea358d1ad9c5603d42ae48646068b04910fcdf3a8d18115eb7e21"
+  }
+}

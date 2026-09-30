@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "data": {
+    "markdown": "Installing the toolchain\n========================\n\nTidewater ships as a single binary. You need a 64-bit operating system and about 200 megabytes of free disk space.\n\nNote: older releases required a separate runtime. That is no longer necessary.\n\nDownload\n--------\n\nUse the installer script, then confirm that the binary is on your path:\n\n    curl -fsSL https://example.org/tidewater/install.sh | sh\n    tidewater --version\n\nInstaller options\n-----------------\n\n| Option | Default | Description |\n| --- | --- | --- |\n| `--prefix` | /usr/local | Directory that receives the binary |\n| `--channel` | stable | Release channel to install from |\n| `--no-modify-path` | off | Do not edit shell profile files |\n\nVerify the installation\n-----------------------\n\n    import tidewater\n    \n    print(tidewater.version())\n    assert tidewater.ping() == \"pong\"\n\nIf the ping fails, run `tidewater doctor` and include its output when you report a problem.",
+    "metadata": {
+      "language": "en",
+      "title": "Installing the toolchain - Tidewater Docs",
+      "scrapeId": "01a0f3db-a0c4-73b3-8de1-f52e2c4012af",
+      "sourceURL": "http://172.31.172.243:40121/docs/install.html",
+      "url": "http://172.31.172.243:40121/docs/install.html",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "proxyUsed": "basic",
+      "creditsUsed": 1,
+      "concurrencyLimited": false
+    }
+  }
+}
