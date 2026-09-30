@@ -1,0 +1,200 @@
+{
+  "name": "validation",
+  "description": "Eight separately authored cases frozen before the #37–40 optimized implementation was exercised. First-run validation; later reruns are regression evidence. Not an independent external benchmark.",
+  "license": "Apache-2.0 (original text written for Fetchkeep)",
+  "cases": [
+    {
+      "id": "val-seed-library",
+      "kind": "fetch",
+      "dataset": "fixture",
+      "url": "/validation/seed-library.html",
+      "heldOut": true,
+      "gold": "gold/val-seed-library.txt",
+      "category": "article",
+      "description": "Unseen article layout with an aside outside the article and long prose paragraphs.",
+      "mustContain": [
+        "The inland lighthouse was converted into a seed library after the reservoir was drained.",
+        "Each packet carries the collection date and the altitude of its original garden.",
+        "Visitors return twice as many seeds at the end of the growing season, but failed crops incur no penalty.",
+        "The collection is stored in clay drawers that remain cool during the afternoon heat.",
+        "A printed inventory is mailed to villages that have no reliable internet connection."
+      ],
+      "mustNotContain": [
+        "Subscribe to the valley bulletin",
+        "Sponsored garden equipment",
+        "Valley bulletin membership offers"
+      ],
+      "headings": [
+        "A lighthouse full of seeds",
+        "Keeping the collection usable"
+      ]
+    },
+    {
+      "id": "val-reference-table",
+      "kind": "fetch",
+      "dataset": "fixture",
+      "url": "/validation/reference-table.html",
+      "heldOut": true,
+      "gold": "gold/val-reference-table.txt",
+      "category": "docs",
+      "description": "Unseen semantic reference with a table, multiline JavaScript and a relative link.",
+      "mustContain": [
+        "reference chamber reaches ambient temperature",
+        "Seconds between samples",
+        "Store the raw reading before applying any calibration correction"
+      ],
+      "mustNotContain": [
+        "Purchase a sampler subscription"
+      ],
+      "headings": [
+        "Pressure sampler reference",
+        "Parameters",
+        "Example"
+      ],
+      "code": [
+        "async function sample(sensor) {\n  const value = await sensor.read();\n  return { value, unit: \"kPa\" };\n}"
+      ],
+      "tables": [
+        {
+          "rows": [
+            [
+              "Field",
+              "Type",
+              "Meaning"
+            ],
+            [
+              "interval",
+              "integer",
+              "Seconds between samples"
+            ],
+            [
+              "unit",
+              "string",
+              "Output pressure unit"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "val-inline-evidence",
+      "kind": "fetch",
+      "dataset": "fixture",
+      "url": "/validation/inline-evidence.html",
+      "heldOut": true,
+      "gold": "gold/val-inline-evidence.txt",
+      "category": "citations",
+      "description": "Exact quotations spanning inline code, strong emphasis and typographic punctuation.",
+      "mustContain": [
+        "reads archive.lock before opening the recovery journal",
+        "preserves the original timestamp and the owner’s signature",
+        "Never replace a verified snapshot with an incomplete copy"
+      ],
+      "mustNotContain": []
+    },
+    {
+      "id": "val-delayed-shell",
+      "kind": "fetch",
+      "dataset": "fixture",
+      "url": "/validation/delayed-shell.html",
+      "heldOut": true,
+      "gold": "gold/val-delayed-shell.txt",
+      "category": "javascript",
+      "description": "An asynchronous application fills a busy main region 1.25 seconds after navigation.",
+      "requiresJs": true,
+      "mustContain": [
+        "replaced the damaged control cable",
+        "retained for seven years in the municipal archive",
+        "vibration measurements from all four gates"
+      ],
+      "mustNotContain": [
+        "Loading inspection details"
+      ],
+      "headings": [
+        "Reservoir inspection"
+      ]
+    },
+    {
+      "id": "val-nested-shadow",
+      "kind": "fetch",
+      "dataset": "fixture",
+      "url": "/validation/nested-shadow.html",
+      "heldOut": true,
+      "gold": "gold/val-nested-shadow.txt",
+      "category": "javascript",
+      "description": "Nested open shadow roots with a named slot and exact multiline code; fallback slot text is not rendered.",
+      "requiresJs": true,
+      "mustContain": [
+        "one depth measurement after each completed descent",
+        "Example depth record",
+        "Disconnect the probe before replacing its protective cap"
+      ],
+      "mustNotContain": [
+        "Unused fallback caption"
+      ],
+      "headings": [
+        "Depth logger"
+      ],
+      "code": [
+        "const reading = { depth: 17, unit: \"metres\" };\nconsole.log(reading.depth);"
+      ]
+    },
+    {
+      "id": "val-background-clock",
+      "kind": "fetch",
+      "dataset": "fixture",
+      "url": "/validation/background-clock.html",
+      "heldOut": true,
+      "gold": "gold/val-background-clock.txt",
+      "category": "javascript",
+      "description": "Complete static main content with a continuously mutating peripheral clock.",
+      "requiresJs": true,
+      "mustContain": [
+        "same brass marker every August",
+        "corrected for the slope of the valley floor",
+        "regional geology library"
+      ],
+      "mustNotContain": [],
+      "headings": [
+        "Glacier measurements"
+      ]
+    },
+    {
+      "id": "val-short-notice",
+      "kind": "fetch",
+      "dataset": "fixture",
+      "url": "/validation/short-notice.html",
+      "heldOut": true,
+      "gold": "gold/val-short-notice.txt",
+      "category": "short-content",
+      "description": "Legitimate short content must not be rejected as an empty application shell.",
+      "mustContain": [
+        "closed on Tuesday for a cable inspection",
+        "signed path beside the mill"
+      ],
+      "mustNotContain": [],
+      "headings": [
+        "Bridge notice"
+      ]
+    },
+    {
+      "id": "val-unicode-protocol",
+      "kind": "fetch",
+      "dataset": "fixture",
+      "url": "/validation/unicode-protocol.html",
+      "heldOut": true,
+      "gold": "gold/val-unicode-protocol.txt",
+      "category": "unicode",
+      "description": "Mixed-language evidence, curly apostrophes, block quote and non-ASCII source code.",
+      "mustContain": [
+        "La température est relevée à midi",
+        "観測記録は毎週金曜日に保存されます",
+        "Never round a raw measurement before archiving it"
+      ],
+      "mustNotContain": [],
+      "code": [
+        "station = \"Ålesund\"\nthreshold = 0.125"
+      ]
+    }
+  ]
+}
