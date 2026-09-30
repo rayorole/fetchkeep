@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { createWriteStream } from "node:fs";
+import { createWriteStream, readFileSync } from "node:fs";
 import { once } from "node:events";
 import { Command, InvalidArgumentError, Option } from "commander";
 import { loadConfig, type ConfigOverrides } from "../core/config.js";
@@ -214,6 +214,27 @@ export function buildProgram(): Command {
     );
 
   program
+    .command("extract")
+    .description("[experimental] extract JSON matching a schema from a saved document with a local Ollama model, with evidence checks")
+    .argument("<target>", "URL (fetched and saved first if needed), document id or fk: ref")
+    .requiredOption("-s, --schema <schema>", "JSON Schema (top-level type object): a file path or inline JSON")
+    .option("-i, --instructions <text>", "extra guidance for the model")
+    .option("--model <name>", "Ollama model (default: $FETCHKEEP_OLLAMA_MODEL or ollama.model)")
+    .option("--max-chars <n>", "document characters sent to the model (default 24000)", int("max-chars"))
+    .action((target: string, o: { schema: string; instructions?: string; model?: string; maxChars?: number }) =>
+      run(g(), (fk, signal) =>
+        fk.extract({
+          target,
+          signal,
+          schema: parseSchemaOption(o.schema),
+          ...(o.instructions ? { instructions: o.instructions } : {}),
+          ...(o.model ? { model: o.model } : {}),
+          ...(o.maxChars !== undefined ? { maxChars: o.maxChars } : {}),
+        }),
+      ),
+    );
+
+  program
     .command("crawls")
     .description("list recent crawls")
     .option("-n, --limit <n>", "maximum crawls", int("limit"), 20)
@@ -340,6 +361,27 @@ export function parseAge(input: string): string {
   const d = new Date(input);
   if (Number.isNaN(d.getTime())) throw new FetchkeepError("invalid_argument", `Invalid age "${input}" (use 30d, 12h, 45m or an ISO date)`);
   return d.toISOString();
+}
+
+/** Inline JSON (starts with `{`) or a path to a JSON file. */
+function parseSchemaOption(value: string): Record<string, unknown> {
+  const inline = value.trim().startsWith("{");
+  let text = value;
+  if (!inline) {
+    try {
+      text = readFileSync(value, "utf8");
+    } catch (err) {
+      throw new FetchkeepError("invalid_argument", `Cannot read schema file ${value}: ${(err as Error).message}`);
+    }
+  }
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(text);
+  } catch (err) {
+    throw new FetchkeepError("invalid_argument", `Schema ${inline ? "argument" : `file ${value}`} is not valid JSON: ${(err as Error).message}`);
+  }
+  if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) throw new FetchkeepError("invalid_argument", "Schema must be a JSON object");
+  return parsed as Record<string, unknown>;
 }
 
 buildProgram()

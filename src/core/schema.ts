@@ -130,8 +130,8 @@ export type Citation = z.infer<typeof Citation>;
 
 export const Truncation = z.object({
   truncated: z.boolean(),
-  /** Why output or input was cut: output budget, or response-size limits while downloading. */
-  reasons: z.array(z.enum(["output_budget", "compressed_limit", "decompressed_limit", "page_limit"])),
+  /** Why output or input was cut: output budget, response-size limits while downloading, or the extraction prompt budget. */
+  reasons: z.array(z.enum(["output_budget", "compressed_limit", "decompressed_limit", "page_limit", "prompt_budget"])),
   totalChars: z.number().int(),
   returnedChars: z.number().int(),
   offset: z.number().int(),
