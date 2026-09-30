@@ -45,16 +45,21 @@
   ],
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
-    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p bench/tsconfig.json",
     "check": "npm run typecheck",
     "test": "vitest run",
     "prepack": "npm run build",
     "licenses": "node scripts/licenses.mjs",
-    "test:browser": "vitest run --config vitest.browser.config.ts"
+    "test:browser": "vitest run --config vitest.browser.config.ts",
+    "bench:fixtures": "node bench/fixtures/build.ts",
+    "bench": "npm run build && node bench/run.ts",
+    "bench:report": "node bench/report.ts",
+    "bench:publish": "node bench/publish.ts"
   },
   "devDependencies": {
     "@types/node": "24.19.0",
     "@types/turndown": "5.0.6",
+    "gpt-tokenizer": "4.0.0",
     "playwright-core": "1.63.0",
     "puppeteer-core": "25.12.0",
     "typescript": "7.0.2",

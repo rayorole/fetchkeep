@@ -1,0 +1,22 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Installing the toolchain - Tidewater Docs</title></head>
+<body><header class="docs-top"><a href="/">Tidewater Docs</a> <input type="search" placeholder="Search the Tidewater documentation"> <a href="https://example.org/gh">Star us on the code forge</a></header><div class="docs-layout"><nav class="docs-sidebar" aria-label="Documentation"><ul><li><a href="/docs/">Overview of Tidewater</a></li>
+<li><a href="/docs/install">Installing the toolchain</a></li><li><a href="/docs/config">Configuration reference</a></li>
+<li><a href="/docs/cli">Command line interface</a></li></ul></nav><main class="docs-content"><h1 id="install">Installing the toolchain</h1>
+<p>Tidewater ships as a single binary. You need a 64-bit operating system and about 200 megabytes of free disk space.</p>
+<div class="admonition note"><p>Note: older releases required a separate runtime. That is no longer necessary.</p></div>
+<h2 id="download">Download</h2>
+<p>Use the installer script, then confirm that the binary is on your path:</p>
+<pre><code class="language-bash">curl -fsSL https://example.org/tidewater/install.sh | sh
+tidewater --version</code></pre>
+<h2 id="options">Installer options</h2>
+<table><thead><tr><th>Option</th><th>Default</th><th>Description</th></tr></thead>
+<tbody><tr><td><code>--prefix</code></td><td>/usr/local</td><td>Directory that receives the binary</td></tr>
+<tr><td><code>--channel</code></td><td>stable</td><td>Release channel to install from</td></tr>
+<tr><td><code>--no-modify-path</code></td><td>off</td><td>Do not edit shell profile files</td></tr></tbody></table>
+<h2 id="verify">Verify the installation</h2>
+<pre><code class="language-python">import tidewater
+
+print(tidewater.version())
+assert tidewater.ping() == "pong"</code></pre>
+<p>If the ping fails, run <code>tidewater doctor</code> and include its output when you report a problem.</p></main>
+<aside class="toc"><p>On this page</p><ul><li><a href="#a">Jump to section</a></li></ul></aside></div><footer><p>Edit this page on the code forge</p><p>Tidewater is maintained by volunteers of the Tidewater Collective.</p></footer></body></html>

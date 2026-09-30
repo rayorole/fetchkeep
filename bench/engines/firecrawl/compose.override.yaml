@@ -1,0 +1,12 @@
+# Benchmark override for Firecrawl self-hosted (docker-compose.yaml at the pinned commit).
+# Only change: allow the API and Playwright service to reach the benchmark's local fixture server, which runs on a
+# private address. Everything else is the upstream default (no auth, NuQ on PostgreSQL, bundled Playwright, no
+# Fire-engine). Recorded in every run's metadata as an unavoidable setting difference.
+services:
+  api:
+    environment:
+      ALLOW_LOCAL_WEBHOOKS: "true"
+      TEST_SUITE_SELF_HOSTED: "true"
+  playwright-service:
+    environment:
+      ALLOW_LOCAL_WEBHOOKS: "true"

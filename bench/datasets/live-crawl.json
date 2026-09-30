@@ -1,0 +1,19 @@
+{
+  "name": "live-crawl",
+  "annotatedAt": "2026-09-30",
+  "note": "Live crawl on a site built for scraping practice. Expected pages are a small must-have set reachable within depth 1; engines choose different additional pages, so coverage is 'must-have pages found'.",
+  "cases": [
+    {
+      "id": "live-crawl-quotes",
+      "kind": "crawl",
+      "dataset": "live",
+      "url": "https://quotes.toscrape.com/",
+      "description": "Paginated quotes site (robots.txt permits crawling). 15 pages, depth 1.",
+      "maxPages": 15,
+      "maxDepth": 1,
+      "expectedPages": ["https://quotes.toscrape.com/", "https://quotes.toscrape.com/page/2/", "https://quotes.toscrape.com/login"],
+      "forbiddenPages": [],
+      "annotatedAt": "2026-09-30"
+    }
+  ]
+}
