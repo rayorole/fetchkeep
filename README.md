@@ -15,20 +15,40 @@ returns citations you can re-read later — through a CLI and an MCP server.
 - **Honest results.** One response envelope for CLI and MCP with status (`success` / `partial` / `error`),
   backend attempts, timings, truncation and actionable errors.
 
-Status: v0.1.1. Apache-2.0.
+Status: v0.1.2. Apache-2.0.
 
 ## Install
 
-Requires Node.js ≥ 22.19 (current LTS lines 22 and 24). No native build step: storage uses Node's built-in
-`node:sqlite`.
+Requires **Node.js 22.19 or newer** (22 and 24 tested). Check with `node --version`.
+Storage uses Node's built-in `node:sqlite`; no compiler, browser or LLM is required.
 
 ```sh
 npm install -g fetchkeep
+fetchkeep --version
 fetchkeep doctor
 ```
 
-The package is available on the npm registry. From a checkout: `npm ci && npm run build && npm link`.
-The install pulls no browser and requires no compiler.
+The package is available on [npm](https://www.npmjs.com/package/fetchkeep). Upgrade with
+`npm install -g fetchkeep@latest`. To try it without a global installation:
+
+```sh
+npx --yes fetchkeep@latest doctor
+npx --yes fetchkeep@latest fetch https://example.com
+```
+
+If your shell cannot find `fetchkeep`, ensure your npm global executable directory is on `PATH`, reopen the
+terminal, or use `npx`. On Windows, PowerShell and Git Bash both work.
+
+For the newest source changes before an npm release:
+
+```sh
+git clone https://github.com/rayorole/fetchkeep.git
+cd fetchkeep
+npm ci
+npm run build
+npm link
+fetchkeep doctor
+```
 
 ## Quick start
 
@@ -44,6 +64,16 @@ fetchkeep --json fetch https://example.com                           # full JSON
 Other commands: `list`, `versions`, `export` (JSON Lines), `delete`, `prune`, `crawls`, `extract` (Ollama,
 experimental), `doctor`, `mcp`. Exit codes: 0 success, 1 error, 2 usage, 3 partial. Workspaces isolate stores:
 `fetchkeep -w research fetch …`.
+
+### Terminal and scripting
+
+Use `fetchkeep --help` or `fetchkeep <command> --help` to explore the commands. Human-readable status and
+diagnostics go to stderr; page Markdown goes to stdout, so redirection does not include presentation text.
+For scripts and agents use `--json`. MCP stdout is reserved for protocol messages.
+
+Commander handles commands and help; Chalk adds terminal-aware color to status, citations and diagnostics.
+Search, saved documents and doctor checks use readable summaries rather than raw JSON. Color is disabled
+for redirected streams, `TERM=dumb`, or when `NO_COLOR` is set. No full-screen TUI or extra runtime is needed.
 
 ## MCP
 
@@ -82,9 +112,13 @@ deterministic local fixtures and an annotated set of live websites. See [bench/R
 published results in [bench/results/](bench/results/).
 
 ```sh
-npm run bench -- --engines fetchkeep,firecrawl,donsetch --suite fetch
+npm run bench -- --engines fetchkeep,firecrawl,donsetch --suite full --cold-start --footprint
 npm run bench:report -- --run bench/runs/<run>
 ```
+
+The full suite runs fetch and crawl cases together. Open `bench/runs/<run>/report.html` directly in your browser:
+it is a standalone offline file, not an app that needs a server. Engine setup and report controls are documented
+in the [benchmark guide](bench/README.md).
 
 ## Documentation
 

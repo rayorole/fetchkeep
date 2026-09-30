@@ -8,10 +8,10 @@ import { FETCH_MODES } from "../core/schema.js";
 import type { Envelope, FetchMode } from "../core/schema.js";
 import { Fetchkeep } from "../core/service.js";
 import { CrawlRepo } from "../core/store/crawls.js";
-import { renderEnvelope } from "../mcp/render.js";
 import { VERSION } from "../version.js";
 import { runDoctor } from "./doctor.js";
 import { runMcpStdio } from "./mcp.js";
+import { configurePresentation, printEnvelope, terminalText } from "./presentation.js";
 
 interface GlobalOpts {
   home?: string;
@@ -45,17 +45,6 @@ function makeService(opts: GlobalOpts): Fetchkeep {
   return new Fetchkeep(loadConfig({ ...(opts.config ? { configPath: opts.config } : {}), overrides }));
 }
 
-function print(env: Envelope, json: boolean | undefined): void {
-  if (json) {
-    process.stdout.write(`${JSON.stringify(env)}\n`);
-    return;
-  }
-  // Human mode: content on stdout, metadata on stderr, so `fetchkeep fetch URL > page.md` works.
-  const meta = renderEnvelope({ ...env, content: undefined } as Envelope);
-  process.stderr.write(`${meta}\n`);
-  if (env.content?.text) process.stdout.write(`${env.content.text}\n`);
-}
-
 async function run(opts: GlobalOpts, fn: (fk: Fetchkeep, signal: AbortSignal) => Promise<Envelope> | Envelope): Promise<void> {
   let fk: Fetchkeep | null = null;
   let env: Envelope;
@@ -70,20 +59,23 @@ async function run(opts: GlobalOpts, fn: (fk: Fetchkeep, signal: AbortSignal) =>
   } finally {
     await fk?.close();
   }
-  print(env, opts.json);
+  printEnvelope(env, opts.json);
   process.exitCode = exitCodeFor(env);
 }
 
 export function buildProgram(): Command {
   const program = new Command()
     .name("fetchkeep")
-    .description("The web, saved for your agents. Fetch, extract, save, search, crawl and cite web content.")
+    .description("Fetch web pages as Markdown. Save, search and cite them locally.")
     .version(VERSION)
+    .optionsGroup("Storage:")
     .option("--home <dir>", "data directory (default: $FETCHKEEP_HOME or ~/.fetchkeep)")
     .option("-w, --workspace <name>", "workspace (isolated store), default: $FETCHKEEP_WORKSPACE or 'default'")
     .option("--config <file>", "config file (default: <home>/config.json if present)")
+    .optionsGroup("Network access:")
     .option("--allow-private-network", "allow private/loopback destinations (trusted local use only)")
     .option("--allow-host <host>", "allow a host that resolves to a private address (repeatable, supports *.suffix)", collect)
+    .optionsGroup("Output:")
     .option("--json", "print the JSON envelope on stdout")
     .showHelpAfterError()
     // Set before subcommands are added so they inherit it: usage errors exit with 2.
@@ -92,12 +84,14 @@ export function buildProgram(): Command {
     })
     .addHelpText(
       "after",
-      "\nExit codes: 0 success, 1 error, 2 usage error, 3 partial result.\nDocs: https://github.com/rayorole/fetchkeep#readme",
+      "\nExamples:\n  fetchkeep fetch https://example.com > page.md\n  fetchkeep search \"retry policy\"\n  fetchkeep read https://example.com\n  fetchkeep crawl https://example.com/docs --max-pages 10\n  fetchkeep doctor\n\nHuman summaries go to stderr; document Markdown goes to stdout.\nUse --json for the complete machine-readable envelope.\nExit codes: 0 success, 1 error, 2 usage error, 3 partial result.\nDocs: https://github.com/rayorole/fetchkeep#readme",
     );
+  configurePresentation(program);
   const g = () => program.opts<GlobalOpts>();
 
   program
     .command("fetch")
+    .helpGroup("Retrieve and explore:")
     .description("fetch a URL, extract Markdown and save it")
     .argument("<url>")
     .addOption(new Option("-m, --mode <mode>", "backend").choices([...FETCH_MODES]).default("auto"))
@@ -123,6 +117,7 @@ export function buildProgram(): Command {
 
   program
     .command("read")
+    .helpGroup("Retrieve and explore:")
     .description("read a saved document (URL, document id or fk: ref) without refetching")
     .argument("<target>")
     .option("--version <n>", "document version (default: latest)", int("version"))
@@ -147,6 +142,7 @@ export function buildProgram(): Command {
 
   program
     .command("search")
+    .helpGroup("Retrieve and explore:")
     .description("search saved documents (offline); --web uses the configured web search provider")
     .argument("<query...>")
     .option("--web", "search the web through the configured provider (e.g. SearXNG)")
@@ -168,6 +164,7 @@ export function buildProgram(): Command {
 
   program
     .command("crawl")
+    .helpGroup("Retrieve and explore:")
     .description("bounded crawl (same origin by default) that saves every page")
     .argument("[url]", "start URL (omit with --resume)")
     .option("-p, --max-pages <n>", "maximum pages to fetch", int("max-pages"))
@@ -215,6 +212,7 @@ export function buildProgram(): Command {
 
   program
     .command("extract")
+    .helpGroup("Retrieve and explore:")
     .description("[experimental] extract JSON matching a schema from a saved document with a local Ollama model, with evidence checks")
     .argument("<target>", "URL (fetched and saved first if needed), document id or fk: ref")
     .requiredOption("-s, --schema <schema>", "JSON Schema (top-level type object): a file path or inline JSON")
@@ -236,6 +234,7 @@ export function buildProgram(): Command {
 
   program
     .command("crawls")
+    .helpGroup("Saved library:")
     .description("list recent crawls")
     .option("-n, --limit <n>", "maximum crawls", int("limit"), 20)
     .action((o: { limit: number }) =>
@@ -244,6 +243,7 @@ export function buildProgram(): Command {
 
   program
     .command("list")
+    .helpGroup("Saved library:")
     .description("list saved documents")
     .option("-n, --limit <n>", "maximum documents", int("limit"), 50)
     .option("--offset <n>", "skip documents", int("offset"), 0)
@@ -260,6 +260,7 @@ export function buildProgram(): Command {
   program
     .command("versions")
     .description("list versions of a saved document")
+    .helpGroup("Saved library:")
     .argument("<target>")
     .action((target: string) =>
       run(g(), (fk) => {
@@ -271,6 +272,7 @@ export function buildProgram(): Command {
 
   program
     .command("export")
+    .helpGroup("Saved library:")
     .description("export every stored version as JSON Lines")
     .option("-o, --out <file>", "output file (default: stdout)")
     .option("--include-raw", "include raw source snapshots (base64)")
@@ -296,6 +298,7 @@ export function buildProgram(): Command {
 
   program
     .command("delete")
+    .helpGroup("Saved library:")
     .description("delete saved documents (all versions, blocks and snapshots)")
     .argument("<targets...>", "URLs, document ids or refs")
     .action((targets: string[]) =>
@@ -321,6 +324,7 @@ export function buildProgram(): Command {
   program
     .command("prune")
     .description("apply retention: drop old versions and/or raw snapshots")
+    .helpGroup("Saved library:")
     .option("--keep-versions <n>", "keep the newest N versions per document", int("keep-versions"))
     .option("--older-than <age>", "drop non-latest versions older than e.g. 30d, 12h or an ISO date")
     .addOption(new Option("--raw <which>", "drop raw snapshots").choices(["all", "old"]))
@@ -342,11 +346,13 @@ export function buildProgram(): Command {
   program
     .command("doctor")
     .description("check the installation, store and optional backends")
+    .helpGroup("Setup and integrations:")
     .action(() => run(g(), (fk) => runDoctor(fk)));
 
   program
     .command("mcp")
     .description("run the MCP server on stdio (stdout carries protocol messages only)")
+    .helpGroup("Setup and integrations:")
     .action(() => runMcpStdio(() => makeService(g())));
 
   return program;
@@ -387,6 +393,6 @@ function parseSchemaOption(value: string): Record<string, unknown> {
 buildProgram()
   .parseAsync(process.argv)
   .catch((err: unknown) => {
-    process.stderr.write(`fetchkeep: ${(err as Error).message}\n`);
+    process.stderr.write(`fetchkeep: ${terminalText((err as Error).message)}\n`);
     process.exit(1);
   });

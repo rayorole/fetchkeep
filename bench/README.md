@@ -9,6 +9,7 @@ zeros and never with invented numbers.
 npm run bench -- --engines fetchkeep,firecrawl,donsetch --suite smoke
 npm run bench -- --engines fetchkeep,firecrawl,donsetch --suite fetch
 npm run bench -- --engines fetchkeep,firecrawl,donsetch --suite crawl
+npm run bench -- --engines fetchkeep,firecrawl,donsetch --suite full --cold-start --footprint
 npm run bench:report -- --run bench/runs/<run-directory>
 npm run bench:publish -- --run bench/runs/<run-directory>     # copy to bench/results/ for committing
 ```
@@ -24,6 +25,10 @@ run on its own:
 
 Other options: `--repetitions`, `--seed`, `--timeout <ms>` (default 30000), `--cold-start`, `--footprint`,
 `--advertise <host>`, `--allow-paid --budget-credits <n>`, `--out`, `--no-report`. See `bench/run.ts`.
+
+`full` includes all 44 fetch cases and both crawl cases, with three repetitions, in a single run and report.
+Use it for a shareable complete comparison; `smoke` is only a quick engine/setup check. Resource measurements
+for a full run include both fetch and crawl work and must not be compared directly to fetch-only totals.
 
 ## Prerequisites
 
@@ -102,3 +107,19 @@ rerun command), `cases.json`, `records.jsonl`, `crawl.jsonl`, `coldstart.json`, 
 
 Published runs live in [`results/`](results/). Raw outputs of live third-party pages are withheld there (their
 SHA-256 and length are listed in `raw/WITHHELD.json`); rerun the benchmark to inspect them.
+
+### Using the HTML report
+
+Open `report.html` in a browser, including via `file://`. It has no external scripts, fonts or stylesheets:
+share that one file without deploying a website.
+
+- Start with **Compare this run**. Choose local fixtures or live websites, a development/held-out split,
+  and all tasks or common cases. Hide profiles or sort by usable rate, recall or warm p50; missing measurements
+  remain `n/a`, not zero. Read sample counts alongside every score.
+- Use **Case inspector** to search IDs, URLs and descriptions, filter cases, and expand raw previews/errors.
+  Crawl cases include missing/unexpected pages and stop reasons.
+- Use sidebar navigation (horizontal on mobile) to reach resources, cold start, footprint, methodology and
+  reproduction details. Wide tables scroll within their own region rather than widening the page.
+- **Download summary.csv / cases.csv / crawl.csv** exports data embedded in the HTML itself. No adjacent
+  files or server are needed. Crawl export appears only when crawl records exist.
+- Print from your browser for a static report. Filtering never changes the underlying run records or CSV exports.
