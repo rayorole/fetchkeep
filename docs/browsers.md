@@ -17,7 +17,7 @@ Fetchkeep never installs a browser, never downloads one at runtime and never con
 |---|---|
 | `auto` (default) | HTTP first. Escalates to an enabled browser only when the HTTP result looks incomplete (see heuristic). |
 | `http` | HTTP only. Never escalates. |
-| `chromium` / `lightpanda` | That browser only. Errors with `browser_unavailable` if it is not enabled/installed. |
+| `chromium` / `lightpanda` | Select that browser; unsupported non-HTML content falls back to HTTP with a recorded attempt. Errors with `browser_unavailable` if it is not enabled/installed. |
 | `browser` | Enabled browsers in preference order (`browser.preferred`, default `chromium`). |
 
 Every attempt is recorded in `backend.attempts` (`backend`, `outcome` = success / insufficient / failed /
@@ -26,6 +26,9 @@ unavailable / skipped, `reason`, `errorCode`, `durationMs`). All attempts share 
 
 If `auto` decides rendering is needed but no browser is enabled or the browser fails, the HTTP result is
 returned with `status: "partial"` and a warning that explains why; nothing is silently substituted.
+
+Recommendation: HTTP-first auto with optional Chromium. Lightpanda remains experimental; see the
+[measured quality, latency and resource comparison](../bench/results/README.md).
 
 ## Escalation heuristic (`src/core/heuristics.ts`)
 
@@ -139,7 +142,7 @@ Behaviour and safety:
   access. Only use it for arbitrary sites inside an external sandbox (container, VM, WSL).
 - Licensing: Lightpanda is AGPL-3.0-only. Fetchkeep does not bundle, download or redistribute it; see
   [research.md](research.md#licensing-implications) for what that does and does not settle.
-- Performance: no speed or memory claims are made here; see the benchmark report for measurements.
+- Performance: see the [benchmark report](../bench/results/README.md) for measured results and caveats.
 
 | Setting | Env | Default |
 |---|---|---|
