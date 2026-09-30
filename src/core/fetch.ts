@@ -49,6 +49,9 @@ async function renderPage(deps: RetrieveDeps, name: BrowserName, opts: RetrieveO
     settleMs: deps.settleMs,
     maxBytes: opts.limits.maxBytes,
   });
+  if (!/^(text\/html|application\/xhtml\+xml)$/.test(r.contentType)) {
+    throw new FetchkeepError("unsupported_content_type", `${name} loaded a ${r.contentType} resource; browsers are only used for HTML`);
+  }
   if (r.status >= 400) {
     throw new FetchkeepError("http_error", `HTTP ${r.status} from ${r.finalUrl} (${name})`, {
       retryable: r.status === 429 || r.status >= 500,
@@ -151,6 +154,21 @@ export async function retrieve(deps: RetrieveDeps, opts: RetrieveOptions): Promi
       return { page: null, backend, error, warnings };
     }
     const { page, error } = await tryBrowsers(names);
+    if (!page && error?.code === "unsupported_content_type" && !opts.signal.aborted) {
+      // PDFs, text and JSON are not rendered by browsers: fetch them directly (recorded as an HTTP attempt).
+      const t0 = performance.now();
+      try {
+        const direct = await fetchViaHttp(deps.http, opts.url, opts.signal, opts.limits);
+        attempts.push({ backend: "http", outcome: "success", reason: "non-HTML resource fetched over HTTP", httpStatus: direct.httpStatus, durationMs: performance.now() - t0 });
+        backend.used = "http";
+        warnings.push(`${direct.contentType} is not rendered by browsers; fetched over HTTP`);
+        return { page: direct, backend, error: null, warnings };
+      } catch (err) {
+        const e = toFetchkeepError(err, opts.signal);
+        attempts.push(failedAttempt("http", e, performance.now() - t0));
+        return { page: null, backend, error: e, warnings };
+      }
+    }
     backend.used = page?.backend ?? null;
     return { page, backend, error: page ? null : error, warnings };
   }

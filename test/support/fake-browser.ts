@@ -1,6 +1,6 @@
 import type { BrowserAvailability, BrowserName, BrowserProvider, RenderRequest, RenderResult } from "../../src/browser/provider.js";
 
-export type FakeBehavior = { html: string; status?: number } | { error: Error } | "hang";
+export type FakeBehavior = { html: string; status?: number; contentType?: string } | { error: Error } | "hang";
 
 /** Scripted BrowserProvider for unit tests: no real browser. */
 export class FakeBrowser implements BrowserProvider {
@@ -37,7 +37,7 @@ export class FakeBrowser implements BrowserProvider {
       return {
         finalUrl: req.url,
         status: b.status ?? 200,
-        contentType: "text/html",
+        contentType: b.contentType ?? "text/html",
         html: b.html,
         truncated: false,
         requests: { total: 1, blocked: 0, failed: 0 },

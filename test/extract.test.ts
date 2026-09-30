@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { sliceMarkdown } from "../src/core/budget.js";
-import { extractHtml } from "../src/core/extract/html.js";
+import { extractHtml, headingFromTitle } from "../src/core/extract/html.js";
 import { extractContent } from "../src/core/extract/index.js";
 import { extractText } from "../src/core/extract/text.js";
 import { makePdf } from "./support/pdf.js";
@@ -93,6 +93,32 @@ describe("extractHtml on an article", () => {
     expect(doc.markdown).toContain("## Details");
     expect(doc.markdown).not.toMatch(/Share on social|Related posts/);
     expect(doc.siteName).toBe("The Blog");
+  });
+});
+
+describe("heading and code details", () => {
+  it("drops heading permalink anchors and detects `brush:` code languages", () => {
+    const doc = extractHtml(
+      `<html><head><title>T</title></head><body><main><h1>Guide<a class="headerlink" href="#guide">¶</a></h1>
+       <h2 id="x">Install <a href="#x" aria-hidden="true">#</a></h2><p>Text about the guide that is long enough.</p>
+       <pre class="brush: js notranslate">const a = 1;</pre></main></body></html>`,
+      { url: "https://docs.example.com/g" },
+    );
+    expect(doc.blocks.filter((b) => b.type === "heading").map((b) => b.markdown)).toEqual(["# Guide", "## Install"]);
+    expect(doc.blocks.find((b) => b.type === "code")).toMatchObject({ lang: "js", text: "const a = 1;" });
+  });
+
+  it("derives a heading from the title without the site name when the page has no h1", () => {
+    expect(headingFromTitle("Announcing Rust 1.0 | Rust Blog")).toBe("Announcing Rust 1.0");
+    expect(headingFromTitle("Install guide – Widget Docs", "Widget Docs")).toBe("Install guide");
+    expect(headingFromTitle("A - B")).toBe("A");
+    expect(headingFromTitle("Pride and Prejudice")).toBe("Pride and Prejudice");
+    expect(headingFromTitle("Short | A much longer trailing part of the title")).toBe("Short | A much longer trailing part of the title");
+    const doc = extractHtml(`<html><head><title>Release notes | Example Blog</title></head><body><main><p>${"Body text. ".repeat(10)}</p></main></body></html>`, {
+      url: "https://blog.example.com/r",
+    });
+    expect(doc.blocks[0]).toMatchObject({ type: "heading", level: 1, text: "Release notes" });
+    expect(doc.title).toBe("Release notes | Example Blog");
   });
 });
 
