@@ -3,6 +3,14 @@
 All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
+## Unreleased
+
+### Added
+
+- Stable GitHub release-triggered npm publishing with tag/version and main-ancestry gates, Linux/Windows
+  Node 22/24 verification, clean-install smoke checks, OIDC trusted publishing and provenance.
+- Maintainer instructions for one-time npm package bootstrap and trusted-publisher configuration.
+
 ## [0.1.0] - 2026-09-30
 
 First release.

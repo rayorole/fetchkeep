@@ -32,6 +32,12 @@ npm run bench -- --suite smoke
 - MCP stdio code must never write to stdout except through the SDK transport; log to stderr.
 - Tests must be deterministic and must not reach the public internet.
 
+## Releases
+
+Stable GitHub releases trigger npm publication after version, ancestry, test and clean-install gates.
+Pushes to `main` do not publish. See [releasing.md](docs/releasing.md) for the required one-time npm
+trusted-publisher setup and release procedure.
+
 ## License
 
 By contributing you agree that your contributions are licensed under the Apache License 2.0.
