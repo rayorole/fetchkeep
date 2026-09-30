@@ -8,8 +8,12 @@ export interface EscalationDecision {
 
 /** Thresholds of the auto-mode heuristic (see docs/browsers.md). */
 export const ESCALATION = {
-  /** Below this many extracted characters a scripted page is treated as not rendered. */
+  /** Below this many extracted characters a script-driven page is treated as not rendered. */
   minChars: 200,
+  /** Inline script characters that make a tiny page count as script-driven. */
+  inlineScriptChars: 1000,
+  /** Body text below this many characters counts as empty. */
+  emptyBodyChars: 50,
   /** An empty SPA root (`#root`, `#__next`, …) escalates while extracted text is below this. */
   spaRootChars: 1000,
   /** A "JavaScript required" notice escalates while extracted text is below this. */
@@ -39,8 +43,13 @@ export function shouldEscalate(doc: ExtractedDocument | null, error: FetchkeepEr
   if (s.noscriptWarning && s.extractedChars < ESCALATION.noscriptChars) {
     return { escalate: true, reason: `page states JavaScript is required and only ${s.extractedChars} chars extracted` };
   }
-  if (s.extractedChars < ESCALATION.minChars && s.scriptCount > 0) {
-    return { escalate: true, reason: `only ${s.extractedChars} chars extracted from a page with ${s.scriptCount} scripts` };
+  // Tiny pages are only treated as unrendered when scripts plausibly produce the content: a large inline script
+  // (embedded data), several external bundles, or an essentially empty body. A lone analytics tag is not enough.
+  if (
+    s.extractedChars < ESCALATION.minChars &&
+    (s.inlineScriptChars >= ESCALATION.inlineScriptChars || s.externalScriptCount >= 2 || (s.scriptCount > 0 && s.bodyTextChars < ESCALATION.emptyBodyChars))
+  ) {
+    return { escalate: true, reason: `only ${s.extractedChars} chars extracted from a script-driven page (${s.scriptCount} scripts)` };
   }
   return { escalate: false, reason: `${s.extractedChars} chars extracted; content looks complete` };
 }

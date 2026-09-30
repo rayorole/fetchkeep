@@ -35,7 +35,9 @@ Computed from the HTTP response only, deterministically:
 2. An app root (`#root`, `#app`, `#__next`, `#__nuxt`, `[data-reactroot]`, `app-root`, `[ng-version]`, …) with
    < 200 characters of text **and** fewer than 1 000 extracted characters → escalate.
 3. A `<noscript>`/body notice such as "enable JavaScript" **and** fewer than 1 500 extracted characters → escalate.
-4. Fewer than 200 extracted characters on a page with at least one `<script>` → escalate.
+4. Fewer than 200 extracted characters on a script-driven page — at least 1 000 characters of inline script, two or
+   more external scripts, or an essentially empty body (< 50 characters) with any script → escalate. A single
+   analytics tag on a small page does not count.
 5. Otherwise keep the HTTP result. Non-HTML content (PDF, text, JSON) never escalates.
 
 After a successful render, the rendered result is used unless it contains less text than the HTTP result.
