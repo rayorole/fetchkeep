@@ -30,6 +30,7 @@ const NOISE_RE =
 const HIDDEN_STYLE_RE = /display\s*:\s*none|visibility\s*:\s*hidden/i;
 const JS_REQUIRED_RE = /(enable|requires?|turn on|activate)\s+javascript|javascript\s+(is\s+)?(disabled|required|must be enabled)/i;
 const APP_ROOTS = "#root,#app,#__next,#__nuxt,#svelte,[data-reactroot],app-root,[ng-app],[ng-version]";
+const SIGNAL_IGNORE_RE = /^(SCRIPT|STYLE|NOSCRIPT|TEMPLATE)$/;
 
 const LEAF: Record<string, BlockType> = {
   H1: "heading",
@@ -49,6 +50,7 @@ const LEAF: Record<string, BlockType> = {
   FIGURE: "paragraph",
   ADDRESS: "paragraph",
 };
+const LEAF_SELECTOR = Object.keys(LEAF).join(",");
 const INLINE: Record<string, true> = {
   A: true, ABBR: true, B: true, BDI: true, BDO: true, BR: true, CITE: true, CODE: true, DATA: true, DFN: true, EM: true, I: true,
   IMG: true, KBD: true, LABEL: true, MARK: true, Q: true, S: true, SAMP: true, SMALL: true, SPAN: true, STRONG: true, SUB: true,
@@ -82,7 +84,7 @@ export function extractHtml(html: string, opts: HtmlExtractOptions): ExtractedDo
   // Candidate 1: structural main-content extraction.
   const { root: structural, semantic } = structuralRoot(document);
 
-  // Candidate 2: Readability on an independent copy (it mutates the DOM).
+  // Candidate 2: Readability may mutate the prepared document; the structural root is already an independent clone.
   const warnings: string[] = [];
   let readable: Element | null = null;
   let byline: string | undefined;
@@ -93,13 +95,9 @@ export function extractHtml(html: string, opts: HtmlExtractOptions): ExtractedDo
   const runReadability = elementCount <= (semantic ? READABILITY_SEMANTIC_MAX_ELEMENTS : READABILITY_MAX_ELEMENTS);
   if (runReadability) {
     try {
-      const copy = parseHTML(html).document;
-      absolutize(copy, baseUrl);
-      for (const el of [...copy.querySelectorAll(ALWAYS_REMOVE)]) el.remove();
-      removePermalinks(copy);
-      for (const h of copy.querySelectorAll("h1")) h.setAttribute("data-fk-h1", "");
-      if (isProbablyReaderable(copy as unknown as Document, { minContentLength: 140, minScore: 20 })) {
-        const article = new Readability<Element>(copy as unknown as Document, {
+      if (isProbablyReaderable(document as unknown as Document, { minContentLength: 140, minScore: 20 })) {
+        for (const h of document.querySelectorAll("h1")) h.setAttribute("data-fk-h1", "");
+        const article = new Readability<Element>(document as unknown as Document, {
           keepClasses: true,
           charThreshold: 200,
           serializer: (n) => n as Element,
@@ -191,9 +189,19 @@ function collectSignals(document: Document): RenderSignals {
   }
   let bodyText = "";
   if (body) {
-    const clone = body.cloneNode(true) as HTMLElement;
-    for (const el of [...clone.querySelectorAll("script,style,noscript,template")]) el.remove();
-    bodyText = normalizeText(clone.textContent ?? "");
+    // Match textContent after removing these subtrees, without cloning the entire body just to count its text.
+    const parts: string[] = [];
+    let node: Node | null = body.firstChild;
+    while (node) {
+      if (node.nodeType === 3) parts.push(node.textContent ?? "");
+      else if (!SIGNAL_IGNORE_RE.test(node.nodeName) && node.firstChild) {
+        node = node.firstChild;
+        continue;
+      }
+      while (!node.nextSibling && node.parentNode !== body) node = node.parentNode!;
+      node = node.nextSibling;
+    }
+    bodyText = normalizeText(parts.join(""));
     if (bodyText.length < 400 && JS_REQUIRED_RE.test(bodyText)) noscriptWarning = true;
   }
   let appRootEmpty = false;
@@ -373,7 +381,7 @@ function walkBlocks(root: Element, td: TurndownService): RawBlock[] {
         flush();
         continue;
       }
-      if (INLINE[tag] && !child.querySelector(Object.keys(LEAF).join(","))) {
+      if (INLINE[tag] && !child.querySelector(LEAF_SELECTOR)) {
         run.push(child);
         continue;
       }
@@ -417,8 +425,16 @@ function walkBlocks(root: Element, td: TurndownService): RawBlock[] {
 
 function toMarkdown(el: Element, td: TurndownService): string {
   const wrapper = el.ownerDocument.createElement("div");
-  wrapper.appendChild(el.cloneNode(true));
-  return td.turndown(wrapper as unknown as HTMLElement).trim();
+  const parent = el.parentNode;
+  const next = el.nextSibling;
+  // Turndown clones its input before conversion. Borrow the element instead of cloning every block twice.
+  wrapper.appendChild(el);
+  try {
+    return td.turndown(wrapper as unknown as HTMLElement).trim();
+  } finally {
+    if (parent) parent.insertBefore(el, next);
+    else wrapper.removeChild(el);
+  }
 }
 
 /** Removes heading permalink anchors (`¶`, `#`, `§`, icon-only links to a fragment of the same page). */

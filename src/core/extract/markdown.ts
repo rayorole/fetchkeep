@@ -105,10 +105,9 @@ function renderTable(table: HTMLTableElement, td: TurndownService): string {
   const rows = tableRows(table).map((tr) => {
     const cells: string[] = [];
     for (const cell of rowCells(tr)) {
-      const wrapper = cell.ownerDocument.createElement("div");
-      for (const child of [...cell.childNodes]) wrapper.appendChild(child.cloneNode(true));
+      // Turndown converts the root's children and clones internally; no separate cell wrapper is needed.
       const md = td
-        .turndown(wrapper as unknown as HTMLElement)
+        .turndown(cell as unknown as HTMLElement)
         .replace(/\n+/g, " <br> ")
         .replace(/\|/g, "\\|")
         .trim()
