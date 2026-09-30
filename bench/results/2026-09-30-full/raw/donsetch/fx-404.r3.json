@@ -1,0 +1,25 @@
+{
+  "text": "not found: http://172.31.172.243:44735/missing/page.html returned HTTP 404\n\nNext action: verify the URL (typo? deleted page?) : or web_search the page title to find the moved copy",
+  "structured": {
+    "code": "content.notfound",
+    "escalation": [
+      {
+        "action": "domain-profile",
+        "ms": 0,
+        "outcome": "cold",
+        "tier": "route"
+      },
+      {
+        "action": "http-fetch",
+        "ms": 0,
+        "outcome": "SoftNotFound status=404",
+        "tier": "1"
+      }
+    ],
+    "next_action": "verify the URL (typo? deleted page?) : or web_search the page title to find the moved copy",
+    "status": 404,
+    "url": "http://172.31.172.243:44735/missing/page.html",
+    "verdict": "SoftNotFound"
+  },
+  "isError": true
+}

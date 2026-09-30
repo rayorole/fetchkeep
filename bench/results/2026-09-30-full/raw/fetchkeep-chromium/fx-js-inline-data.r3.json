@@ -1,0 +1,65 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_8a53691474f76b1c",
+    "version": 1,
+    "ref": "fk:d_8a53691474f76b1c@1",
+    "requestedUrl": "http://172.31.172.243:44735/js/next-data.html",
+    "finalUrl": "http://172.31.172.243:44735/js/next-data.html",
+    "title": "Glossary",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T18:15:31.663Z",
+    "contentHash": "2784a730b3e46ee20376cddd99aa1e2c2ddcdf0efda3472292c1ce260a966e23",
+    "rawHash": "f55e9a61e3dadfc1e7c6c3703c06f827e7925e1a9a896f794d983cfb71b4fbe4",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "chromium",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Glossary of harbour terms\n\nBollard\n\nA short post on a quay used for mooring ships.\n\nFender\n\nA cushion that protects a hull from the quay wall.\n\nSlipway\n\nA ramp that lets boats move between land and water."
+  },
+  "backend": {
+    "mode": "chromium",
+    "used": "chromium",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "chromium",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 1047.7196150000673
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 206,
+    "returnedChars": 206,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "browserLaunchMs": 0,
+    "navigateMs": 1018.5,
+    "renderMs": 1043.6,
+    "extractMs": 1,
+    "subrequests": 1,
+    "subrequestsBlocked": 0,
+    "totalMs": 1048.1
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_8a53691474f76b1c@1",
+    "url": "http://172.31.172.243:44735/js/next-data.html",
+    "title": "Glossary",
+    "fetchedAt": "2026-09-30T18:15:31.663Z",
+    "version": 1,
+    "contentHash": "2784a730b3e46ee20376cddd99aa1e2c2ddcdf0efda3472292c1ce260a966e23"
+  }
+}

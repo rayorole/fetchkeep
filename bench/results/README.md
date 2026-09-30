@@ -1,6 +1,44 @@
 # Measured results — 2026-09-30
 
-## Recommendation
+## Latest: v0.1.2 full comparison
+
+**[Download the standalone HTML report](https://github.com/rayorole/fetchkeep/releases/download/v0.1.2/fetchkeep-benchmark-0.1.2.html)** and open it locally.
+It includes filterable/sortable comparisons, searchable fetch/crawl cases, charts, methodology and embedded CSV exports.
+[Repository HTML](2026-09-30-full/report.html) · [Markdown](2026-09-30-full/report.md) · [CSV](2026-09-30-full/summary.csv).
+
+Fresh clean run of commit `a74656b520ff90d632366b757bb6777d17df2bdd`, package 0.1.2, on Ubuntu 24.04/WSL2
+with Node 24.15.0. All 44 fetch cases and both crawl cases, three repetitions, seed 42, concurrency one.
+966 records: 924 fetch and 42 crawl. Six profiles ran; 138 hosted-Firecrawl records are explicitly unavailable
+because no API key was configured. No paid service was used. Exact configuration and pins are in
+[meta.json](2026-09-30-full/meta.json).
+
+| Profile | Live usable / 72 | Warm live p50 / p95 | Warm latency n |
+|---|---:|---:|---:|
+| Fetchkeep HTTP | 63 (87.5%) | 382 / 1,300 ms | 48 |
+| Fetchkeep Chromium | 69 (95.8%) | 1,913 / 3,341 ms | 48 |
+| Fetchkeep Lightpanda | 67 (93.1%) | 1,116 / 2,094 ms | 48 |
+| Fetchkeep auto | 69 (95.8%) | 456 / 2,314 ms | 48 |
+| Firecrawl self-hosted | 66 (91.7%) | 805 / 2,217 ms | 46 |
+| DonSeTch | 66 (91.7%) | 260 / 946 ms | 46 |
+
+Usable means at least 75% annotated passage recall; warm latency is measured over successful responses in
+repetitions 2–3, not just usable outputs. This is a curated sample, not an overall ranking.
+Auto escalated 9/72 live requests and retained the recommended HTTP-first/optional-Chromium trade-off.
+Lightpanda remains experimental and unsandboxed. Its full-run CPU/peak RSS were 44.48 s / 639.3 MiB versus
+103.04 s / 1,196.3 MiB for always-Chromium. Full-run resource totals include crawl work, so they are not directly
+comparable to the earlier fetch-only resource totals below.
+
+All Fetchkeep profiles found 13/13 required fixture-crawl pages in all three runs with no forbidden or duplicate
+URLs. Firecrawl also found 13/13, but returned duplicates in all three and a forbidden URL in two.
+DonSeTch found 11/13 with one forbidden URL per run. All available profiles found 2/3 required live-crawl pages
+within the 15-page cap; that is not evidence of exhaustive site coverage.
+
+Live raw page content is withheld from the published report; hashes are preserved. Synthetic raw outputs are
+included. Prior limitations (delayed JavaScript, shadow-DOM code, held-out citation mismatch) remain visible.
+
+The sections below preserve the original pre-release, separate fetch/crawl baseline and its measurements.
+
+## Original baseline recommendation
 
 Keep the default install browser-free and HTTP-first. Enable **Chromium for auto escalation** when JavaScript rendering is needed. In this run auto matched Chromium's 69/72 usable live outputs while escalating only 9/72 requests; its warm median was 394 ms versus 1,832 ms for always-Chromium. Chromium's sandbox and broader compatibility make it the recommended optional backend for arbitrary sites, not a guarantee of safe execution.
 

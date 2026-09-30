@@ -1,0 +1,72 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_fab6c2c51aebfcb0",
+    "version": 1,
+    "ref": "fk:d_fab6c2c51aebfcb0@1",
+    "requestedUrl": "http://172.31.172.243:44735/files/annual-report.pdf",
+    "finalUrl": "http://172.31.172.243:44735/files/annual-report.pdf",
+    "title": "Valley Water Board Annual Report",
+    "contentType": "application/pdf",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T18:16:49.711Z",
+    "contentHash": "bf2a1467db93a121a356dd3bd70a1a56eb986eb3c9559d292e6364c82981a0ca",
+    "rawHash": "5f21ab70d28663c41ecfed363348b47d21e84673f9b22e0969747c241d44f894",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "pdf",
+    "backend": "http",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Valley Water Board Annual Report\n\nThe board supplied drinking water to eleven thousand households this year. Leakage fell for the third consecutive year after the pipe renewal programme.\n\n## Finances\n\nOperating costs were covered entirely by water charges and connection fees.\n\n## Outlook\n\nNext year the board will replace the Millbrook pumping station."
+  },
+  "backend": {
+    "mode": "chromium",
+    "used": "http",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "chromium",
+        "outcome": "failed",
+        "reason": "The URL triggers a download (e.g. a PDF); use mode http for non-HTML resources",
+        "errorCode": "unsupported_content_type",
+        "durationMs": 37.728820999967866
+      },
+      {
+        "backend": "http",
+        "outcome": "success",
+        "reason": "non-HTML resource fetched over HTTP",
+        "httpStatus": 200,
+        "durationMs": 5.944782999926247
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 355,
+    "returnedChars": 355,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "firstByteMs": 1.9,
+    "downloadMs": 2.1,
+    "extractMs": 3.9,
+    "totalMs": 44.1
+  },
+  "warnings": [
+    "application/pdf is not rendered by browsers; fetched over HTTP"
+  ],
+  "citation": {
+    "ref": "fk:d_fab6c2c51aebfcb0@1",
+    "url": "http://172.31.172.243:44735/files/annual-report.pdf",
+    "title": "Valley Water Board Annual Report",
+    "fetchedAt": "2026-09-30T18:16:49.711Z",
+    "version": 1,
+    "contentHash": "bf2a1467db93a121a356dd3bd70a1a56eb986eb3c9559d292e6364c82981a0ca"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_1f8669f9c0e1c00f",
+    "version": 1,
+    "ref": "fk:d_1f8669f9c0e1c00f@1",
+    "requestedUrl": "http://172.31.172.243:44735/tutorials/state-machine.html",
+    "finalUrl": "http://172.31.172.243:44735/tutorials/state-machine.html",
+    "title": "Parsing log lines with a state machine - Tidewater Docs",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T18:06:57.899Z",
+    "contentHash": "6ddfd455f32e40027525d2138408f202c35c35a0fcae56ef313d2ba52e1ff4aa",
+    "rawHash": "8eccd3a96f36cf0930a9b3d07be4e872ddd60f4e693734a358b27a9b98809ba4",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "chromium",
+    "saved": true,
+    "unchanged": false
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Parsing log lines with a state machine\n\nThis tutorial builds a tiny parser for lines such as `level=warn msg=\"disk almost full\"`.\n\n## The token type\n\n```rust\nenum Token<'a> {\n    Key(&'a str),\n    Value(&'a str),\n}\n```\n\n## The loop\n\nEach character moves the parser between three states. Quotes switch into a mode where spaces are kept.\n\n```\nfor ch in line.chars() {\n    match (state, ch) {\n        (State::Key, '=') => state = State::Value,\n        _ => buf.push(ch),\n    }\n}\n```\n\n## Testing it\n\n```js\nconst out = parse('level=warn msg=\"disk almost full\"');\nconsole.assert(out.msg === \"disk almost full\");\n```\n\nEscaped quotes inside values are left as an exercise; the reference solution handles them with one extra state."
+  },
+  "backend": {
+    "mode": "chromium",
+    "used": "chromium",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "chromium",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 1094.0219610000204
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 724,
+    "returnedChars": 724,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "browserLaunchMs": 0,
+    "navigateMs": 1043,
+    "renderMs": 1075,
+    "extractMs": 3.5,
+    "subrequests": 1,
+    "subrequestsBlocked": 0,
+    "totalMs": 1095.3
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_1f8669f9c0e1c00f@1",
+    "url": "http://172.31.172.243:44735/tutorials/state-machine.html",
+    "title": "Parsing log lines with a state machine - Tidewater Docs",
+    "fetchedAt": "2026-09-30T18:06:57.899Z",
+    "version": 1,
+    "contentHash": "6ddfd455f32e40027525d2138408f202c35c35a0fcae56ef313d2ba52e1ff4aa"
+  }
+}

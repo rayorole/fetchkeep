@@ -1,0 +1,62 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_c1e68e675f221cc9",
+    "version": 1,
+    "ref": "fk:d_c1e68e675f221cc9@1",
+    "requestedUrl": "http://172.31.172.243:44735/docs/config.html",
+    "finalUrl": "http://172.31.172.243:44735/docs/config.html",
+    "title": "Configuration reference - Tidewater Docs",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T18:09:05.635Z",
+    "contentHash": "6b9259437cff05da5c8d19939503bb1c1c19e2ea88f29a05ba78ea1d1f3574c7",
+    "rawHash": "5a30f7326cc3e4088249c4993d04aa116302e52166882e0d1b32e4712bcef41f",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "http",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Configuration reference\n\nTidewater reads `tidewater.toml` from the project root. Every key can also be set with an environment variable.\n\n```toml\n[server]\nport = 8080\nworkers = 4\n```\n\n```shell\nexport TIDEWATER_SERVER_PORT=8080\nexport TIDEWATER_SERVER_WORKERS=4\n```\n\n## Keys\n\n| Key | Type | Default |\n| --- | --- | --- |\n| server.port | integer | 8080 |\n| server.workers | integer | number of CPU cores |\n| log.format | string | text |\n\n## Precedence\n\n1. Command line flags\n2. Environment variables\n3. The configuration file\n4. Built-in defaults\n\nValues that cannot be parsed stop startup with an error that names the offending key."
+  },
+  "backend": {
+    "mode": "http",
+    "used": "http",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "http",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 8.876840999990236
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 633,
+    "returnedChars": 633,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "firstByteMs": 1.1,
+    "downloadMs": 1.2,
+    "extractMs": 7.7,
+    "totalMs": 9.2
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_c1e68e675f221cc9@1",
+    "url": "http://172.31.172.243:44735/docs/config.html",
+    "title": "Configuration reference - Tidewater Docs",
+    "fetchedAt": "2026-09-30T18:09:05.635Z",
+    "version": 1,
+    "contentHash": "6b9259437cff05da5c8d19939503bb1c1c19e2ea88f29a05ba78ea1d1f3574c7"
+  }
+}

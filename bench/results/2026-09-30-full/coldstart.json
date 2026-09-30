@@ -1,0 +1,72 @@
+[
+  {
+    "profile": "fetchkeep-http",
+    "engine": "fetchkeep",
+    "method": "CLI one-shot: node dist/src/cli/main.js --json fetch <fixture> (process spawn → result → exit)",
+    "samplesMs": [
+      475,
+      429,
+      435,
+      436,
+      433
+    ]
+  },
+  {
+    "profile": "fetchkeep-chromium",
+    "engine": "fetchkeep",
+    "method": "CLI one-shot: node dist/src/cli/main.js --json fetch <fixture> (process spawn → result → exit)",
+    "samplesMs": [
+      1894,
+      1889,
+      1860,
+      1845,
+      1890
+    ]
+  },
+  {
+    "profile": "fetchkeep-lightpanda",
+    "engine": "fetchkeep",
+    "method": "CLI one-shot: node dist/src/cli/main.js --json fetch <fixture> (process spawn → result → exit)",
+    "samplesMs": [
+      1426,
+      1400,
+      1408,
+      1407,
+      1402
+    ]
+  },
+  {
+    "profile": "fetchkeep-auto",
+    "engine": "fetchkeep",
+    "method": "CLI one-shot: node dist/src/cli/main.js --json fetch <fixture> (process spawn → result → exit)",
+    "samplesMs": [
+      472,
+      446,
+      429,
+      440,
+      430
+    ]
+  },
+  {
+    "profile": "firecrawl-selfhost",
+    "engine": "firecrawl",
+    "method": "docker compose stop → docker compose up -d api → first successful /v2/scrape of a local fixture",
+    "samplesMs": [
+      34332,
+      25336,
+      25452
+    ]
+  },
+  {
+    "profile": "donsetch",
+    "engine": "donsetch",
+    "method": "CLI one-shot: donsetch fetch <fixture> --json (process spawn → result → exit)",
+    "samplesMs": [
+      42,
+      40,
+      39,
+      41,
+      37
+    ]
+  }
+]

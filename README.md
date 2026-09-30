@@ -111,6 +111,10 @@ Lightpanda is supported experimentally through CDP (`FETCHKEEP_LIGHTPANDA_EXECUT
 deterministic local fixtures and an annotated set of live websites. See [bench/README.md](bench/README.md) and the
 published results in [bench/results/](bench/results/).
 
+**[Download the latest benchmark HTML](https://github.com/rayorole/fetchkeep/releases/download/v0.1.2/fetchkeep-benchmark-0.1.2.html)** —
+open one file to compare results, search cases and export CSV. The v0.1.2 full run contains 966 task records;
+hosted Firecrawl is explicitly unavailable, not scored as zero.
+
 ```sh
 npm run bench -- --engines fetchkeep,firecrawl,donsetch --suite full --cold-start --footprint
 npm run bench:report -- --run bench/runs/<run>

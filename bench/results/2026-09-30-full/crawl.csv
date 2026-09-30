@@ -1,0 +1,43 @@
+profile,case,dataset,repetition,outcome,coverage,pages_returned,forbidden_returned,duplicate_rate,latency,stop_reason,missing_pages,error,na_reason
+firecrawl-selfhost,live-crawl-quotes,live,1,ok,0.6667,15,0,0,6722.7,completed,https://quotes.toscrape.com/page/2/,,
+firecrawl-selfhost,fx-crawl-estuary,fixture,1,ok,1,15,1,0.0667,11220.9,completed,,,
+fetchkeep-chromium,live-crawl-quotes,live,1,ok,0.6667,15,0,0,17487,page_limit,https://quotes.toscrape.com/page/2/,,
+donsetch,fx-crawl-estuary,fixture,1,ok,0.8462,12,1,0,4177,FrontierEmpty,/crawl/plants/samphire-copy.html /crawl/hidden/lighthouse.html,,
+firecrawl-hosted,fx-crawl-estuary,fixture,1,unavailable,,0,0,,,,,,engine unavailable: FIRECRAWL_API_KEY is not set
+fetchkeep-auto,live-crawl-quotes,live,1,ok,0.6667,15,0,0,7792.5,page_limit,https://quotes.toscrape.com/page/2/,,
+fetchkeep-http,live-crawl-quotes,live,1,ok,0.6667,15,0,0,7746.7,page_limit,https://quotes.toscrape.com/page/2/,,
+donsetch,live-crawl-quotes,live,1,ok,0.6667,13,0,0,6720.8,MaxPages,https://quotes.toscrape.com/login,,
+fetchkeep-lightpanda,live-crawl-quotes,live,1,ok,0.6667,15,0,0,9411.6,page_limit,https://quotes.toscrape.com/page/2/,,
+firecrawl-hosted,live-crawl-quotes,live,1,unavailable,,0,0,,,,,,engine unavailable: FIRECRAWL_API_KEY is not set
+fetchkeep-http,fx-crawl-estuary,fixture,1,ok,1,13,0,0,6527.2,depth_limit,,,
+fetchkeep-chromium,fx-crawl-estuary,fixture,1,ok,1,13,0,0,7970.7,depth_limit,,,
+fetchkeep-lightpanda,fx-crawl-estuary,fixture,1,ok,1,13,0,0,7028.8,depth_limit,,,
+fetchkeep-auto,fx-crawl-estuary,fixture,1,ok,1,13,0,0,6518.9,depth_limit,,,
+firecrawl-hosted,live-crawl-quotes,live,2,unavailable,,0,0,,,,,,engine unavailable: FIRECRAWL_API_KEY is not set
+fetchkeep-auto,fx-crawl-estuary,fixture,2,ok,1,13,0,0,6515.1,depth_limit,,,
+fetchkeep-http,fx-crawl-estuary,fixture,2,ok,1,13,0,0,6518.5,depth_limit,,,
+donsetch,fx-crawl-estuary,fixture,2,ok,0.8462,12,1,0,4170.4,FrontierEmpty,/crawl/plants/samphire-copy.html /crawl/hidden/lighthouse.html,,
+fetchkeep-auto,live-crawl-quotes,live,2,ok,0.6667,15,0,0,7618.9,page_limit,https://quotes.toscrape.com/page/2/,,
+fetchkeep-lightpanda,live-crawl-quotes,live,2,ok,0.6667,15,0,0,9098.7,page_limit,https://quotes.toscrape.com/page/2/,,
+fetchkeep-http,live-crawl-quotes,live,2,ok,0.6667,15,0,0,7609.5,page_limit,https://quotes.toscrape.com/page/2/,,
+firecrawl-hosted,fx-crawl-estuary,fixture,2,unavailable,,0,0,,,,,,engine unavailable: FIRECRAWL_API_KEY is not set
+fetchkeep-lightpanda,fx-crawl-estuary,fixture,2,ok,1,13,0,0,7044.4,depth_limit,,,
+donsetch,live-crawl-quotes,live,2,ok,0.6667,14,0,0,7072.4,MaxPages,https://quotes.toscrape.com/login,,
+firecrawl-selfhost,live-crawl-quotes,live,2,ok,0.6667,15,0,0,11624.5,completed,https://quotes.toscrape.com/page/2/,,
+fetchkeep-chromium,fx-crawl-estuary,fixture,2,ok,1,13,0,0,7938.6,depth_limit,,,
+fetchkeep-chromium,live-crawl-quotes,live,2,ok,0.6667,15,0,0,16176.6,page_limit,https://quotes.toscrape.com/page/2/,,
+firecrawl-selfhost,fx-crawl-estuary,fixture,2,ok,1,14,0,0.0714,11275.2,completed,,,
+fetchkeep-chromium,fx-crawl-estuary,fixture,3,ok,1,13,0,0,7970.6,depth_limit,,,
+donsetch,fx-crawl-estuary,fixture,3,ok,0.8462,12,1,0,4171,FrontierEmpty,/crawl/plants/samphire.html /crawl/hidden/lighthouse.html,,
+firecrawl-hosted,fx-crawl-estuary,fixture,3,unavailable,,0,0,,,,,,engine unavailable: FIRECRAWL_API_KEY is not set
+firecrawl-selfhost,fx-crawl-estuary,fixture,3,ok,1,15,1,0.0667,9209,completed,,,
+donsetch,live-crawl-quotes,live,3,ok,0.6667,13,0,0,4597,MaxPages,https://quotes.toscrape.com/login,,
+firecrawl-hosted,live-crawl-quotes,live,3,unavailable,,0,0,,,,,,engine unavailable: FIRECRAWL_API_KEY is not set
+fetchkeep-auto,fx-crawl-estuary,fixture,3,ok,1,13,0,0,6518.6,depth_limit,,,
+fetchkeep-auto,live-crawl-quotes,live,3,ok,0.6667,15,0,0,7744.3,page_limit,https://quotes.toscrape.com/page/2/,,
+fetchkeep-http,live-crawl-quotes,live,3,ok,0.6667,15,0,0,7780,page_limit,https://quotes.toscrape.com/page/2/,,
+firecrawl-selfhost,live-crawl-quotes,live,3,ok,0.6667,15,0,0,11251.9,completed,https://quotes.toscrape.com/page/2/,,
+fetchkeep-lightpanda,live-crawl-quotes,live,3,ok,0.6667,15,0,0,9535.2,page_limit,https://quotes.toscrape.com/page/2/,,
+fetchkeep-chromium,live-crawl-quotes,live,3,ok,0.6667,15,0,0,17756.9,page_limit,https://quotes.toscrape.com/page/2/,,
+fetchkeep-http,fx-crawl-estuary,fixture,3,ok,1,13,0,0,6550.4,depth_limit,,,
+fetchkeep-lightpanda,fx-crawl-estuary,fixture,3,ok,1,13,0,0,7030.2,depth_limit,,,
