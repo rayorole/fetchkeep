@@ -1,0 +1,73 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_5adff197ebb4aacd",
+    "version": 1,
+    "ref": "fk:d_5adff197ebb4aacd@1",
+    "requestedUrl": "http://172.31.172.243:40121/files/notice.txt",
+    "finalUrl": "http://172.31.172.243:40121/files/notice.txt",
+    "title": "HARBOUR NOTICE 17",
+    "contentType": "text/plain",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T19:32:11.640Z",
+    "contentHash": "c43ba641d0a6588c431fccfb0bb63d4970cdbb59abd7c283bdb369daa4589647",
+    "rawHash": "56eb3877ff7c664270207f03466293a553b5793d1292176e6af82d86ae68a97e",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "text",
+    "backend": "http",
+    "saved": true,
+    "unchanged": false
+  },
+  "content": {
+    "format": "markdown",
+    "text": "HARBOUR NOTICE 17\n\nThe north breakwater will be closed to pedestrians from Monday for resurfacing.\n\nAnglers may use the south pier during the works."
+  },
+  "backend": {
+    "mode": "lightpanda",
+    "used": "http",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "lightpanda",
+        "outcome": "failed",
+        "reason": "lightpanda loaded a text/plain resource; browsers are only used for HTML",
+        "errorCode": "unsupported_content_type",
+        "durationMs": 525.9571010000072
+      },
+      {
+        "backend": "http",
+        "outcome": "success",
+        "reason": "non-HTML resource fetched over HTTP",
+        "httpStatus": 200,
+        "durationMs": 7.8423369999509305
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 148,
+    "returnedChars": 148,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "firstByteMs": 7,
+    "downloadMs": 7.3,
+    "extractMs": 0.4,
+    "saveMs": 0.6,
+    "totalMs": 534.7
+  },
+  "warnings": [
+    "text/plain is not rendered by browsers; fetched over HTTP"
+  ],
+  "citation": {
+    "ref": "fk:d_5adff197ebb4aacd@1",
+    "url": "http://172.31.172.243:40121/files/notice.txt",
+    "title": "HARBOUR NOTICE 17",
+    "fetchedAt": "2026-09-30T19:32:11.640Z",
+    "version": 1,
+    "contentHash": "c43ba641d0a6588c431fccfb0bb63d4970cdbb59abd7c283bdb369daa4589647"
+  }
+}

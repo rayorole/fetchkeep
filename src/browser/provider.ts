@@ -10,7 +10,7 @@ export interface RenderRequest {
   deadline: number;
   policy: NetworkPolicy;
   userAgent: string;
-  /** Extra time to wait after `load` for late network activity. */
+  /** Minimum observation time after load; bounded content-aware readiness may wait longer for loading pages. */
   settleMs: number;
   /** Maximum size of the serialized HTML. */
   maxBytes: number;
@@ -26,11 +26,12 @@ export interface RenderResult {
   finalUrl: string;
   status: number;
   contentType: string;
-  /** Serialized DOM after scripts ran (`document.documentElement.outerHTML`). */
+  /** Serialized composed DOM after scripts ran, including open shadow roots and assigned slots. */
   html: string;
   truncated: boolean;
   requests: RequestStats;
-  timings: { launchMs: number; navigateMs: number; totalMs: number };
+  /** Disjoint phases; launch includes connection/context setup. totalMs overlaps all phases. */
+  timings: { launchMs: number; navigateMs: number; readinessMs: number; serializeMs: number; totalMs: number };
 }
 
 export interface BrowserAvailability {

@@ -1,0 +1,11 @@
+{
+  "text": "# Archive recovery notes\nhttp://172.31.172.243:45387/validation/inline-evidence.html\n\nThe operator reads `archive.lock` before opening the **recovery journal**.\n\nA successful restore preserves the original timestamp and the owner’s signature.\n\nNever replace a verified snapshot with an incomplete copy.",
+  "structured": {
+    "changed": "new",
+    "content_kind": "Page",
+    "content_ok": true,
+    "lang": "en",
+    "url": "http://172.31.172.243:45387/validation/inline-evidence.html"
+  },
+  "isError": false
+}

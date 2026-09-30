@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "data": {
+    "markdown": "Reservoir inspection\n====================\n\nLoading inspection details…",
+    "metadata": {
+      "language": "en",
+      "title": "Reservoir inspection",
+      "scrapeId": "01a0f3c6-ecff-768b-a0b2-68df0e879dbb",
+      "sourceURL": "http://172.31.172.243:45387/validation/delayed-shell.html",
+      "url": "http://172.31.172.243:45387/validation/delayed-shell.html",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "proxyUsed": "basic",
+      "creditsUsed": 1,
+      "concurrencyLimited": false
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "text": "# Station protocol\nhttp://172.31.172.243:45387/validation/unicode-protocol.html\n\nLa température est relevée à midi dans l’abri météorologique.\n\n観測記録は毎週金曜日に保存されます。\n\n> Never round a raw measurement before archiving it.\n\n```\nstation = \"Ålesund\"\nthreshold = 0.125\n```",
+  "structured": {
+    "changed": "new",
+    "content_kind": "Page",
+    "content_ok": true,
+    "lang": "en",
+    "url": "http://172.31.172.243:45387/validation/unicode-protocol.html"
+  },
+  "isError": false
+}

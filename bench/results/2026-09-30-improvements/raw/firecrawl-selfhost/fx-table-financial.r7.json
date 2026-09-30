@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "data": {
+    "markdown": "We use cookies to measure audience engagement. Accept all cookies\n\nQuarterly results for the ferry cooperative\n===========================================\n\nThe cooperative carried more passengers than in any previous quarter, but fuel costs rose faster than fares.\n\n| Line item | Q1  | Q2  | Change |\n| --- | --- | --- | --- |\n| Passenger fares | 1,204,000 | 1,388,500 | +15.3% |\n| Fuel | 402,100 | 497,900 | +23.8% |\n| Crew wages | 511,000 | 519,400 | +1.6% |\n| **Operating surplus** | 290,900 | 371,200 | +27.6% |\n\nMembers will vote on a fare adjustment at the annual meeting.",
+    "metadata": {
+      "language": "en",
+      "title": "Quarterly results for the ferry cooperative | Northwind Journal",
+      "scrapeId": "01a0f3e7-41ec-7715-a647-cbb58f2945af",
+      "sourceURL": "http://172.31.172.243:40121/data/ferry-results.html",
+      "url": "http://172.31.172.243:40121/data/ferry-results.html",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "proxyUsed": "basic",
+      "creditsUsed": 1,
+      "concurrencyLimited": false
+    }
+  }
+}

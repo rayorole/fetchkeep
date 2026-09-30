@@ -1,0 +1,68 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_cf7f0f92ad3fff7b",
+    "version": 1,
+    "ref": "fk:d_cf7f0f92ad3fff7b@1",
+    "requestedUrl": "http://172.31.172.243:45387/validation/background-clock.html",
+    "finalUrl": "http://172.31.172.243:45387/validation/background-clock.html",
+    "title": "Glacier measurements",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T19:26:04.652Z",
+    "contentHash": "fc537ee5685a93b4860638c297d67a547643d48633ab5b14156571ac793ac46e",
+    "rawHash": "91a1b2c791ae07d5b9bf5060f0edd9158bfbf277b1b50681648317f4513216d5",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "lightpanda",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Glacier measurements\n\nThe survey team measures the terminus from the same brass marker every August.\n\nMeasurements are corrected for the slope of the valley floor before publication.\n\nArchived field notebooks remain available at the regional geology library."
+  },
+  "backend": {
+    "mode": "lightpanda",
+    "used": "lightpanda",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "lightpanda",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 525.2925990000076
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 260,
+    "returnedChars": 260,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "launchMs": 12.1,
+    "navigateMs": 2.2,
+    "readinessMs": 507.5,
+    "serializeMs": 0.6,
+    "renderMs": 522.4,
+    "extractMs": 1.5,
+    "subrequests": 1,
+    "subrequestsBlocked": 0,
+    "saveMs": 0.2,
+    "totalMs": 525.9
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_cf7f0f92ad3fff7b@1",
+    "url": "http://172.31.172.243:45387/validation/background-clock.html",
+    "title": "Glacier measurements",
+    "fetchedAt": "2026-09-30T19:26:04.652Z",
+    "version": 1,
+    "contentHash": "fc537ee5685a93b4860638c297d67a547643d48633ab5b14156571ac793ac46e"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_b1ec193bb079789e",
+    "version": 1,
+    "ref": "fk:d_b1ec193bb079789e@1",
+    "requestedUrl": "http://172.31.172.243:40121/js/next-data.html",
+    "finalUrl": "http://172.31.172.243:40121/js/next-data.html",
+    "title": "Glossary",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T19:47:32.264Z",
+    "contentHash": "2784a730b3e46ee20376cddd99aa1e2c2ddcdf0efda3472292c1ce260a966e23",
+    "rawHash": "a20d6cdb52657cbebfd1857a8ef580e48b0fe0eabc7f11b0bdc0b4fcf4074558",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "chromium",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Glossary of harbour terms\n\nBollard\n\nA short post on a quay used for mooring ships.\n\nFender\n\nA cushion that protects a hull from the quay wall.\n\nSlipway\n\nA ramp that lets boats move between land and water."
+  },
+  "backend": {
+    "mode": "auto",
+    "used": "chromium",
+    "escalated": true,
+    "attempts": [
+      {
+        "backend": "http",
+        "outcome": "insufficient",
+        "reason": "empty single-page-app root and only 8 chars extracted",
+        "httpStatus": 200,
+        "durationMs": 1.175152000039816
+      },
+      {
+        "backend": "chromium",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 605.1235150001012
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 206,
+    "returnedChars": 206,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "firstByteMs": 0.6,
+    "downloadMs": 0.7,
+    "extractMs": 2.4,
+    "launchMs": 31,
+    "navigateMs": 16,
+    "readinessMs": 533.2,
+    "serializeMs": 12.2,
+    "renderMs": 592.5,
+    "subrequests": 1,
+    "subrequestsBlocked": 0,
+    "saveMs": 0.4,
+    "totalMs": 606.9
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_b1ec193bb079789e@1",
+    "url": "http://172.31.172.243:40121/js/next-data.html",
+    "title": "Glossary",
+    "fetchedAt": "2026-09-30T19:47:32.264Z",
+    "version": 1,
+    "contentHash": "2784a730b3e46ee20376cddd99aa1e2c2ddcdf0efda3472292c1ce260a966e23"
+  }
+}

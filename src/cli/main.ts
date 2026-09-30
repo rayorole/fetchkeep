@@ -2,15 +2,12 @@
 import { createWriteStream, readFileSync } from "node:fs";
 import { once } from "node:events";
 import { Command, InvalidArgumentError, Option } from "commander";
-import { loadConfig, type ConfigOverrides } from "../core/config.js";
+import type { ConfigOverrides } from "../core/config.js";
 import { FetchkeepError } from "../core/errors.js";
-import { FETCH_MODES } from "../core/schema.js";
+import { FETCH_MODES } from "../core/modes.js";
 import type { Envelope, FetchMode } from "../core/schema.js";
-import { Fetchkeep } from "../core/service.js";
-import { CrawlRepo } from "../core/store/crawls.js";
+import type { Fetchkeep } from "../core/service.js";
 import { VERSION } from "../version.js";
-import { runDoctor } from "./doctor.js";
-import { runMcpStdio } from "./mcp.js";
 import { configurePresentation, printEnvelope, terminalText } from "./presentation.js";
 
 interface GlobalOpts {
@@ -34,7 +31,8 @@ function exitCodeFor(env: Envelope): number {
   return env.status === "success" ? 0 : env.status === "partial" ? 3 : 1;
 }
 
-function makeService(opts: GlobalOpts): Fetchkeep {
+async function makeService(opts: GlobalOpts): Promise<Fetchkeep> {
+  const [{ loadConfig }, { Fetchkeep }] = await Promise.all([import("../core/config.js"), import("../core/service.js")]);
   const overrides: ConfigOverrides = {};
   if (opts.home) overrides.home = opts.home;
   if (opts.workspace) overrides.workspace = opts.workspace;
@@ -49,7 +47,7 @@ async function run(opts: GlobalOpts, fn: (fk: Fetchkeep, signal: AbortSignal) =>
   let fk: Fetchkeep | null = null;
   let env: Envelope;
   try {
-    fk = makeService(opts);
+    fk = await makeService(opts);
     const ac = new AbortController();
     process.once("SIGINT", () => ac.abort(new FetchkeepError("cancelled", "Interrupted")));
     env = await fn(fk, ac.signal);
@@ -238,7 +236,10 @@ export function buildProgram(): Command {
     .description("list recent crawls")
     .option("-n, --limit <n>", "maximum crawls", int("limit"), 20)
     .action((o: { limit: number }) =>
-      run(g(), (fk) => ({ status: "success", tool: "crawls", data: { crawls: new CrawlRepo(fk.store.db).list(o.limit) }, timings: {}, warnings: [] })),
+      run(g(), async (fk) => {
+        const { CrawlRepo } = await import("../core/store/crawls.js");
+        return { status: "success", tool: "crawls", data: { crawls: new CrawlRepo(fk.store.db).list(o.limit) }, timings: {}, warnings: [] };
+      }),
     );
 
   program
@@ -277,7 +278,7 @@ export function buildProgram(): Command {
     .option("-o, --out <file>", "output file (default: stdout)")
     .option("--include-raw", "include raw source snapshots (base64)")
     .action(async (o: { out?: string; includeRaw?: boolean }) => {
-      const fk = makeService(g());
+      const fk = await makeService(g());
       try {
         const out = o.out ? createWriteStream(o.out) : process.stdout;
         let n = 0;
@@ -347,13 +348,19 @@ export function buildProgram(): Command {
     .command("doctor")
     .description("check the installation, store and optional backends")
     .helpGroup("Setup and integrations:")
-    .action(() => run(g(), (fk) => runDoctor(fk)));
+    .action(() => run(g(), async (fk) => {
+      const { runDoctor } = await import("./doctor.js");
+      return runDoctor(fk);
+    }));
 
   program
     .command("mcp")
     .description("run the MCP server on stdio (stdout carries protocol messages only)")
     .helpGroup("Setup and integrations:")
-    .action(() => runMcpStdio(() => makeService(g())));
+    .action(async () => {
+      const { runMcpStdio } = await import("./mcp.js");
+      return runMcpStdio(() => makeService(g()));
+    });
 
   return program;
 }

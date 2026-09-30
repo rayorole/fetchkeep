@@ -1,0 +1,63 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_cf7f0f92ad3fff7b",
+    "version": 1,
+    "ref": "fk:d_cf7f0f92ad3fff7b@1",
+    "requestedUrl": "http://172.31.172.243:45387/validation/background-clock.html",
+    "finalUrl": "http://172.31.172.243:45387/validation/background-clock.html",
+    "title": "Glacier measurements",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T19:26:41.009Z",
+    "contentHash": "fc537ee5685a93b4860638c297d67a547643d48633ab5b14156571ac793ac46e",
+    "rawHash": "ab7234743e357205a5f441bbdf64828d83f2570ee12a098a0dbcd8233dd16107",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "http",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Glacier measurements\n\nThe survey team measures the terminus from the same brass marker every August.\n\nMeasurements are corrected for the slope of the valley floor before publication.\n\nArchived field notebooks remain available at the regional geology library."
+  },
+  "backend": {
+    "mode": "http",
+    "used": "http",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "http",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 2.560081000003265
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 260,
+    "returnedChars": 260,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "firstByteMs": 1.1,
+    "downloadMs": 1.3,
+    "extractMs": 1.2,
+    "saveMs": 0.2,
+    "totalMs": 3
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_cf7f0f92ad3fff7b@1",
+    "url": "http://172.31.172.243:45387/validation/background-clock.html",
+    "title": "Glacier measurements",
+    "fetchedAt": "2026-09-30T19:26:41.009Z",
+    "version": 1,
+    "contentHash": "fc537ee5685a93b4860638c297d67a547643d48633ab5b14156571ac793ac46e"
+  }
+}

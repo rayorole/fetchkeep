@@ -1,11 +1,10 @@
 import { z } from "zod";
 import { ERROR_CODES } from "./errors.js";
+import { BACKENDS, FETCH_MODES } from "./modes.js";
 
-export const BACKENDS = ["http", "chromium", "lightpanda"] as const;
 export const BackendName = z.enum(BACKENDS);
 export type BackendName = z.infer<typeof BackendName>;
 
-export const FETCH_MODES = ["http", "auto", "chromium", "lightpanda", "browser"] as const;
 export const FetchMode = z.enum(FETCH_MODES);
 export type FetchMode = z.infer<typeof FetchMode>;
 

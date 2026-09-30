@@ -1,0 +1,2 @@
+Depth logger The logger writes one depth measurement after each completed descent. Example depth record const reading = { depth: 17, unit: "metres" };
+console.log(reading.depth); Disconnect the probe before replacing its protective cap.

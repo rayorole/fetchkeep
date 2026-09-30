@@ -13,6 +13,7 @@ import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { makePdf } from "../../test/support/pdf.ts";
 import type { CrawlCase, FetchCase } from "../lib/types.ts";
+import { validationFixtures } from "./validation.ts";
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const SITE = join(ROOT, "site");
@@ -596,6 +597,8 @@ crawlCases.push({
 
 // ---------------------------------------------------------------------------------------------------------------
 // Write everything.
+const validation = validationFixtures();
+for (const [path, body] of validation.files) files.set(path, body);
 
 rmSync(SITE, { recursive: true, force: true });
 rmSync(GOLD, { recursive: true, force: true });
@@ -613,6 +616,12 @@ const manifest = {
 const datasetsDir = join(ROOT, "..", "datasets");
 mkdirSync(datasetsDir, { recursive: true });
 writeFileSync(join(datasetsDir, "fixtures.json"), `${JSON.stringify(manifest, null, 2)}\n`);
+writeFileSync(join(datasetsDir, "validation.json"), `${JSON.stringify({
+  name: "validation",
+  description: "Eight separately authored cases frozen before the #37–40 optimized implementation was exercised. First-run validation; later reruns are regression evidence. Not an independent external benchmark.",
+  license: "Apache-2.0 (original text written for Fetchkeep)",
+  cases: validation.cases,
+}, null, 2)}\n`);
 
 function walk(dir: string): string[] {
   return readdirSync(dir).flatMap((f) => {
@@ -620,7 +629,7 @@ function walk(dir: string): string[] {
     return statSync(p).isDirectory() ? walk(p) : [p];
   });
 }
-const sums = [...walk(SITE), ...walk(GOLD), join(datasetsDir, "fixtures.json")]
+const sums = [...walk(SITE), ...walk(GOLD), join(datasetsDir, "fixtures.json"), join(datasetsDir, "validation.json")]
   .map((p) => `${createHash("sha256").update(readFileSync(p)).digest("hex")}  ${relative(join(ROOT, ".."), p).replace(/\\/g, "/")}`)
   .sort((a, b) => a.slice(66).localeCompare(b.slice(66)));
 writeFileSync(join(ROOT, "SHA256SUMS"), `${sums.join("\n")}\n`);

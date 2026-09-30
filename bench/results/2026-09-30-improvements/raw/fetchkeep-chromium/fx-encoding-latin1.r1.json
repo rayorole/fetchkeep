@@ -1,0 +1,68 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_fc5ee5a5274e8f45",
+    "version": 1,
+    "ref": "fk:d_fc5ee5a5274e8f45@1",
+    "requestedUrl": "http://172.31.172.243:40121/enc/latin1.html",
+    "finalUrl": "http://172.31.172.243:40121/enc/latin1.html",
+    "title": "Menu du jour",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T19:30:02.072Z",
+    "contentHash": "b8b815e16766ee56d37f850924f90b5c2440d62f8457faee0a6cbb1b0dd4f8df",
+    "rawHash": "386ce359dd5684baa61711d3f19022a44caad14cfe2556e29054226a1895b165",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "chromium",
+    "saved": true,
+    "unchanged": false
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Menu du jour\n\nCrème brûlée is served at the café on the quay every Friday.\n\nA slice of tarte costs €4 with coffee."
+  },
+  "backend": {
+    "mode": "chromium",
+    "used": "chromium",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "chromium",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 631.3457690000068
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 116,
+    "returnedChars": 116,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "launchMs": 44.7,
+    "navigateMs": 41.3,
+    "readinessMs": 533.9,
+    "serializeMs": 2.7,
+    "renderMs": 622.5,
+    "extractMs": 4,
+    "subrequests": 1,
+    "subrequestsBlocked": 0,
+    "saveMs": 1.1,
+    "totalMs": 632.7
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_fc5ee5a5274e8f45@1",
+    "url": "http://172.31.172.243:40121/enc/latin1.html",
+    "title": "Menu du jour",
+    "fetchedAt": "2026-09-30T19:30:02.072Z",
+    "version": 1,
+    "contentHash": "b8b815e16766ee56d37f850924f90b5c2440d62f8457faee0a6cbb1b0dd4f8df"
+  }
+}

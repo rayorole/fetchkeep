@@ -1,0 +1,77 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_a1442895d2538147",
+    "version": 1,
+    "ref": "fk:d_a1442895d2538147@1",
+    "requestedUrl": "http://172.31.172.243:45387/validation/nested-shadow.html",
+    "finalUrl": "http://172.31.172.243:45387/validation/nested-shadow.html",
+    "title": "Depth logger",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T19:26:09.382Z",
+    "contentHash": "e18d5544b80fae2dd38b97645b2f067d7eb1c54a66b43a46d83e479d1cef1dcb",
+    "rawHash": "2ff9292c331ba6aca83d234f81718a7baf6219699b1cb05fdb970919ed9e0b45",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "chromium",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Depth logger"
+  },
+  "backend": {
+    "mode": "auto",
+    "used": "chromium",
+    "escalated": true,
+    "attempts": [
+      {
+        "backend": "http",
+        "outcome": "insufficient",
+        "reason": "only 12 chars extracted from a script-driven page (1 scripts)",
+        "httpStatus": 200,
+        "durationMs": 1.6453250000049593
+      },
+      {
+        "backend": "chromium",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 2080.1817379999993
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 14,
+    "returnedChars": 14,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "firstByteMs": 0.9,
+    "downloadMs": 1,
+    "extractMs": 1.4,
+    "launchMs": 49.4,
+    "navigateMs": 21.1,
+    "readinessMs": 2001.5,
+    "serializeMs": 3.4,
+    "renderMs": 2075.3,
+    "subrequests": 1,
+    "subrequestsBlocked": 0,
+    "saveMs": 0.2,
+    "totalMs": 2082.5
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_a1442895d2538147@1",
+    "url": "http://172.31.172.243:45387/validation/nested-shadow.html",
+    "title": "Depth logger",
+    "fetchedAt": "2026-09-30T19:26:09.382Z",
+    "version": 1,
+    "contentHash": "e18d5544b80fae2dd38b97645b2f067d7eb1c54a66b43a46d83e479d1cef1dcb"
+  }
+}

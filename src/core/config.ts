@@ -49,7 +49,7 @@ const Browser = z
     preferred: z.enum(["chromium", "lightpanda"]).default("chromium"),
     maxConcurrency: z.number().int().min(1).max(16).default(2),
     idleMs: z.number().int().min(1000).default(60_000),
-    /** Extra wait after load for late network activity (ms). */
+    /** Minimum post-load content observation (ms); sparse/loading pages get a bounded readiness window. */
     settleMs: z.number().int().min(0).max(30_000).default(500),
     chromium: Chromium.default(Chromium.parse({})),
     lightpanda: Lightpanda.default(Lightpanda.parse({})),

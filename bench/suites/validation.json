@@ -1,0 +1,7 @@
+{
+  "name": "validation",
+  "description": "Separate frozen validation cases for issues #37–40; not part of the historical full suite. Subsequent tuning must relabel them as regression evidence.",
+  "kind": "fetch",
+  "cases": ["val-*"],
+  "repetitions": 7
+}

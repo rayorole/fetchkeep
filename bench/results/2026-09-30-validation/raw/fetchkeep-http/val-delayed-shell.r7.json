@@ -1,0 +1,63 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_8c1d901a57d41129",
+    "version": 1,
+    "ref": "fk:d_8c1d901a57d41129@1",
+    "requestedUrl": "http://172.31.172.243:45387/validation/delayed-shell.html",
+    "finalUrl": "http://172.31.172.243:45387/validation/delayed-shell.html",
+    "title": "Reservoir inspection",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T19:27:23.874Z",
+    "contentHash": "18f12892028ddab0c7d33a9aa19b1b2f63ef3a9c2f3fe7a882fe2886fb1f0c34",
+    "rawHash": "3ca5905a934f15d7ce5a7f9b188a07fe7bc39a4b431429f90679f91a1b6d4056",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "http",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Reservoir inspection\n\nLoading inspection details…"
+  },
+  "backend": {
+    "mode": "http",
+    "used": "http",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "http",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 3.2759450000012293
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 51,
+    "returnedChars": 51,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "firstByteMs": 0.9,
+    "downloadMs": 1,
+    "extractMs": 2.3,
+    "saveMs": 0.4,
+    "totalMs": 4.5
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_8c1d901a57d41129@1",
+    "url": "http://172.31.172.243:45387/validation/delayed-shell.html",
+    "title": "Reservoir inspection",
+    "fetchedAt": "2026-09-30T19:27:23.874Z",
+    "version": 1,
+    "contentHash": "18f12892028ddab0c7d33a9aa19b1b2f63ef3a9c2f3fe7a882fe2886fb1f0c34"
+  }
+}

@@ -1,0 +1,7 @@
+http://172.31.172.243:40121/files/notice.txt
+
+HARBOUR NOTICE 17
+
+The north breakwater will be closed to pedestrians from Monday for resurfacing.
+
+Anglers may use the south pier during the works.

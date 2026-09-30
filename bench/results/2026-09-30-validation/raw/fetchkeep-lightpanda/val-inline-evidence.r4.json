@@ -1,0 +1,68 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_ccfc1ad33bc828f8",
+    "version": 1,
+    "ref": "fk:d_ccfc1ad33bc828f8@1",
+    "requestedUrl": "http://172.31.172.243:45387/validation/inline-evidence.html",
+    "finalUrl": "http://172.31.172.243:45387/validation/inline-evidence.html",
+    "title": "Archive recovery notes",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T19:26:12.113Z",
+    "contentHash": "49458b1ff3b3d311925a05b8b5df83b58c0237ce6a91a8806ae005dc1d0fc687",
+    "rawHash": "b5c6c97e3ab20a3fb417c06496bc162de25ccbce95deccfc04ec67b6515cb558",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "lightpanda",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Archive recovery notes\n\nThe operator reads `archive.lock` before opening the **recovery journal**.\n\nA successful restore preserves the original timestamp and the owner’s signature.\n\nNever replace a verified snapshot with an incomplete copy."
+  },
+  "backend": {
+    "mode": "lightpanda",
+    "used": "lightpanda",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "lightpanda",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 525.6843410000001
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 242,
+    "returnedChars": 242,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "launchMs": 11.6,
+    "navigateMs": 1.9,
+    "readinessMs": 508.1,
+    "serializeMs": 0.7,
+    "renderMs": 522.3,
+    "extractMs": 1.5,
+    "subrequests": 1,
+    "subrequestsBlocked": 0,
+    "saveMs": 0.2,
+    "totalMs": 526.2
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_ccfc1ad33bc828f8@1",
+    "url": "http://172.31.172.243:45387/validation/inline-evidence.html",
+    "title": "Archive recovery notes",
+    "fetchedAt": "2026-09-30T19:26:12.113Z",
+    "version": 1,
+    "contentHash": "49458b1ff3b3d311925a05b8b5df83b58c0237ce6a91a8806ae005dc1d0fc687"
+  }
+}

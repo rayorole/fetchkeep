@@ -1,0 +1,15 @@
+{
+  "text": "# Valley Water Board Annual Report\nhttp://172.31.172.243:40121/files/annual-report.pdf\n\nThe board supplied drinking water to eleven thousand households this year. Leakage fell for the third consecutive year after the pipe renewal programme.\n\n## Finances\n\nOperating costs were covered entirely by water charges and connection fees.\n\n## Outlook\n\nNext year the board will replace the Millbrook pumping station.",
+  "structured": {
+    "changed": "new",
+    "content_kind": "Page",
+    "content_ok": true,
+    "lang": "en",
+    "pdf": {
+      "ocr_pages": 0,
+      "pages": 2
+    },
+    "url": "http://172.31.172.243:40121/files/annual-report.pdf"
+  },
+  "isError": false
+}

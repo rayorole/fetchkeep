@@ -3,6 +3,7 @@ import type * as Playwright from "playwright-core";
 import type { Browser, BrowserContext, Route, WebSocketRoute } from "playwright-core";
 import { FetchkeepError, toFetchkeepError } from "../core/errors.js";
 import type { BrowserAvailability, BrowserProvider, RenderRequest, RenderResult, RequestStats } from "./provider.js";
+import { inspectDocument, waitForContent } from "./readiness.js";
 
 export interface ChromiumOptions {
   /** Playwright channel (`chromium`, `chrome`, `msedge`, …). Default: Playwright's Chromium headless shell. */
@@ -62,9 +63,8 @@ export class ChromiumProvider implements BrowserProvider {
     }
   }
 
-  private async ensureBrowser(deadline: number): Promise<{ browser: Browser; launchMs: number }> {
-    if (this.browser?.isConnected()) return { browser: this.browser, launchMs: 0 };
-    const t0 = performance.now();
+  private async ensureBrowser(deadline: number): Promise<Browser> {
+    if (this.browser?.isConnected()) return this.browser;
     this.launching ??= (async () => {
       const pw = await loadPlaywright();
       if (!pw) throw new FetchkeepError("browser_unavailable", "playwright-core is not installed", { hint: INSTALL_HINT });
@@ -72,7 +72,7 @@ export class ChromiumProvider implements BrowserProvider {
         const browser = await pw.chromium.launch({
           headless: true,
           chromiumSandbox: this.opts.sandbox,
-          timeout: Math.max(1000, deadline - Date.now()),
+          timeout: Math.max(1, deadline - Date.now()),
           ...(this.opts.executablePath ? { executablePath: this.opts.executablePath } : this.opts.channel ? { channel: this.opts.channel } : {}),
           args: ["--disable-background-networking", "--disable-component-update", "--no-first-run", "--disable-sync", "--metrics-recording-only"],
         });
@@ -93,12 +93,13 @@ export class ChromiumProvider implements BrowserProvider {
     } finally {
       this.launching = null;
     }
-    return { browser: this.browser, launchMs: performance.now() - t0 };
+    return this.browser;
   }
 
   async render(req: RenderRequest): Promise<RenderResult> {
+    req.signal.throwIfAborted();
     const started = performance.now();
-    const { browser, launchMs } = await this.ensureBrowser(req.deadline);
+    const browser = await this.ensureBrowser(req.deadline);
     const stats: RequestStats = { total: 0, blocked: 0, failed: 0 };
     let context: BrowserContext | null = null;
     const onAbort = () => void context?.close().catch(() => undefined);
@@ -111,6 +112,7 @@ export class ChromiumProvider implements BrowserProvider {
         javaScriptEnabled: true,
         ignoreHTTPSErrors: false,
       });
+      req.signal.throwIfAborted();
       await context.route("**/*", async (route: Route) => {
         stats.total++;
         const target = route.request().url();
@@ -137,13 +139,17 @@ export class ChromiumProvider implements BrowserProvider {
       });
       const page = await context.newPage();
       page.on("requestfailed", () => stats.failed++);
+      req.signal.throwIfAborted();
       const navStart = performance.now();
-      const timeout = Math.max(500, req.deadline - Date.now());
+      const launchMs = navStart - started;
+      const timeout = Math.max(1, req.deadline - Date.now());
       const response = await page.goto(req.url, { waitUntil: "load", timeout });
-      const settle = Math.min(req.settleMs + 2000, Math.max(0, req.deadline - Date.now() - 250));
-      await page.waitForLoadState("networkidle", { timeout: settle }).catch(() => undefined);
-      if (req.settleMs > 0) await page.waitForTimeout(Math.min(req.settleMs, Math.max(0, req.deadline - Date.now() - 250)));
-      let html = await page.content();
+      const readinessStart = performance.now();
+      const navigateMs = readinessStart - navStart;
+      await waitForContent(() => page.evaluate(inspectDocument, false), req);
+      const serializeStart = performance.now();
+      const readinessMs = serializeStart - readinessStart;
+      let { html } = await page.evaluate(inspectDocument, true);
       let truncated = false;
       if (Buffer.byteLength(html) > req.maxBytes) {
         html = Buffer.from(html).subarray(0, req.maxBytes).toString("utf8");
@@ -157,7 +163,7 @@ export class ChromiumProvider implements BrowserProvider {
         html,
         truncated,
         requests: stats,
-        timings: { launchMs, navigateMs: performance.now() - navStart, totalMs: performance.now() - started },
+        timings: { launchMs, navigateMs, readinessMs, serializeMs: performance.now() - serializeStart, totalMs: performance.now() - started },
       };
     } catch (err) {
       if (req.signal.aborted) throw toFetchkeepError(err, req.signal);

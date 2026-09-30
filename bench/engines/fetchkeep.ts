@@ -3,6 +3,9 @@ import { once } from "node:events";
 import { existsSync, mkdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
+import type { Envelope as ServiceEnvelope } from "../../src/core/schema.js";
+import { citationVerified, type CitationMatch } from "../lib/citation.ts";
+import { reportedTimings } from "../lib/timings.ts";
 import { McpSession } from "../lib/mcp.ts";
 import type { Availability, Capabilities, CrawlOutput, EngineAdapter, EngineError, EngineInfo, FetchOutput, ResourceTarget } from "../lib/types.ts";
 
@@ -18,15 +21,8 @@ const MODE: Record<FetchkeepProfile, string> = {
   "fetchkeep-auto": "auto",
 };
 
-interface Envelope {
-  status: "success" | "partial" | "error";
-  document?: { ref: string; finalUrl: string; title: string; httpStatus: number };
-  content?: { text: string };
-  backend?: { used: string | null; escalated: boolean; attempts: unknown[] };
-  error?: { code: string; message: string };
-  data?: Record<string, unknown>;
-}
-
+export type FetchkeepEnvelope = Omit<ServiceEnvelope, "data"> & { data?: Record<string, unknown> };
+type Envelope = FetchkeepEnvelope;
 function errorKind(code: string): EngineError["kind"] {
   if (code === "timeout") return "timeout";
   if (code === "blocked_by_policy" || code === "robots_disallowed") return "blocked";
@@ -116,10 +112,10 @@ export class FetchkeepAdapter implements EngineAdapter {
       "documents are saved to a per-profile store (Fetchkeep default behaviour); no HTTP cache",
     ];
     if (this.profile === "fetchkeep-chromium" || this.profile === "fetchkeep-auto") {
-      differences.push("browser: Playwright Chromium headless shell 153 (playwright-core 1.63.0), sandbox on, settleMs 500 (default)");
+      differences.push("browser: Playwright Chromium headless shell (installed version recorded by the environment); default bounded readiness policy");
     }
     if (this.profile === "fetchkeep-auto") differences.push("auto: HTTP first, escalates to Chromium only when the heuristic flags the HTTP result (docs/browsers.md)");
-    if (this.profile === "fetchkeep-lightpanda") differences.push("browser: Lightpanda nightly (see engine config), spawned by Fetchkeep with telemetry disabled, settleMs 500 (default)");
+    if (this.profile === "fetchkeep-lightpanda") differences.push("browser: Lightpanda (see engine config), spawned by Fetchkeep with telemetry disabled; default bounded readiness policy");
     return {
       profile: this.profile,
       engine: "fetchkeep",
@@ -151,7 +147,7 @@ export class FetchkeepAdapter implements EngineAdapter {
   }
 
   async fetch(url: string, timeoutMs: number): Promise<FetchOutput> {
-    const res = await this.session!.call("web_fetch", { url, mode: MODE[this.profile], timeoutMs, maxChars: 1_000_000 }, timeoutMs + 15_000);
+    const res = await this.callTool("web_fetch", { url, mode: MODE[this.profile], timeoutMs, maxChars: 1_000_000 }, timeoutMs + 15_000);
     const env = res.structured as unknown as Envelope | undefined;
     if (!env) return { ok: false, markdown: "", error: { kind: "engine_error", message: res.text.slice(0, 500) }, raw: res.text };
     const out: FetchOutput = {
@@ -170,6 +166,8 @@ export class FetchkeepAdapter implements EngineAdapter {
       out.escalated = env.backend.escalated;
       out.attempts = env.backend.attempts.length;
     }
+    const timings = reportedTimings(env.timings);
+    if (timings) out.timings = timings;
     if (env.error) out.error = { kind: errorKind(env.error.code), code: env.error.code, message: env.error.message };
     return out;
   }
@@ -198,13 +196,18 @@ export class FetchkeepAdapter implements EngineAdapter {
     return out;
   }
 
+  /** Exposes actual MCP operations for the separate saved-library workload. */
+  async callTool(name: string, args: Record<string, unknown>, timeoutMs = 30_000) {
+    if (!this.session) throw new Error("Fetchkeep MCP session not started");
+    return this.session.call(name, args, timeoutMs);
+  }
+
   async verifyCitation(ref: string, quote: string): Promise<boolean> {
-    const found = (await this.session!.call("web_read", { target: ref, find: quote }, 30_000)).structured as unknown as Envelope | undefined;
-    const match = (found?.data?.matches as { quote: string; citation: { ref: string } }[] | undefined)?.[0];
+    const found = (await this.callTool("web_read", { target: ref, find: quote })).structured as unknown as Envelope | undefined;
+    const match = (found?.data?.matches as CitationMatch[] | undefined)?.[0];
     if (!match) return false;
-    const block = (await this.session!.call("web_read", { target: match.citation.ref }, 30_000)).structured as unknown as Envelope | undefined;
-    const norm = (s: string) => s.replace(/\s+/g, " ").trim().toLowerCase();
-    return norm(match.quote) === norm(quote) && norm(block?.content?.text ?? "").includes(norm(quote));
+    const block = (await this.callTool("web_read", { target: match.citation.ref })).structured as unknown as Envelope | undefined;
+    return citationVerified(match, block, quote);
   }
 
   readonly coldStartMethod = "CLI one-shot: node dist/src/cli/main.js --json fetch <fixture> (process spawn → result → exit)";

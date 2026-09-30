@@ -1,0 +1,4 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Pressure sampler reference</title></head><body><nav>Purchase a sampler subscription</nav><main><h1>Pressure sampler reference</h1><p>Use the sampler only after the reference chamber reaches ambient temperature.</p><h2>Parameters</h2><table><thead><tr><th>Field</th><th>Type</th><th>Meaning</th></tr></thead><tbody><tr><td>interval</td><td>integer</td><td>Seconds between samples</td></tr><tr><td>unit</td><td>string</td><td>Output pressure unit</td></tr></tbody></table><h2>Example</h2><pre><code class="language-js">async function sample(sensor) {
+  const value = await sensor.read();
+  return { value, unit: "kPa" };
+}</code></pre><p>Store the raw reading before applying any calibration correction.</p><a href="../calibration.html">Calibration procedure</a></main></body></html>

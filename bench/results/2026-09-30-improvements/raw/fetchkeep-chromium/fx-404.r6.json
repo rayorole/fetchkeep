@@ -1,0 +1,32 @@
+{
+  "status": "error",
+  "tool": "web_fetch",
+  "timings": {
+    "totalMs": 2043.3
+  },
+  "warnings": [],
+  "backend": {
+    "mode": "chromium",
+    "used": null,
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "chromium",
+        "outcome": "failed",
+        "reason": "HTTP 404 from http://172.31.172.243:40121/missing/page.html (chromium)",
+        "errorCode": "http_error",
+        "durationMs": 2043.1345269999001,
+        "httpStatus": 404
+      }
+    ]
+  },
+  "error": {
+    "code": "http_error",
+    "message": "HTTP 404 from http://172.31.172.243:40121/missing/page.html (chromium)",
+    "retryable": false,
+    "details": {
+      "status": 404,
+      "finalUrl": "http://172.31.172.243:40121/missing/page.html"
+    }
+  }
+}

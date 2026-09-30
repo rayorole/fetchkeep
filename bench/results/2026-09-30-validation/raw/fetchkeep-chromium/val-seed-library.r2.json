@@ -1,0 +1,68 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_19689f447d5ca8dc",
+    "version": 1,
+    "ref": "fk:d_19689f447d5ca8dc@1",
+    "requestedUrl": "http://172.31.172.243:45387/validation/seed-library.html",
+    "finalUrl": "http://172.31.172.243:45387/validation/seed-library.html",
+    "title": "A lighthouse full of seeds",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T19:25:30.088Z",
+    "contentHash": "e1aa578e3bf1dba40916ff861e551560a0e95582d37dec9ce31ea241c6469f70",
+    "rawHash": "d24d22da454f4cda73322b342ce7538b26db62c8214f00fa095301414f96f620",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "chromium",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# A lighthouse full of seeds\n\nThe inland lighthouse was converted into a seed library after the reservoir was drained.\n\nEach packet carries the collection date and the altitude of its original garden.\n\nVisitors return twice as many seeds at the end of the growing season, but failed crops incur no penalty.\n\n## Keeping the collection usable\n\nThe collection is stored in clay drawers that remain cool during the afternoon heat.\n\nA printed inventory is mailed to villages that have no reliable internet connection."
+  },
+  "backend": {
+    "mode": "chromium",
+    "used": "chromium",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "chromium",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 604.7598090000029
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 512,
+    "returnedChars": 512,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "launchMs": 52.4,
+    "navigateMs": 20,
+    "readinessMs": 524.3,
+    "serializeMs": 2.4,
+    "renderMs": 599.1,
+    "extractMs": 1.7,
+    "subrequests": 1,
+    "subrequestsBlocked": 0,
+    "saveMs": 0.2,
+    "totalMs": 605.3
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_19689f447d5ca8dc@1",
+    "url": "http://172.31.172.243:45387/validation/seed-library.html",
+    "title": "A lighthouse full of seeds",
+    "fetchedAt": "2026-09-30T19:25:30.088Z",
+    "version": 1,
+    "contentHash": "e1aa578e3bf1dba40916ff861e551560a0e95582d37dec9ce31ea241c6469f70"
+  }
+}

@@ -1,0 +1,5163 @@
+{
+  "method": "95% percentile case-cluster bootstrap",
+  "draws": 2000,
+  "seed": 424242,
+  "uncertainty": [
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "usable",
+      "estimate": {
+        "value": 0.75,
+        "low": 0.5,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "success",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "warmP50",
+      "estimate": {
+        "value": 4.6,
+        "low": 4.1,
+        "high": 5.2,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "warmP95",
+      "estimate": {
+        "value": 10.1,
+        "low": 7.4,
+        "high": 16.6,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "passageRecall",
+      "estimate": {
+        "value": 0.75,
+        "low": 0.5,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "tokenPrecision",
+      "estimate": {
+        "value": 0.9476851851851851,
+        "low": 0.8476851851851853,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "tokenRecall",
+      "estimate": {
+        "value": 0.7682900432900432,
+        "low": 0.5303030303030303,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "tokenF1",
+      "estimate": {
+        "value": 0.7818674899866489,
+        "low": 0.5571428571428569,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "boilerplate",
+      "estimate": {
+        "value": 0.75,
+        "low": 0.25,
+        "high": 1,
+        "cases": 4,
+        "attempts": 28
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "headings",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 6,
+        "attempts": 42
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "tables",
+      "estimate": {
+        "value": 1,
+        "low": null,
+        "high": null,
+        "cases": 1,
+        "attempts": 7
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "code",
+      "estimate": {
+        "value": 0.6666666666666666,
+        "low": 0,
+        "high": 1,
+        "cases": 3,
+        "attempts": 21
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "citation",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 6,
+        "attempts": 42
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "correctError",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "timeout",
+      "estimate": {
+        "value": 0,
+        "low": 0,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "blocked",
+      "estimate": {
+        "value": 0,
+        "low": 0,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "usable",
+      "estimate": {
+        "value": 0.75,
+        "low": 0.5,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "success",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "warmP50",
+      "estimate": {
+        "value": 4.6,
+        "low": 4.1,
+        "high": 5.2,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "warmP95",
+      "estimate": {
+        "value": 10.1,
+        "low": 7.4,
+        "high": 16.6,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "passageRecall",
+      "estimate": {
+        "value": 0.75,
+        "low": 0.5,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "tokenPrecision",
+      "estimate": {
+        "value": 0.9476851851851851,
+        "low": 0.8476851851851853,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "tokenRecall",
+      "estimate": {
+        "value": 0.7682900432900432,
+        "low": 0.5303030303030303,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "tokenF1",
+      "estimate": {
+        "value": 0.7818674899866489,
+        "low": 0.5571428571428569,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "boilerplate",
+      "estimate": {
+        "value": 0.75,
+        "low": 0.25,
+        "high": 1,
+        "cases": 4,
+        "attempts": 28
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "headings",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 6,
+        "attempts": 42
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "tables",
+      "estimate": {
+        "value": 1,
+        "low": null,
+        "high": null,
+        "cases": 1,
+        "attempts": 7
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "code",
+      "estimate": {
+        "value": 0.6666666666666666,
+        "low": 0,
+        "high": 1,
+        "cases": 3,
+        "attempts": 21
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "citation",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 6,
+        "attempts": 42
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "correctError",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "timeout",
+      "estimate": {
+        "value": 0,
+        "low": 0,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "blocked",
+      "estimate": {
+        "value": 0,
+        "low": 0,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "usable",
+      "estimate": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "success",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "warmP50",
+      "estimate": {
+        "value": 630.8,
+        "low": 606.7,
+        "high": 710.4,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "warmP95",
+      "estimate": {
+        "value": 2080.1,
+        "low": 654.5,
+        "high": 2110.6,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "passageRecall",
+      "estimate": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "tokenPrecision",
+      "estimate": {
+        "value": 0.9976851851851851,
+        "low": 0.9930555555555554,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "tokenRecall",
+      "estimate": {
+        "value": 0.8825757575757578,
+        "low": 0.6477272727272728,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "tokenF1",
+      "estimate": {
+        "value": 0.8881174899866489,
+        "low": 0.6666889185580773,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "boilerplate",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 4,
+        "attempts": 28
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "headings",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 6,
+        "attempts": 42
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "tables",
+      "estimate": {
+        "value": 1,
+        "low": null,
+        "high": null,
+        "cases": 1,
+        "attempts": 7
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "code",
+      "estimate": {
+        "value": 0.6666666666666666,
+        "low": 0,
+        "high": 1,
+        "cases": 3,
+        "attempts": 21
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "citation",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 7,
+        "attempts": 49
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "correctError",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "timeout",
+      "estimate": {
+        "value": 0,
+        "low": 0,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "blocked",
+      "estimate": {
+        "value": 0,
+        "low": 0,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "usable",
+      "estimate": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "success",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "warmP50",
+      "estimate": {
+        "value": 630.8,
+        "low": 606.7,
+        "high": 710.4,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "warmP95",
+      "estimate": {
+        "value": 2080.1,
+        "low": 654.5,
+        "high": 2110.6,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "passageRecall",
+      "estimate": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "tokenPrecision",
+      "estimate": {
+        "value": 0.9976851851851851,
+        "low": 0.9930555555555554,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "tokenRecall",
+      "estimate": {
+        "value": 0.8825757575757578,
+        "low": 0.6477272727272728,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "tokenF1",
+      "estimate": {
+        "value": 0.8881174899866489,
+        "low": 0.6666889185580773,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "boilerplate",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 4,
+        "attempts": 28
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "headings",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 6,
+        "attempts": 42
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "tables",
+      "estimate": {
+        "value": 1,
+        "low": null,
+        "high": null,
+        "cases": 1,
+        "attempts": 7
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "code",
+      "estimate": {
+        "value": 0.6666666666666666,
+        "low": 0,
+        "high": 1,
+        "cases": 3,
+        "attempts": 21
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "citation",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 7,
+        "attempts": 49
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "correctError",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "timeout",
+      "estimate": {
+        "value": 0,
+        "low": 0,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "blocked",
+      "estimate": {
+        "value": 0,
+        "low": 0,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "usable",
+      "estimate": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "success",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "warmP50",
+      "estimate": {
+        "value": 530.9,
+        "low": 529.2,
+        "high": 553.6,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "warmP95",
+      "estimate": {
+        "value": 2022.2,
+        "low": 545.4,
+        "high": 2033.4,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "passageRecall",
+      "estimate": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "tokenPrecision",
+      "estimate": {
+        "value": 0.9976851851851851,
+        "low": 0.9930555555555554,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "tokenRecall",
+      "estimate": {
+        "value": 0.8825757575757578,
+        "low": 0.6477272727272728,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "tokenF1",
+      "estimate": {
+        "value": 0.8881174899866489,
+        "low": 0.6666889185580773,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "boilerplate",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 4,
+        "attempts": 28
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "headings",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 6,
+        "attempts": 42
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "tables",
+      "estimate": {
+        "value": 1,
+        "low": null,
+        "high": null,
+        "cases": 1,
+        "attempts": 7
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "code",
+      "estimate": {
+        "value": 0.6666666666666666,
+        "low": 0,
+        "high": 1,
+        "cases": 3,
+        "attempts": 21
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "citation",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 7,
+        "attempts": 49
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "correctError",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "timeout",
+      "estimate": {
+        "value": 0,
+        "low": 0,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "blocked",
+      "estimate": {
+        "value": 0,
+        "low": 0,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "usable",
+      "estimate": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "success",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "warmP50",
+      "estimate": {
+        "value": 530.9,
+        "low": 529.2,
+        "high": 553.6,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "warmP95",
+      "estimate": {
+        "value": 2022.2,
+        "low": 545.4,
+        "high": 2033.4,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "passageRecall",
+      "estimate": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "tokenPrecision",
+      "estimate": {
+        "value": 0.9976851851851851,
+        "low": 0.9930555555555554,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "tokenRecall",
+      "estimate": {
+        "value": 0.8825757575757578,
+        "low": 0.6477272727272728,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "tokenF1",
+      "estimate": {
+        "value": 0.8881174899866489,
+        "low": 0.6666889185580773,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "boilerplate",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 4,
+        "attempts": 28
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "headings",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 6,
+        "attempts": 42
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "tables",
+      "estimate": {
+        "value": 1,
+        "low": null,
+        "high": null,
+        "cases": 1,
+        "attempts": 7
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "code",
+      "estimate": {
+        "value": 0.6666666666666666,
+        "low": 0,
+        "high": 1,
+        "cases": 3,
+        "attempts": 21
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "citation",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 7,
+        "attempts": 49
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "correctError",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "timeout",
+      "estimate": {
+        "value": 0,
+        "low": 0,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "blocked",
+      "estimate": {
+        "value": 0,
+        "low": 0,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "usable",
+      "estimate": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "success",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "warmP50",
+      "estimate": {
+        "value": 4.6,
+        "low": 4.2,
+        "high": 10.2,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "warmP95",
+      "estimate": {
+        "value": 2094.7,
+        "low": 7.2,
+        "high": 2175.9,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "passageRecall",
+      "estimate": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "tokenPrecision",
+      "estimate": {
+        "value": 0.9976851851851851,
+        "low": 0.9930555555555554,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "tokenRecall",
+      "estimate": {
+        "value": 0.8825757575757578,
+        "low": 0.6477272727272728,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "tokenF1",
+      "estimate": {
+        "value": 0.8881174899866489,
+        "low": 0.6666889185580773,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "boilerplate",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 4,
+        "attempts": 28
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "headings",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 6,
+        "attempts": 42
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "tables",
+      "estimate": {
+        "value": 1,
+        "low": null,
+        "high": null,
+        "cases": 1,
+        "attempts": 7
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "code",
+      "estimate": {
+        "value": 0.6666666666666666,
+        "low": 0,
+        "high": 1,
+        "cases": 3,
+        "attempts": 21
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "citation",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 7,
+        "attempts": 49
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "correctError",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "timeout",
+      "estimate": {
+        "value": 0,
+        "low": 0,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "blocked",
+      "estimate": {
+        "value": 0,
+        "low": 0,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "usable",
+      "estimate": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "success",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "warmP50",
+      "estimate": {
+        "value": 4.6,
+        "low": 4.2,
+        "high": 10.2,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "warmP95",
+      "estimate": {
+        "value": 2094.7,
+        "low": 7.2,
+        "high": 2175.9,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "passageRecall",
+      "estimate": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "tokenPrecision",
+      "estimate": {
+        "value": 0.9976851851851851,
+        "low": 0.9930555555555554,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "tokenRecall",
+      "estimate": {
+        "value": 0.8825757575757578,
+        "low": 0.6477272727272728,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "tokenF1",
+      "estimate": {
+        "value": 0.8881174899866489,
+        "low": 0.6666889185580773,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "boilerplate",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 4,
+        "attempts": 28
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "headings",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 6,
+        "attempts": 42
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "tables",
+      "estimate": {
+        "value": 1,
+        "low": null,
+        "high": null,
+        "cases": 1,
+        "attempts": 7
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "code",
+      "estimate": {
+        "value": 0.6666666666666666,
+        "low": 0,
+        "high": 1,
+        "cases": 3,
+        "attempts": 21
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "citation",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 7,
+        "attempts": 49
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "correctError",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "timeout",
+      "estimate": {
+        "value": 0,
+        "low": 0,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "blocked",
+      "estimate": {
+        "value": 0,
+        "low": 0,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "usable",
+      "estimate": {
+        "value": 0.75,
+        "low": 0.5,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "success",
+      "estimate": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "warmP50",
+      "estimate": {
+        "value": 134.8,
+        "low": 111.8,
+        "high": 149.7,
+        "cases": 7,
+        "attempts": 42
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "warmP95",
+      "estimate": {
+        "value": 321.8,
+        "low": 195.1,
+        "high": 349.2,
+        "cases": 7,
+        "attempts": 42
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "passageRecall",
+      "estimate": {
+        "value": 0.8571428571428571,
+        "low": 0.5714285714285714,
+        "high": 1,
+        "cases": 7,
+        "attempts": 49
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "tokenPrecision",
+      "estimate": {
+        "value": 0.9428571428571427,
+        "low": 0.8285714285714288,
+        "high": 1,
+        "cases": 7,
+        "attempts": 49
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "tokenRecall",
+      "estimate": {
+        "value": 0.8693877551020407,
+        "low": 0.6081632653061223,
+        "high": 1,
+        "cases": 7,
+        "attempts": 49
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "tokenF1",
+      "estimate": {
+        "value": 0.8785714285714287,
+        "low": 0.6357142857142853,
+        "high": 1,
+        "cases": 7,
+        "attempts": 49
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "boilerplate",
+      "estimate": {
+        "value": 0.6666666666666666,
+        "low": 0,
+        "high": 1,
+        "cases": 3,
+        "attempts": 21
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "headings",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 5,
+        "attempts": 35
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "tables",
+      "estimate": {
+        "value": 1,
+        "low": null,
+        "high": null,
+        "cases": 1,
+        "attempts": 7
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "code",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 2,
+        "attempts": 14
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "citation",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "correctError",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "timeout",
+      "estimate": {
+        "value": 0,
+        "low": 0,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "blocked",
+      "estimate": {
+        "value": 0,
+        "low": 0,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "usable",
+      "estimate": {
+        "value": 0.75,
+        "low": 0.5,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "success",
+      "estimate": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "warmP50",
+      "estimate": {
+        "value": 134.8,
+        "low": 111.8,
+        "high": 149.7,
+        "cases": 7,
+        "attempts": 42
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "warmP95",
+      "estimate": {
+        "value": 321.8,
+        "low": 195.1,
+        "high": 349.2,
+        "cases": 7,
+        "attempts": 42
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "passageRecall",
+      "estimate": {
+        "value": 0.8571428571428571,
+        "low": 0.5714285714285714,
+        "high": 1,
+        "cases": 7,
+        "attempts": 49
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "tokenPrecision",
+      "estimate": {
+        "value": 0.9428571428571427,
+        "low": 0.8285714285714288,
+        "high": 1,
+        "cases": 7,
+        "attempts": 49
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "tokenRecall",
+      "estimate": {
+        "value": 0.8693877551020407,
+        "low": 0.6081632653061223,
+        "high": 1,
+        "cases": 7,
+        "attempts": 49
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "tokenF1",
+      "estimate": {
+        "value": 0.8785714285714287,
+        "low": 0.6357142857142853,
+        "high": 1,
+        "cases": 7,
+        "attempts": 49
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "boilerplate",
+      "estimate": {
+        "value": 0.6666666666666666,
+        "low": 0,
+        "high": 1,
+        "cases": 3,
+        "attempts": 21
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "headings",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 5,
+        "attempts": 35
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "tables",
+      "estimate": {
+        "value": 1,
+        "low": null,
+        "high": null,
+        "cases": 1,
+        "attempts": 7
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "code",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 2,
+        "attempts": 14
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "citation",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "correctError",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "timeout",
+      "estimate": {
+        "value": 0,
+        "low": 0,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "blocked",
+      "estimate": {
+        "value": 0,
+        "low": 0,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "usable",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "success",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "warmP50",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "warmP95",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "passageRecall",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "tokenPrecision",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "tokenRecall",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "tokenF1",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "boilerplate",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "headings",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "tables",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "code",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "citation",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "correctError",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "timeout",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "blocked",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "usable",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "success",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "warmP50",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "warmP95",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "passageRecall",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "tokenPrecision",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "tokenRecall",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "tokenF1",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "boilerplate",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "headings",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "tables",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "code",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "citation",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "correctError",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "timeout",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "blocked",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "usable",
+      "estimate": {
+        "value": 0.75,
+        "low": 0.5,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "success",
+      "estimate": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "warmP50",
+      "estimate": {
+        "value": 2.2,
+        "low": 2.2,
+        "high": 2.4,
+        "cases": 7,
+        "attempts": 42
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "warmP95",
+      "estimate": {
+        "value": 9.2,
+        "low": 4.8,
+        "high": 17.2,
+        "cases": 7,
+        "attempts": 42
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "passageRecall",
+      "estimate": {
+        "value": 0.8571428571428571,
+        "low": 0.5714285714285714,
+        "high": 1,
+        "cases": 7,
+        "attempts": 49
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "tokenPrecision",
+      "estimate": {
+        "value": 0.6930344206118809,
+        "low": 0.5149151085321294,
+        "high": 0.8177800419004795,
+        "cases": 7,
+        "attempts": 49
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "tokenRecall",
+      "estimate": {
+        "value": 0.8639969195225261,
+        "low": 0.6027724297266075,
+        "high": 1,
+        "cases": 7,
+        "attempts": 49
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "tokenF1",
+      "estimate": {
+        "value": 0.7618012648863697,
+        "low": 0.5414523725122806,
+        "high": 0.8942264220095348,
+        "cases": 7,
+        "attempts": 49
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "boilerplate",
+      "estimate": {
+        "value": 0.6666666666666666,
+        "low": 0,
+        "high": 1,
+        "cases": 3,
+        "attempts": 21
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "headings",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 5,
+        "attempts": 35
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "tables",
+      "estimate": {
+        "value": 1,
+        "low": null,
+        "high": null,
+        "cases": 1,
+        "attempts": 7
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "code",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 2,
+        "attempts": 14
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "citation",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "correctError",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "timeout",
+      "estimate": {
+        "value": 0,
+        "low": 0,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "all",
+      "metric": "blocked",
+      "estimate": {
+        "value": 0,
+        "low": 0,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "usable",
+      "estimate": {
+        "value": 0.75,
+        "low": 0.5,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "success",
+      "estimate": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "warmP50",
+      "estimate": {
+        "value": 2.2,
+        "low": 2.2,
+        "high": 2.4,
+        "cases": 7,
+        "attempts": 42
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "warmP95",
+      "estimate": {
+        "value": 9.2,
+        "low": 4.8,
+        "high": 17.2,
+        "cases": 7,
+        "attempts": 42
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "passageRecall",
+      "estimate": {
+        "value": 0.8571428571428571,
+        "low": 0.5714285714285714,
+        "high": 1,
+        "cases": 7,
+        "attempts": 49
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "tokenPrecision",
+      "estimate": {
+        "value": 0.6930344206118809,
+        "low": 0.5149151085321294,
+        "high": 0.8177800419004795,
+        "cases": 7,
+        "attempts": 49
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "tokenRecall",
+      "estimate": {
+        "value": 0.8639969195225261,
+        "low": 0.6027724297266075,
+        "high": 1,
+        "cases": 7,
+        "attempts": 49
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "tokenF1",
+      "estimate": {
+        "value": 0.7618012648863697,
+        "low": 0.5414523725122806,
+        "high": 0.8942264220095348,
+        "cases": 7,
+        "attempts": 49
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "boilerplate",
+      "estimate": {
+        "value": 0.6666666666666666,
+        "low": 0,
+        "high": 1,
+        "cases": 3,
+        "attempts": 21
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "headings",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 5,
+        "attempts": 35
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "tables",
+      "estimate": {
+        "value": 1,
+        "low": null,
+        "high": null,
+        "cases": 1,
+        "attempts": 7
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "code",
+      "estimate": {
+        "value": 1,
+        "low": 1,
+        "high": 1,
+        "cases": 2,
+        "attempts": 14
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "citation",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "correctError",
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "timeout",
+      "estimate": {
+        "value": 0,
+        "low": 0,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "split": "validation",
+      "metric": "blocked",
+      "estimate": {
+        "value": 0,
+        "low": 0,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      }
+    }
+  ],
+  "paired": [
+    {
+      "a": "fetchkeep-http",
+      "b": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "matchedAttempts": 56,
+      "matchedCases": 8,
+      "onlyAAttempted": 0,
+      "onlyBAttempted": 0,
+      "aErrors": 0,
+      "bErrors": 0,
+      "aUsable": {
+        "value": 0.75,
+        "low": 0.5,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      },
+      "bUsable": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      },
+      "usableDifference": {
+        "value": -0.125,
+        "low": -0.375,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      },
+      "aWarmP50": {
+        "value": 4.6,
+        "low": 4.1,
+        "high": 5.2,
+        "cases": 8,
+        "attempts": 48
+      },
+      "bWarmP50": {
+        "value": 630.8,
+        "low": 606.7,
+        "high": 710.4,
+        "cases": 8,
+        "attempts": 48
+      },
+      "warmDeltaP50": {
+        "value": -626.0999999999999,
+        "low": -1435.3999999999999,
+        "high": -601.4000000000001,
+        "cases": 8,
+        "attempts": 48
+      },
+      "warmRatioP50": {
+        "value": 0.00642791551882461,
+        "low": 0.0045490196078431374,
+        "high": 0.007875335120643432,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "a": "fetchkeep-http",
+      "b": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "matchedAttempts": 56,
+      "matchedCases": 8,
+      "onlyAAttempted": 0,
+      "onlyBAttempted": 0,
+      "aErrors": 0,
+      "bErrors": 0,
+      "aUsable": {
+        "value": 0.75,
+        "low": 0.5,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      },
+      "bUsable": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      },
+      "usableDifference": {
+        "value": -0.125,
+        "low": -0.375,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      },
+      "aWarmP50": {
+        "value": 4.6,
+        "low": 4.1,
+        "high": 5.2,
+        "cases": 8,
+        "attempts": 48
+      },
+      "bWarmP50": {
+        "value": 530.9,
+        "low": 529.2,
+        "high": 553.6,
+        "cases": 8,
+        "attempts": 48
+      },
+      "warmDeltaP50": {
+        "value": -526.4000000000001,
+        "low": -1435.6000000000001,
+        "high": -523.9000000000001,
+        "cases": 8,
+        "attempts": 48
+      },
+      "warmRatioP50": {
+        "value": 0.007762211283604694,
+        "low": 0.005326231691078561,
+        "high": 0.008822977285526562,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "a": "fetchkeep-http",
+      "b": "fetchkeep-auto",
+      "dataset": "fixture",
+      "matchedAttempts": 56,
+      "matchedCases": 8,
+      "onlyAAttempted": 0,
+      "onlyBAttempted": 0,
+      "aErrors": 0,
+      "bErrors": 0,
+      "aUsable": {
+        "value": 0.75,
+        "low": 0.5,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      },
+      "bUsable": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      },
+      "usableDifference": {
+        "value": -0.125,
+        "low": -0.375,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      },
+      "aWarmP50": {
+        "value": 4.6,
+        "low": 4.1,
+        "high": 5.2,
+        "cases": 8,
+        "attempts": 48
+      },
+      "bWarmP50": {
+        "value": 4.6,
+        "low": 4.2,
+        "high": 10.2,
+        "cases": 8,
+        "attempts": 48
+      },
+      "warmDeltaP50": {
+        "value": -0.5,
+        "low": -1467.3,
+        "high": 0.40000000000000036,
+        "cases": 8,
+        "attempts": 48
+      },
+      "warmRatioP50": {
+        "value": 0.8913043478260869,
+        "low": 0.005355206073752712,
+        "high": 1.0731707317073174,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "a": "fetchkeep-http",
+      "b": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "matchedAttempts": 56,
+      "matchedCases": 8,
+      "onlyAAttempted": 0,
+      "onlyBAttempted": 0,
+      "aErrors": 0,
+      "bErrors": 7,
+      "aUsable": {
+        "value": 0.75,
+        "low": 0.5,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      },
+      "bUsable": {
+        "value": 0.75,
+        "low": 0.5,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      },
+      "usableDifference": {
+        "value": 0,
+        "low": 0,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      },
+      "aWarmP50": {
+        "value": 4.6,
+        "low": 4.1,
+        "high": 5.2,
+        "cases": 7,
+        "attempts": 42
+      },
+      "bWarmP50": {
+        "value": 134.8,
+        "low": 111.8,
+        "high": 149.7,
+        "cases": 7,
+        "attempts": 42
+      },
+      "warmDeltaP50": {
+        "value": -130.4,
+        "low": -148.5,
+        "high": -115.3,
+        "cases": 7,
+        "attempts": 42
+      },
+      "warmRatioP50": {
+        "value": 0.032640949554896145,
+        "low": 0.03072812291249165,
+        "high": 0.03528114663726571,
+        "cases": 7,
+        "attempts": 42
+      }
+    },
+    {
+      "a": "fetchkeep-http",
+      "b": "firecrawl-hosted",
+      "dataset": "fixture",
+      "matchedAttempts": 0,
+      "matchedCases": 0,
+      "onlyAAttempted": 56,
+      "onlyBAttempted": 0,
+      "aErrors": 0,
+      "bErrors": 0,
+      "aUsable": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "bUsable": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "usableDifference": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "aWarmP50": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "bWarmP50": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "warmDeltaP50": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "warmRatioP50": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "a": "fetchkeep-http",
+      "b": "donsetch",
+      "dataset": "fixture",
+      "matchedAttempts": 56,
+      "matchedCases": 8,
+      "onlyAAttempted": 0,
+      "onlyBAttempted": 0,
+      "aErrors": 0,
+      "bErrors": 7,
+      "aUsable": {
+        "value": 0.75,
+        "low": 0.5,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      },
+      "bUsable": {
+        "value": 0.75,
+        "low": 0.5,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      },
+      "usableDifference": {
+        "value": 0,
+        "low": 0,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      },
+      "aWarmP50": {
+        "value": 4.6,
+        "low": 4.1,
+        "high": 5.2,
+        "cases": 7,
+        "attempts": 42
+      },
+      "bWarmP50": {
+        "value": 2.2,
+        "low": 2.2,
+        "high": 2.4,
+        "cases": 7,
+        "attempts": 42
+      },
+      "warmDeltaP50": {
+        "value": 2.1000000000000014,
+        "low": 1.7000000000000002,
+        "high": 2.9000000000000004,
+        "cases": 7,
+        "attempts": 42
+      },
+      "warmRatioP50": {
+        "value": 2,
+        "low": 1.85,
+        "high": 2.611111111111111,
+        "cases": 7,
+        "attempts": 42
+      }
+    },
+    {
+      "a": "fetchkeep-chromium",
+      "b": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "matchedAttempts": 56,
+      "matchedCases": 8,
+      "onlyAAttempted": 0,
+      "onlyBAttempted": 0,
+      "aErrors": 0,
+      "bErrors": 0,
+      "aUsable": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      },
+      "bUsable": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      },
+      "usableDifference": {
+        "value": 0,
+        "low": 0,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      },
+      "aWarmP50": {
+        "value": 630.8,
+        "low": 606.7,
+        "high": 710.4,
+        "cases": 8,
+        "attempts": 48
+      },
+      "bWarmP50": {
+        "value": 530.9,
+        "low": 529.2,
+        "high": 553.6,
+        "cases": 8,
+        "attempts": 48
+      },
+      "warmDeltaP50": {
+        "value": 71.69999999999982,
+        "low": 63.10000000000002,
+        "high": 89.39999999999998,
+        "cases": 8,
+        "attempts": 48
+      },
+      "warmRatioP50": {
+        "value": 1.1335078534031415,
+        "low": 1.044851485148515,
+        "high": 1.1691900075700228,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "a": "fetchkeep-chromium",
+      "b": "fetchkeep-auto",
+      "dataset": "fixture",
+      "matchedAttempts": 56,
+      "matchedCases": 8,
+      "onlyAAttempted": 0,
+      "onlyBAttempted": 0,
+      "aErrors": 0,
+      "bErrors": 0,
+      "aUsable": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      },
+      "bUsable": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      },
+      "usableDifference": {
+        "value": 0,
+        "low": 0,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      },
+      "aWarmP50": {
+        "value": 630.8,
+        "low": 606.7,
+        "high": 710.4,
+        "cases": 8,
+        "attempts": 48
+      },
+      "bWarmP50": {
+        "value": 4.6,
+        "low": 4.2,
+        "high": 10.2,
+        "cases": 8,
+        "attempts": 48
+      },
+      "warmDeltaP50": {
+        "value": 593.6999999999999,
+        "low": 24.5,
+        "high": 609.1999999999999,
+        "cases": 8,
+        "attempts": 48
+      },
+      "warmRatioP50": {
+        "value": 128.80434782608697,
+        "low": 1.016607917570499,
+        "high": 146.12195121951223,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "a": "fetchkeep-chromium",
+      "b": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "matchedAttempts": 56,
+      "matchedCases": 8,
+      "onlyAAttempted": 0,
+      "onlyBAttempted": 0,
+      "aErrors": 0,
+      "bErrors": 7,
+      "aUsable": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      },
+      "bUsable": {
+        "value": 0.75,
+        "low": 0.5,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      },
+      "usableDifference": {
+        "value": 0.125,
+        "low": 0,
+        "high": 0.375,
+        "cases": 8,
+        "attempts": 56
+      },
+      "aWarmP50": {
+        "value": 617.8,
+        "low": 602.6,
+        "high": 653.4,
+        "cases": 7,
+        "attempts": 42
+      },
+      "bWarmP50": {
+        "value": 134.8,
+        "low": 111.8,
+        "high": 149.7,
+        "cases": 7,
+        "attempts": 42
+      },
+      "warmDeltaP50": {
+        "value": 488.2,
+        "low": 474.2,
+        "high": 528.6999999999999,
+        "cases": 7,
+        "attempts": 42
+      },
+      "warmRatioP50": {
+        "value": 4.997478991596639,
+        "low": 4.033248081841432,
+        "high": 5.681574239713775,
+        "cases": 7,
+        "attempts": 42
+      }
+    },
+    {
+      "a": "fetchkeep-chromium",
+      "b": "firecrawl-hosted",
+      "dataset": "fixture",
+      "matchedAttempts": 0,
+      "matchedCases": 0,
+      "onlyAAttempted": 56,
+      "onlyBAttempted": 0,
+      "aErrors": 0,
+      "bErrors": 0,
+      "aUsable": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "bUsable": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "usableDifference": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "aWarmP50": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "bWarmP50": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "warmDeltaP50": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "warmRatioP50": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "a": "fetchkeep-chromium",
+      "b": "donsetch",
+      "dataset": "fixture",
+      "matchedAttempts": 56,
+      "matchedCases": 8,
+      "onlyAAttempted": 0,
+      "onlyBAttempted": 0,
+      "aErrors": 0,
+      "bErrors": 7,
+      "aUsable": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      },
+      "bUsable": {
+        "value": 0.75,
+        "low": 0.5,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      },
+      "usableDifference": {
+        "value": 0.125,
+        "low": 0,
+        "high": 0.375,
+        "cases": 8,
+        "attempts": 56
+      },
+      "aWarmP50": {
+        "value": 617.8,
+        "low": 602.6,
+        "high": 653.4,
+        "cases": 7,
+        "attempts": 42
+      },
+      "bWarmP50": {
+        "value": 2.2,
+        "low": 2.2,
+        "high": 2.4,
+        "cases": 7,
+        "attempts": 42
+      },
+      "warmDeltaP50": {
+        "value": 615.5999999999999,
+        "low": 600.6,
+        "high": 650.5999999999999,
+        "cases": 7,
+        "attempts": 42
+      },
+      "warmRatioP50": {
+        "value": 280.81818181818176,
+        "low": 265.625,
+        "high": 331.55555555555554,
+        "cases": 7,
+        "attempts": 42
+      }
+    },
+    {
+      "a": "fetchkeep-lightpanda",
+      "b": "fetchkeep-auto",
+      "dataset": "fixture",
+      "matchedAttempts": 56,
+      "matchedCases": 8,
+      "onlyAAttempted": 0,
+      "onlyBAttempted": 0,
+      "aErrors": 0,
+      "bErrors": 0,
+      "aUsable": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      },
+      "bUsable": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      },
+      "usableDifference": {
+        "value": 0,
+        "low": 0,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      },
+      "aWarmP50": {
+        "value": 530.9,
+        "low": 529.2,
+        "high": 553.6,
+        "cases": 8,
+        "attempts": 48
+      },
+      "bWarmP50": {
+        "value": 4.6,
+        "low": 4.2,
+        "high": 10.2,
+        "cases": 8,
+        "attempts": 48
+      },
+      "warmDeltaP50": {
+        "value": 522.9,
+        "low": -30.600000000000136,
+        "high": 524.1,
+        "cases": 8,
+        "attempts": 48
+      },
+      "warmRatioP50": {
+        "value": 113.82978723404256,
+        "low": 0.97925704989154,
+        "high": 125.5,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "a": "fetchkeep-lightpanda",
+      "b": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "matchedAttempts": 56,
+      "matchedCases": 8,
+      "onlyAAttempted": 0,
+      "onlyBAttempted": 0,
+      "aErrors": 0,
+      "bErrors": 7,
+      "aUsable": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      },
+      "bUsable": {
+        "value": 0.75,
+        "low": 0.5,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      },
+      "usableDifference": {
+        "value": 0.125,
+        "low": 0,
+        "high": 0.375,
+        "cases": 8,
+        "attempts": 56
+      },
+      "aWarmP50": {
+        "value": 530.5,
+        "low": 528.2,
+        "high": 537.7,
+        "cases": 7,
+        "attempts": 42
+      },
+      "bWarmP50": {
+        "value": 134.8,
+        "low": 111.8,
+        "high": 149.7,
+        "cases": 7,
+        "attempts": 42
+      },
+      "warmDeltaP50": {
+        "value": 410.4,
+        "low": 376.90000000000003,
+        "high": 428.7,
+        "cases": 7,
+        "attempts": 42
+      },
+      "warmRatioP50": {
+        "value": 4.405042016806723,
+        "low": 3.5177020708082836,
+        "high": 4.844202898550724,
+        "cases": 7,
+        "attempts": 42
+      }
+    },
+    {
+      "a": "fetchkeep-lightpanda",
+      "b": "firecrawl-hosted",
+      "dataset": "fixture",
+      "matchedAttempts": 0,
+      "matchedCases": 0,
+      "onlyAAttempted": 56,
+      "onlyBAttempted": 0,
+      "aErrors": 0,
+      "bErrors": 0,
+      "aUsable": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "bUsable": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "usableDifference": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "aWarmP50": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "bWarmP50": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "warmDeltaP50": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "warmRatioP50": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "a": "fetchkeep-lightpanda",
+      "b": "donsetch",
+      "dataset": "fixture",
+      "matchedAttempts": 56,
+      "matchedCases": 8,
+      "onlyAAttempted": 0,
+      "onlyBAttempted": 0,
+      "aErrors": 0,
+      "bErrors": 7,
+      "aUsable": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      },
+      "bUsable": {
+        "value": 0.75,
+        "low": 0.5,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      },
+      "usableDifference": {
+        "value": 0.125,
+        "low": 0,
+        "high": 0.375,
+        "cases": 8,
+        "attempts": 56
+      },
+      "aWarmP50": {
+        "value": 530.5,
+        "low": 528.2,
+        "high": 537.7,
+        "cases": 7,
+        "attempts": 42
+      },
+      "bWarmP50": {
+        "value": 2.2,
+        "low": 2.2,
+        "high": 2.4,
+        "cases": 7,
+        "attempts": 42
+      },
+      "warmDeltaP50": {
+        "value": 527.4,
+        "low": 525.6999999999999,
+        "high": 532.6,
+        "cases": 7,
+        "attempts": 42
+      },
+      "warmRatioP50": {
+        "value": 240.72727272727272,
+        "low": 219.75,
+        "high": 294,
+        "cases": 7,
+        "attempts": 42
+      }
+    },
+    {
+      "a": "fetchkeep-auto",
+      "b": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "matchedAttempts": 56,
+      "matchedCases": 8,
+      "onlyAAttempted": 0,
+      "onlyBAttempted": 0,
+      "aErrors": 0,
+      "bErrors": 7,
+      "aUsable": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      },
+      "bUsable": {
+        "value": 0.75,
+        "low": 0.5,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      },
+      "usableDifference": {
+        "value": 0.125,
+        "low": 0,
+        "high": 0.375,
+        "cases": 8,
+        "attempts": 56
+      },
+      "aWarmP50": {
+        "value": 4.5,
+        "low": 4,
+        "high": 7,
+        "cases": 7,
+        "attempts": 42
+      },
+      "bWarmP50": {
+        "value": 134.8,
+        "low": 111.8,
+        "high": 149.7,
+        "cases": 7,
+        "attempts": 42
+      },
+      "warmDeltaP50": {
+        "value": -114.5,
+        "low": -146.79999999999998,
+        "high": -96.10000000000001,
+        "cases": 7,
+        "attempts": 42
+      },
+      "warmRatioP50": {
+        "value": 0.03528114663726571,
+        "low": 0.02717070289427052,
+        "high": 0.05341246290801187,
+        "cases": 7,
+        "attempts": 42
+      }
+    },
+    {
+      "a": "fetchkeep-auto",
+      "b": "firecrawl-hosted",
+      "dataset": "fixture",
+      "matchedAttempts": 0,
+      "matchedCases": 0,
+      "onlyAAttempted": 56,
+      "onlyBAttempted": 0,
+      "aErrors": 0,
+      "bErrors": 0,
+      "aUsable": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "bUsable": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "usableDifference": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "aWarmP50": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "bWarmP50": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "warmDeltaP50": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "warmRatioP50": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "a": "fetchkeep-auto",
+      "b": "donsetch",
+      "dataset": "fixture",
+      "matchedAttempts": 56,
+      "matchedCases": 8,
+      "onlyAAttempted": 0,
+      "onlyBAttempted": 0,
+      "aErrors": 0,
+      "bErrors": 7,
+      "aUsable": {
+        "value": 0.875,
+        "low": 0.625,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      },
+      "bUsable": {
+        "value": 0.75,
+        "low": 0.5,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      },
+      "usableDifference": {
+        "value": 0.125,
+        "low": 0,
+        "high": 0.375,
+        "cases": 8,
+        "attempts": 56
+      },
+      "aWarmP50": {
+        "value": 4.5,
+        "low": 4,
+        "high": 7,
+        "cases": 7,
+        "attempts": 42
+      },
+      "bWarmP50": {
+        "value": 2.2,
+        "low": 2.2,
+        "high": 2.4,
+        "cases": 7,
+        "attempts": 42
+      },
+      "warmDeltaP50": {
+        "value": 1.7999999999999998,
+        "low": 1.2000000000000002,
+        "high": 4.3,
+        "cases": 7,
+        "attempts": 42
+      },
+      "warmRatioP50": {
+        "value": 1.9,
+        "low": 1.5185185185185184,
+        "high": 3.1818181818181817,
+        "cases": 7,
+        "attempts": 42
+      }
+    },
+    {
+      "a": "firecrawl-selfhost",
+      "b": "firecrawl-hosted",
+      "dataset": "fixture",
+      "matchedAttempts": 0,
+      "matchedCases": 0,
+      "onlyAAttempted": 56,
+      "onlyBAttempted": 0,
+      "aErrors": 0,
+      "bErrors": 0,
+      "aUsable": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "bUsable": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "usableDifference": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "aWarmP50": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "bWarmP50": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "warmDeltaP50": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "warmRatioP50": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "a": "firecrawl-selfhost",
+      "b": "donsetch",
+      "dataset": "fixture",
+      "matchedAttempts": 56,
+      "matchedCases": 8,
+      "onlyAAttempted": 0,
+      "onlyBAttempted": 0,
+      "aErrors": 7,
+      "bErrors": 7,
+      "aUsable": {
+        "value": 0.75,
+        "low": 0.5,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      },
+      "bUsable": {
+        "value": 0.75,
+        "low": 0.5,
+        "high": 1,
+        "cases": 8,
+        "attempts": 56
+      },
+      "usableDifference": {
+        "value": 0,
+        "low": 0,
+        "high": 0,
+        "cases": 8,
+        "attempts": 56
+      },
+      "aWarmP50": {
+        "value": 134.8,
+        "low": 111.8,
+        "high": 149.7,
+        "cases": 7,
+        "attempts": 42
+      },
+      "bWarmP50": {
+        "value": 2.2,
+        "low": 2.2,
+        "high": 2.4,
+        "cases": 7,
+        "attempts": 42
+      },
+      "warmDeltaP50": {
+        "value": 132.60000000000002,
+        "low": 109.8,
+        "high": 147.7,
+        "cases": 7,
+        "attempts": 42
+      },
+      "warmRatioP50": {
+        "value": 59.5,
+        "low": 54.166666666666664,
+        "high": 65.875,
+        "cases": 7,
+        "attempts": 42
+      }
+    },
+    {
+      "a": "firecrawl-hosted",
+      "b": "donsetch",
+      "dataset": "fixture",
+      "matchedAttempts": 0,
+      "matchedCases": 0,
+      "onlyAAttempted": 0,
+      "onlyBAttempted": 56,
+      "aErrors": 0,
+      "bErrors": 0,
+      "aUsable": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "bUsable": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "usableDifference": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "aWarmP50": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "bWarmP50": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "warmDeltaP50": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      },
+      "warmRatioP50": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    }
+  ],
+  "phases": [
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "phase": "downloadMs",
+      "definition": "HTTP network and body decoding, including redirects",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 1.2,
+        "low": 1.1,
+        "high": 1.3,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "phase": "firstByteMs",
+      "definition": "HTTP first byte (nested within downloadMs; not additive)",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 1.1,
+        "low": 0.9,
+        "high": 1.2,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "phase": "launchMs",
+      "definition": "Browser launch/acquire",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "phase": "navigateMs",
+      "definition": "Browser navigation",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "phase": "readinessMs",
+      "definition": "Bounded content readiness",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "phase": "serializeMs",
+      "definition": "DOM serialization",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "phase": "extractMs",
+      "definition": "Content extraction",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 1.4,
+        "low": 1.2,
+        "high": 2.1,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "phase": "renderMs",
+      "definition": "Browser render total (overlaps browser phases; not additive)",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "phase": "saveMs",
+      "definition": "Local persistence",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 0.2,
+        "low": 0.2,
+        "high": 0.2,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-http",
+      "dataset": "fixture",
+      "phase": "totalMs",
+      "definition": "Engine total (includes phases; do not sum with them)",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 3.5,
+        "low": 3,
+        "high": 4,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "phase": "downloadMs",
+      "definition": "HTTP network and body decoding, including redirects",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "phase": "firstByteMs",
+      "definition": "HTTP first byte (nested within downloadMs; not additive)",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "phase": "launchMs",
+      "definition": "Browser launch/acquire",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 43.6,
+        "low": 42.2,
+        "high": 46.6,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "phase": "navigateMs",
+      "definition": "Browser navigation",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 24.1,
+        "low": 21.4,
+        "high": 25.6,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "phase": "readinessMs",
+      "definition": "Bounded content readiness",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 535.8,
+        "low": 526.3,
+        "high": 555,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "phase": "serializeMs",
+      "definition": "DOM serialization",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 2.5,
+        "low": 2.4,
+        "high": 2.7,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "phase": "extractMs",
+      "definition": "Content extraction",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 1.4,
+        "low": 1.2,
+        "high": 1.7,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "phase": "renderMs",
+      "definition": "Browser render total (overlaps browser phases; not additive)",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 622.3,
+        "low": 595.5,
+        "high": 701.4,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "phase": "saveMs",
+      "definition": "Local persistence",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 0.2,
+        "low": 0.2,
+        "high": 0.2,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "dataset": "fixture",
+      "phase": "totalMs",
+      "definition": "Engine total (includes phases; do not sum with them)",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 629,
+        "low": 604.7,
+        "high": 709.3,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "phase": "downloadMs",
+      "definition": "HTTP network and body decoding, including redirects",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "phase": "firstByteMs",
+      "definition": "HTTP first byte (nested within downloadMs; not additive)",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "phase": "launchMs",
+      "definition": "Browser launch/acquire",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 12.7,
+        "low": 12.1,
+        "high": 13.2,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "phase": "navigateMs",
+      "definition": "Browser navigation",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 2.7,
+        "low": 2.4,
+        "high": 2.8,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "phase": "readinessMs",
+      "definition": "Bounded content readiness",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 508.3,
+        "low": 507.8,
+        "high": 512.3,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "phase": "serializeMs",
+      "definition": "DOM serialization",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 0.8,
+        "low": 0.7,
+        "high": 0.9,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "phase": "extractMs",
+      "definition": "Content extraction",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 1.5,
+        "low": 1.4,
+        "high": 2,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "phase": "renderMs",
+      "definition": "Browser render total (overlaps browser phases; not additive)",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 525.1,
+        "low": 523.7,
+        "high": 548.9,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "phase": "saveMs",
+      "definition": "Local persistence",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 0.2,
+        "low": 0.2,
+        "high": 0.3,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "dataset": "fixture",
+      "phase": "totalMs",
+      "definition": "Engine total (includes phases; do not sum with them)",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 529.9,
+        "low": 528.4,
+        "high": 552.7,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "phase": "downloadMs",
+      "definition": "HTTP network and body decoding, including redirects",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 1.1,
+        "low": 1,
+        "high": 1.5,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "phase": "firstByteMs",
+      "definition": "HTTP first byte (nested within downloadMs; not additive)",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 1,
+        "low": 0.9,
+        "high": 1.3,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "phase": "launchMs",
+      "definition": "Browser launch/acquire",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 48.8,
+        "low": 41.2,
+        "high": 51.4,
+        "cases": 2,
+        "attempts": 12
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "phase": "navigateMs",
+      "definition": "Browser navigation",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 27.3,
+        "low": 20.5,
+        "high": 28.8,
+        "cases": 2,
+        "attempts": 12
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "phase": "readinessMs",
+      "definition": "Bounded content readiness",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 1446,
+        "low": 1439.9,
+        "high": 2001.5,
+        "cases": 2,
+        "attempts": 12
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "phase": "serializeMs",
+      "definition": "DOM serialization",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 2.7,
+        "low": 2.5,
+        "high": 2.7,
+        "cases": 2,
+        "attempts": 12
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "phase": "extractMs",
+      "definition": "Content extraction",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 1.4,
+        "low": 1.1,
+        "high": 2,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "phase": "renderMs",
+      "definition": "Browser render total (overlaps browser phases; not additive)",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 1751.9,
+        "low": 1499.8,
+        "high": 2079.5,
+        "cases": 2,
+        "attempts": 12
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "phase": "saveMs",
+      "definition": "Local persistence",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 0.2,
+        "low": 0.2,
+        "high": 0.2,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "dataset": "fixture",
+      "phase": "totalMs",
+      "definition": "Engine total (includes phases; do not sum with them)",
+      "eligibleAttempts": 48,
+      "estimate": {
+        "value": 3.5,
+        "low": 3.2,
+        "high": 7.1,
+        "cases": 8,
+        "attempts": 48
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "phase": "downloadMs",
+      "definition": "HTTP network and body decoding, including redirects",
+      "eligibleAttempts": 42,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "phase": "firstByteMs",
+      "definition": "HTTP first byte (nested within downloadMs; not additive)",
+      "eligibleAttempts": 42,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "phase": "launchMs",
+      "definition": "Browser launch/acquire",
+      "eligibleAttempts": 42,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "phase": "navigateMs",
+      "definition": "Browser navigation",
+      "eligibleAttempts": 42,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "phase": "readinessMs",
+      "definition": "Bounded content readiness",
+      "eligibleAttempts": 42,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "phase": "serializeMs",
+      "definition": "DOM serialization",
+      "eligibleAttempts": 42,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "phase": "extractMs",
+      "definition": "Content extraction",
+      "eligibleAttempts": 42,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "phase": "renderMs",
+      "definition": "Browser render total (overlaps browser phases; not additive)",
+      "eligibleAttempts": 42,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "phase": "saveMs",
+      "definition": "Local persistence",
+      "eligibleAttempts": 42,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "dataset": "fixture",
+      "phase": "totalMs",
+      "definition": "Engine total (includes phases; do not sum with them)",
+      "eligibleAttempts": 42,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "phase": "downloadMs",
+      "definition": "HTTP network and body decoding, including redirects",
+      "eligibleAttempts": 0,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "phase": "firstByteMs",
+      "definition": "HTTP first byte (nested within downloadMs; not additive)",
+      "eligibleAttempts": 0,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "phase": "launchMs",
+      "definition": "Browser launch/acquire",
+      "eligibleAttempts": 0,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "phase": "navigateMs",
+      "definition": "Browser navigation",
+      "eligibleAttempts": 0,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "phase": "readinessMs",
+      "definition": "Bounded content readiness",
+      "eligibleAttempts": 0,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "phase": "serializeMs",
+      "definition": "DOM serialization",
+      "eligibleAttempts": 0,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "phase": "extractMs",
+      "definition": "Content extraction",
+      "eligibleAttempts": 0,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "phase": "renderMs",
+      "definition": "Browser render total (overlaps browser phases; not additive)",
+      "eligibleAttempts": 0,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "phase": "saveMs",
+      "definition": "Local persistence",
+      "eligibleAttempts": 0,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "dataset": "fixture",
+      "phase": "totalMs",
+      "definition": "Engine total (includes phases; do not sum with them)",
+      "eligibleAttempts": 0,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "phase": "downloadMs",
+      "definition": "HTTP network and body decoding, including redirects",
+      "eligibleAttempts": 42,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "phase": "firstByteMs",
+      "definition": "HTTP first byte (nested within downloadMs; not additive)",
+      "eligibleAttempts": 42,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "phase": "launchMs",
+      "definition": "Browser launch/acquire",
+      "eligibleAttempts": 42,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "phase": "navigateMs",
+      "definition": "Browser navigation",
+      "eligibleAttempts": 42,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "phase": "readinessMs",
+      "definition": "Bounded content readiness",
+      "eligibleAttempts": 42,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "phase": "serializeMs",
+      "definition": "DOM serialization",
+      "eligibleAttempts": 42,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "phase": "extractMs",
+      "definition": "Content extraction",
+      "eligibleAttempts": 42,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "phase": "renderMs",
+      "definition": "Browser render total (overlaps browser phases; not additive)",
+      "eligibleAttempts": 42,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "phase": "saveMs",
+      "definition": "Local persistence",
+      "eligibleAttempts": 42,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    },
+    {
+      "profile": "donsetch",
+      "dataset": "fixture",
+      "phase": "totalMs",
+      "definition": "Engine total (includes phases; do not sum with them)",
+      "eligibleAttempts": 42,
+      "estimate": {
+        "value": null,
+        "low": null,
+        "high": null,
+        "cases": 0,
+        "attempts": 0
+      }
+    }
+  ]
+}

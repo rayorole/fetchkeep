@@ -1,0 +1,68 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_6f4d2693403ff196",
+    "version": 1,
+    "ref": "fk:d_6f4d2693403ff196@1",
+    "requestedUrl": "http://172.31.172.243:40121/docs/install.html",
+    "finalUrl": "http://172.31.172.243:40121/docs/install.html",
+    "title": "Installing the toolchain - Tidewater Docs",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T19:37:22.203Z",
+    "contentHash": "7e969f4bf63e3c590218d8c4ec73dbe02da1db1b0c066cea1fe5c9435964ca67",
+    "rawHash": "03135bd93b346dc592e8c7d98d4002cf57ca5f72fd16f65b103ae556f7544ecb",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "chromium",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Installing the toolchain\n\nTidewater ships as a single binary. You need a 64-bit operating system and about 200 megabytes of free disk space.\n\nNote: older releases required a separate runtime. That is no longer necessary.\n\n## Download\n\nUse the installer script, then confirm that the binary is on your path:\n\n```bash\ncurl -fsSL https://example.org/tidewater/install.sh | sh\ntidewater --version\n```\n\n## Installer options\n\n| Option | Default | Description |\n| --- | --- | --- |\n| `--prefix` | /usr/local | Directory that receives the binary |\n| `--channel` | stable | Release channel to install from |\n| `--no-modify-path` | off | Do not edit shell profile files |\n\n## Verify the installation\n\n```python\nimport tidewater\n\nprint(tidewater.version())\nassert tidewater.ping() == \"pong\"\n```\n\nIf the ping fails, run `tidewater doctor` and include its output when you report a problem."
+  },
+  "backend": {
+    "mode": "chromium",
+    "used": "chromium",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "chromium",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 595.3129819999449
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 878,
+    "returnedChars": 878,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "launchMs": 32,
+    "navigateMs": 31.5,
+    "readinessMs": 519.9,
+    "serializeMs": 2.2,
+    "renderMs": 585.5,
+    "extractMs": 3.4,
+    "subrequests": 1,
+    "subrequestsBlocked": 0,
+    "saveMs": 0.3,
+    "totalMs": 595.9
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_6f4d2693403ff196@1",
+    "url": "http://172.31.172.243:40121/docs/install.html",
+    "title": "Installing the toolchain - Tidewater Docs",
+    "fetchedAt": "2026-09-30T19:37:22.203Z",
+    "version": 1,
+    "contentHash": "7e969f4bf63e3c590218d8c4ec73dbe02da1db1b0c066cea1fe5c9435964ca67"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_3a2bfc11e18a0e22",
+    "version": 1,
+    "ref": "fk:d_3a2bfc11e18a0e22@1",
+    "requestedUrl": "http://172.31.172.243:40121/js/hydrate.html",
+    "finalUrl": "http://172.31.172.243:40121/js/hydrate.html",
+    "title": "Community garden opens a seed library | Northwind Journal",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T19:54:12.771Z",
+    "contentHash": "6d4c18b15ea847abb3252d9e18d9432864a6a249e791a8f21ecc824c1588a8b4",
+    "rawHash": "359fde0bd85fd2c16b918051b3df30f5f652da2bcb10f42fe16df4a8e3549af6",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "lightpanda",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Community garden opens a seed library\n\nResidents can now borrow seeds from a cabinet in the tool shed and return seeds from their own harvest in autumn.\n\nThe library started with forty varieties donated by a retired market gardener.\n\n## Comments\n\nGreat idea, I will bring runner beans."
+  },
+  "backend": {
+    "mode": "lightpanda",
+    "used": "lightpanda",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "lightpanda",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 527.291016999865
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 287,
+    "returnedChars": 287,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "launchMs": 9.3,
+    "navigateMs": 1.8,
+    "readinessMs": 508.5,
+    "serializeMs": 1.4,
+    "renderMs": 520.9,
+    "extractMs": 3.6,
+    "subrequests": 1,
+    "subrequestsBlocked": 0,
+    "saveMs": 0.4,
+    "totalMs": 527.8
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_3a2bfc11e18a0e22@1",
+    "url": "http://172.31.172.243:40121/js/hydrate.html",
+    "title": "Community garden opens a seed library | Northwind Journal",
+    "fetchedAt": "2026-09-30T19:54:12.771Z",
+    "version": 1,
+    "contentHash": "6d4c18b15ea847abb3252d9e18d9432864a6a249e791a8f21ecc824c1588a8b4"
+  }
+}

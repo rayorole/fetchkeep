@@ -1,0 +1,63 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_b1ec193bb079789e",
+    "version": 1,
+    "ref": "fk:d_b1ec193bb079789e@1",
+    "requestedUrl": "http://172.31.172.243:40121/js/next-data.html",
+    "finalUrl": "http://172.31.172.243:40121/js/next-data.html",
+    "title": "Glossary",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T19:57:55.654Z",
+    "contentHash": "d76a58bcd5643375d4886c1a988b3b2e6c604b334d7f6860b5b7e9573cbfe1ca",
+    "rawHash": "c7eca0646a271328cd2bde21e5d772e34a4da997011cfb930197fcff92e0fa3d",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "http",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Glossary"
+  },
+  "backend": {
+    "mode": "http",
+    "used": "http",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "http",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 1.9584849998354912
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 10,
+    "returnedChars": 10,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "firstByteMs": 1.3,
+    "downloadMs": 1.4,
+    "extractMs": 0.5,
+    "saveMs": 0.2,
+    "totalMs": 2.3
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_b1ec193bb079789e@1",
+    "url": "http://172.31.172.243:40121/js/next-data.html",
+    "title": "Glossary",
+    "fetchedAt": "2026-09-30T19:57:55.654Z",
+    "version": 1,
+    "contentHash": "d76a58bcd5643375d4886c1a988b3b2e6c604b334d7f6860b5b7e9573cbfe1ca"
+  }
+}

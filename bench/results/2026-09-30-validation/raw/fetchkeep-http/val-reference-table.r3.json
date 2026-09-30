@@ -1,0 +1,63 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_b517e93b85d5019c",
+    "version": 1,
+    "ref": "fk:d_b517e93b85d5019c@1",
+    "requestedUrl": "http://172.31.172.243:45387/validation/reference-table.html",
+    "finalUrl": "http://172.31.172.243:45387/validation/reference-table.html",
+    "title": "Pressure sampler reference",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T19:25:55.138Z",
+    "contentHash": "6c960d62e44ceb3db1e29f1b00133466930c0753980584df84950b8bab741667",
+    "rawHash": "0713a6acb2d8f7f22fd6b99ed5e91e754919d545e297212b8e8e45e481db98c6",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "http",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Pressure sampler reference\n\nUse the sampler only after the reference chamber reaches ambient temperature.\n\n## Parameters\n\n| Field | Type | Meaning |\n| --- | --- | --- |\n| interval | integer | Seconds between samples |\n| unit | string | Output pressure unit |\n\n## Example\n\n```js\nasync function sample(sensor) {\n  const value = await sensor.read();\n  return { value, unit: \"kPa\" };\n}\n```\n\nStore the raw reading before applying any calibration correction.\n\n[Calibration procedure](http://172.31.172.243:45387/calibration.html)"
+  },
+  "backend": {
+    "mode": "http",
+    "used": "http",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "http",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 3.6931230000045616
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 525,
+    "returnedChars": 525,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "firstByteMs": 0.7,
+    "downloadMs": 0.8,
+    "extractMs": 2.8,
+    "saveMs": 0.2,
+    "totalMs": 4.1
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_b517e93b85d5019c@1",
+    "url": "http://172.31.172.243:45387/validation/reference-table.html",
+    "title": "Pressure sampler reference",
+    "fetchedAt": "2026-09-30T19:25:55.138Z",
+    "version": 1,
+    "contentHash": "6c960d62e44ceb3db1e29f1b00133466930c0753980584df84950b8bab741667"
+  }
+}

@@ -41,7 +41,7 @@ export class FakeBrowser implements BrowserProvider {
         html: b.html,
         truncated: false,
         requests: { total: 1, blocked: 0, failed: 0 },
-        timings: { launchMs: 0, navigateMs: 1, totalMs: 1 },
+        timings: { launchMs: 0, navigateMs: 1, readinessMs: 0, serializeMs: 0, totalMs: 1 },
       };
     } finally {
       this.concurrent--;

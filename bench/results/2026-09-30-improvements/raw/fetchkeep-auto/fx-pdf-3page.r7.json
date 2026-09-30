@@ -1,0 +1,63 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_34416e5ffa50c3b7",
+    "version": 1,
+    "ref": "fk:d_34416e5ffa50c3b7@1",
+    "requestedUrl": "http://172.31.172.243:40121/files/ferry-safety.pdf",
+    "finalUrl": "http://172.31.172.243:40121/files/ferry-safety.pdf",
+    "title": "Passenger Safety Briefing",
+    "contentType": "application/pdf",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T20:01:22.647Z",
+    "contentHash": "003aa73d81dd3e76de84af0e6532a6c53f1b8ff8f31304bfe8ea784bea4c82ab",
+    "rawHash": "0c00e15356c4b93092ff9d8db2c163219f352f15a2ce4e77aabce44de1f83101",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "pdf",
+    "backend": "http",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Passenger Safety Briefing\n\nLife jackets are stored under every seat on the upper deck. Children under twelve must wear a life jacket on open decks.\n\n## Muster stations\n\nMuster station B is next to the cafe on the main deck.\n\nIn an emergency, follow the instructions of the crew at all times."
+  },
+  "backend": {
+    "mode": "auto",
+    "used": "http",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "http",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 3.84220499987714
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 293,
+    "returnedChars": 293,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "firstByteMs": 1,
+    "downloadMs": 1.1,
+    "extractMs": 2.7,
+    "saveMs": 0.2,
+    "totalMs": 4.2
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_34416e5ffa50c3b7@1",
+    "url": "http://172.31.172.243:40121/files/ferry-safety.pdf",
+    "title": "Passenger Safety Briefing",
+    "fetchedAt": "2026-09-30T20:01:22.647Z",
+    "version": 1,
+    "contentHash": "003aa73d81dd3e76de84af0e6532a6c53f1b8ff8f31304bfe8ea784bea4c82ab"
+  }
+}

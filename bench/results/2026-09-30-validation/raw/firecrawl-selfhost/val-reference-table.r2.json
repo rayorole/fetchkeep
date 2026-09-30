@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "data": {
+    "markdown": "Pressure sampler reference\n==========================\n\nUse the sampler only after the reference chamber reaches ambient temperature.\n\nParameters\n----------\n\n| Field | Type | Meaning |\n| --- | --- | --- |\n| interval | integer | Seconds between samples |\n| unit | string | Output pressure unit |\n\nExample\n-------\n\n    async function sample(sensor) {\n      const value = await sensor.read();\n      return { value, unit: \"kPa\" };\n    }\n\nStore the raw reading before applying any calibration correction.\n\n[Calibration procedure](http://172.31.172.243:45387/calibration.html)",
+    "metadata": {
+      "title": "Pressure sampler reference",
+      "language": "en",
+      "scrapeId": "01a0f3c7-9b60-74ab-a0bf-a552e01bd2ad",
+      "sourceURL": "http://172.31.172.243:45387/validation/reference-table.html",
+      "url": "http://172.31.172.243:45387/validation/reference-table.html",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "proxyUsed": "basic",
+      "creditsUsed": 1,
+      "concurrencyLimited": false
+    }
+  }
+}

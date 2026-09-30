@@ -1,0 +1,11 @@
+{
+  "text": "# Bridge notice\nhttp://172.31.172.243:45387/validation/short-notice.html\n\nThe footbridge is closed on Tuesday for a cable inspection.\n\nUse the signed path beside the mill.",
+  "structured": {
+    "changed": "new",
+    "content_kind": "Page",
+    "content_ok": true,
+    "lang": "en",
+    "url": "http://172.31.172.243:45387/validation/short-notice.html"
+  },
+  "isError": false
+}

@@ -1,6 +1,98 @@
 # Measured results — 2026-09-30
 
-## Latest: v0.1.2 full comparison
+## v0.1.3 evidence status
+
+The version bump includes verified implementation changes. The seven-repetition
+[intermediate full report](2026-09-30-improvements/report.md) and
+[standalone HTML](2026-09-30-improvements/report.html) measure source `35c1701`, **not the final v0.1.3 code**.
+That intermediate policy still missed the original ten-second delayed-JavaScript case. The later fix at
+`baf2b28` retrieved all three annotated passages on both Chromium and Lightpanda and reopened exact saved
+citations. Native browser regression coverage passed 26/26; Windows Chromium passed 14/14.
+
+A separate final-source benchmark sweep was started before the requested merge/version bump; its results
+are not claimed here until publication. Lightpanda's React output still has a code-line formatting gap in the
+intermediate run; strict code scoring retains that failure. HTTP and Chromium preserve the annotated line.
+
+## Component profiles and MCP workflows — issues #37–40
+
+These are separate workloads, **not substitutes for end-to-end live retrieval**. Production changes are in
+`35c170126b455eaeb032b6e8d20b9fb83cc3eb75`; the compared baseline is v0.1.2. Node 24.15.0, same dependencies,
+sequential before/after measurements, OS caches not flushed. Host load varied, so these observations do not promise
+a fixed speedup on other machines.
+
+### CLI startup
+
+Native Ubuntu/WSL fresh-process spawn-to-exit medians, 15 repetitions per command, interleaved by command:
+
+| Command | Before | After |
+|---|---:|---:|
+| Help | 491 ms | 65 ms |
+| Doctor | 469 ms | 259 ms |
+| Saved read | 518 ms | 239 ms |
+| Fresh local HTTP fetch, saving enabled | 559 ms | 453 ms |
+
+[Linux before samples](2026-09-30-profiles/linux-startup-before.json) ·
+[Linux after samples](2026-09-30-profiles/linux-startup-after.json) ·
+[Windows before](2026-09-30-profiles/windows-startup-before.json) ·
+[Windows after](2026-09-30-profiles/windows-startup-after.json).
+Windows snapshots used same-depth paths to avoid giving one version a shorter module-resolution search.
+Saved reads use a populated workspace; fetches still contact the local server and persist their result.
+Reproduce with [`bench/startup.ts`](../startup.ts), compiling each source revision first.
+
+### HTML extraction
+
+Windows extraction-only workload, 15 passes with the first excluded; CPU profiling enabled for both measurements:
+
+| Document shape | Input size | Before median | After median |
+|---|---:|---:|---:|
+| Small semantic reference | 19,571 bytes | 25.27 ms | 20.59 ms |
+| Large semantic reference, 2,801 blocks | 457,051 bytes | 556.83 ms | 372.34 ms |
+| Ambiguous article | 31,164 bytes | 15.19 ms | 13.32 ms |
+| Sparse semantic reference | 602 bytes | 1.27 ms | 0.95 ms |
+
+Peak process RSS: **519.1 → 404.0 MiB**. Complete extracted-object hashes matched for every document, including
+Markdown, block text/hashes/offsets, code, tables, links, metadata and selection strategy. No extraction thresholds
+were changed. Tail latency is noisy: the ambiguous-article p95 increased in this sample, so do not generalize from
+the median alone.
+[Before samples](2026-09-30-profiles/windows-extraction-before.json) ·
+[After samples](2026-09-30-profiles/windows-extraction-after.json) ·
+[Before CPU profile](2026-09-30-profiles/extraction-before.cpuprofile.gz) ·
+[After CPU profile](2026-09-30-profiles/extraction-after.cpuprofile.gz).
+Reproduce with [`bench/extraction.ts`](../extraction.ts); `--compare` rejects changes to complete output hashes.
+
+### Persistent MCP sessions and saved evidence
+
+[Full workflow report](2026-09-30-workloads/workloads.md) ·
+[Every operation and raw response](2026-09-30-workloads/workloads.json).
+
+All **35/35 session-fetch sessions** passed: seven sessions for each of four Fetchkeep profiles and DonSeTch,
+four fresh URLs per session. Every operation had server-side origin-request evidence; no engine received a
+saved-read shortcut. DonSeTch remained faster on this simple local workload: median four-call total **13.0 ms**
+versus Fetchkeep auto **296.7 ms** (HTTP **320.9 ms**). These totals include first-call lazy initialization but
+exclude separately reported MCP startup. Later warm calls and a multi-page live benchmark answer different questions.
+
+All **28/28 Fetchkeep saved-library sessions** passed all six operations: fetch/save, exact quote lookup, citation
+reopen, local search with the origin stopped, fetch a revised page, then reopen the original citation offline.
+DonSeTch's seven library sessions are N/A, not failures or fake zero-latency measurements.
+Each scenario is only one workload case; seven repetitions do not create seven independent cases or justify
+case-population confidence intervals.
+
+### Validation provenance
+
+The eight-case corpus was frozen before its first validation run. The first
+[validation report](2026-09-30-validation/report.md) is retained, including its failure evidence. One authored
+fixture, `val-nested-shadow`, had a missing closing brace: its JavaScript could not execute, so that case is invalid
+as a product-quality measurement in the first run. The single-brace correction changes neither product code,
+expectations nor scoring and has a separately named `validation-corrected` suite. Seven other cases were valid
+in the original run. The final-source rerun also includes the separately verified fix for the original historical
+ten-second site. Neither that rerun nor previously inspected historical holdouts are independent external evidence.
+
+The original validation records `fetchkeepDirty: true` because completed, untracked result
+directories existed under `bench/results/` in the native worktree. The observed worktree status contained only
+generated validation/workload directories, with no tracked source edits. The recorded source commit and fixture
+hashes remain the provenance; the dirty flag is preserved, not rewritten.
+
+## Historical: v0.1.2 full comparison
 
 **[Download the standalone HTML report](https://github.com/rayorole/fetchkeep/releases/download/v0.1.2/fetchkeep-benchmark-0.1.2.html)** and open it locally.
 It includes filterable/sortable comparisons, searchable fetch/crawl cases, charts, methodology and embedded CSV exports.

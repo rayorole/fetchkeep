@@ -1,0 +1,68 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_cf7f0f92ad3fff7b",
+    "version": 1,
+    "ref": "fk:d_cf7f0f92ad3fff7b@1",
+    "requestedUrl": "http://172.31.172.243:45387/validation/background-clock.html",
+    "finalUrl": "http://172.31.172.243:45387/validation/background-clock.html",
+    "title": "Glacier measurements",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T19:25:24.413Z",
+    "contentHash": "fc537ee5685a93b4860638c297d67a547643d48633ab5b14156571ac793ac46e",
+    "rawHash": "c1837b608ddf90c986e30c28906de5c38c1579679a517943b11a312b577d89d9",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "chromium",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Glacier measurements\n\nThe survey team measures the terminus from the same brass marker every August.\n\nMeasurements are corrected for the slope of the valley floor before publication.\n\nArchived field notebooks remain available at the regional geology library."
+  },
+  "backend": {
+    "mode": "chromium",
+    "used": "chromium",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "chromium",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 650.6086829999986
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 260,
+    "returnedChars": 260,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "launchMs": 64.8,
+    "navigateMs": 29.5,
+    "readinessMs": 545.9,
+    "serializeMs": 3.9,
+    "renderMs": 644,
+    "extractMs": 1.7,
+    "subrequests": 1,
+    "subrequestsBlocked": 0,
+    "saveMs": 0.3,
+    "totalMs": 651.1
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_cf7f0f92ad3fff7b@1",
+    "url": "http://172.31.172.243:45387/validation/background-clock.html",
+    "title": "Glacier measurements",
+    "fetchedAt": "2026-09-30T19:25:24.413Z",
+    "version": 1,
+    "contentHash": "fc537ee5685a93b4860638c297d67a547643d48633ab5b14156571ac793ac46e"
+  }
+}

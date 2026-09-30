@@ -1,0 +1,77 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_853c36f6490e1a9f",
+    "version": 1,
+    "ref": "fk:d_853c36f6490e1a9f@1",
+    "requestedUrl": "http://172.31.172.243:40121/js/spa.html",
+    "finalUrl": "http://172.31.172.243:40121/js/spa.html",
+    "title": "Island ferry timetable",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T19:58:52.337Z",
+    "contentHash": "c3db44f46a30ee4feadde4ebe7a577339fd7ce572802fcff618cf2aadb94ef37",
+    "rawHash": "54973af187013e222dcce1c4153b488cc625b9ecf17c0f3a83cd9159249ef767",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "chromium",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Island ferry timetable\n\nWinter sailings run daily except on public holidays.\n\n| Departure | Destination | Pier |\n| --- | --- | --- |\n| 07:15 | Gull Island | Pier 2 |\n| 09:40 | Heron Key | Pier 1 |\n| 13:05 | Gull Island | Pier 2 |\n\nVehicles must check in thirty minutes before departure."
+  },
+  "backend": {
+    "mode": "auto",
+    "used": "chromium",
+    "escalated": true,
+    "attempts": [
+      {
+        "backend": "http",
+        "outcome": "insufficient",
+        "reason": "empty single-page-app root and only 8 chars extracted",
+        "httpStatus": 200,
+        "durationMs": 1.7235930000897497
+      },
+      {
+        "backend": "chromium",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 599.5739350002259
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 288,
+    "returnedChars": 288,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "firstByteMs": 1.1,
+    "downloadMs": 1.2,
+    "extractMs": 2,
+    "launchMs": 51.6,
+    "navigateMs": 23.3,
+    "readinessMs": 516.3,
+    "serializeMs": 2.1,
+    "renderMs": 593.3,
+    "subrequests": 2,
+    "subrequestsBlocked": 0,
+    "saveMs": 0.2,
+    "totalMs": 601.7
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_853c36f6490e1a9f@1",
+    "url": "http://172.31.172.243:40121/js/spa.html",
+    "title": "Island ferry timetable",
+    "fetchedAt": "2026-09-30T19:58:52.337Z",
+    "version": 1,
+    "contentHash": "c3db44f46a30ee4feadde4ebe7a577339fd7ce572802fcff618cf2aadb94ef37"
+  }
+}

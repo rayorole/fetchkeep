@@ -125,7 +125,7 @@ function environment(): Record<string, unknown> {
 export function loadDatasets(): { cases: BenchCase[]; datasets: RunMeta["datasets"] } {
   const cases: BenchCase[] = [];
   const datasets: RunMeta["datasets"] = [];
-  for (const name of ["fixtures", "live", "live-crawl"]) {
+  for (const name of ["fixtures", "live", "live-crawl", "validation"]) {
     const path = join(BENCH, "datasets", `${name}.json`);
     if (!existsSync(path)) continue;
     const ds = JSON.parse(readFileSync(path, "utf8")) as { cases: BenchCase[] };
@@ -135,7 +135,7 @@ export function loadDatasets(): { cases: BenchCase[]; datasets: RunMeta["dataset
   return { cases, datasets };
 }
 
-function makeAdapter(profile: string, runDir: string, opts: RunOptions, fixtureCidr: string): EngineAdapter {
+export function makeAdapter(profile: string, runDir: string, opts: Pick<RunOptions, "allowPaid" | "budgetCredits">, fixtureCidr: string): EngineAdapter {
   const env = process.env;
   if (profile.startsWith("fetchkeep-")) {
     return new FetchkeepAdapter({
@@ -193,6 +193,7 @@ export async function run(opts: RunOptions): Promise<string> {
   });
   if (selected.length === 0) throw new Error(`suite ${opts.suite} selects no cases (is bench/datasets/live.json present?)`);
   const repetitions = opts.repetitions ?? suite.repetitions;
+  if (!Number.isSafeInteger(repetitions) || repetitions < 1) throw new Error("repetitions must be a positive integer");
 
   const startedAt = new Date();
   const runId = `${startedAt.toISOString().replace(/[:.]/g, "-").slice(0, 19)}-${opts.suite}`;
@@ -313,6 +314,7 @@ export async function run(opts: RunOptions): Promise<string> {
         if (out.attempts !== undefined) rec.output.attempts = out.attempts;
         if (out.error) rec.error = out.error;
         if (out.cost) rec.cost = out.cost;
+        if (out.timings) rec.timings = out.timings;
         const scores: Record<string, number | null> = { ...scoreFetch(fc, out.ok, md, golds.get(fc.id) ?? null) };
         if (adapter!.verifyCitation && out.ok && out.citationRef && (fc.mustContain ?? []).length && !fc.expectError) {
           let verified = 0;
@@ -325,7 +327,7 @@ export async function run(opts: RunOptions): Promise<string> {
         const rawBase = join("raw", t.profile, `${fc.id}.r${t.repetition}`);
         mkdirSync(join(runDir, "raw", t.profile), { recursive: true });
         writeFileSync(join(runDir, `${rawBase}.md`), out.markdown ?? "");
-        writeFileSync(join(runDir, `${rawBase}.json`), JSON.stringify(out.raw ?? null, null, 2).slice(0, 2_000_000));
+        writeFileSync(join(runDir, `${rawBase}.json`), JSON.stringify(out.raw ?? null, null, 2));
         rec.rawPath = `${rawBase}.md`.replace(/\\/g, "/");
       }
       appendFileSync(recordsPath, `${JSON.stringify(rec)}\n`);
@@ -352,7 +354,7 @@ export async function run(opts: RunOptions): Promise<string> {
         const rawBase = join("raw", t.profile, `${cc.id}.r${t.repetition}`);
         mkdirSync(join(runDir, "raw", t.profile), { recursive: true });
         writeFileSync(join(runDir, `${rawBase}.md`), out.pages.map((p) => `<!-- ${p.url} -->\n${p.markdown}`).join("\n\n"));
-        writeFileSync(join(runDir, `${rawBase}.json`), JSON.stringify(out.raw ?? null, null, 2).slice(0, 2_000_000));
+        writeFileSync(join(runDir, `${rawBase}.json`), JSON.stringify(out.raw ?? null, null, 2));
         rec.rawPath = `${rawBase}.md`.replace(/\\/g, "/");
       }
       appendFileSync(crawlPath, `${JSON.stringify(rec)}\n`);
@@ -417,8 +419,9 @@ export async function run(opts: RunOptions): Promise<string> {
     engines: engineMeta,
     notes: [
       "Tasks run sequentially (concurrency 1) in a seeded random order per repetition; all engines see the same URLs and per-request deadline.",
-      "Repetition 1 is the first request after the engine started (browsers launch lazily); later repetitions are warm.",
+      "Repetition 1 is the first pass over each case, not a cold process per case; repetitions ≥2 form the warm cohort. MCP sessions persist across all operations.",
       "Live websites change: live results are only comparable within one run.",
+      "Legacy heldOut flags identify previously inspected regression cases. Fresh val-* validation is selected only by an explicit suite pattern and must not be used for tuning.",
     ],
   };
   writeFileSync(join(runDir, "meta.json"), `${JSON.stringify(meta, null, 2)}\n`);

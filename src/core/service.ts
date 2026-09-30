@@ -1,10 +1,10 @@
-import { extractWithOllama, type ExtractInput } from "./ai/ollama.js";
+import type { ExtractInput } from "./ai/ollama.js";
 import { sliceMarkdown } from "./budget.js";
-import { runCrawl, type CrawlInput } from "./crawl.js";
+import type { CrawlInput } from "./crawl.js";
 import type { FetchkeepConfig } from "./config.js";
 import { errorEnvelope, roundTimings } from "./envelope.js";
 import { FetchkeepError, toFetchkeepError } from "./errors.js";
-import { retrieve, type RetrieveResult } from "./fetch.js";
+import type { RetrieveResult } from "./fetch.js";
 import { sha256 } from "./hash.js";
 import { HttpClient } from "./http.js";
 import { NetworkPolicy } from "./netpolicy.js";
@@ -98,6 +98,7 @@ export class Fetchkeep {
     const signal = this.deadline(timeoutMs, parent);
     try {
       this.policy.checkUrl(url);
+      const { retrieve } = await import("./fetch.js");
       return await retrieve(
         { http: this.http, browsers: this.browsers, policy: this.policy, userAgent: this.userAgent, settleMs: this.config.browser.settleMs },
         { url, mode, signal, deadline, limits: this.config.limits },
@@ -120,12 +121,15 @@ export class Fetchkeep {
     let version = 0;
     let unchanged: boolean | undefined;
     let contentHash = "";
+    let saveMs = 0;
     if (save) {
+      const saveStarted = performance.now();
       const saved = this.store.save(page, this.config.rawSnapshots);
       docId = saved.docId;
       version = saved.version;
       unchanged = saved.unchanged;
       contentHash = saved.contentHash;
+      saveMs = performance.now() - saveStarted;
     }
     const ex = page.extracted;
     const slice = sliceMarkdown(ex.markdown, ex.blocks, input.offset ?? 0, input.maxChars ?? this.config.maxChars);
@@ -165,7 +169,7 @@ export class Fetchkeep {
         offset: slice.offset,
         nextOffset: slice.nextOffset,
       },
-      timings: roundTimings({ ...page.timings, totalMs: performance.now() - started }),
+      timings: roundTimings({ ...page.timings, saveMs, totalMs: performance.now() - started }),
       warnings: allWarnings,
     };
     if (save) env.citation = citationFor(document);
@@ -173,12 +177,14 @@ export class Fetchkeep {
   }
 
   /** Bounded crawl; see {@link runCrawl}. */
-  crawl(input: CrawlInput): Promise<Envelope> {
+  async crawl(input: CrawlInput): Promise<Envelope> {
+    const { runCrawl } = await import("./crawl.js");
     return runCrawl(this, input);
   }
 
   /** Experimental schema-based extraction with a local Ollama model; see {@link extractWithOllama}. */
-  extract(input: ExtractInput): Promise<Envelope> {
+  async extract(input: ExtractInput): Promise<Envelope> {
+    const { extractWithOllama } = await import("./ai/ollama.js");
     return extractWithOllama(this, input);
   }
 

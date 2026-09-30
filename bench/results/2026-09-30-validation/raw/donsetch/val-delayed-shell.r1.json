@@ -1,0 +1,11 @@
+{
+  "text": "# Reservoir inspection\nhttp://172.31.172.243:45387/validation/delayed-shell.html\n\nLoading inspection details…",
+  "structured": {
+    "changed": "new",
+    "content_kind": "Page",
+    "content_ok": true,
+    "lang": "en",
+    "url": "http://172.31.172.243:45387/validation/delayed-shell.html"
+  },
+  "isError": false
+}

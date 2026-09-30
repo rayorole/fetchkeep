@@ -1,0 +1,63 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_3a2bfc11e18a0e22",
+    "version": 1,
+    "ref": "fk:d_3a2bfc11e18a0e22@1",
+    "requestedUrl": "http://172.31.172.243:40121/js/hydrate.html",
+    "finalUrl": "http://172.31.172.243:40121/js/hydrate.html",
+    "title": "Community garden opens a seed library | Northwind Journal",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T19:53:10.684Z",
+    "contentHash": "32b160dfe9b1af046e5468bf5e917d137b68b1761580188f8763baca496c542b",
+    "rawHash": "c79e04a75a4ea4ccb625dee2b3afd8bee99ce04a8a52ce4ccd87125e06fe6365",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "http",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Community garden opens a seed library\n\nResidents can now borrow seeds from a cabinet in the tool shed and return seeds from their own harvest in autumn.\n\nThe library started with forty varieties donated by a retired market gardener.\n\nLoading comments…"
+  },
+  "backend": {
+    "mode": "http",
+    "used": "http",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "http",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 2.0860530000645667
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 253,
+    "returnedChars": 253,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "firstByteMs": 0.7,
+    "downloadMs": 0.8,
+    "extractMs": 1.2,
+    "saveMs": 0.2,
+    "totalMs": 2.4
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_3a2bfc11e18a0e22@1",
+    "url": "http://172.31.172.243:40121/js/hydrate.html",
+    "title": "Community garden opens a seed library | Northwind Journal",
+    "fetchedAt": "2026-09-30T19:53:10.684Z",
+    "version": 1,
+    "contentHash": "32b160dfe9b1af046e5468bf5e917d137b68b1761580188f8763baca496c542b"
+  }
+}

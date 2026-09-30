@@ -1,0 +1,63 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_1df0cc9426cc24cf",
+    "version": 1,
+    "ref": "fk:d_1df0cc9426cc24cf@1",
+    "requestedUrl": "http://172.31.172.243:40121/slow/2500",
+    "finalUrl": "http://172.31.172.243:40121/slow/2500",
+    "title": "Slow page",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T19:36:24.666Z",
+    "contentHash": "c9e99b416f2ea358d1ad9c5603d42ae48646068b04910fcdf3a8d18115eb7e21",
+    "rawHash": "bf9d71eb8a0df65e30ce482b9edd973ec5d7f6486a582ccf6e16db1febeab817",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "http",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Slow page\n\nThis page was deliberately slow to respond, by 2500 milliseconds."
+  },
+  "backend": {
+    "mode": "auto",
+    "used": "http",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "http",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 2503.2480780000333
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 78,
+    "returnedChars": 78,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "firstByteMs": 2502.2,
+    "downloadMs": 2502.4,
+    "extractMs": 0.8,
+    "saveMs": 0.2,
+    "totalMs": 2503.7
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_1df0cc9426cc24cf@1",
+    "url": "http://172.31.172.243:40121/slow/2500",
+    "title": "Slow page",
+    "fetchedAt": "2026-09-30T19:36:24.666Z",
+    "version": 1,
+    "contentHash": "c9e99b416f2ea358d1ad9c5603d42ae48646068b04910fcdf3a8d18115eb7e21"
+  }
+}

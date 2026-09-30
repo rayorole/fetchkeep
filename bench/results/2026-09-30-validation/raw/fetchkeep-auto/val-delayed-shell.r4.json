@@ -1,0 +1,77 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_8c1d901a57d41129",
+    "version": 1,
+    "ref": "fk:d_8c1d901a57d41129@1",
+    "requestedUrl": "http://172.31.172.243:45387/validation/delayed-shell.html",
+    "finalUrl": "http://172.31.172.243:45387/validation/delayed-shell.html",
+    "title": "Reservoir inspection",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T19:26:22.892Z",
+    "contentHash": "b67e6d4e86dbdbf9fcade9e9577c4cd905f05bbaccd0797fec40c3aecc40a928",
+    "rawHash": "74f81be791bea2391ff7bd4d86c85c27fa1d136fb833bd65ab6e293d06ba6296",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "chromium",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Reservoir inspection\n\nThe western spillway reopened after engineers replaced the damaged control cable.\n\nInspection photographs are retained for seven years in the municipal archive.\n\nThe next inspection will compare vibration measurements from all four gates."
+  },
+  "backend": {
+    "mode": "auto",
+    "used": "chromium",
+    "escalated": true,
+    "attempts": [
+      {
+        "backend": "http",
+        "outcome": "insufficient",
+        "reason": "only 49 chars extracted from a script-driven page (1 scripts)",
+        "httpStatus": 200,
+        "durationMs": 2.6222909999924013
+      },
+      {
+        "backend": "chromium",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 1520.6963760000071
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 262,
+    "returnedChars": 262,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "firstByteMs": 1.4,
+    "downloadMs": 1.5,
+    "extractMs": 2.1,
+    "launchMs": 48.8,
+    "navigateMs": 20.5,
+    "readinessMs": 1444.3,
+    "serializeMs": 2.3,
+    "renderMs": 1515.8,
+    "subrequests": 1,
+    "subrequestsBlocked": 0,
+    "saveMs": 0.2,
+    "totalMs": 1523.8
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_8c1d901a57d41129@1",
+    "url": "http://172.31.172.243:45387/validation/delayed-shell.html",
+    "title": "Reservoir inspection",
+    "fetchedAt": "2026-09-30T19:26:22.892Z",
+    "version": 1,
+    "contentHash": "b67e6d4e86dbdbf9fcade9e9577c4cd905f05bbaccd0797fec40c3aecc40a928"
+  }
+}

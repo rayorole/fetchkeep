@@ -1,0 +1,11 @@
+{
+  "text": "# Menu du jour\nhttp://172.31.172.243:40121/enc/latin1.html\n\nCrème brûlée is served at the café on the quay every Friday.\n\nA slice of tarte costs €4 with coffee.",
+  "structured": {
+    "changed": "new",
+    "content_kind": "Page",
+    "content_ok": true,
+    "lang": "en",
+    "url": "http://172.31.172.243:40121/enc/latin1.html"
+  },
+  "isError": false
+}

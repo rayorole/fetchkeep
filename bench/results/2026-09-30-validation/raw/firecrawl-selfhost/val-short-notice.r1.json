@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "data": {
+    "markdown": "Bridge notice\n=============\n\nThe footbridge is closed on Tuesday for a cable inspection.\n\nUse the signed path beside the mill.",
+    "metadata": {
+      "title": "Bridge notice",
+      "language": "en",
+      "scrapeId": "01a0f3c7-5282-733e-ba83-7916e97e26cd",
+      "sourceURL": "http://172.31.172.243:45387/validation/short-notice.html",
+      "url": "http://172.31.172.243:45387/validation/short-notice.html",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "proxyUsed": "basic",
+      "creditsUsed": 1,
+      "concurrencyLimited": false
+    }
+  }
+}

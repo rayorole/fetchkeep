@@ -77,8 +77,10 @@ async function renderPage(deps: RetrieveDeps, name: BrowserName, opts: RetrieveO
     redirects: [],
     extracted,
     timings: {
-      browserLaunchMs: r.timings.launchMs,
+      launchMs: r.timings.launchMs,
       navigateMs: r.timings.navigateMs,
+      readinessMs: r.timings.readinessMs,
+      serializeMs: r.timings.serializeMs,
       renderMs: r.timings.totalMs,
       extractMs: performance.now() - t0,
       subrequests: r.requests.total,
@@ -107,6 +109,13 @@ export async function retrieve(deps: RetrieveDeps, opts: RetrieveOptions): Promi
   const attempts: Attempt[] = [];
   const warnings: string[] = [];
   const backend: BackendInfo = { mode: opts.mode, used: null, escalated: false, attempts };
+  // Every successful attempt contributes work, even if a later/earlier result is selected for its content.
+  // Failed attempts have no measured phases; their duration remains in backend.attempts, not invented stage data.
+  const timings: FetchedPage["timings"] = {};
+  const recordTimings = (page: FetchedPage): void => {
+    for (const [key, value] of Object.entries(page.timings)) timings[key] = (timings[key] ?? 0) + value;
+    page.timings = timings;
+  };
 
   const tryBrowsers = async (names: BrowserName[]): Promise<{ page: FetchedPage | null; error: FetchkeepError | null }> => {
     let lastError: FetchkeepError | null = null;
@@ -119,6 +128,7 @@ export async function retrieve(deps: RetrieveDeps, opts: RetrieveOptions): Promi
       // Availability may launch the browser (Chromium); that time belongs to this attempt.
       const t0 = performance.now();
       const avail = await deps.browsers.availability(name);
+      const availabilityMs = performance.now() - t0;
       if (!avail.available) {
         attempts.push({ backend: name, outcome: "unavailable", reason: avail.detail, durationMs: performance.now() - t0 });
         lastError = new FetchkeepError("browser_unavailable", `${name} is not available: ${avail.detail}`);
@@ -126,6 +136,10 @@ export async function retrieve(deps: RetrieveDeps, opts: RetrieveOptions): Promi
       }
       try {
         const page = await renderPage(deps, name, opts);
+        // Availability can launch Chromium before render. Include that nonoverlapping setup work.
+        page.timings.launchMs = (page.timings.launchMs ?? 0) + availabilityMs;
+        page.timings.renderMs = (page.timings.renderMs ?? 0) + availabilityMs;
+        recordTimings(page);
         attempts.push({ backend: name, outcome: "success", httpStatus: page.httpStatus, durationMs: performance.now() - t0 });
         return { page, error: null };
       } catch (err) {
@@ -159,6 +173,7 @@ export async function retrieve(deps: RetrieveDeps, opts: RetrieveOptions): Promi
       const t0 = performance.now();
       try {
         const direct = await fetchViaHttp(deps.http, opts.url, opts.signal, opts.limits);
+        recordTimings(direct);
         attempts.push({ backend: "http", outcome: "success", reason: "non-HTML resource fetched over HTTP", httpStatus: direct.httpStatus, durationMs: performance.now() - t0 });
         backend.used = "http";
         warnings.push(`${direct.contentType} is not rendered by browsers; fetched over HTTP`);
@@ -179,6 +194,7 @@ export async function retrieve(deps: RetrieveDeps, opts: RetrieveOptions): Promi
   let httpError: FetchkeepError | null = null;
   try {
     httpPage = await fetchViaHttp(deps.http, opts.url, opts.signal, opts.limits);
+    recordTimings(httpPage);
   } catch (err) {
     httpError = toFetchkeepError(err, opts.signal);
   }

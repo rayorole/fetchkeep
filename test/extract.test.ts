@@ -96,6 +96,57 @@ describe("extractHtml on an article", () => {
   });
 });
 
+describe("candidate and block isolation", () => {
+  it("keeps structural code, tables and relative links when the article candidate discards them", () => {
+    const doc = extractHtml(
+      `<html><head><title>Care guide</title><base href="https://docs.example.com/manual/"></head><body><main>
+       <h1>Care guide</h1><p>${lorem}</p>
+       <div class="comment"><pre class="language-js"><code>pump.stop();
+inspect(seal);</code></pre>
+       <table><tr><th>Part</th><th>Spec</th></tr><tr><td><a href="seal">Seal</a></td>
+       <td><code>PTFE</code> | <strong>10 mm</strong></td></tr></table></div>
+       <p>Read the <a href="maintenance">maintenance guide</a> next.</p></main></body></html>`,
+      { url: "https://docs.example.com/start" },
+    );
+    expect(doc.strategy).toBe("structural");
+    expect(doc.blocks.find((b) => b.type === "code")).toMatchObject({ text: "pump.stop();\ninspect(seal);", lang: "js" });
+    expect(doc.blocks.find((b) => b.type === "table")).toMatchObject({ text: "Part\tSpec\nSeal\tPTFE | 10 mm" });
+    expect(doc.markdown).toContain("| [Seal](https://docs.example.com/manual/seal) | `PTFE` \\| **10 mm** |");
+    expect(doc.links).toEqual([
+      { href: "https://docs.example.com/manual/seal", text: "Seal" },
+      { href: "https://docs.example.com/manual/maintenance", text: "maintenance guide" },
+    ]);
+  });
+
+  it("preserves sibling order, plain citation text and links through inline and table conversion", () => {
+    const doc = extractHtml(
+      `<html><body><main><h1>Service log</h1>
+       <div>Inspect <em>every</em> seal and <a href="/parts">order parts</a> before departure.</div>
+       <p>Set <code>pump.mode</code> to <strong>safe</strong>.</p>
+       <pre><code>pump.stop();
+inspect(seal);</code></pre>
+       <table><caption>Required items</caption><tr><th>Item</th><th>Detail</th></tr>
+       <tr><td><a href="/seals">Seal</a></td><td><strong>10 mm</strong><br><code>PTFE</code> | flexible</td></tr></table>
+       <p>Finally, close the <a href="/log">service log</a>.</p></main></body></html>`,
+      { url: "https://docs.example.com/start" },
+    );
+    expect(doc.blocks.map((b) => b.type)).toEqual(["heading", "paragraph", "paragraph", "code", "table", "paragraph"]);
+    expect(doc.blocks[1]?.text).toBe("Inspect every seal and order parts before departure.");
+    expect(doc.blocks[2]?.text).toBe("Set pump.mode to safe.");
+    expect(doc.blocks[3]?.text).toBe("pump.stop();\ninspect(seal);");
+    expect(doc.blocks[4]?.text).toBe("Item\tDetail\nSeal\t10 mm PTFE | flexible");
+    expect(doc.blocks[4]?.markdown).toContain("**10 mm**");
+    expect(doc.blocks[4]?.markdown).toContain("<br> `PTFE` \\| flexible");
+    expect(doc.blocks[5]?.markdown).toContain("[service log](https://docs.example.com/log)");
+    expect(doc.links.map((link) => link.href)).toEqual([
+      "https://docs.example.com/parts",
+      "https://docs.example.com/seals",
+      "https://docs.example.com/log",
+    ]);
+    for (const block of doc.blocks) expect(doc.markdown.slice(block.offset, block.offset + block.markdown.length)).toBe(block.markdown);
+  });
+});
+
 describe("heading and code details", () => {
   it("drops heading permalink anchors and detects `brush:` code languages", () => {
     const doc = extractHtml(
@@ -130,6 +181,21 @@ describe("render signals", () => {
     );
     expect(doc.signals).toMatchObject({ appRootEmpty: true, noscriptWarning: true, scriptCount: 1 });
     expect(doc.signals!.bodyTextChars).toBeLessThan(10);
+  });
+
+  it("counts body text without script, style, template or noscript subtrees", () => {
+    const doc = extractHtml(
+      `<html><head><title>Signals</title><script src="/bundle.js"></script></head><body>Before <span>inline</span> after.<div><style>p { color: red; }</style><script>window.ready = true;</script><template><p>Template content</p></template><noscript>Enable JavaScript to continue.</noscript>Next block.</div><!-- not visible --></body></html>`,
+      { url: "https://app.example.com/" },
+    );
+    expect(doc.signals).toMatchObject({
+      bodyTextChars: "Before inline after.Next block.".length,
+      scriptCount: 2,
+      externalScriptCount: 1,
+      inlineScriptChars: "window.ready = true;".length,
+      noscriptWarning: true,
+    });
+    expect(doc.blocks.filter((b) => b.type === "paragraph").map((b) => b.text)).toEqual(["Before inline after.", "Next block."]);
   });
 });
 

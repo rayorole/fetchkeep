@@ -1,0 +1,68 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_1e0c3e45630cf5a9",
+    "version": 1,
+    "ref": "fk:d_1e0c3e45630cf5a9@1",
+    "requestedUrl": "http://172.31.172.243:40121/go/old-tide",
+    "finalUrl": "http://172.31.172.243:40121/articles/tide-gauge.html",
+    "title": "Harbor town rebuilds its tide gauge | Northwind Journal",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T19:52:03.461Z",
+    "contentHash": "e538764f844efed6c3e75aab8ce8192747c99aab49869b4c714bd17b359121fd",
+    "rawHash": "b4ace37e080540d235ea977f1c109642a04714e4d74391313c96465f6c7c86ab",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "readability",
+    "backend": "lightpanda",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Harbor town rebuilds its tide gauge after sixty years\n\nThe volunteers of Saltmarsh Point spent the summer replacing a tide gauge that had recorded sea levels since the town was founded. The original instrument, a float in a stilling well connected to a paper chart, stopped working during the spring storms.\n\nLocal engineer Tobias Varga led the effort. He explained that the new gauge uses a pressure sensor and logs readings every six minutes, which lets researchers compare the record with nearby stations without converting units by hand.\n\n## Why a small gauge matters\n\nLong, continuous records are rare. A single gap of a few months can make it harder to separate seasonal swings from long-term change, so the team kept the old chart recorder running in parallel until the new sensor had been calibrated.\n\n> We did not want to lose even one tide cycle of data.\n\nThe town council has agreed to fund maintenance for the next ten years, and the readings are already published on the harbor office noticeboard."
+  },
+  "backend": {
+    "mode": "lightpanda",
+    "used": "lightpanda",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "lightpanda",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 534.0291999999899
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 1012,
+    "returnedChars": 1012,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "launchMs": 14.3,
+    "navigateMs": 4.6,
+    "readinessMs": 511.3,
+    "serializeMs": 0.5,
+    "renderMs": 530.7,
+    "extractMs": 2.2,
+    "subrequests": 3,
+    "subrequestsBlocked": 0,
+    "saveMs": 0.2,
+    "totalMs": 534.5
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_1e0c3e45630cf5a9@1",
+    "url": "http://172.31.172.243:40121/articles/tide-gauge.html",
+    "title": "Harbor town rebuilds its tide gauge | Northwind Journal",
+    "fetchedAt": "2026-09-30T19:52:03.461Z",
+    "version": 1,
+    "contentHash": "e538764f844efed6c3e75aab8ce8192747c99aab49869b4c714bd17b359121fd"
+  }
+}

@@ -3,6 +3,41 @@
 All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+## [0.1.3] - 2026-09-30
+
+### Changed
+
+- HTML extraction reuses the prepared document for Readability and avoids redundant signal, block and table-cell
+  clones. Candidate-selection thresholds remain unchanged; extraction-only profiles compare complete output hashes.
+- CLI help and version no longer load validation/retrieval/MCP modules. Doctor, MCP, crawling, schema extraction
+  and retrieval load their implementation only when used; saved reads avoid loading the HTML extraction pipeline.
+- Browser readiness observes stable primary content and loading indicators within the shared deadline instead of
+  stacking Chromium network-idle and settling waits. `browser.settleMs` is the minimum post-load observation time.
+
+### Fixed
+
+- Rendered extraction preserves nested open shadow roots and assigned slots without duplicating unassigned light
+  DOM or modifying the live page. Closed roots remain inaccessible; updates after content stabilizes are not guaranteed.
+- Script-driven empty pages use the remaining shared deadline rather than a short fixed readiness cap, fixing
+  the original ten-second delayed-quotes case. Navigation/footer text no longer signals readiness; short static
+  documents do not incur the extended wait.
+- Benchmark citation verification checks the exact persisted block-text span, fixing false negatives for quotes
+  spanning inline Markdown formatting. Historical benchmark artifacts remain unchanged.
+
+### Added
+
+- Fetch phase diagnostics for browser setup, navigation, readiness, serialization and persistence. Successful
+  fallback attempts accumulate measured phases; overlapping totals and unavailable failed-attempt breakdowns
+  are documented rather than presented as an additive decomposition.
+- Reproducible startup and extraction profiling commands with raw samples, peak process RSS for extraction,
+  and complete extraction-output hash comparisons.
+- Case-cluster bootstrap intervals, paired same-case/same-repetition latency comparisons, phase evidence and
+  standalone CSV/JSON exports in benchmark reports. Missing measurements remain unavailable.
+- A separately frozen validation suite and real persistent-MCP multi-operation and offline saved-library
+  workloads. Previously inspected held-out cases are explicitly labeled regression evidence.
+
 ## [0.1.2] - 2026-09-30
 
 ### Changed
@@ -76,3 +111,4 @@ First release.
 [0.1.0]: https://github.com/rayorole/fetchkeep/releases/tag/v0.1.0
 [0.1.1]: https://github.com/rayorole/fetchkeep/releases/tag/v0.1.1
 [0.1.2]: https://github.com/rayorole/fetchkeep/releases/tag/v0.1.2
+[0.1.3]: https://github.com/rayorole/fetchkeep/compare/v0.1.2...main

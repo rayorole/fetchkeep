@@ -1,0 +1,11 @@
+{
+  "text": "# A lighthouse full of seeds\nhttp://172.31.172.243:45387/validation/seed-library.html\n\nThe inland lighthouse was converted into a seed library after the reservoir was drained.\n\nEach packet carries the collection date and the altitude of its original garden.\n\nVisitors return twice as many seeds at the end of the growing season, but failed crops incur no penalty.\n\n## Keeping the collection usable\n\nThe collection is stored in clay drawers that remain cool during the afternoon heat.\n\nA printed inventory is mailed to villages that have no reliable internet connection.",
+  "structured": {
+    "changed": "unchanged",
+    "content_kind": "Page",
+    "content_ok": true,
+    "lang": "en",
+    "url": "http://172.31.172.243:45387/validation/seed-library.html"
+  },
+  "isError": false
+}

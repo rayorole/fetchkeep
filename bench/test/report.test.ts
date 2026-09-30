@@ -73,7 +73,6 @@ const meta: RunMeta = {
 
 let dir: string;
 let summary: Record<string, string>[];
-let files: string[];
 
 beforeAll(async () => {
   dir = await mkdtemp(join(tmpdir(), "bench-report-"));
@@ -83,7 +82,7 @@ beforeAll(async () => {
   await writeFile(join(dir, "cases.json"), JSON.stringify(cases));
   await writeFile(join(dir, "records.jsonl"), records.map((r) => JSON.stringify(r)).join("\n") + "\n");
   await writeFile(join(dir, "resources.json"), JSON.stringify([{ profile: "fc", engine: "firecrawl", scope: "remote", cpuSeconds: null, peakRssMb: null, idleRssMb: null, samples: 0 }]));
-  ({ files } = await generateReport(dir));
+  await generateReport(dir);
   summary = parseCsv(await readFile(join(dir, "summary.csv"), "utf8"));
 });
 
@@ -108,10 +107,6 @@ describe("nearestRank", () => {
 });
 
 describe("generateReport", () => {
-  it("writes csv, markdown and html (no crawl.csv without crawl records)", () => {
-    expect(files.map((f) => f.slice(dir.length + 1)).sort()).toEqual(["cases.csv", "report.html", "report.md", "summary.csv"]);
-  });
-
   it("splits latency into first request and warm with nearest-rank percentiles over ok tasks", () => {
     const r = row("fk", "fixture", "all");
     expect(r.latency_first_p50).toBe("100"); // first: [100, 200] (e1 errored)
