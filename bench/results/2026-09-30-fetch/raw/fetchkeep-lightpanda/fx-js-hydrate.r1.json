@@ -1,0 +1,65 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_c7d972a25ba165bb",
+    "version": 1,
+    "ref": "fk:d_c7d972a25ba165bb@1",
+    "requestedUrl": "http://172.31.172.243:39953/js/hydrate.html",
+    "finalUrl": "http://172.31.172.243:39953/js/hydrate.html",
+    "title": "Community garden opens a seed library | Northwind Journal",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T16:54:09.072Z",
+    "contentHash": "6d4c18b15ea847abb3252d9e18d9432864a6a249e791a8f21ecc824c1588a8b4",
+    "rawHash": "1d6d355153de66be1faea590ff6b6df0ce0f60b37eb41ef288e451d181d80939",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "lightpanda",
+    "saved": true,
+    "unchanged": false
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Community garden opens a seed library\n\nResidents can now borrow seeds from a cabinet in the tool shed and return seeds from their own harvest in autumn.\n\nThe library started with forty varieties donated by a retired market gardener.\n\n## Comments\n\nGreat idea, I will bring runner beans."
+  },
+  "backend": {
+    "mode": "lightpanda",
+    "used": "lightpanda",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "lightpanda",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 514.891982000001
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 287,
+    "returnedChars": 287,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "browserLaunchMs": 0,
+    "navigateMs": 502.6,
+    "renderMs": 511.7,
+    "extractMs": 1.9,
+    "subrequests": 1,
+    "subrequestsBlocked": 0,
+    "totalMs": 515.7
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_c7d972a25ba165bb@1",
+    "url": "http://172.31.172.243:39953/js/hydrate.html",
+    "title": "Community garden opens a seed library | Northwind Journal",
+    "fetchedAt": "2026-09-30T16:54:09.072Z",
+    "version": 1,
+    "contentHash": "6d4c18b15ea847abb3252d9e18d9432864a6a249e791a8f21ecc824c1588a8b4"
+  }
+}

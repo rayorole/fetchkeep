@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "data": {
+    "markdown": "We use cookies to measure audience engagement. Accept all cookies\n\nHarbor town rebuilds its tide gauge after sixty years\n=====================================================\n\nBy Mara Ellison\n\nThe volunteers of Saltmarsh Point spent the summer replacing a tide gauge that had recorded sea levels since the town was founded. The original instrument, a float in a stilling well connected to a paper chart, stopped working during the spring storms.\n\nLocal engineer Tobias Varga led the effort. He explained that the new gauge uses a pressure sensor and logs readings every six minutes, which lets researchers compare the record with nearby stations without converting units by hand.\n\nWhy a small gauge matters\n-------------------------\n\nLong, continuous records are rare. A single gap of a few months can make it harder to separate seasonal swings from long-term change, so the team kept the old chart recorder running in parallel until the new sensor had been calibrated.\n\n> We did not want to lose even one tide cycle of data.\n\nThe town council has agreed to fund maintenance for the next ten years, and the readings are already published on the harbor office noticeboard.",
+    "metadata": {
+      "language": "en",
+      "title": "Harbor town rebuilds its tide gauge | Northwind Journal",
+      "scrapeId": "01a0f33e-36f9-743c-96f0-6f735cc8fde6",
+      "sourceURL": "http://172.31.172.243:39953/articles/tide-gauge.html",
+      "url": "http://172.31.172.243:39953/articles/tide-gauge.html",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "proxyUsed": "basic",
+      "creditsUsed": 1,
+      "concurrencyLimited": false
+    }
+  }
+}

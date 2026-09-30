@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "data": {
+    "markdown": "We use cookies to measure audience engagement. Accept all cookies\n\nThe orchard that keeps a ledger of frost\n========================================\n\nFor three generations the Aldana family has written down the date of the first autumn frost on the inside of a barn door. The oldest entry, in faded pencil, reads the fourteenth of October.\n\nA record written on wood\n------------------------\n\nHistorians visiting the farm photographed every entry. Some years have two dates, because a warm spell melted the first frost and the family decided it did not count.\n\n*   Entries begin in the spring of the first planting.\n*   Every entry lists the variety that was picked last.\n*   Three years are missing because the barn was being repaired.\n\nComparing the door with instruments\n-----------------------------------\n\nA regional weather station opened twelve kilometres away decades later. Where the two overlap, the door agrees with the station to within four days in most years.\n\n![Pencil marks on a barn door](http://172.31.172.243:39953/img/door.png)\n\nPencil marks on the barn door, photographed in autumn.\n\n### What the family plans next\n\nThe youngest Aldana has started a spreadsheet, but the door will stay. Nobody, she said, is going to paint over it.",
+    "metadata": {
+      "language": "en",
+      "title": "The orchard that keeps a ledger of frost | Northwind Journal",
+      "scrapeId": "01a0f33b-12da-7702-a4cc-769b65ba21c8",
+      "sourceURL": "http://172.31.172.243:39953/articles/frost-ledger.html",
+      "url": "http://172.31.172.243:39953/articles/frost-ledger.html",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "proxyUsed": "basic",
+      "creditsUsed": 1,
+      "concurrencyLimited": false
+    }
+  }
+}

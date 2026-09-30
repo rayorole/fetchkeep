@@ -1,0 +1,46 @@
+[
+  {
+    "id": "fx-crawl-estuary",
+    "kind": "crawl",
+    "dataset": "fixture",
+    "url": "http://172.31.172.243:41237/crawl/",
+    "description": "15-page site: robots.txt disallows /crawl/private/, one page only in the sitemap, a duplicate-content page, a redirect (/crawl/tides/old-tables → tables.html), tracking-parameter and fragment variants, an external link and a page beyond depth 3.",
+    "maxPages": 30,
+    "maxDepth": 3,
+    "expectedPages": [
+      "/crawl/",
+      "/crawl/birds/",
+      "/crawl/birds/curlew.html",
+      "/crawl/birds/redshank.html",
+      "/crawl/birds/avocet.html",
+      "/crawl/birds/avocet-eggs.html",
+      "/crawl/plants/",
+      "/crawl/plants/samphire.html",
+      "/crawl/plants/sea-lavender.html",
+      "/crawl/plants/samphire-copy.html",
+      "/crawl/tides/",
+      "/crawl/tides/tables.html",
+      "/crawl/hidden/lighthouse.html"
+    ],
+    "forbiddenPages": [
+      "/crawl/private/notes.html",
+      "/crawl/birds/avocet-deep.html"
+    ]
+  },
+  {
+    "id": "live-crawl-quotes",
+    "kind": "crawl",
+    "dataset": "live",
+    "url": "https://quotes.toscrape.com/",
+    "description": "Paginated quotes site (robots.txt permits crawling). 15 pages, depth 1.",
+    "maxPages": 15,
+    "maxDepth": 1,
+    "expectedPages": [
+      "https://quotes.toscrape.com/",
+      "https://quotes.toscrape.com/page/2/",
+      "https://quotes.toscrape.com/login"
+    ],
+    "forbiddenPages": [],
+    "annotatedAt": "2026-09-30"
+  }
+]

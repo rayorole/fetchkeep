@@ -1,0 +1,27 @@
+{
+  "status": "error",
+  "tool": "web_fetch",
+  "timings": {
+    "totalMs": 90.3
+  },
+  "warnings": [],
+  "backend": {
+    "mode": "chromium",
+    "used": null,
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "chromium",
+        "outcome": "failed",
+        "reason": "Chromium render failed: page.goto: net::ERR_TOO_MANY_REDIRECTS at http://172.31.172.243:39953/loop/a",
+        "errorCode": "browser_failed",
+        "durationMs": 90.18194500007667
+      }
+    ]
+  },
+  "error": {
+    "code": "browser_failed",
+    "message": "Chromium render failed: page.goto: net::ERR_TOO_MANY_REDIRECTS at http://172.31.172.243:39953/loop/a",
+    "retryable": true
+  }
+}

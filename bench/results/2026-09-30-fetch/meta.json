@@ -1,0 +1,211 @@
+{
+  "runId": "2026-09-30T16-51-06-fetch",
+  "suite": "fetch",
+  "startedAt": "2026-09-30T16:51:06.455Z",
+  "finishedAt": "2026-09-30T17:03:18.017Z",
+  "command": "node bench/run.ts --engines fetchkeep,firecrawl,donsetch --suite fetch --cold-start --footprint",
+  "rerun": "npm run bench -- --engines fetchkeep-http,fetchkeep-chromium,fetchkeep-lightpanda,fetchkeep-auto,firecrawl-selfhost,firecrawl-hosted,donsetch --suite fetch --repetitions 3 --seed 42 --timeout 30000 --cold-start --footprint",
+  "seed": 42,
+  "repetitions": 3,
+  "timeoutMs": 30000,
+  "concurrency": 1,
+  "tokenizer": {
+    "name": "gpt-tokenizer",
+    "encoding": "o200k_base",
+    "version": "4.0.0"
+  },
+  "environment": {
+    "os": "Linux 6.18.33.2-microsoft-standard-WSL2",
+    "distribution": "Ubuntu 24.04.1 LTS",
+    "wsl": true,
+    "cpu": "Intel(R) Core(TM) i7-9700K CPU @ 3.60GHz",
+    "logicalCpus": 8,
+    "memoryGb": 15.6,
+    "node": "v24.15.0",
+    "docker": "28.1.1",
+    "fetchkeepCommit": "a244b9aee566fd73516585973d1ed2d8256d90a6",
+    "fetchkeepDirty": false
+  },
+  "fixtureServer": {
+    "origin": "http://172.31.172.243:39953",
+    "bind": "0.0.0.0"
+  },
+  "datasets": [
+    {
+      "name": "fixtures",
+      "path": "bench/datasets/fixtures.json",
+      "sha256": "8c7b0a6f99ea2f1fd5551747be2df264f7fbfacc03973227cc484e740f576749",
+      "cases": 21
+    },
+    {
+      "name": "live",
+      "path": "bench/datasets/live.json",
+      "sha256": "d458c8afc2696bd34699711b710ebee36bfbaf2f9557ae1893b31090ae6f7474",
+      "cases": 24
+    },
+    {
+      "name": "live-crawl",
+      "path": "bench/datasets/live-crawl.json",
+      "sha256": "166f4d2d133883c97d2b24c57650f1f9edd4e72d02611cda8b2e98d5a164ec75",
+      "cases": 1
+    },
+    {
+      "name": "fixture-files",
+      "path": "bench/fixtures/SHA256SUMS",
+      "sha256": "9d450f2677512812812f7a05020e5e75cd8cd2588895585786a35fb74679de52",
+      "cases": 0
+    }
+  ],
+  "engines": [
+    {
+      "profile": "fetchkeep-http",
+      "engine": "fetchkeep",
+      "version": "0.0.0",
+      "revision": "a244b9aee566fd73516585973d1ed2d8256d90a6",
+      "transport": "MCP stdio (web_fetch / web_crawl / web_read), warm server per profile",
+      "config": {
+        "mode": "http",
+        "maxChars": 1000000
+      },
+      "settingDifferences": [
+        "network: only the fixture server address (172.31.172.243/32) is allowed besides public addresses (FETCHKEEP_ALLOW_CIDRS)",
+        "documents are saved to a per-profile store (Fetchkeep default behaviour); no HTTP cache"
+      ],
+      "availability": {
+        "available": true
+      },
+      "readyMs": 367
+    },
+    {
+      "profile": "fetchkeep-chromium",
+      "engine": "fetchkeep",
+      "version": "0.0.0",
+      "revision": "a244b9aee566fd73516585973d1ed2d8256d90a6",
+      "transport": "MCP stdio (web_fetch / web_crawl / web_read), warm server per profile",
+      "config": {
+        "mode": "chromium",
+        "maxChars": 1000000
+      },
+      "settingDifferences": [
+        "network: only the fixture server address (172.31.172.243/32) is allowed besides public addresses (FETCHKEEP_ALLOW_CIDRS)",
+        "documents are saved to a per-profile store (Fetchkeep default behaviour); no HTTP cache",
+        "browser: Playwright Chromium headless shell 153 (playwright-core 1.63.0), sandbox on, settleMs 500 (default)"
+      ],
+      "availability": {
+        "available": true
+      },
+      "readyMs": 359
+    },
+    {
+      "profile": "fetchkeep-lightpanda",
+      "engine": "fetchkeep",
+      "version": "0.0.0",
+      "revision": "a244b9aee566fd73516585973d1ed2d8256d90a6",
+      "transport": "MCP stdio (web_fetch / web_crawl / web_read), warm server per profile",
+      "config": {
+        "mode": "lightpanda",
+        "maxChars": 1000000,
+        "lightpanda": "/home/rayor/fkbench/lightpanda",
+        "lightpandaVersion": "1.0.0-nightly.9929+e774f9bba"
+      },
+      "settingDifferences": [
+        "network: only the fixture server address (172.31.172.243/32) is allowed besides public addresses (FETCHKEEP_ALLOW_CIDRS)",
+        "documents are saved to a per-profile store (Fetchkeep default behaviour); no HTTP cache",
+        "browser: Lightpanda nightly (see engine config), spawned by Fetchkeep with telemetry disabled, settleMs 500 (default)"
+      ],
+      "availability": {
+        "available": true
+      },
+      "readyMs": 350
+    },
+    {
+      "profile": "fetchkeep-auto",
+      "engine": "fetchkeep",
+      "version": "0.0.0",
+      "revision": "a244b9aee566fd73516585973d1ed2d8256d90a6",
+      "transport": "MCP stdio (web_fetch / web_crawl / web_read), warm server per profile",
+      "config": {
+        "mode": "auto",
+        "maxChars": 1000000
+      },
+      "settingDifferences": [
+        "network: only the fixture server address (172.31.172.243/32) is allowed besides public addresses (FETCHKEEP_ALLOW_CIDRS)",
+        "documents are saved to a per-profile store (Fetchkeep default behaviour); no HTTP cache",
+        "browser: Playwright Chromium headless shell 153 (playwright-core 1.63.0), sandbox on, settleMs 500 (default)",
+        "auto: HTTP first, escalates to Chromium only when the heuristic flags the HTTP result (docs/browsers.md)"
+      ],
+      "availability": {
+        "available": true
+      },
+      "readyMs": 388
+    },
+    {
+      "profile": "firecrawl-selfhost",
+      "engine": "firecrawl",
+      "version": "apps/api 1.0.0 (self-hosted build)",
+      "revision": "7e4a959dca0efbdad2f0a9d82b0fce20afeb9a4d",
+      "transport": "REST API v2 (http://localhost:3002)",
+      "config": {
+        "baseUrl": "http://localhost:3002",
+        "creditBudget": null
+      },
+      "settingDifferences": [
+        "formats=[markdown], onlyMainContent=true (default), waitFor=0 (default), maxAge=0 and storeInCache=false (fresh scrapes, no Firecrawl cache)",
+        "self-host: upstream docker-compose.yaml at the pinned commit, services api+playwright-service+redis+rabbitmq+nuq-postgres; no Fire-engine, no proxies, auth disabled",
+        "ALLOW_LOCAL_WEBHOOKS=true and TEST_SUITE_SELF_HOSTED=true (bench/engines/firecrawl/compose.override.yaml) so the stack can reach the private fixture server"
+      ],
+      "availability": {
+        "available": true
+      },
+      "readyMs": 0
+    },
+    {
+      "profile": "firecrawl-hosted",
+      "engine": "firecrawl",
+      "version": "hosted API v2",
+      "revision": "hosted service (version not exposed)",
+      "transport": "REST API v2 (https://api.firecrawl.dev)",
+      "config": {
+        "baseUrl": "https://api.firecrawl.dev",
+        "creditBudget": 0
+      },
+      "settingDifferences": [
+        "formats=[markdown], onlyMainContent=true (default), waitFor=0 (default), maxAge=0 and storeInCache=false (fresh scrapes, no Firecrawl cache)",
+        "hosted: cannot reach local fixtures (marked N/A); credits counted from responses (creditsUsed) with 1 credit/scrape as the estimate when absent"
+      ],
+      "availability": {
+        "available": false,
+        "reason": "FIRECRAWL_API_KEY is not set"
+      }
+    },
+    {
+      "profile": "donsetch",
+      "engine": "donsetch",
+      "version": "4.4.1",
+      "revision": "v4.4.1 release binary (npm donsetch@4.4.1)",
+      "transport": "MCP stdio (web_fetch / web_crawl), warm server",
+      "config": {
+        "tier": "auto (default)",
+        "archive": "off",
+        "max_chars": 1000000,
+        "browserBackend": "headless",
+        "chromium": "/home/rayor/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome"
+      },
+      "settingDifferences": [
+        "DONSETCH_ALLOW_PRIVATE_EGRESS=1: all private destinations allowed (DonSeTch has no per-address allow-list), needed for the local fixture server",
+        "archive=off: disables the default Wayback/archive fallback so results come from the live page",
+        "DONSETCH_BYPASS=0 and isolated cache/config dir (DONSETCH_CACHE_DIR, DONSETCH_NO_CONFIG_FILE=1)",
+        "browser: DONSETCH_BROWSER_BACKEND=headless with the same Chromium 153 build that Playwright installed (full Chromium, not the headless shell)"
+      ],
+      "availability": {
+        "available": true
+      },
+      "readyMs": 62
+    }
+  ],
+  "notes": [
+    "Tasks run sequentially (concurrency 1) in a seeded random order per repetition; all engines see the same URLs and per-request deadline.",
+    "Repetition 1 is the first request after the engine started (browsers launch lazily); later repetitions are warm.",
+    "Live websites change: live results are only comparable within one run."
+  ]
+}

@@ -1,0 +1,4325 @@
+{
+  "reason": "Raw outputs of live third-party websites are not redistributed. Hashes allow comparison with a rerun.",
+  "files": [
+    {
+      "path": "raw/donsetch/live-arxiv-attention-pdf.r1.json",
+      "sha256": "28623df402bd06952ce8a7268dccbbb7edfbd2384d929009852226fc63972163",
+      "bytes": 39862
+    },
+    {
+      "path": "raw/donsetch/live-arxiv-attention-pdf.r1.md",
+      "sha256": "201e3cc26941eaa6c36401305a5da36ad8bd1c23547c3db5bfaba084ffe695e9",
+      "bytes": 39229
+    },
+    {
+      "path": "raw/donsetch/live-arxiv-attention-pdf.r2.json",
+      "sha256": "28d29c986a2cd7227b3463c14eb412b26229050afb77677b6a8e5c2713befb99",
+      "bytes": 39868
+    },
+    {
+      "path": "raw/donsetch/live-arxiv-attention-pdf.r2.md",
+      "sha256": "201e3cc26941eaa6c36401305a5da36ad8bd1c23547c3db5bfaba084ffe695e9",
+      "bytes": 39229
+    },
+    {
+      "path": "raw/donsetch/live-arxiv-attention-pdf.r3.json",
+      "sha256": "28d29c986a2cd7227b3463c14eb412b26229050afb77677b6a8e5c2713befb99",
+      "bytes": 39868
+    },
+    {
+      "path": "raw/donsetch/live-arxiv-attention-pdf.r3.md",
+      "sha256": "201e3cc26941eaa6c36401305a5da36ad8bd1c23547c3db5bfaba084ffe695e9",
+      "bytes": 39229
+    },
+    {
+      "path": "raw/donsetch/live-books-toscrape.r1.json",
+      "sha256": "f6277f8d153ef2703713a63e2adf4d6df68739c7b52fda7e6de384f6be5f7c5d",
+      "bytes": 2233
+    },
+    {
+      "path": "raw/donsetch/live-books-toscrape.r1.md",
+      "sha256": "1c5fe55346a078797a8f6da56f0e8d7657879a59b4a70a4a9aabbfbc80bca737",
+      "bytes": 1788
+    },
+    {
+      "path": "raw/donsetch/live-books-toscrape.r2.json",
+      "sha256": "f6277f8d153ef2703713a63e2adf4d6df68739c7b52fda7e6de384f6be5f7c5d",
+      "bytes": 2233
+    },
+    {
+      "path": "raw/donsetch/live-books-toscrape.r2.md",
+      "sha256": "1c5fe55346a078797a8f6da56f0e8d7657879a59b4a70a4a9aabbfbc80bca737",
+      "bytes": 1788
+    },
+    {
+      "path": "raw/donsetch/live-books-toscrape.r3.json",
+      "sha256": "f6277f8d153ef2703713a63e2adf4d6df68739c7b52fda7e6de384f6be5f7c5d",
+      "bytes": 2233
+    },
+    {
+      "path": "raw/donsetch/live-books-toscrape.r3.md",
+      "sha256": "1c5fe55346a078797a8f6da56f0e8d7657879a59b4a70a4a9aabbfbc80bca737",
+      "bytes": 1788
+    },
+    {
+      "path": "raw/donsetch/live-crates-io-serde.r1.json",
+      "sha256": "fd4e854c56f56e93ace1eb37f990ef75da5475b873db28751de98628f56f5430",
+      "bytes": 770
+    },
+    {
+      "path": "raw/donsetch/live-crates-io-serde.r1.md",
+      "sha256": "1a3ec8eb6d52d5bfdf9dad86cb2018284a67c74d48721eb39f9ff714133a7725",
+      "bytes": 574
+    },
+    {
+      "path": "raw/donsetch/live-crates-io-serde.r2.json",
+      "sha256": "fd4e854c56f56e93ace1eb37f990ef75da5475b873db28751de98628f56f5430",
+      "bytes": 770
+    },
+    {
+      "path": "raw/donsetch/live-crates-io-serde.r2.md",
+      "sha256": "1a3ec8eb6d52d5bfdf9dad86cb2018284a67c74d48721eb39f9ff714133a7725",
+      "bytes": 574
+    },
+    {
+      "path": "raw/donsetch/live-crates-io-serde.r3.json",
+      "sha256": "fd4e854c56f56e93ace1eb37f990ef75da5475b873db28751de98628f56f5430",
+      "bytes": 770
+    },
+    {
+      "path": "raw/donsetch/live-crates-io-serde.r3.md",
+      "sha256": "1a3ec8eb6d52d5bfdf9dad86cb2018284a67c74d48721eb39f9ff714133a7725",
+      "bytes": 574
+    },
+    {
+      "path": "raw/donsetch/live-example-com.r1.json",
+      "sha256": "88c8562ddf792d76da48873bf4a8508ad064b513374f7000d98b79b2c3a5c7ff",
+      "bytes": 439
+    },
+    {
+      "path": "raw/donsetch/live-example-com.r1.md",
+      "sha256": "a3cdb9e16f6fbba0a3ab59d8845ec0450fc03e7e63fbb1610990cb470b3b78b8",
+      "bytes": 195
+    },
+    {
+      "path": "raw/donsetch/live-example-com.r2.json",
+      "sha256": "4cf5c734bb268088c23656459766e9ece51b62c5ca32dc3bc09caa2acfaf6a68",
+      "bytes": 445
+    },
+    {
+      "path": "raw/donsetch/live-example-com.r2.md",
+      "sha256": "a3cdb9e16f6fbba0a3ab59d8845ec0450fc03e7e63fbb1610990cb470b3b78b8",
+      "bytes": 195
+    },
+    {
+      "path": "raw/donsetch/live-example-com.r3.json",
+      "sha256": "4cf5c734bb268088c23656459766e9ece51b62c5ca32dc3bc09caa2acfaf6a68",
+      "bytes": 445
+    },
+    {
+      "path": "raw/donsetch/live-example-com.r3.md",
+      "sha256": "a3cdb9e16f6fbba0a3ab59d8845ec0450fc03e7e63fbb1610990cb470b3b78b8",
+      "bytes": 195
+    },
+    {
+      "path": "raw/donsetch/live-github-flask-readme.r1.json",
+      "sha256": "e8f4cbc78703041177acab91aa2cc757380b86c7cf2217dc789fce94e9f8e1ef",
+      "bytes": 5498
+    },
+    {
+      "path": "raw/donsetch/live-github-flask-readme.r1.md",
+      "sha256": "aca17449e5b438f3b184ece482e1ffcce3380c70d81135bb7bc97429f111381a",
+      "bytes": 4980
+    },
+    {
+      "path": "raw/donsetch/live-github-flask-readme.r2.json",
+      "sha256": "e8f4cbc78703041177acab91aa2cc757380b86c7cf2217dc789fce94e9f8e1ef",
+      "bytes": 5498
+    },
+    {
+      "path": "raw/donsetch/live-github-flask-readme.r2.md",
+      "sha256": "aca17449e5b438f3b184ece482e1ffcce3380c70d81135bb7bc97429f111381a",
+      "bytes": 4980
+    },
+    {
+      "path": "raw/donsetch/live-github-flask-readme.r3.json",
+      "sha256": "e8f4cbc78703041177acab91aa2cc757380b86c7cf2217dc789fce94e9f8e1ef",
+      "bytes": 5498
+    },
+    {
+      "path": "raw/donsetch/live-github-flask-readme.r3.md",
+      "sha256": "aca17449e5b438f3b184ece482e1ffcce3380c70d81135bb7bc97429f111381a",
+      "bytes": 4980
+    },
+    {
+      "path": "raw/donsetch/live-go-effective-go.r1.json",
+      "sha256": "3fe1d3c2477f14fe1f2d0e6f13fcb3d4d023c714fdfd5295e7e7960407c88eba",
+      "bytes": 104560
+    },
+    {
+      "path": "raw/donsetch/live-go-effective-go.r1.md",
+      "sha256": "4fefb164aff8983a750790910d9cb831a7fd26f5698de0e03a5feb2f64f88438",
+      "bytes": 101895
+    },
+    {
+      "path": "raw/donsetch/live-go-effective-go.r2.json",
+      "sha256": "dca6b85bc96c8579522c3dfe861aadcbf0934d29d18dc00248571443f610d54a",
+      "bytes": 104566
+    },
+    {
+      "path": "raw/donsetch/live-go-effective-go.r2.md",
+      "sha256": "4fefb164aff8983a750790910d9cb831a7fd26f5698de0e03a5feb2f64f88438",
+      "bytes": 101895
+    },
+    {
+      "path": "raw/donsetch/live-go-effective-go.r3.json",
+      "sha256": "dca6b85bc96c8579522c3dfe861aadcbf0934d29d18dc00248571443f610d54a",
+      "bytes": 104566
+    },
+    {
+      "path": "raw/donsetch/live-go-effective-go.r3.md",
+      "sha256": "4fefb164aff8983a750790910d9cb831a7fd26f5698de0e03a5feb2f64f88438",
+      "bytes": 101895
+    },
+    {
+      "path": "raw/donsetch/live-hn-dropbox-thread.r1.json",
+      "sha256": "50ffb474729164c3eff4a52ba2eda8efeafa5675990684a9af1eba7f5ab17061",
+      "bytes": 28006
+    },
+    {
+      "path": "raw/donsetch/live-hn-dropbox-thread.r1.md",
+      "sha256": "13436b89b03be3dca4749a29eab17a53169aa651aa7d92da93849ce667ef0b77",
+      "bytes": 27487
+    },
+    {
+      "path": "raw/donsetch/live-hn-dropbox-thread.r2.json",
+      "sha256": "50ffb474729164c3eff4a52ba2eda8efeafa5675990684a9af1eba7f5ab17061",
+      "bytes": 28006
+    },
+    {
+      "path": "raw/donsetch/live-hn-dropbox-thread.r2.md",
+      "sha256": "13436b89b03be3dca4749a29eab17a53169aa651aa7d92da93849ce667ef0b77",
+      "bytes": 27487
+    },
+    {
+      "path": "raw/donsetch/live-hn-dropbox-thread.r3.json",
+      "sha256": "50ffb474729164c3eff4a52ba2eda8efeafa5675990684a9af1eba7f5ab17061",
+      "bytes": 28006
+    },
+    {
+      "path": "raw/donsetch/live-hn-dropbox-thread.r3.md",
+      "sha256": "13436b89b03be3dca4749a29eab17a53169aa651aa7d92da93849ce667ef0b77",
+      "bytes": 27487
+    },
+    {
+      "path": "raw/donsetch/live-hn-guidelines.r1.json",
+      "sha256": "e9190693b06f5e12ebf5567b75fc63f5c24a5b8ccf1bd59519002040b28efaf3",
+      "bytes": 4813
+    },
+    {
+      "path": "raw/donsetch/live-hn-guidelines.r1.md",
+      "sha256": "a48bcf5b4d4d5b42bdbbfbe8a75457bfa51d5b635e638a12eaf4d5685de6cb9c",
+      "bytes": 4451
+    },
+    {
+      "path": "raw/donsetch/live-hn-guidelines.r2.json",
+      "sha256": "91f9d72a1f874eb5cee258069149773a4505f4e991cef1411b097a6c4dc4719c",
+      "bytes": 4819
+    },
+    {
+      "path": "raw/donsetch/live-hn-guidelines.r2.md",
+      "sha256": "a48bcf5b4d4d5b42bdbbfbe8a75457bfa51d5b635e638a12eaf4d5685de6cb9c",
+      "bytes": 4451
+    },
+    {
+      "path": "raw/donsetch/live-hn-guidelines.r3.json",
+      "sha256": "91f9d72a1f874eb5cee258069149773a4505f4e991cef1411b097a6c4dc4719c",
+      "bytes": 4819
+    },
+    {
+      "path": "raw/donsetch/live-hn-guidelines.r3.md",
+      "sha256": "a48bcf5b4d4d5b42bdbbfbe8a75457bfa51d5b635e638a12eaf4d5685de6cb9c",
+      "bytes": 4451
+    },
+    {
+      "path": "raw/donsetch/live-iana-http-status-codes.r1.json",
+      "sha256": "0e983baa128c95408f5038c9f92868490fe095b7411e170739c242d74e9e515d",
+      "bytes": 3192
+    },
+    {
+      "path": "raw/donsetch/live-iana-http-status-codes.r1.md",
+      "sha256": "10826faa9da895f8a5777559833901e4b278298ec4e2e163e1af7499f8a47d2d",
+      "bytes": 2861
+    },
+    {
+      "path": "raw/donsetch/live-iana-http-status-codes.r2.json",
+      "sha256": "9ffb2d2a132af2fadc52920e2905922f897c76c68bd014108e35872b9bda029e",
+      "bytes": 3198
+    },
+    {
+      "path": "raw/donsetch/live-iana-http-status-codes.r2.md",
+      "sha256": "10826faa9da895f8a5777559833901e4b278298ec4e2e163e1af7499f8a47d2d",
+      "bytes": 2861
+    },
+    {
+      "path": "raw/donsetch/live-iana-http-status-codes.r3.json",
+      "sha256": "9ffb2d2a132af2fadc52920e2905922f897c76c68bd014108e35872b9bda029e",
+      "bytes": 3198
+    },
+    {
+      "path": "raw/donsetch/live-iana-http-status-codes.r3.md",
+      "sha256": "10826faa9da895f8a5777559833901e4b278298ec4e2e163e1af7499f8a47d2d",
+      "bytes": 2861
+    },
+    {
+      "path": "raw/donsetch/live-mdn-array-map.r1.json",
+      "sha256": "3642499005412ea0f3cc535b900b843ca3c92159fbea54d261f11e71a740fed9",
+      "bytes": 9942
+    },
+    {
+      "path": "raw/donsetch/live-mdn-array-map.r1.md",
+      "sha256": "167362e4adb3d48f380b19583a7e759560543f62642515d8afe2b0a646657daf",
+      "bytes": 9294
+    },
+    {
+      "path": "raw/donsetch/live-mdn-array-map.r2.json",
+      "sha256": "5314f1523aae621131dff6200d1a826da79f2f04fd74ef36589e014f62d19085",
+      "bytes": 9948
+    },
+    {
+      "path": "raw/donsetch/live-mdn-array-map.r2.md",
+      "sha256": "167362e4adb3d48f380b19583a7e759560543f62642515d8afe2b0a646657daf",
+      "bytes": 9294
+    },
+    {
+      "path": "raw/donsetch/live-mdn-array-map.r3.json",
+      "sha256": "5314f1523aae621131dff6200d1a826da79f2f04fd74ef36589e014f62d19085",
+      "bytes": 9948
+    },
+    {
+      "path": "raw/donsetch/live-mdn-array-map.r3.md",
+      "sha256": "167362e4adb3d48f380b19583a7e759560543f62642515d8afe2b0a646657daf",
+      "bytes": 9294
+    },
+    {
+      "path": "raw/donsetch/live-nodejs-path.r1.json",
+      "sha256": "172f06bed9dd37b245e61c17d087c1a2b9578ab927d0eac99ad0df7c7ecc8a27",
+      "bytes": 16903
+    },
+    {
+      "path": "raw/donsetch/live-nodejs-path.r1.md",
+      "sha256": "7b0fd8ddd9e3da4804dc22ce6a3e2b64a186ac48ae64ae32d3103ad358cb04c3",
+      "bytes": 15928
+    },
+    {
+      "path": "raw/donsetch/live-nodejs-path.r2.json",
+      "sha256": "742ed9c99953610d3c753cf69820d902b68e30ac68a8494b3a7289c20ef083cf",
+      "bytes": 16909
+    },
+    {
+      "path": "raw/donsetch/live-nodejs-path.r2.md",
+      "sha256": "7b0fd8ddd9e3da4804dc22ce6a3e2b64a186ac48ae64ae32d3103ad358cb04c3",
+      "bytes": 15928
+    },
+    {
+      "path": "raw/donsetch/live-nodejs-path.r3.json",
+      "sha256": "742ed9c99953610d3c753cf69820d902b68e30ac68a8494b3a7289c20ef083cf",
+      "bytes": 16909
+    },
+    {
+      "path": "raw/donsetch/live-nodejs-path.r3.md",
+      "sha256": "7b0fd8ddd9e3da4804dc22ce6a3e2b64a186ac48ae64ae32d3103ad358cb04c3",
+      "bytes": 15928
+    },
+    {
+      "path": "raw/donsetch/live-paulgraham-great-work.r1.json",
+      "sha256": "5ec8986369e67b2caff5c5a826833cd1a892ff49a2215e4aa99b3e5c198a1abf",
+      "bytes": 68763
+    },
+    {
+      "path": "raw/donsetch/live-paulgraham-great-work.r1.md",
+      "sha256": "955974c776b72bbad9b78ac21a23e146e9047e8f410f4aab9253b7d42f450239",
+      "bytes": 67183
+    },
+    {
+      "path": "raw/donsetch/live-paulgraham-great-work.r2.json",
+      "sha256": "5ec8986369e67b2caff5c5a826833cd1a892ff49a2215e4aa99b3e5c198a1abf",
+      "bytes": 68763
+    },
+    {
+      "path": "raw/donsetch/live-paulgraham-great-work.r2.md",
+      "sha256": "955974c776b72bbad9b78ac21a23e146e9047e8f410f4aab9253b7d42f450239",
+      "bytes": 67183
+    },
+    {
+      "path": "raw/donsetch/live-paulgraham-great-work.r3.json",
+      "sha256": "5ec8986369e67b2caff5c5a826833cd1a892ff49a2215e4aa99b3e5c198a1abf",
+      "bytes": 68763
+    },
+    {
+      "path": "raw/donsetch/live-paulgraham-great-work.r3.md",
+      "sha256": "955974c776b72bbad9b78ac21a23e146e9047e8f410f4aab9253b7d42f450239",
+      "bytes": 67183
+    },
+    {
+      "path": "raw/donsetch/live-python-json.r1.json",
+      "sha256": "5183a702542feacb56fbd3688b49841dc3cbcfbde52e68991df05f59a3c92972",
+      "bytes": 25871
+    },
+    {
+      "path": "raw/donsetch/live-python-json.r1.md",
+      "sha256": "3aecba0e31ba74ca2becb41fe6ae924af8d7bba14bd4662834b3a94e1956b4eb",
+      "bytes": 25194
+    },
+    {
+      "path": "raw/donsetch/live-python-json.r2.json",
+      "sha256": "1ba6089cc803ec6be8d076571396e5c1faf604cf9f34f446da4c4a3c01a152f0",
+      "bytes": 25877
+    },
+    {
+      "path": "raw/donsetch/live-python-json.r2.md",
+      "sha256": "3aecba0e31ba74ca2becb41fe6ae924af8d7bba14bd4662834b3a94e1956b4eb",
+      "bytes": 25194
+    },
+    {
+      "path": "raw/donsetch/live-python-json.r3.json",
+      "sha256": "1ba6089cc803ec6be8d076571396e5c1faf604cf9f34f446da4c4a3c01a152f0",
+      "bytes": 25877
+    },
+    {
+      "path": "raw/donsetch/live-python-json.r3.md",
+      "sha256": "3aecba0e31ba74ca2becb41fe6ae924af8d7bba14bd4662834b3a94e1956b4eb",
+      "bytes": 25194
+    },
+    {
+      "path": "raw/donsetch/live-python-library-index.r1.json",
+      "sha256": "d533deafd6a72200526f12a7015d1434ee61113a620653f8e7075649c130df73",
+      "bytes": 15241
+    },
+    {
+      "path": "raw/donsetch/live-python-library-index.r1.md",
+      "sha256": "905fe10bef22ac0f2696aa6800f6fcb3daa7147e1cf1ee8f57fc4ebff0bfe392",
+      "bytes": 14353
+    },
+    {
+      "path": "raw/donsetch/live-python-library-index.r2.json",
+      "sha256": "d533deafd6a72200526f12a7015d1434ee61113a620653f8e7075649c130df73",
+      "bytes": 15241
+    },
+    {
+      "path": "raw/donsetch/live-python-library-index.r2.md",
+      "sha256": "905fe10bef22ac0f2696aa6800f6fcb3daa7147e1cf1ee8f57fc4ebff0bfe392",
+      "bytes": 14353
+    },
+    {
+      "path": "raw/donsetch/live-python-library-index.r3.json",
+      "sha256": "d533deafd6a72200526f12a7015d1434ee61113a620653f8e7075649c130df73",
+      "bytes": 15241
+    },
+    {
+      "path": "raw/donsetch/live-python-library-index.r3.md",
+      "sha256": "905fe10bef22ac0f2696aa6800f6fcb3daa7147e1cf1ee8f57fc4ebff0bfe392",
+      "bytes": 14353
+    },
+    {
+      "path": "raw/donsetch/live-quotes-toscrape-js-delayed.r1.json",
+      "sha256": "e617b441e4eca7e34781fb97cc35334544f9f1716d0019725e1fcab170194a79",
+      "bytes": 1094
+    },
+    {
+      "path": "raw/donsetch/live-quotes-toscrape-js-delayed.r1.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "raw/donsetch/live-quotes-toscrape-js-delayed.r2.json",
+      "sha256": "e6b4223d0e82d00e67f7d3731bedc5499e14f73c9401c6f221d7586274e9f882",
+      "bytes": 1092
+    },
+    {
+      "path": "raw/donsetch/live-quotes-toscrape-js-delayed.r2.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "raw/donsetch/live-quotes-toscrape-js-delayed.r3.json",
+      "sha256": "48d891c7cbf9644a845a37331612b3c174e8e92973a4c69373e4ab0bec2a4491",
+      "bytes": 1092
+    },
+    {
+      "path": "raw/donsetch/live-quotes-toscrape-js-delayed.r3.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "raw/donsetch/live-quotes-toscrape-js.r1.json",
+      "sha256": "74d89aab29c890b15e64e43d48023b8d467428c87d6d8378735d7ebce7d8051e",
+      "bytes": 1769
+    },
+    {
+      "path": "raw/donsetch/live-quotes-toscrape-js.r1.md",
+      "sha256": "31b7ee47edf2db6cf5406d17c359bda4e6b4a25454ba8eae3fb12eb430494f22",
+      "bytes": 1532
+    },
+    {
+      "path": "raw/donsetch/live-quotes-toscrape-js.r2.json",
+      "sha256": "50950d2e6884a640d6a2f127bb2e0acdeac25ceacad42c6b2d33ba37087bc600",
+      "bytes": 1747
+    },
+    {
+      "path": "raw/donsetch/live-quotes-toscrape-js.r2.md",
+      "sha256": "31b7ee47edf2db6cf5406d17c359bda4e6b4a25454ba8eae3fb12eb430494f22",
+      "bytes": 1532
+    },
+    {
+      "path": "raw/donsetch/live-quotes-toscrape-js.r3.json",
+      "sha256": "516ca3707814fe3e83cd627978718f39d8bdde274f74dc75fa273d55d834eb87",
+      "bytes": 1775
+    },
+    {
+      "path": "raw/donsetch/live-quotes-toscrape-js.r3.md",
+      "sha256": "31b7ee47edf2db6cf5406d17c359bda4e6b4a25454ba8eae3fb12eb430494f22",
+      "bytes": 1532
+    },
+    {
+      "path": "raw/donsetch/live-react-thinking-in-react.r1.json",
+      "sha256": "f9b8671da9f9f3a877a971c4b0b55e4de7356e280d9b27f08fe45caeb5417c78",
+      "bytes": 22351
+    },
+    {
+      "path": "raw/donsetch/live-react-thinking-in-react.r1.md",
+      "sha256": "d5a8c61c73169704cc7a4a49518430fc497217cd4945f2c762c5e11f4876e558",
+      "bytes": 21438
+    },
+    {
+      "path": "raw/donsetch/live-react-thinking-in-react.r2.json",
+      "sha256": "0f1013d4a8551b33023742149287ecc222ac8f4467f52ab26accff00b8228b65",
+      "bytes": 22357
+    },
+    {
+      "path": "raw/donsetch/live-react-thinking-in-react.r2.md",
+      "sha256": "d5a8c61c73169704cc7a4a49518430fc497217cd4945f2c762c5e11f4876e558",
+      "bytes": 21438
+    },
+    {
+      "path": "raw/donsetch/live-react-thinking-in-react.r3.json",
+      "sha256": "0f1013d4a8551b33023742149287ecc222ac8f4467f52ab26accff00b8228b65",
+      "bytes": 22357
+    },
+    {
+      "path": "raw/donsetch/live-react-thinking-in-react.r3.md",
+      "sha256": "d5a8c61c73169704cc7a4a49518430fc497217cd4945f2c762c5e11f4876e558",
+      "bytes": 21438
+    },
+    {
+      "path": "raw/donsetch/live-rfc9110-http-semantics.r1.json",
+      "sha256": "7b7fd31aeaa4aae04dfbe815ffe67f978d08231ab36878f6ef210edd11a8f527",
+      "bytes": 430026
+    },
+    {
+      "path": "raw/donsetch/live-rfc9110-http-semantics.r1.md",
+      "sha256": "4c087053a73a4f9d0d5eba856541fcc84bb53ba916b49d28a3e1fd454e859c43",
+      "bytes": 423458
+    },
+    {
+      "path": "raw/donsetch/live-rfc9110-http-semantics.r2.json",
+      "sha256": "32afc609527e4d9070caa4848ece350f64aedcda0e5edc9ecf974a0e5c4e02e2",
+      "bytes": 430032
+    },
+    {
+      "path": "raw/donsetch/live-rfc9110-http-semantics.r2.md",
+      "sha256": "4c087053a73a4f9d0d5eba856541fcc84bb53ba916b49d28a3e1fd454e859c43",
+      "bytes": 423458
+    },
+    {
+      "path": "raw/donsetch/live-rfc9110-http-semantics.r3.json",
+      "sha256": "32afc609527e4d9070caa4848ece350f64aedcda0e5edc9ecf974a0e5c4e02e2",
+      "bytes": 430032
+    },
+    {
+      "path": "raw/donsetch/live-rfc9110-http-semantics.r3.md",
+      "sha256": "4c087053a73a4f9d0d5eba856541fcc84bb53ba916b49d28a3e1fd454e859c43",
+      "bytes": 423458
+    },
+    {
+      "path": "raw/donsetch/live-rfc9309-pdf.r1.json",
+      "sha256": "8012bdd704e2662333d64355f86a7c78129f7f2e2cba66394b553a6f620386be",
+      "bytes": 23301
+    },
+    {
+      "path": "raw/donsetch/live-rfc9309-pdf.r1.md",
+      "sha256": "ffb20eb965cf3dc6d07866419731e13b33daddbc8ddb618d107814ab6e534417",
+      "bytes": 22539
+    },
+    {
+      "path": "raw/donsetch/live-rfc9309-pdf.r2.json",
+      "sha256": "24f9f04f13cdd2b2678847e3de5bd7872bc669c9a7cad2c5d358bbe46eabe0b0",
+      "bytes": 23307
+    },
+    {
+      "path": "raw/donsetch/live-rfc9309-pdf.r2.md",
+      "sha256": "ffb20eb965cf3dc6d07866419731e13b33daddbc8ddb618d107814ab6e534417",
+      "bytes": 22539
+    },
+    {
+      "path": "raw/donsetch/live-rfc9309-pdf.r3.json",
+      "sha256": "24f9f04f13cdd2b2678847e3de5bd7872bc669c9a7cad2c5d358bbe46eabe0b0",
+      "bytes": 23307
+    },
+    {
+      "path": "raw/donsetch/live-rfc9309-pdf.r3.md",
+      "sha256": "ffb20eb965cf3dc6d07866419731e13b33daddbc8ddb618d107814ab6e534417",
+      "bytes": 22539
+    },
+    {
+      "path": "raw/donsetch/live-rfc9309-txt.r1.json",
+      "sha256": "fd2c82b5c23a00ccceb3ff51dc378e7b21bf1a9711a98ec10f0452fcb7544629",
+      "bytes": 26215
+    },
+    {
+      "path": "raw/donsetch/live-rfc9309-txt.r1.md",
+      "sha256": "d11aa1a5f32a64f2f3b2cbbcd25a570e5d8e1e788a2feb3c32207bc24886ad5b",
+      "bytes": 25308
+    },
+    {
+      "path": "raw/donsetch/live-rfc9309-txt.r2.json",
+      "sha256": "fd2c82b5c23a00ccceb3ff51dc378e7b21bf1a9711a98ec10f0452fcb7544629",
+      "bytes": 26215
+    },
+    {
+      "path": "raw/donsetch/live-rfc9309-txt.r2.md",
+      "sha256": "d11aa1a5f32a64f2f3b2cbbcd25a570e5d8e1e788a2feb3c32207bc24886ad5b",
+      "bytes": 25308
+    },
+    {
+      "path": "raw/donsetch/live-rfc9309-txt.r3.json",
+      "sha256": "fd2c82b5c23a00ccceb3ff51dc378e7b21bf1a9711a98ec10f0452fcb7544629",
+      "bytes": 26215
+    },
+    {
+      "path": "raw/donsetch/live-rfc9309-txt.r3.md",
+      "sha256": "d11aa1a5f32a64f2f3b2cbbcd25a570e5d8e1e788a2feb3c32207bc24886ad5b",
+      "bytes": 25308
+    },
+    {
+      "path": "raw/donsetch/live-rust-blog-1-0.r1.json",
+      "sha256": "30407ba92e1de969d15a2091effacc5e1c2fc07c4ab531307710e68c9f00021c",
+      "bytes": 8707
+    },
+    {
+      "path": "raw/donsetch/live-rust-blog-1-0.r1.md",
+      "sha256": "9cda79d5439e2e405e7e4e9e7ae80ecc8b457b5f886311d031b08250fa1a747c",
+      "bytes": 8181
+    },
+    {
+      "path": "raw/donsetch/live-rust-blog-1-0.r2.json",
+      "sha256": "16aea31310a296e98bc873a6cbe4cd5126e427a7ab8ac9963ea1d06642846ffb",
+      "bytes": 8713
+    },
+    {
+      "path": "raw/donsetch/live-rust-blog-1-0.r2.md",
+      "sha256": "9cda79d5439e2e405e7e4e9e7ae80ecc8b457b5f886311d031b08250fa1a747c",
+      "bytes": 8181
+    },
+    {
+      "path": "raw/donsetch/live-rust-blog-1-0.r3.json",
+      "sha256": "16aea31310a296e98bc873a6cbe4cd5126e427a7ab8ac9963ea1d06642846ffb",
+      "bytes": 8713
+    },
+    {
+      "path": "raw/donsetch/live-rust-blog-1-0.r3.md",
+      "sha256": "9cda79d5439e2e405e7e4e9e7ae80ecc8b457b5f886311d031b08250fa1a747c",
+      "bytes": 8181
+    },
+    {
+      "path": "raw/donsetch/live-rust-book-control-flow.r1.json",
+      "sha256": "ea0b370046b1b8bc64cc12685948e7400be36dadcabd31b38405dbca95657201",
+      "bytes": 17963
+    },
+    {
+      "path": "raw/donsetch/live-rust-book-control-flow.r1.md",
+      "sha256": "31121eca9de3044cebcfc2f44054b6d1502c6884a86e01a021a65dfa3062a449",
+      "bytes": 17288
+    },
+    {
+      "path": "raw/donsetch/live-rust-book-control-flow.r2.json",
+      "sha256": "ecece05a67e54cf5563a0cb3b95ca38cacd5a4d6d5b73d6d29f8c8b8814f4c39",
+      "bytes": 17969
+    },
+    {
+      "path": "raw/donsetch/live-rust-book-control-flow.r2.md",
+      "sha256": "31121eca9de3044cebcfc2f44054b6d1502c6884a86e01a021a65dfa3062a449",
+      "bytes": 17288
+    },
+    {
+      "path": "raw/donsetch/live-rust-book-control-flow.r3.json",
+      "sha256": "ecece05a67e54cf5563a0cb3b95ca38cacd5a4d6d5b73d6d29f8c8b8814f4c39",
+      "bytes": 17969
+    },
+    {
+      "path": "raw/donsetch/live-rust-book-control-flow.r3.md",
+      "sha256": "31121eca9de3044cebcfc2f44054b6d1502c6884a86e01a021a65dfa3062a449",
+      "bytes": 17288
+    },
+    {
+      "path": "raw/donsetch/live-wikipedia-chemical-elements.r1.json",
+      "sha256": "94ddada9456eb193a36b93d8595af8e98877bb2288494b0868f20c65d6eee70e",
+      "bytes": 15627
+    },
+    {
+      "path": "raw/donsetch/live-wikipedia-chemical-elements.r1.md",
+      "sha256": "1a8518f27b717f8c1cc5b74d7de89ba9a48849ddeace5242be79c71bb404ed31",
+      "bytes": 15125
+    },
+    {
+      "path": "raw/donsetch/live-wikipedia-chemical-elements.r2.json",
+      "sha256": "990af62e56d2f84b0401686f4e14660e7ce4162b8d626c9e83fc7af1b87165c3",
+      "bytes": 15633
+    },
+    {
+      "path": "raw/donsetch/live-wikipedia-chemical-elements.r2.md",
+      "sha256": "1a8518f27b717f8c1cc5b74d7de89ba9a48849ddeace5242be79c71bb404ed31",
+      "bytes": 15125
+    },
+    {
+      "path": "raw/donsetch/live-wikipedia-chemical-elements.r3.json",
+      "sha256": "990af62e56d2f84b0401686f4e14660e7ce4162b8d626c9e83fc7af1b87165c3",
+      "bytes": 15633
+    },
+    {
+      "path": "raw/donsetch/live-wikipedia-chemical-elements.r3.md",
+      "sha256": "1a8518f27b717f8c1cc5b74d7de89ba9a48849ddeace5242be79c71bb404ed31",
+      "bytes": 15125
+    },
+    {
+      "path": "raw/donsetch/live-wikipedia-markdown.r1.json",
+      "sha256": "cc16f120cbfd426f894ad4d5fbb3b79fe8cd36f2f1f47f509ee9866872c5199a",
+      "bytes": 25591
+    },
+    {
+      "path": "raw/donsetch/live-wikipedia-markdown.r1.md",
+      "sha256": "927e674578afdbee65f9741a1a43aba483c4a502c6231997170550548483d05d",
+      "bytes": 24955
+    },
+    {
+      "path": "raw/donsetch/live-wikipedia-markdown.r2.json",
+      "sha256": "cc16f120cbfd426f894ad4d5fbb3b79fe8cd36f2f1f47f509ee9866872c5199a",
+      "bytes": 25591
+    },
+    {
+      "path": "raw/donsetch/live-wikipedia-markdown.r2.md",
+      "sha256": "927e674578afdbee65f9741a1a43aba483c4a502c6231997170550548483d05d",
+      "bytes": 24955
+    },
+    {
+      "path": "raw/donsetch/live-wikipedia-markdown.r3.json",
+      "sha256": "cc16f120cbfd426f894ad4d5fbb3b79fe8cd36f2f1f47f509ee9866872c5199a",
+      "bytes": 25591
+    },
+    {
+      "path": "raw/donsetch/live-wikipedia-markdown.r3.md",
+      "sha256": "927e674578afdbee65f9741a1a43aba483c4a502c6231997170550548483d05d",
+      "bytes": 24955
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-arxiv-attention-pdf.r1.json",
+      "sha256": "2e581c48e23a6cb629419c080501c258205907bd734ee0f3eba459ed5b9adff6",
+      "bytes": 42460
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-arxiv-attention-pdf.r1.md",
+      "sha256": "27b28802e1082323857907127201e7ac6b2ef4add4eca4b01c091d0d368399d8",
+      "bytes": 40027
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-arxiv-attention-pdf.r2.json",
+      "sha256": "1b0d4dcace1d7b3414293531937e6ab18f5ebd45397314e5e6cd9f718658bf1a",
+      "bytes": 42454
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-arxiv-attention-pdf.r2.md",
+      "sha256": "27b28802e1082323857907127201e7ac6b2ef4add4eca4b01c091d0d368399d8",
+      "bytes": 40027
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-arxiv-attention-pdf.r3.json",
+      "sha256": "180c6d6d54c1afcc619fc73f56ce1bf8516054c31a81fc324a5f3820fe508162",
+      "bytes": 42459
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-arxiv-attention-pdf.r3.md",
+      "sha256": "27b28802e1082323857907127201e7ac6b2ef4add4eca4b01c091d0d368399d8",
+      "bytes": 40027
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-books-toscrape.r1.json",
+      "sha256": "e65ff3f8f9aec115f311bde76789cb9ccaf5ef48199c19389c26544da7e534fd",
+      "bytes": 10437
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-books-toscrape.r1.md",
+      "sha256": "69e336f9648e819d7d3edddd7bf338e4cc61a73e787e5f70cf4fcfa7f011a796",
+      "bytes": 8606
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-books-toscrape.r2.json",
+      "sha256": "9a78212d3902698513d34f1a7301f6e919f2f80d8895f1f2ec83f6743ba0fc70",
+      "bytes": 10436
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-books-toscrape.r2.md",
+      "sha256": "69e336f9648e819d7d3edddd7bf338e4cc61a73e787e5f70cf4fcfa7f011a796",
+      "bytes": 8606
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-books-toscrape.r3.json",
+      "sha256": "323dd4e2d68f47cdba0a6898bfd0c4d8284fcc6abd7bf893bc4dace06af4ad6d",
+      "bytes": 10436
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-books-toscrape.r3.md",
+      "sha256": "69e336f9648e819d7d3edddd7bf338e4cc61a73e787e5f70cf4fcfa7f011a796",
+      "bytes": 8606
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-crates-io-serde.r1.json",
+      "sha256": "ec1c96cf5f36d898781fd4befbbc2775ba30872282b180111c854c37b5fed3a3",
+      "bytes": 4443
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-crates-io-serde.r1.md",
+      "sha256": "c0b8382f81d5b311a6fb177ae1a6b95a57bdb81f9a28ae23eddac4b28a42b3cf",
+      "bytes": 2457
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-crates-io-serde.r2.json",
+      "sha256": "ed73ae33a1ddbdb6e5d00a9bdd2d786696ea6f42e888a785b33b0a2678d1ac97",
+      "bytes": 4446
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-crates-io-serde.r2.md",
+      "sha256": "c0b8382f81d5b311a6fb177ae1a6b95a57bdb81f9a28ae23eddac4b28a42b3cf",
+      "bytes": 2457
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-crates-io-serde.r3.json",
+      "sha256": "4f7526c21f0879163c215adb32eac1ce909a0767c8fabff464a243c9d913fa5e",
+      "bytes": 4445
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-crates-io-serde.r3.md",
+      "sha256": "c0b8382f81d5b311a6fb177ae1a6b95a57bdb81f9a28ae23eddac4b28a42b3cf",
+      "bytes": 2457
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-example-com.r1.json",
+      "sha256": "5b7182148613108fc23cf5577499abf4c7f2eb75d0aac3b8c243d4cbb3b976d2",
+      "bytes": 1779
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-example-com.r1.md",
+      "sha256": "6087cde38e747cc5f6c099d068a22be44843c3a461588ed9c64b25df275ccf8c",
+      "bytes": 227
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-example-com.r2.json",
+      "sha256": "3eae13bdf1040fbf065a8a5bc8714904572d304e782a225b24fdf303f7cad459",
+      "bytes": 1778
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-example-com.r2.md",
+      "sha256": "6087cde38e747cc5f6c099d068a22be44843c3a461588ed9c64b25df275ccf8c",
+      "bytes": 227
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-example-com.r3.json",
+      "sha256": "7e3b607e5b40cc0d8a038b5b0e24384d3161281cbc360b89e1f77f0481902029",
+      "bytes": 1777
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-example-com.r3.md",
+      "sha256": "6087cde38e747cc5f6c099d068a22be44843c3a461588ed9c64b25df275ccf8c",
+      "bytes": 227
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-github-flask-readme.r1.json",
+      "sha256": "1fe0ecba1a5cc41661603e394a54eaa3506ee4f46e7752496bfd8f92f400cf00",
+      "bytes": 8321
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-github-flask-readme.r1.md",
+      "sha256": "67fa8a72ebc2fae17cdd33ab0b143f519c749065d99217b042436725975334a9",
+      "bytes": 6413
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-github-flask-readme.r2.json",
+      "sha256": "f5224f437b904dad558559d911a8e34a51e8960e35f6af159717801d34fca624",
+      "bytes": 8319
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-github-flask-readme.r2.md",
+      "sha256": "67fa8a72ebc2fae17cdd33ab0b143f519c749065d99217b042436725975334a9",
+      "bytes": 6413
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-github-flask-readme.r3.json",
+      "sha256": "248c1566bc914a8969bfc7e196e704eee7c1548267b40cac200d6ab51f2f5757",
+      "bytes": 8320
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-github-flask-readme.r3.md",
+      "sha256": "67fa8a72ebc2fae17cdd33ab0b143f519c749065d99217b042436725975334a9",
+      "bytes": 6413
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-go-effective-go.r1.json",
+      "sha256": "d933659ff2d6e5ea1eabefd55437c4296aef00edba6fa482574aff4bcf34dbf6",
+      "bytes": 106806
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-go-effective-go.r1.md",
+      "sha256": "5d0c2eb8bd6fd787c70632f4b9992fb0720f79201ce39634430fbffd7c3770f4",
+      "bytes": 102671
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-go-effective-go.r2.json",
+      "sha256": "cd740695a71ebe75081338b604be47340c50fcdd9858a37125231eb5d6b87171",
+      "bytes": 106806
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-go-effective-go.r2.md",
+      "sha256": "5d0c2eb8bd6fd787c70632f4b9992fb0720f79201ce39634430fbffd7c3770f4",
+      "bytes": 102671
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-go-effective-go.r3.json",
+      "sha256": "4d4aec3f8a08f053e7399c4d506ccd554b9870d8aae9ce2e1abcc3d8cf9b860c",
+      "bytes": 106806
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-go-effective-go.r3.md",
+      "sha256": "5d0c2eb8bd6fd787c70632f4b9992fb0720f79201ce39634430fbffd7c3770f4",
+      "bytes": 102671
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-hn-dropbox-thread.r1.json",
+      "sha256": "d8c732ebfa3ce05c1af6371db74e9d35aee24b1e658a3bd639d4fb7291c09bcf",
+      "bytes": 54669
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-hn-dropbox-thread.r1.md",
+      "sha256": "b5f23436b5b0155ccb1ad06457ba636a14ad7872f237a625bce8650a6d25ad0d",
+      "bytes": 50917
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-hn-dropbox-thread.r2.json",
+      "sha256": "5d567e5c7648f2a734f9ef34cf728ec97ba1c6ba02911a9207f24baaf1d20049",
+      "bytes": 54670
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-hn-dropbox-thread.r2.md",
+      "sha256": "b5f23436b5b0155ccb1ad06457ba636a14ad7872f237a625bce8650a6d25ad0d",
+      "bytes": 50917
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-hn-dropbox-thread.r3.json",
+      "sha256": "c4a92d4bc6c4a5ce684d1484ad452c9f90b288f9c5a062f93bd62ed7d24a47fb",
+      "bytes": 54670
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-hn-dropbox-thread.r3.md",
+      "sha256": "b5f23436b5b0155ccb1ad06457ba636a14ad7872f237a625bce8650a6d25ad0d",
+      "bytes": 50917
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-hn-guidelines.r1.json",
+      "sha256": "f9758d9a98569de8978cf3b82fe9568c9a255c8054ad44a5b6def8b54aa0ea51",
+      "bytes": 7104
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-hn-guidelines.r1.md",
+      "sha256": "7e07e2ce56e64d19a5cae1c4d1b8ff1cff6f4ff31d46554b9d638a70399fb551",
+      "bytes": 5422
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-hn-guidelines.r2.json",
+      "sha256": "5a14dcd541a7004efdf43b4773f8ef1363972655dffd99e04decc382ce2b83b0",
+      "bytes": 7100
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-hn-guidelines.r2.md",
+      "sha256": "7e07e2ce56e64d19a5cae1c4d1b8ff1cff6f4ff31d46554b9d638a70399fb551",
+      "bytes": 5422
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-hn-guidelines.r3.json",
+      "sha256": "2e80a8d0254cf4e76061168bf16c189c30f4fc8c3cf9e30c9a4c64c9b92306ad",
+      "bytes": 7100
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-hn-guidelines.r3.md",
+      "sha256": "7e07e2ce56e64d19a5cae1c4d1b8ff1cff6f4ff31d46554b9d638a70399fb551",
+      "bytes": 5422
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-iana-http-status-codes.r1.json",
+      "sha256": "76d3e77ad9d03d573f65744ecb0616f94c49938e7c02c056b7834beefdf7eb27",
+      "bytes": 9532
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-iana-http-status-codes.r1.md",
+      "sha256": "dc00669812e613a4ce9c5fd143382bfffa27c30cceef07a2df548aabdb5d9b36",
+      "bytes": 7561
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-iana-http-status-codes.r2.json",
+      "sha256": "e8a77b47e3905746876666a436c70d70c902ff51110111e8ef8ed5ea30af410d",
+      "bytes": 9533
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-iana-http-status-codes.r2.md",
+      "sha256": "dc00669812e613a4ce9c5fd143382bfffa27c30cceef07a2df548aabdb5d9b36",
+      "bytes": 7561
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-iana-http-status-codes.r3.json",
+      "sha256": "cf66fd42a1c9ef56f3b030861df711df1f3141a221a8e98efd2d9b1e6aac6b99",
+      "bytes": 9532
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-iana-http-status-codes.r3.md",
+      "sha256": "dc00669812e613a4ce9c5fd143382bfffa27c30cceef07a2df548aabdb5d9b36",
+      "bytes": 7561
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-mdn-array-map.r1.json",
+      "sha256": "ef0eedfc417855bd383b2b4f85ce0e443ecb0c6d2a42b71417d049a79cccbbb9",
+      "bytes": 15771
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-mdn-array-map.r1.md",
+      "sha256": "4799b06e6be81b4ff41e615dfcc15eaabc17a80b48d4d2effadc72bee1a03c46",
+      "bytes": 13579
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-mdn-array-map.r2.json",
+      "sha256": "a5f10a410e34fc0cf0c1c99ced84e2d949ae10480709504abb47ad6ecca40d85",
+      "bytes": 15771
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-mdn-array-map.r2.md",
+      "sha256": "4799b06e6be81b4ff41e615dfcc15eaabc17a80b48d4d2effadc72bee1a03c46",
+      "bytes": 13579
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-mdn-array-map.r3.json",
+      "sha256": "19466de13c7da8fd9fa5b5fdb9693a739def769be2bbe22fc71183a16a92403c",
+      "bytes": 15771
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-mdn-array-map.r3.md",
+      "sha256": "4799b06e6be81b4ff41e615dfcc15eaabc17a80b48d4d2effadc72bee1a03c46",
+      "bytes": 13579
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-nodejs-path.r1.json",
+      "sha256": "1e602e5fb80c0f2e1caf6765894f4ebe2f4be225e3474bddfe7ded89e4f31f5f",
+      "bytes": 23344
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-nodejs-path.r1.md",
+      "sha256": "c65139cf6a33c19bfe4a75790bafa1d07f88e65729879b9e7897631d23103ff2",
+      "bytes": 20962
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-nodejs-path.r2.json",
+      "sha256": "0d96af40b94bbc12ceb204b0a79354d438b0b888c5f2ad78315bbdcc64ed7569",
+      "bytes": 23340
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-nodejs-path.r2.md",
+      "sha256": "c65139cf6a33c19bfe4a75790bafa1d07f88e65729879b9e7897631d23103ff2",
+      "bytes": 20962
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-nodejs-path.r3.json",
+      "sha256": "90788203972c9d22f9d3320eb3d59085aa7ac9271caf01c64e486907ee4d5797",
+      "bytes": 23341
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-nodejs-path.r3.md",
+      "sha256": "c65139cf6a33c19bfe4a75790bafa1d07f88e65729879b9e7897631d23103ff2",
+      "bytes": 20962
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-paulgraham-great-work.r1.json",
+      "sha256": "b52e77d3fb04689e9080f101b0a03e724c98d75ed98ba9c4d8e20453d49783c9",
+      "bytes": 74988
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-paulgraham-great-work.r1.md",
+      "sha256": "a164becd91bbab1e3fccbca52d0a608d72e2440197db9402e13f9ae4f1e5f5f4",
+      "bytes": 73195
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-paulgraham-great-work.r2.json",
+      "sha256": "b344592c290be192c5a8730f8924be014d775a450982962521c2c2ae967e3342",
+      "bytes": 74991
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-paulgraham-great-work.r2.md",
+      "sha256": "a164becd91bbab1e3fccbca52d0a608d72e2440197db9402e13f9ae4f1e5f5f4",
+      "bytes": 73195
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-paulgraham-great-work.r3.json",
+      "sha256": "1eb4c36d99a8fc7b66897305b01c4e68988e60ecfdada903d55a3bef9591d2d6",
+      "bytes": 74991
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-paulgraham-great-work.r3.md",
+      "sha256": "a164becd91bbab1e3fccbca52d0a608d72e2440197db9402e13f9ae4f1e5f5f4",
+      "bytes": 73195
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-python-json.r1.json",
+      "sha256": "bd7f1e7d142146821badf2dbdaef4bc8c42d9aa129108b13c17ff8284812120d",
+      "bytes": 36003
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-python-json.r1.md",
+      "sha256": "309a055568b50d2852e85cabc96d30a6f753369c33790cfccbe583310a36935a",
+      "bytes": 33356
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-python-json.r2.json",
+      "sha256": "76c6148238022ec07bf8d70a1756b02eb4fd98574a495bb202d5b34993954ea1",
+      "bytes": 36003
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-python-json.r2.md",
+      "sha256": "309a055568b50d2852e85cabc96d30a6f753369c33790cfccbe583310a36935a",
+      "bytes": 33356
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-python-json.r3.json",
+      "sha256": "4c4d09f8149b8f1add8b06d0c002b05e32ba708a41dcc12e37e845fab2fcbb06",
+      "bytes": 35999
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-python-json.r3.md",
+      "sha256": "309a055568b50d2852e85cabc96d30a6f753369c33790cfccbe583310a36935a",
+      "bytes": 33356
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-python-library-index.r1.json",
+      "sha256": "9c10dd9fbc2740282d1a57c982e9eba373208de458a12b0badc0a165c056ed84",
+      "bytes": 30888
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-python-library-index.r1.md",
+      "sha256": "6e24043a4e56140df5ab4f095f96c14afa1d538a06b872f5e264df93ecbfa8d1",
+      "bytes": 28951
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-python-library-index.r2.json",
+      "sha256": "6f8077dae0302ba84646ca62ff544e4d88699320c9934f40f522d791e8430964",
+      "bytes": 30886
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-python-library-index.r2.md",
+      "sha256": "6e24043a4e56140df5ab4f095f96c14afa1d538a06b872f5e264df93ecbfa8d1",
+      "bytes": 28951
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-python-library-index.r3.json",
+      "sha256": "a97c037791a231017eca894787fb7b08e69c2b8ce3833b5ea6cc52d2180890ca",
+      "bytes": 30887
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-python-library-index.r3.md",
+      "sha256": "6e24043a4e56140df5ab4f095f96c14afa1d538a06b872f5e264df93ecbfa8d1",
+      "bytes": 28951
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-quotes-toscrape-js-delayed.r1.json",
+      "sha256": "a15acb8b4b8e0c4d6fe13d0e97bedbf289141e93977f9e80299baaee2fa599ad",
+      "bytes": 2020
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-quotes-toscrape-js-delayed.r1.md",
+      "sha256": "d7c1a70dbfa0b0cdda9322886c337d0a704c573a9367720ba239b2043098dbc5",
+      "bytes": 94
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-quotes-toscrape-js-delayed.r2.json",
+      "sha256": "898d602e6c125487a63193ab844141e4be3cc43fee7f13b8f30c70dae5340fba",
+      "bytes": 2023
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-quotes-toscrape-js-delayed.r2.md",
+      "sha256": "d7c1a70dbfa0b0cdda9322886c337d0a704c573a9367720ba239b2043098dbc5",
+      "bytes": 94
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-quotes-toscrape-js-delayed.r3.json",
+      "sha256": "6f75b69ce392f728d64ccae532954b78a365d5648e5c335de2e8e0a49540e1fd",
+      "bytes": 2017
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-quotes-toscrape-js-delayed.r3.md",
+      "sha256": "d7c1a70dbfa0b0cdda9322886c337d0a704c573a9367720ba239b2043098dbc5",
+      "bytes": 94
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-quotes-toscrape-js.r1.json",
+      "sha256": "1fda5fe1244b7dad871bdae871fc3523dfffd580d894e7ca8427b2918ee88504",
+      "bytes": 3508
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-quotes-toscrape-js.r1.md",
+      "sha256": "feaf72ee78ff0cec76c98d3d85a7df69e3e55a4d2c021598e76e527eaf333434",
+      "bytes": 1566
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-quotes-toscrape-js.r2.json",
+      "sha256": "0c46f562961fb2a1b13f72224f03030459a4f32e10139579c1f77a74b9b8d3a9",
+      "bytes": 3509
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-quotes-toscrape-js.r2.md",
+      "sha256": "feaf72ee78ff0cec76c98d3d85a7df69e3e55a4d2c021598e76e527eaf333434",
+      "bytes": 1566
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-quotes-toscrape-js.r3.json",
+      "sha256": "39c3d01bfe116f1edc3c4e449235acc82a5981fa13ecc6e43e8601f61119b3d3",
+      "bytes": 3511
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-quotes-toscrape-js.r3.md",
+      "sha256": "feaf72ee78ff0cec76c98d3d85a7df69e3e55a4d2c021598e76e527eaf333434",
+      "bytes": 1566
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-react-thinking-in-react.r1.json",
+      "sha256": "6881ebef0c7f303c7f975a3735feabe637c57b3eac07e48cae9e7228f3132f61",
+      "bytes": 23649
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-react-thinking-in-react.r1.md",
+      "sha256": "b653be31bc026207788cd219346204770c31e1284a571dad92db9998e9c1ab2d",
+      "bytes": 21305
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-react-thinking-in-react.r2.json",
+      "sha256": "6711ae9357f68437cd8680ac34f2a378e091caa12a9c0b4058122f48f26b84c3",
+      "bytes": 23647
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-react-thinking-in-react.r2.md",
+      "sha256": "b653be31bc026207788cd219346204770c31e1284a571dad92db9998e9c1ab2d",
+      "bytes": 21305
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-react-thinking-in-react.r3.json",
+      "sha256": "9720c4f3395237c35885d4e4c617d2e19a4e85d8e6e6c152aa882bfb876299ad",
+      "bytes": 23649
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-react-thinking-in-react.r3.md",
+      "sha256": "b653be31bc026207788cd219346204770c31e1284a571dad92db9998e9c1ab2d",
+      "bytes": 21305
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-rfc9110-http-semantics.r1.json",
+      "sha256": "e55b4122a5972ea63d27098bb2f045ee3b4c9d3d9bc86f34ce0a99c5e76bcc7d",
+      "bytes": 763684
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-rfc9110-http-semantics.r1.md",
+      "sha256": "adb708f940243f554422c111db72f50759f845ebda478c2fd6577056ec0a6ef7",
+      "bytes": 752216
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-rfc9110-http-semantics.r2.json",
+      "sha256": "9fb172a806c4bdd15393800a6cb6e8262769ca5c9e5fdd1046fdcde9a577c8e2",
+      "bytes": 763681
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-rfc9110-http-semantics.r2.md",
+      "sha256": "adb708f940243f554422c111db72f50759f845ebda478c2fd6577056ec0a6ef7",
+      "bytes": 752216
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-rfc9110-http-semantics.r3.json",
+      "sha256": "5e73aa4f8bfb1966f2e60f6c55519371d66cd0683af2092afbc3fb2bde621c26",
+      "bytes": 763683
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-rfc9110-http-semantics.r3.md",
+      "sha256": "adb708f940243f554422c111db72f50759f845ebda478c2fd6577056ec0a6ef7",
+      "bytes": 752216
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-rfc9309-pdf.r1.json",
+      "sha256": "1a4f0113e393a064a7e162e23bc162885e3867f5bd0dadb51d0ab0242ce330e2",
+      "bytes": 24708
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-rfc9309-pdf.r1.md",
+      "sha256": "7776759fef86a4ebf133f6473d0b04ee77f6d8427f4d616c12d5192cc71e8e61",
+      "bytes": 22421
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-rfc9309-pdf.r2.json",
+      "sha256": "b148f8e0eee2e3069aab5ca9d1e3bcbcd652ea0ba872e2fa17777be7b6781981",
+      "bytes": 24709
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-rfc9309-pdf.r2.md",
+      "sha256": "7776759fef86a4ebf133f6473d0b04ee77f6d8427f4d616c12d5192cc71e8e61",
+      "bytes": 22421
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-rfc9309-pdf.r3.json",
+      "sha256": "edd6b9e624813f4bae0438aa9fde0ee161ae2f8686270f2998ab43264a1afdd1",
+      "bytes": 24707
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-rfc9309-pdf.r3.md",
+      "sha256": "7776759fef86a4ebf133f6473d0b04ee77f6d8427f4d616c12d5192cc71e8e61",
+      "bytes": 22421
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-rfc9309-txt.r1.json",
+      "sha256": "a7fec49702947ddb41fafb7028b1f697fe252cd3136ec2986d70709cf86dcbfb",
+      "bytes": 27808
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-rfc9309-txt.r1.md",
+      "sha256": "c28bd3fa4eab0eeb24966de5d71cded75c40485613347978f5359e8212aa2e53",
+      "bytes": 25253
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-rfc9309-txt.r2.json",
+      "sha256": "fb364b97c5c94a10609faac15c8140d014f2c21b4fe6b841ba8e318263959134",
+      "bytes": 27806
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-rfc9309-txt.r2.md",
+      "sha256": "c28bd3fa4eab0eeb24966de5d71cded75c40485613347978f5359e8212aa2e53",
+      "bytes": 25253
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-rfc9309-txt.r3.json",
+      "sha256": "0cbfad75853ec21cb931ef98052ae80cdfa321b89e006761bef1f72fd1ef0a9b",
+      "bytes": 27804
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-rfc9309-txt.r3.md",
+      "sha256": "c28bd3fa4eab0eeb24966de5d71cded75c40485613347978f5359e8212aa2e53",
+      "bytes": 25253
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-rust-blog-1-0.r1.json",
+      "sha256": "f8dc273dd30a135a4702ab7c0415417d74babcb2540c4349952bead139cf958b",
+      "bytes": 11121
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-rust-blog-1-0.r1.md",
+      "sha256": "f784f734b0a3cf073bd4661df4c9508f81e386be3d4074f48b0d54afa9a3830e",
+      "bytes": 9204
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-rust-blog-1-0.r2.json",
+      "sha256": "269cb926bdfb14772bd361eae683d37052d8909054a057833a84db08c2e7f631",
+      "bytes": 11117
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-rust-blog-1-0.r2.md",
+      "sha256": "f784f734b0a3cf073bd4661df4c9508f81e386be3d4074f48b0d54afa9a3830e",
+      "bytes": 9204
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-rust-blog-1-0.r3.json",
+      "sha256": "291e0a5eb056e70ee7617b2281ad8a9b18735089a9ae42c8a589a32a090a0268",
+      "bytes": 11118
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-rust-blog-1-0.r3.md",
+      "sha256": "f784f734b0a3cf073bd4661df4c9508f81e386be3d4074f48b0d54afa9a3830e",
+      "bytes": 9204
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-rust-book-control-flow.r1.json",
+      "sha256": "aaf7fde2579d3f1dd997246ad86314c577a86432f487eee0680421b39e2422e3",
+      "bytes": 22235
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-rust-book-control-flow.r1.md",
+      "sha256": "52e30106afdc4abdbf0fdff22d8974d6a8567324f7a4a2bb6916d4073082939a",
+      "bytes": 20023
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-rust-book-control-flow.r2.json",
+      "sha256": "992027cd757a8a8fc3cc57a395bf086e4035a8422ff6d97a8f39359385a67d7e",
+      "bytes": 22234
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-rust-book-control-flow.r2.md",
+      "sha256": "52e30106afdc4abdbf0fdff22d8974d6a8567324f7a4a2bb6916d4073082939a",
+      "bytes": 20023
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-rust-book-control-flow.r3.json",
+      "sha256": "12f6c28a142a0b248e63529d13a8db462c7153aee8d09dae0f07009bde319914",
+      "bytes": 22237
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-rust-book-control-flow.r3.md",
+      "sha256": "52e30106afdc4abdbf0fdff22d8974d6a8567324f7a4a2bb6916d4073082939a",
+      "bytes": 20023
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-wikipedia-chemical-elements.r1.json",
+      "sha256": "733109bd9259bb47af3226c375abf48ef3486d8bd10aac6fd7e7ff8a29788008",
+      "bytes": 98673
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-wikipedia-chemical-elements.r1.md",
+      "sha256": "14017227705f5376202d3fa5d4f2bbab7082ba44683b4bff77bebe104afbd8f5",
+      "bytes": 95074
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-wikipedia-chemical-elements.r2.json",
+      "sha256": "cb426045d998988c74bed89c94dde9542a118dc5a4e325927d79cdf0b671aa3f",
+      "bytes": 98673
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-wikipedia-chemical-elements.r2.md",
+      "sha256": "14017227705f5376202d3fa5d4f2bbab7082ba44683b4bff77bebe104afbd8f5",
+      "bytes": 95074
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-wikipedia-chemical-elements.r3.json",
+      "sha256": "cab00810a1297e6019eaabf036405d3d4aab5c2afbca60a90493a49e80b6e9fa",
+      "bytes": 98671
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-wikipedia-chemical-elements.r3.md",
+      "sha256": "14017227705f5376202d3fa5d4f2bbab7082ba44683b4bff77bebe104afbd8f5",
+      "bytes": 95074
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-wikipedia-markdown.r1.json",
+      "sha256": "3abfc231e4a9ee0e5a2eb11929f426dd090c1933061bdece28884a734891ad2a",
+      "bytes": 58583
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-wikipedia-markdown.r1.md",
+      "sha256": "29653256fe4855e9c10d9f18a47019e1b66f8151c648cc6ca21d11828ada87ab",
+      "bytes": 55868
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-wikipedia-markdown.r2.json",
+      "sha256": "cca7710c15c070f0d94863cf44ca0cbe73a0bd72a6a057b761e70f367bc84265",
+      "bytes": 58583
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-wikipedia-markdown.r2.md",
+      "sha256": "29653256fe4855e9c10d9f18a47019e1b66f8151c648cc6ca21d11828ada87ab",
+      "bytes": 55868
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-wikipedia-markdown.r3.json",
+      "sha256": "481dc3638d0a54747be1c392674cb5dd5e7ee75bfd426f9366450e2a34116fe4",
+      "bytes": 58584
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-wikipedia-markdown.r3.md",
+      "sha256": "29653256fe4855e9c10d9f18a47019e1b66f8151c648cc6ca21d11828ada87ab",
+      "bytes": 55868
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-arxiv-attention-pdf.r1.json",
+      "sha256": "6343b1401247ed57c290cd697fe8832d7001e8767d7fd166380f1688da3fb71e",
+      "bytes": 42861
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-arxiv-attention-pdf.r1.md",
+      "sha256": "27b28802e1082323857907127201e7ac6b2ef4add4eca4b01c091d0d368399d8",
+      "bytes": 40027
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-arxiv-attention-pdf.r2.json",
+      "sha256": "6e160f31d441ba0e464116fa4a1fa0b9f5eb2d1a60d198162478b9a43668069f",
+      "bytes": 42860
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-arxiv-attention-pdf.r2.md",
+      "sha256": "27b28802e1082323857907127201e7ac6b2ef4add4eca4b01c091d0d368399d8",
+      "bytes": 40027
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-arxiv-attention-pdf.r3.json",
+      "sha256": "6d39f635e33815358900c14cb825a2230dd2e450c8dd446d50edc67bb7b5f0bb",
+      "bytes": 42857
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-arxiv-attention-pdf.r3.md",
+      "sha256": "27b28802e1082323857907127201e7ac6b2ef4add4eca4b01c091d0d368399d8",
+      "bytes": 40027
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-books-toscrape.r1.json",
+      "sha256": "43174a9e8896741eace615a803ffa52b9e2102b2cb311526e31698c749ce4d75",
+      "bytes": 10531
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-books-toscrape.r1.md",
+      "sha256": "69e336f9648e819d7d3edddd7bf338e4cc61a73e787e5f70cf4fcfa7f011a796",
+      "bytes": 8606
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-books-toscrape.r2.json",
+      "sha256": "fee25c318dd49b6cd97ab6588d0ba42b53c16ded9e43098dab997de95bcda90c",
+      "bytes": 10527
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-books-toscrape.r2.md",
+      "sha256": "69e336f9648e819d7d3edddd7bf338e4cc61a73e787e5f70cf4fcfa7f011a796",
+      "bytes": 8606
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-books-toscrape.r3.json",
+      "sha256": "7bd9d9867af97948e4ee76275ee0d54b009932561d766b55f1665ab881f8e969",
+      "bytes": 10531
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-books-toscrape.r3.md",
+      "sha256": "69e336f9648e819d7d3edddd7bf338e4cc61a73e787e5f70cf4fcfa7f011a796",
+      "bytes": 8606
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-crates-io-serde.r1.json",
+      "sha256": "f21cfc8a9a0d09d2fda0483419e3f3b94146903eb1892893d276bf79d6b9f2c2",
+      "bytes": 4221
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-crates-io-serde.r1.md",
+      "sha256": "c0b8382f81d5b311a6fb177ae1a6b95a57bdb81f9a28ae23eddac4b28a42b3cf",
+      "bytes": 2457
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-crates-io-serde.r2.json",
+      "sha256": "d439bef608c111167c6b77a2caac949af87fb0bd70922c0124ecc75fe165fbca",
+      "bytes": 4221
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-crates-io-serde.r2.md",
+      "sha256": "c0b8382f81d5b311a6fb177ae1a6b95a57bdb81f9a28ae23eddac4b28a42b3cf",
+      "bytes": 2457
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-crates-io-serde.r3.json",
+      "sha256": "cab795554172d9178579f638ecdc66338657c7d4b77f13301e938a5096088eea",
+      "bytes": 4218
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-crates-io-serde.r3.md",
+      "sha256": "c0b8382f81d5b311a6fb177ae1a6b95a57bdb81f9a28ae23eddac4b28a42b3cf",
+      "bytes": 2457
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-example-com.r1.json",
+      "sha256": "f1dace85df6e5fb4813000f69a4ccd13d3b9d8747eb34f5e42302966c83e70d8",
+      "bytes": 3017
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-example-com.r1.md",
+      "sha256": "4e2bdc3e81e6284cd9553eb66643d7a22d5f6bd5424581ec72c2ca7d2119cf4f",
+      "bytes": 1360
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-example-com.r2.json",
+      "sha256": "a4bc82f01ee45af2ce608f62b6cf5d39207a2eff426d4d9ef0f36404381921bc",
+      "bytes": 3009
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-example-com.r2.md",
+      "sha256": "4e2bdc3e81e6284cd9553eb66643d7a22d5f6bd5424581ec72c2ca7d2119cf4f",
+      "bytes": 1360
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-example-com.r3.json",
+      "sha256": "7ff4f31cc78d1a7df8d7919ec06c13147b2826169468a82a81a9f46fe82c9198",
+      "bytes": 3016
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-example-com.r3.md",
+      "sha256": "4e2bdc3e81e6284cd9553eb66643d7a22d5f6bd5424581ec72c2ca7d2119cf4f",
+      "bytes": 1360
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-github-flask-readme.r1.json",
+      "sha256": "ca0a432d520f950ef81627400c4e60db7e69ed0e74e57ebf65f676761d04edd0",
+      "bytes": 19568
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-github-flask-readme.r1.md",
+      "sha256": "2cd57abe16b3e98a028310deae77d1c4db99d329aeb56b4a4c299e7385f62bb6",
+      "bytes": 17470
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-github-flask-readme.r2.json",
+      "sha256": "9dad6fe4b92d594a1508249e3c076cc729232dfd1b532224b6b7549cb18f585e",
+      "bytes": 19566
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-github-flask-readme.r2.md",
+      "sha256": "a3ceddf9d141bffad7c6b5f7b19e43649ae077a8eeab2e2d0433609c115ab4cb",
+      "bytes": 17468
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-github-flask-readme.r3.json",
+      "sha256": "1e4d99880c5d7a33fa4a07cbe1a10c47b3a0a6d66c0c87b09c0837958a61069e",
+      "bytes": 19567
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-github-flask-readme.r3.md",
+      "sha256": "bd46eaee2b407247910f0980ae65804a6095b8842ed14b35e8d52f0f55624b0e",
+      "bytes": 17472
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-go-effective-go.r1.json",
+      "sha256": "c4b6b69ddfca7ef355967a3513a8679aa61973d5743bd6ae7d88458abb1f0fa4",
+      "bytes": 110844
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-go-effective-go.r1.md",
+      "sha256": "7f48686418972ce5168517855b2ccd27adfa9737de979fb2cc0343a4dba570e0",
+      "bytes": 106617
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-go-effective-go.r2.json",
+      "sha256": "67eae1843fa3a601493c73757c500aab917161a7bbe3e47c923beb8526958b15",
+      "bytes": 110849
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-go-effective-go.r2.md",
+      "sha256": "7f48686418972ce5168517855b2ccd27adfa9737de979fb2cc0343a4dba570e0",
+      "bytes": 106617
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-go-effective-go.r3.json",
+      "sha256": "8cbfea4aa3fd87b144696db63c46445395776183bf40964a858b1f48275b1019",
+      "bytes": 110850
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-go-effective-go.r3.md",
+      "sha256": "7f48686418972ce5168517855b2ccd27adfa9737de979fb2cc0343a4dba570e0",
+      "bytes": 106617
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-hn-dropbox-thread.r1.json",
+      "sha256": "4d228bf47df673fdb5e7ab82cf29ac94af2082f211c44307b60efa33f6ecc29b",
+      "bytes": 54762
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-hn-dropbox-thread.r1.md",
+      "sha256": "b5f23436b5b0155ccb1ad06457ba636a14ad7872f237a625bce8650a6d25ad0d",
+      "bytes": 50917
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-hn-dropbox-thread.r2.json",
+      "sha256": "14a2934f7c31c54385278e5e8b4a3bbb3d35459423ad012042327f497cc37f9c",
+      "bytes": 54760
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-hn-dropbox-thread.r2.md",
+      "sha256": "b5f23436b5b0155ccb1ad06457ba636a14ad7872f237a625bce8650a6d25ad0d",
+      "bytes": 50917
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-hn-dropbox-thread.r3.json",
+      "sha256": "a4002d711c7ab4e49b4eb7b7684153c56aa25d77af566ca56a01330b598b7b13",
+      "bytes": 54761
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-hn-dropbox-thread.r3.md",
+      "sha256": "b5f23436b5b0155ccb1ad06457ba636a14ad7872f237a625bce8650a6d25ad0d",
+      "bytes": 50917
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-hn-guidelines.r1.json",
+      "sha256": "ffd60061e518a3a11c8aaa2cbb7348e27d7845c2a1f39c147c964439ef7820a0",
+      "bytes": 7198
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-hn-guidelines.r1.md",
+      "sha256": "7e07e2ce56e64d19a5cae1c4d1b8ff1cff6f4ff31d46554b9d638a70399fb551",
+      "bytes": 5422
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-hn-guidelines.r2.json",
+      "sha256": "b01e9bf90649eb62f72b19ce2b8332cf4f8140650ac0d99a3ae8ed6b602cd5ed",
+      "bytes": 7196
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-hn-guidelines.r2.md",
+      "sha256": "7e07e2ce56e64d19a5cae1c4d1b8ff1cff6f4ff31d46554b9d638a70399fb551",
+      "bytes": 5422
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-hn-guidelines.r3.json",
+      "sha256": "6bf9c798ae8b8f1a5d5b3e453212b345d3933f49d1ed65d43f51182c9f8a9f00",
+      "bytes": 7194
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-hn-guidelines.r3.md",
+      "sha256": "7e07e2ce56e64d19a5cae1c4d1b8ff1cff6f4ff31d46554b9d638a70399fb551",
+      "bytes": 5422
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-iana-http-status-codes.r1.json",
+      "sha256": "d667de6a21929490a2a4fb94e840765861d37c56dbbdc06aa1cfc9bfb168f23b",
+      "bytes": 9813
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-iana-http-status-codes.r1.md",
+      "sha256": "5597764fb3e4020287127b55a93952e3563086c72fc0f619eb9addd580959ad5",
+      "bytes": 7744
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-iana-http-status-codes.r2.json",
+      "sha256": "1611e9154e666462fbfb1c8361c5ee46c1ffe8b34e3f6394b3889854b836c32c",
+      "bytes": 9812
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-iana-http-status-codes.r2.md",
+      "sha256": "5597764fb3e4020287127b55a93952e3563086c72fc0f619eb9addd580959ad5",
+      "bytes": 7744
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-iana-http-status-codes.r3.json",
+      "sha256": "4f0e454b9c19de6f21fcf099ad712a164750d099ed3b6252b87ee786036ad021",
+      "bytes": 9810
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-iana-http-status-codes.r3.md",
+      "sha256": "5597764fb3e4020287127b55a93952e3563086c72fc0f619eb9addd580959ad5",
+      "bytes": 7744
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-mdn-array-map.r1.json",
+      "sha256": "d3a6cb4ba70e93e7adc166774e1f573f5b9d3ce27fd467f1705c933866e6025b",
+      "bytes": 12009
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-mdn-array-map.r1.md",
+      "sha256": "022548e285cf91cdb1a3ff931f1ae4a787253f26efa35f3439c647cebc386585",
+      "bytes": 9974
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-mdn-array-map.r2.json",
+      "sha256": "da4733ac50b5f9f9499d3c1c25e7fca36d2cd867c7f7436a7f2c7f70bc1c8aa2",
+      "bytes": 12008
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-mdn-array-map.r2.md",
+      "sha256": "022548e285cf91cdb1a3ff931f1ae4a787253f26efa35f3439c647cebc386585",
+      "bytes": 9974
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-mdn-array-map.r3.json",
+      "sha256": "1a040cbee0560d8da43073a1065c00be7781b9e891a81840e234b6046283f418",
+      "bytes": 12008
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-mdn-array-map.r3.md",
+      "sha256": "022548e285cf91cdb1a3ff931f1ae4a787253f26efa35f3439c647cebc386585",
+      "bytes": 9974
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-nodejs-path.r1.json",
+      "sha256": "798a6d803044e19065fa237e5616f2111cf0bc6de6ebce971a3192599b27fca3",
+      "bytes": 22860
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-nodejs-path.r1.md",
+      "sha256": "d5cbde64bd5ef1de9cc9e1eb57178b220f783affcbd2a79c87958ddbbfc518ab",
+      "bytes": 20388
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-nodejs-path.r2.json",
+      "sha256": "2caf64e5622fae5fc1d943d1edf73eb8e0dec3336041e79cd3fbcb44d1a55fec",
+      "bytes": 22858
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-nodejs-path.r2.md",
+      "sha256": "d5cbde64bd5ef1de9cc9e1eb57178b220f783affcbd2a79c87958ddbbfc518ab",
+      "bytes": 20388
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-nodejs-path.r3.json",
+      "sha256": "a5eb6b05a6430b4868c9b4263436309b9a7ca36606e818c3ace36c7f22dbae77",
+      "bytes": 22859
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-nodejs-path.r3.md",
+      "sha256": "d5cbde64bd5ef1de9cc9e1eb57178b220f783affcbd2a79c87958ddbbfc518ab",
+      "bytes": 20388
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-paulgraham-great-work.r1.json",
+      "sha256": "68f5bcc1f5576b341a1ba2d65f8e87238a2af2be9279859c18b70cc6a01670b4",
+      "bytes": 75084
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-paulgraham-great-work.r1.md",
+      "sha256": "0569b4eb807f5b577a526e1577a20c112b8c544604493f3a2bd86c91fbd43cbc",
+      "bytes": 73196
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-paulgraham-great-work.r2.json",
+      "sha256": "08de780bf009a5aa1fdeb4a228ef4848beff031615cb1dac7b2836e6ecf34add",
+      "bytes": 75083
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-paulgraham-great-work.r2.md",
+      "sha256": "0569b4eb807f5b577a526e1577a20c112b8c544604493f3a2bd86c91fbd43cbc",
+      "bytes": 73196
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-paulgraham-great-work.r3.json",
+      "sha256": "6b0116c728009f358e4c6efd8f4e65ffecbbec04c944eb602d7ecbf556d00b40",
+      "bytes": 75083
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-paulgraham-great-work.r3.md",
+      "sha256": "0569b4eb807f5b577a526e1577a20c112b8c544604493f3a2bd86c91fbd43cbc",
+      "bytes": 73196
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-python-json.r1.json",
+      "sha256": "563a7ddf33ad6dfd20c29cd0966a4fb8f5817d910629d70fe26f42b85dea56af",
+      "bytes": 36101
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-python-json.r1.md",
+      "sha256": "309a055568b50d2852e85cabc96d30a6f753369c33790cfccbe583310a36935a",
+      "bytes": 33356
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-python-json.r2.json",
+      "sha256": "779a697246aab0b7f70cfcce3ec5fc2f21e5e53037483e2830a08f1eaf345d5d",
+      "bytes": 36098
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-python-json.r2.md",
+      "sha256": "309a055568b50d2852e85cabc96d30a6f753369c33790cfccbe583310a36935a",
+      "bytes": 33356
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-python-json.r3.json",
+      "sha256": "58844caf9e152014f82e9a4aa36398d22fcb6d48b8c2e91521232d5bc3a78e8b",
+      "bytes": 36100
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-python-json.r3.md",
+      "sha256": "309a055568b50d2852e85cabc96d30a6f753369c33790cfccbe583310a36935a",
+      "bytes": 33356
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-python-library-index.r1.json",
+      "sha256": "54da9db848789bb2f5d87117124d69a8b787fbbf8985d77e49e89292faa6d5ee",
+      "bytes": 30984
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-python-library-index.r1.md",
+      "sha256": "6e24043a4e56140df5ab4f095f96c14afa1d538a06b872f5e264df93ecbfa8d1",
+      "bytes": 28951
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-python-library-index.r2.json",
+      "sha256": "2f81231e6aa433f8c67462f64e5df87d5c422b5fdc96280f9f47017c833be35f",
+      "bytes": 30980
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-python-library-index.r2.md",
+      "sha256": "6e24043a4e56140df5ab4f095f96c14afa1d538a06b872f5e264df93ecbfa8d1",
+      "bytes": 28951
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-python-library-index.r3.json",
+      "sha256": "42f04ed41e6e3bfc29c22d513efff6681ad6cddc2967b4dfbcac2517230d2128",
+      "bytes": 30981
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-python-library-index.r3.md",
+      "sha256": "6e24043a4e56140df5ab4f095f96c14afa1d538a06b872f5e264df93ecbfa8d1",
+      "bytes": 28951
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-quotes-toscrape-js-delayed.r1.json",
+      "sha256": "ed6adda873a82351d826f13cbb0f4356b67b7168985e5c577d283d8e2c4f0464",
+      "bytes": 1793
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-quotes-toscrape-js-delayed.r1.md",
+      "sha256": "d7c1a70dbfa0b0cdda9322886c337d0a704c573a9367720ba239b2043098dbc5",
+      "bytes": 94
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-quotes-toscrape-js-delayed.r2.json",
+      "sha256": "68d72d7dad45a28bd0b1594bf9258f3691d2976662b4799280058016d3459dd0",
+      "bytes": 1795
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-quotes-toscrape-js-delayed.r2.md",
+      "sha256": "d7c1a70dbfa0b0cdda9322886c337d0a704c573a9367720ba239b2043098dbc5",
+      "bytes": 94
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-quotes-toscrape-js-delayed.r3.json",
+      "sha256": "3e27e09908ca899b446699693a21e546859544c66fecaedf660e46a427fbcbda",
+      "bytes": 1795
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-quotes-toscrape-js-delayed.r3.md",
+      "sha256": "d7c1a70dbfa0b0cdda9322886c337d0a704c573a9367720ba239b2043098dbc5",
+      "bytes": 94
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-quotes-toscrape-js.r1.json",
+      "sha256": "02b2589eccb63a37b2c02e72f595fce42a86f2575c05663fa0c61c196c9c74a8",
+      "bytes": 3288
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-quotes-toscrape-js.r1.md",
+      "sha256": "feaf72ee78ff0cec76c98d3d85a7df69e3e55a4d2c021598e76e527eaf333434",
+      "bytes": 1566
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-quotes-toscrape-js.r2.json",
+      "sha256": "638c32884cda8ed3592a0f0264f48024e073a95fe767cb5edb7e5ca66f4f649e",
+      "bytes": 3287
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-quotes-toscrape-js.r2.md",
+      "sha256": "feaf72ee78ff0cec76c98d3d85a7df69e3e55a4d2c021598e76e527eaf333434",
+      "bytes": 1566
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-quotes-toscrape-js.r3.json",
+      "sha256": "ab22cd44ba7af51f73172b1e0768607191b54f14c0587d9853249bfb51ccf889",
+      "bytes": 3287
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-quotes-toscrape-js.r3.md",
+      "sha256": "feaf72ee78ff0cec76c98d3d85a7df69e3e55a4d2c021598e76e527eaf333434",
+      "bytes": 1566
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-react-thinking-in-react.r1.json",
+      "sha256": "0524f829f5e9b35f9c2c15282e88c4c02161786cf0375206f60f177cff54c09c",
+      "bytes": 23745
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-react-thinking-in-react.r1.md",
+      "sha256": "b653be31bc026207788cd219346204770c31e1284a571dad92db9998e9c1ab2d",
+      "bytes": 21305
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-react-thinking-in-react.r2.json",
+      "sha256": "c7d8b2c73300978d7d0d61482a86534513b8af6918198b2fce4d137740a497e0",
+      "bytes": 23744
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-react-thinking-in-react.r2.md",
+      "sha256": "b653be31bc026207788cd219346204770c31e1284a571dad92db9998e9c1ab2d",
+      "bytes": 21305
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-react-thinking-in-react.r3.json",
+      "sha256": "78ef5fdf987839b0c70d8789ded209149334f3c91c03fd97cad5e97848273b3f",
+      "bytes": 23744
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-react-thinking-in-react.r3.md",
+      "sha256": "b653be31bc026207788cd219346204770c31e1284a571dad92db9998e9c1ab2d",
+      "bytes": 21305
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-rfc9110-http-semantics.r1.json",
+      "sha256": "179a323ae14e072a94d90a6bcaca2b084e7d6e08cd2fa9c16af567bb3c82c9c3",
+      "bytes": 764574
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-rfc9110-http-semantics.r1.md",
+      "sha256": "acf2702244abdf4bb4344783ed54998ea4e36caf225725d35b674057d204a8e9",
+      "bytes": 752999
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-rfc9110-http-semantics.r2.json",
+      "sha256": "cc5019b51771eb29dbaa920ac56667ef000d69836e1b21350a0a694dd5f15cbc",
+      "bytes": 764573
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-rfc9110-http-semantics.r2.md",
+      "sha256": "acf2702244abdf4bb4344783ed54998ea4e36caf225725d35b674057d204a8e9",
+      "bytes": 752999
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-rfc9110-http-semantics.r3.json",
+      "sha256": "7c83e6b3ce22d078ac5b0336da398c69b163f0697de47e9bb7c132c1a12d6038",
+      "bytes": 764573
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-rfc9110-http-semantics.r3.md",
+      "sha256": "acf2702244abdf4bb4344783ed54998ea4e36caf225725d35b674057d204a8e9",
+      "bytes": 752999
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-rfc9309-pdf.r1.json",
+      "sha256": "7f5aa55eff55cf19c8e0377a83ef45870222b54de14f8c4c6ee5a0b1415e6379",
+      "bytes": 25108
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-rfc9309-pdf.r1.md",
+      "sha256": "7776759fef86a4ebf133f6473d0b04ee77f6d8427f4d616c12d5192cc71e8e61",
+      "bytes": 22421
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-rfc9309-pdf.r2.json",
+      "sha256": "1e85e11a130405f2a603a771c011c759d04131ac2834314428706ff6df04bceb",
+      "bytes": 25105
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-rfc9309-pdf.r2.md",
+      "sha256": "7776759fef86a4ebf133f6473d0b04ee77f6d8427f4d616c12d5192cc71e8e61",
+      "bytes": 22421
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-rfc9309-pdf.r3.json",
+      "sha256": "fb5581516598125cd362ca60bef7e91a9e876c88e7a6a9a009acc2437a2ed4df",
+      "bytes": 25108
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-rfc9309-pdf.r3.md",
+      "sha256": "7776759fef86a4ebf133f6473d0b04ee77f6d8427f4d616c12d5192cc71e8e61",
+      "bytes": 22421
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-rfc9309-txt.r1.json",
+      "sha256": "86a307055d44c749553f505ce3ea42ae844cafefbb1655631db4576c0c32d5d3",
+      "bytes": 28193
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-rfc9309-txt.r1.md",
+      "sha256": "c28bd3fa4eab0eeb24966de5d71cded75c40485613347978f5359e8212aa2e53",
+      "bytes": 25253
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-rfc9309-txt.r2.json",
+      "sha256": "48865142daea387af370cea721c434ab72f2aac5945b7ab7ba590a6f8b5289af",
+      "bytes": 28193
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-rfc9309-txt.r2.md",
+      "sha256": "c28bd3fa4eab0eeb24966de5d71cded75c40485613347978f5359e8212aa2e53",
+      "bytes": 25253
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-rfc9309-txt.r3.json",
+      "sha256": "a65a9e63c2c106dd4a562f44dbc295123dd0dd9aef55170214064e4ea4116a94",
+      "bytes": 28195
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-rfc9309-txt.r3.md",
+      "sha256": "c28bd3fa4eab0eeb24966de5d71cded75c40485613347978f5359e8212aa2e53",
+      "bytes": 25253
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-rust-blog-1-0.r1.json",
+      "sha256": "6d91e9d2dd97e9d0d1e364f45f004336de3ad351485428b758c8ae3763a8de27",
+      "bytes": 11217
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-rust-blog-1-0.r1.md",
+      "sha256": "f784f734b0a3cf073bd4661df4c9508f81e386be3d4074f48b0d54afa9a3830e",
+      "bytes": 9204
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-rust-blog-1-0.r2.json",
+      "sha256": "a0afcb7210b7559931510072052e345ee491fd6e2856d1ba5429af754c2ba5af",
+      "bytes": 11216
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-rust-blog-1-0.r2.md",
+      "sha256": "f784f734b0a3cf073bd4661df4c9508f81e386be3d4074f48b0d54afa9a3830e",
+      "bytes": 9204
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-rust-blog-1-0.r3.json",
+      "sha256": "c2fc82f1ffbb26ef1c49a241b3e95844043d1fe7d4c553689f58a2f6f5cc3c0c",
+      "bytes": 11216
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-rust-blog-1-0.r3.md",
+      "sha256": "f784f734b0a3cf073bd4661df4c9508f81e386be3d4074f48b0d54afa9a3830e",
+      "bytes": 9204
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-rust-book-control-flow.r1.json",
+      "sha256": "7d1f55c0462f9216065ff1ee2c6eff999558c2c27063326a665919d70ae7ebff",
+      "bytes": 34666
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-rust-book-control-flow.r1.md",
+      "sha256": "8b64266e04d1ba0619864274ebab9c6372187b825e57809f18e746393bd490a5",
+      "bytes": 32242
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-rust-book-control-flow.r2.json",
+      "sha256": "99fe1cb755d2eb70d0b9bd54a6ca56e32e328c44ae0aeb78d670ca65e3719a68",
+      "bytes": 34663
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-rust-book-control-flow.r2.md",
+      "sha256": "8b64266e04d1ba0619864274ebab9c6372187b825e57809f18e746393bd490a5",
+      "bytes": 32242
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-rust-book-control-flow.r3.json",
+      "sha256": "3b51f00b766921f76fe81ecb24682acec1d66e8a5fb2dbd0ec6f033762a03f8b",
+      "bytes": 34665
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-rust-book-control-flow.r3.md",
+      "sha256": "8b64266e04d1ba0619864274ebab9c6372187b825e57809f18e746393bd490a5",
+      "bytes": 32242
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-wikipedia-chemical-elements.r1.json",
+      "sha256": "05c5397a6414996a9859a3bfa0be36a535f54b196e3725c85dfd898ddd5f276a",
+      "bytes": 100414
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-wikipedia-chemical-elements.r1.md",
+      "sha256": "ebdb199b59acc4c6634c951e45f4282abaee8f37969647295442d7b62dec9041",
+      "bytes": 96448
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-wikipedia-chemical-elements.r2.json",
+      "sha256": "8f673c444d9cb2126368f759afdb6c75d49129ed37ddb6f796550d0891688b1f",
+      "bytes": 100413
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-wikipedia-chemical-elements.r2.md",
+      "sha256": "ebdb199b59acc4c6634c951e45f4282abaee8f37969647295442d7b62dec9041",
+      "bytes": 96448
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-wikipedia-chemical-elements.r3.json",
+      "sha256": "2c980994903831957b73bda1939caca7042bbfd36feae946c71f9f4b52c5b16d",
+      "bytes": 100413
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-wikipedia-chemical-elements.r3.md",
+      "sha256": "ebdb199b59acc4c6634c951e45f4282abaee8f37969647295442d7b62dec9041",
+      "bytes": 96448
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-wikipedia-markdown.r1.json",
+      "sha256": "5d56ba123596f21b552cc7142fc7fe27d311b11035953c9474e68c6fec69768c",
+      "bytes": 59321
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-wikipedia-markdown.r1.md",
+      "sha256": "fd0d1cf7a7bfb9715ebcd98890c7f0c57e83fcd560764e6c5411ddcea3c76722",
+      "bytes": 56424
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-wikipedia-markdown.r2.json",
+      "sha256": "c3e79a5f29e244d924e0b211256c92bc9668a71cfb0ee9510a43993cb19a8679",
+      "bytes": 59327
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-wikipedia-markdown.r2.md",
+      "sha256": "fd0d1cf7a7bfb9715ebcd98890c7f0c57e83fcd560764e6c5411ddcea3c76722",
+      "bytes": 56424
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-wikipedia-markdown.r3.json",
+      "sha256": "2ebe41399b072736e9be4415607ee7b48378421fe70b9cc4517ad24f12aa8fcc",
+      "bytes": 59327
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-wikipedia-markdown.r3.md",
+      "sha256": "fd0d1cf7a7bfb9715ebcd98890c7f0c57e83fcd560764e6c5411ddcea3c76722",
+      "bytes": 56424
+    },
+    {
+      "path": "raw/fetchkeep-http/live-arxiv-attention-pdf.r1.json",
+      "sha256": "b2e1d45229e1d89592069f5959d36fc397643c9605d04764f33e52b111e6b4cd",
+      "bytes": 42459
+    },
+    {
+      "path": "raw/fetchkeep-http/live-arxiv-attention-pdf.r1.md",
+      "sha256": "27b28802e1082323857907127201e7ac6b2ef4add4eca4b01c091d0d368399d8",
+      "bytes": 40027
+    },
+    {
+      "path": "raw/fetchkeep-http/live-arxiv-attention-pdf.r2.json",
+      "sha256": "ef2251f5e45f2ba625e6d770f9878aaebf8c57e7b6695fe797556316d7ece17d",
+      "bytes": 42457
+    },
+    {
+      "path": "raw/fetchkeep-http/live-arxiv-attention-pdf.r2.md",
+      "sha256": "27b28802e1082323857907127201e7ac6b2ef4add4eca4b01c091d0d368399d8",
+      "bytes": 40027
+    },
+    {
+      "path": "raw/fetchkeep-http/live-arxiv-attention-pdf.r3.json",
+      "sha256": "7614608fb2e969c2c0aabf3a34fe9b6c26ab19e6437d3b5a37fa9737cde4b31b",
+      "bytes": 42457
+    },
+    {
+      "path": "raw/fetchkeep-http/live-arxiv-attention-pdf.r3.md",
+      "sha256": "27b28802e1082323857907127201e7ac6b2ef4add4eca4b01c091d0d368399d8",
+      "bytes": 40027
+    },
+    {
+      "path": "raw/fetchkeep-http/live-books-toscrape.r1.json",
+      "sha256": "c4747e78bd399c0b525dcdef7b04d0ec2f17dcbc8615d47b1ef56f2f5039e27b",
+      "bytes": 10437
+    },
+    {
+      "path": "raw/fetchkeep-http/live-books-toscrape.r1.md",
+      "sha256": "69e336f9648e819d7d3edddd7bf338e4cc61a73e787e5f70cf4fcfa7f011a796",
+      "bytes": 8606
+    },
+    {
+      "path": "raw/fetchkeep-http/live-books-toscrape.r2.json",
+      "sha256": "424e1b3d7cf0bf2f51ecf2254c04c395909e39ab6316d0cb92c6c24dc3f130c7",
+      "bytes": 10436
+    },
+    {
+      "path": "raw/fetchkeep-http/live-books-toscrape.r2.md",
+      "sha256": "69e336f9648e819d7d3edddd7bf338e4cc61a73e787e5f70cf4fcfa7f011a796",
+      "bytes": 8606
+    },
+    {
+      "path": "raw/fetchkeep-http/live-books-toscrape.r3.json",
+      "sha256": "b86dd7976dfbc5569d4be6c2c1a2704a69fd9f7496d7d470444430d504b7aeef",
+      "bytes": 10436
+    },
+    {
+      "path": "raw/fetchkeep-http/live-books-toscrape.r3.md",
+      "sha256": "69e336f9648e819d7d3edddd7bf338e4cc61a73e787e5f70cf4fcfa7f011a796",
+      "bytes": 8606
+    },
+    {
+      "path": "raw/fetchkeep-http/live-crates-io-serde.r1.json",
+      "sha256": "b9c9ddcc00109937025974cff62bf9ca854c9e5048c3e4f5b377c7ae6e4ee787",
+      "bytes": 1643
+    },
+    {
+      "path": "raw/fetchkeep-http/live-crates-io-serde.r1.md",
+      "sha256": "785629d14d887acb72f00e4aac0a627ec1918206728fbfbcd86a88a640f850eb",
+      "bytes": 34
+    },
+    {
+      "path": "raw/fetchkeep-http/live-crates-io-serde.r2.json",
+      "sha256": "1d820595b7d2d4473032d6b8416027e89589c32cfd06d7d72ab3c03855f25647",
+      "bytes": 1645
+    },
+    {
+      "path": "raw/fetchkeep-http/live-crates-io-serde.r2.md",
+      "sha256": "785629d14d887acb72f00e4aac0a627ec1918206728fbfbcd86a88a640f850eb",
+      "bytes": 34
+    },
+    {
+      "path": "raw/fetchkeep-http/live-crates-io-serde.r3.json",
+      "sha256": "28cde592b524910f7c2811e5b004b77296b4e0fa0bd8f710c27653e80e2b4587",
+      "bytes": 1643
+    },
+    {
+      "path": "raw/fetchkeep-http/live-crates-io-serde.r3.md",
+      "sha256": "785629d14d887acb72f00e4aac0a627ec1918206728fbfbcd86a88a640f850eb",
+      "bytes": 34
+    },
+    {
+      "path": "raw/fetchkeep-http/live-example-com.r1.json",
+      "sha256": "e49731fb43e0f69987e922094b2a071ad1f1ce9736e86cb6a47c4b10247e03ae",
+      "bytes": 1778
+    },
+    {
+      "path": "raw/fetchkeep-http/live-example-com.r1.md",
+      "sha256": "6087cde38e747cc5f6c099d068a22be44843c3a461588ed9c64b25df275ccf8c",
+      "bytes": 227
+    },
+    {
+      "path": "raw/fetchkeep-http/live-example-com.r2.json",
+      "sha256": "201cad13762123d80810daeabb3d0339b8baa27bff207b5878b95032b20a755a",
+      "bytes": 1778
+    },
+    {
+      "path": "raw/fetchkeep-http/live-example-com.r2.md",
+      "sha256": "6087cde38e747cc5f6c099d068a22be44843c3a461588ed9c64b25df275ccf8c",
+      "bytes": 227
+    },
+    {
+      "path": "raw/fetchkeep-http/live-example-com.r3.json",
+      "sha256": "1f9c2729da4be1f4cc78d669bf48a014ba57c56e844c782fd8f087d2452ee208",
+      "bytes": 1772
+    },
+    {
+      "path": "raw/fetchkeep-http/live-example-com.r3.md",
+      "sha256": "6087cde38e747cc5f6c099d068a22be44843c3a461588ed9c64b25df275ccf8c",
+      "bytes": 227
+    },
+    {
+      "path": "raw/fetchkeep-http/live-github-flask-readme.r1.json",
+      "sha256": "8b4f3fd4a9f4e54cc8ac66c0aaa6f0aafabf4015f63af0995f41b86f8c20b503",
+      "bytes": 8322
+    },
+    {
+      "path": "raw/fetchkeep-http/live-github-flask-readme.r1.md",
+      "sha256": "67fa8a72ebc2fae17cdd33ab0b143f519c749065d99217b042436725975334a9",
+      "bytes": 6413
+    },
+    {
+      "path": "raw/fetchkeep-http/live-github-flask-readme.r2.json",
+      "sha256": "ced4504353d7d110d7591904c04042f6e8a261c84f18b3cd9ab4c20e2f416175",
+      "bytes": 8321
+    },
+    {
+      "path": "raw/fetchkeep-http/live-github-flask-readme.r2.md",
+      "sha256": "67fa8a72ebc2fae17cdd33ab0b143f519c749065d99217b042436725975334a9",
+      "bytes": 6413
+    },
+    {
+      "path": "raw/fetchkeep-http/live-github-flask-readme.r3.json",
+      "sha256": "1c5c39a19513e1ea5b071e3c053d51b94fea0a73cceda255f647e930daef68a8",
+      "bytes": 8321
+    },
+    {
+      "path": "raw/fetchkeep-http/live-github-flask-readme.r3.md",
+      "sha256": "67fa8a72ebc2fae17cdd33ab0b143f519c749065d99217b042436725975334a9",
+      "bytes": 6413
+    },
+    {
+      "path": "raw/fetchkeep-http/live-go-effective-go.r1.json",
+      "sha256": "a4600ccc378eb794ad19718de2f24c7bc23195b1c276aee9aa6cacfe10161501",
+      "bytes": 106804
+    },
+    {
+      "path": "raw/fetchkeep-http/live-go-effective-go.r1.md",
+      "sha256": "5d0c2eb8bd6fd787c70632f4b9992fb0720f79201ce39634430fbffd7c3770f4",
+      "bytes": 102671
+    },
+    {
+      "path": "raw/fetchkeep-http/live-go-effective-go.r2.json",
+      "sha256": "3dc82b32f1e541fb60b87079dcca530912a5ab68db5b1e95b5c81b68e5a44de5",
+      "bytes": 106806
+    },
+    {
+      "path": "raw/fetchkeep-http/live-go-effective-go.r2.md",
+      "sha256": "5d0c2eb8bd6fd787c70632f4b9992fb0720f79201ce39634430fbffd7c3770f4",
+      "bytes": 102671
+    },
+    {
+      "path": "raw/fetchkeep-http/live-go-effective-go.r3.json",
+      "sha256": "3cd2d2f4d04ab21ecf6821f79dafb7840a26a04dd36852c7f2fbe49ce7dbdc23",
+      "bytes": 106805
+    },
+    {
+      "path": "raw/fetchkeep-http/live-go-effective-go.r3.md",
+      "sha256": "5d0c2eb8bd6fd787c70632f4b9992fb0720f79201ce39634430fbffd7c3770f4",
+      "bytes": 102671
+    },
+    {
+      "path": "raw/fetchkeep-http/live-hn-dropbox-thread.r1.json",
+      "sha256": "88e5e0c614cbc89e18ee7042f433b3ed03015fdd8f949eabf8cd7efbecb585c2",
+      "bytes": 54669
+    },
+    {
+      "path": "raw/fetchkeep-http/live-hn-dropbox-thread.r1.md",
+      "sha256": "b5f23436b5b0155ccb1ad06457ba636a14ad7872f237a625bce8650a6d25ad0d",
+      "bytes": 50917
+    },
+    {
+      "path": "raw/fetchkeep-http/live-hn-dropbox-thread.r2.json",
+      "sha256": "e0c8d83734113cb0fbbdc4468359d4b51971033eba39aa8c07522e851dc671c9",
+      "bytes": 54668
+    },
+    {
+      "path": "raw/fetchkeep-http/live-hn-dropbox-thread.r2.md",
+      "sha256": "b5f23436b5b0155ccb1ad06457ba636a14ad7872f237a625bce8650a6d25ad0d",
+      "bytes": 50917
+    },
+    {
+      "path": "raw/fetchkeep-http/live-hn-dropbox-thread.r3.json",
+      "sha256": "b8d73b94618d73b09b7f2fe3cc0997901c85d4e161083eb6b7b827c61ad20d10",
+      "bytes": 54670
+    },
+    {
+      "path": "raw/fetchkeep-http/live-hn-dropbox-thread.r3.md",
+      "sha256": "b5f23436b5b0155ccb1ad06457ba636a14ad7872f237a625bce8650a6d25ad0d",
+      "bytes": 50917
+    },
+    {
+      "path": "raw/fetchkeep-http/live-hn-guidelines.r1.json",
+      "sha256": "f4b4eff03532d6624f7a8f2efd13eb8331941d20735ded085f7cddd12253aa85",
+      "bytes": 7102
+    },
+    {
+      "path": "raw/fetchkeep-http/live-hn-guidelines.r1.md",
+      "sha256": "7e07e2ce56e64d19a5cae1c4d1b8ff1cff6f4ff31d46554b9d638a70399fb551",
+      "bytes": 5422
+    },
+    {
+      "path": "raw/fetchkeep-http/live-hn-guidelines.r2.json",
+      "sha256": "f7a5201a36001fda374ea6ee82581673d8ac30a5240eb495654d245e7585f542",
+      "bytes": 7102
+    },
+    {
+      "path": "raw/fetchkeep-http/live-hn-guidelines.r2.md",
+      "sha256": "7e07e2ce56e64d19a5cae1c4d1b8ff1cff6f4ff31d46554b9d638a70399fb551",
+      "bytes": 5422
+    },
+    {
+      "path": "raw/fetchkeep-http/live-hn-guidelines.r3.json",
+      "sha256": "9261f66b11eaec6e216c19f8fd145bb87f1c4d39c3d85c1f2bccc8b92129286e",
+      "bytes": 7100
+    },
+    {
+      "path": "raw/fetchkeep-http/live-hn-guidelines.r3.md",
+      "sha256": "7e07e2ce56e64d19a5cae1c4d1b8ff1cff6f4ff31d46554b9d638a70399fb551",
+      "bytes": 5422
+    },
+    {
+      "path": "raw/fetchkeep-http/live-iana-http-status-codes.r1.json",
+      "sha256": "24fa046c0b9d60da6f1992c13994c3ffa8ea199a2c8c3a8e18d3895f86e39109",
+      "bytes": 9535
+    },
+    {
+      "path": "raw/fetchkeep-http/live-iana-http-status-codes.r1.md",
+      "sha256": "dc00669812e613a4ce9c5fd143382bfffa27c30cceef07a2df548aabdb5d9b36",
+      "bytes": 7561
+    },
+    {
+      "path": "raw/fetchkeep-http/live-iana-http-status-codes.r2.json",
+      "sha256": "4f0f1444eca471a2971b80aa351dd833ada157c3dfb73aa55ca76b3bf4e7ac02",
+      "bytes": 9533
+    },
+    {
+      "path": "raw/fetchkeep-http/live-iana-http-status-codes.r2.md",
+      "sha256": "dc00669812e613a4ce9c5fd143382bfffa27c30cceef07a2df548aabdb5d9b36",
+      "bytes": 7561
+    },
+    {
+      "path": "raw/fetchkeep-http/live-iana-http-status-codes.r3.json",
+      "sha256": "adfb1dec706d0f38112ac684310e141556dedf35cd134b9eef7fd655fc92e7f7",
+      "bytes": 9532
+    },
+    {
+      "path": "raw/fetchkeep-http/live-iana-http-status-codes.r3.md",
+      "sha256": "dc00669812e613a4ce9c5fd143382bfffa27c30cceef07a2df548aabdb5d9b36",
+      "bytes": 7561
+    },
+    {
+      "path": "raw/fetchkeep-http/live-mdn-array-map.r1.json",
+      "sha256": "52ceb726e0b5992ea00f45a5d4cfe837b2ccb3af25ceb9b38e14976ef8b214a4",
+      "bytes": 15769
+    },
+    {
+      "path": "raw/fetchkeep-http/live-mdn-array-map.r1.md",
+      "sha256": "4799b06e6be81b4ff41e615dfcc15eaabc17a80b48d4d2effadc72bee1a03c46",
+      "bytes": 13579
+    },
+    {
+      "path": "raw/fetchkeep-http/live-mdn-array-map.r2.json",
+      "sha256": "85aa1037376adb8c1d6a1f5a7807209f6d43b388ea31eca2e11c3ada6e86d56d",
+      "bytes": 15771
+    },
+    {
+      "path": "raw/fetchkeep-http/live-mdn-array-map.r2.md",
+      "sha256": "4799b06e6be81b4ff41e615dfcc15eaabc17a80b48d4d2effadc72bee1a03c46",
+      "bytes": 13579
+    },
+    {
+      "path": "raw/fetchkeep-http/live-mdn-array-map.r3.json",
+      "sha256": "9f53c8f69350f6a10de7e3d87cc30abda2e9dcfa5fba1b859e85fdba069d0876",
+      "bytes": 15768
+    },
+    {
+      "path": "raw/fetchkeep-http/live-mdn-array-map.r3.md",
+      "sha256": "4799b06e6be81b4ff41e615dfcc15eaabc17a80b48d4d2effadc72bee1a03c46",
+      "bytes": 13579
+    },
+    {
+      "path": "raw/fetchkeep-http/live-nodejs-path.r1.json",
+      "sha256": "aab67e529d67a0f0b507153ba1864d74ec6e072a386b283a550847b40ff2a866",
+      "bytes": 23342
+    },
+    {
+      "path": "raw/fetchkeep-http/live-nodejs-path.r1.md",
+      "sha256": "c65139cf6a33c19bfe4a75790bafa1d07f88e65729879b9e7897631d23103ff2",
+      "bytes": 20962
+    },
+    {
+      "path": "raw/fetchkeep-http/live-nodejs-path.r2.json",
+      "sha256": "bb7651f4a302c29662c091efa773a06be93786b082ddabc8e290d06db16d301a",
+      "bytes": 23343
+    },
+    {
+      "path": "raw/fetchkeep-http/live-nodejs-path.r2.md",
+      "sha256": "c65139cf6a33c19bfe4a75790bafa1d07f88e65729879b9e7897631d23103ff2",
+      "bytes": 20962
+    },
+    {
+      "path": "raw/fetchkeep-http/live-nodejs-path.r3.json",
+      "sha256": "24edddd5417a386756b6e83f70476ed525aab6e0e1e5f25d666f520455f93a3e",
+      "bytes": 23341
+    },
+    {
+      "path": "raw/fetchkeep-http/live-nodejs-path.r3.md",
+      "sha256": "c65139cf6a33c19bfe4a75790bafa1d07f88e65729879b9e7897631d23103ff2",
+      "bytes": 20962
+    },
+    {
+      "path": "raw/fetchkeep-http/live-paulgraham-great-work.r1.json",
+      "sha256": "2f992e1390eea9146290683eb55bf4e6e65e9550609fa1a42daaedc681366d03",
+      "bytes": 74988
+    },
+    {
+      "path": "raw/fetchkeep-http/live-paulgraham-great-work.r1.md",
+      "sha256": "a164becd91bbab1e3fccbca52d0a608d72e2440197db9402e13f9ae4f1e5f5f4",
+      "bytes": 73195
+    },
+    {
+      "path": "raw/fetchkeep-http/live-paulgraham-great-work.r2.json",
+      "sha256": "19f1c652f895b90e3cc9675ebda7f472561f932c89201a464ab57ed7cd3794c0",
+      "bytes": 74987
+    },
+    {
+      "path": "raw/fetchkeep-http/live-paulgraham-great-work.r2.md",
+      "sha256": "a164becd91bbab1e3fccbca52d0a608d72e2440197db9402e13f9ae4f1e5f5f4",
+      "bytes": 73195
+    },
+    {
+      "path": "raw/fetchkeep-http/live-paulgraham-great-work.r3.json",
+      "sha256": "22e68f77d2f83048091ab7e2155bc804246f107a5903214b02938f54c6ab9661",
+      "bytes": 74985
+    },
+    {
+      "path": "raw/fetchkeep-http/live-paulgraham-great-work.r3.md",
+      "sha256": "a164becd91bbab1e3fccbca52d0a608d72e2440197db9402e13f9ae4f1e5f5f4",
+      "bytes": 73195
+    },
+    {
+      "path": "raw/fetchkeep-http/live-python-json.r1.json",
+      "sha256": "16683a97fc946cd0e39034522f69122cbd2f86dbf1b9b8ed3d9b566b469d29cc",
+      "bytes": 36005
+    },
+    {
+      "path": "raw/fetchkeep-http/live-python-json.r1.md",
+      "sha256": "309a055568b50d2852e85cabc96d30a6f753369c33790cfccbe583310a36935a",
+      "bytes": 33356
+    },
+    {
+      "path": "raw/fetchkeep-http/live-python-json.r2.json",
+      "sha256": "ecfd7363839a141c683e152e9dec4fc4ca161dac379cd3f4cf0463acc5287f9a",
+      "bytes": 36001
+    },
+    {
+      "path": "raw/fetchkeep-http/live-python-json.r2.md",
+      "sha256": "309a055568b50d2852e85cabc96d30a6f753369c33790cfccbe583310a36935a",
+      "bytes": 33356
+    },
+    {
+      "path": "raw/fetchkeep-http/live-python-json.r3.json",
+      "sha256": "68756731fe1e6939a1ffbf1a48529260b17116cd66f9f3618c56107e37d3123a",
+      "bytes": 36004
+    },
+    {
+      "path": "raw/fetchkeep-http/live-python-json.r3.md",
+      "sha256": "309a055568b50d2852e85cabc96d30a6f753369c33790cfccbe583310a36935a",
+      "bytes": 33356
+    },
+    {
+      "path": "raw/fetchkeep-http/live-python-library-index.r1.json",
+      "sha256": "a7c85be9e24d0ef82a0185a80d55ef99f438fb5035c1042f8208aad549b90c33",
+      "bytes": 30886
+    },
+    {
+      "path": "raw/fetchkeep-http/live-python-library-index.r1.md",
+      "sha256": "6e24043a4e56140df5ab4f095f96c14afa1d538a06b872f5e264df93ecbfa8d1",
+      "bytes": 28951
+    },
+    {
+      "path": "raw/fetchkeep-http/live-python-library-index.r2.json",
+      "sha256": "e6b2170fdd30e5ee05cc216818b12a7219925c9be279e63760278a62dae2773f",
+      "bytes": 30887
+    },
+    {
+      "path": "raw/fetchkeep-http/live-python-library-index.r2.md",
+      "sha256": "6e24043a4e56140df5ab4f095f96c14afa1d538a06b872f5e264df93ecbfa8d1",
+      "bytes": 28951
+    },
+    {
+      "path": "raw/fetchkeep-http/live-python-library-index.r3.json",
+      "sha256": "139f42fb33110c504bc205d4cebca50322aa57305eeef40e8840e88a6e17ac7e",
+      "bytes": 30887
+    },
+    {
+      "path": "raw/fetchkeep-http/live-python-library-index.r3.md",
+      "sha256": "6e24043a4e56140df5ab4f095f96c14afa1d538a06b872f5e264df93ecbfa8d1",
+      "bytes": 28951
+    },
+    {
+      "path": "raw/fetchkeep-http/live-quotes-toscrape-js-delayed.r1.json",
+      "sha256": "6240cf702fa60d7b56638ed58328a94f7a768ade3c08d7f54fe9e0b42b8b7a4a",
+      "bytes": 1703
+    },
+    {
+      "path": "raw/fetchkeep-http/live-quotes-toscrape-js-delayed.r1.md",
+      "sha256": "d7c1a70dbfa0b0cdda9322886c337d0a704c573a9367720ba239b2043098dbc5",
+      "bytes": 94
+    },
+    {
+      "path": "raw/fetchkeep-http/live-quotes-toscrape-js-delayed.r2.json",
+      "sha256": "664a879d262e36775f516356030bfa36a197f3a30d92bfe02acfae9c9673d6c9",
+      "bytes": 1701
+    },
+    {
+      "path": "raw/fetchkeep-http/live-quotes-toscrape-js-delayed.r2.md",
+      "sha256": "d7c1a70dbfa0b0cdda9322886c337d0a704c573a9367720ba239b2043098dbc5",
+      "bytes": 94
+    },
+    {
+      "path": "raw/fetchkeep-http/live-quotes-toscrape-js-delayed.r3.json",
+      "sha256": "1dc02ba7c785267682b2d67d4ebce3e02e9f44a849c3553c68b5e36e9156c1bd",
+      "bytes": 1699
+    },
+    {
+      "path": "raw/fetchkeep-http/live-quotes-toscrape-js-delayed.r3.md",
+      "sha256": "d7c1a70dbfa0b0cdda9322886c337d0a704c573a9367720ba239b2043098dbc5",
+      "bytes": 94
+    },
+    {
+      "path": "raw/fetchkeep-http/live-quotes-toscrape-js.r1.json",
+      "sha256": "9567b0597e9e1cfe90a0874c40ccb29242c87bf022f9236464770167977f60d3",
+      "bytes": 1676
+    },
+    {
+      "path": "raw/fetchkeep-http/live-quotes-toscrape-js.r1.md",
+      "sha256": "d7c1a70dbfa0b0cdda9322886c337d0a704c573a9367720ba239b2043098dbc5",
+      "bytes": 94
+    },
+    {
+      "path": "raw/fetchkeep-http/live-quotes-toscrape-js.r2.json",
+      "sha256": "74ab5485b0ff1f4393ae4c483aa76aba80cc59a37063e430419ac9fe707e11e9",
+      "bytes": 1677
+    },
+    {
+      "path": "raw/fetchkeep-http/live-quotes-toscrape-js.r2.md",
+      "sha256": "d7c1a70dbfa0b0cdda9322886c337d0a704c573a9367720ba239b2043098dbc5",
+      "bytes": 94
+    },
+    {
+      "path": "raw/fetchkeep-http/live-quotes-toscrape-js.r3.json",
+      "sha256": "3a6c783d5cacffde90961f88363ba69f9ce7c1ba8a0478b292c46e83ce7ad683",
+      "bytes": 1676
+    },
+    {
+      "path": "raw/fetchkeep-http/live-quotes-toscrape-js.r3.md",
+      "sha256": "d7c1a70dbfa0b0cdda9322886c337d0a704c573a9367720ba239b2043098dbc5",
+      "bytes": 94
+    },
+    {
+      "path": "raw/fetchkeep-http/live-react-thinking-in-react.r1.json",
+      "sha256": "f00b068582d248b74be44d60fbc69e7a10a5948861e0a965938d72cb32ae040d",
+      "bytes": 23650
+    },
+    {
+      "path": "raw/fetchkeep-http/live-react-thinking-in-react.r1.md",
+      "sha256": "b653be31bc026207788cd219346204770c31e1284a571dad92db9998e9c1ab2d",
+      "bytes": 21305
+    },
+    {
+      "path": "raw/fetchkeep-http/live-react-thinking-in-react.r2.json",
+      "sha256": "5de4926c31141d8e7c4d6260b47a44fdc007104f4b5502cc32650fa258c63533",
+      "bytes": 23647
+    },
+    {
+      "path": "raw/fetchkeep-http/live-react-thinking-in-react.r2.md",
+      "sha256": "b653be31bc026207788cd219346204770c31e1284a571dad92db9998e9c1ab2d",
+      "bytes": 21305
+    },
+    {
+      "path": "raw/fetchkeep-http/live-react-thinking-in-react.r3.json",
+      "sha256": "f3a01b74056fb57e896403633b0213145b86a08ff72b2111e34fcdca1d0ef8cd",
+      "bytes": 23649
+    },
+    {
+      "path": "raw/fetchkeep-http/live-react-thinking-in-react.r3.md",
+      "sha256": "b653be31bc026207788cd219346204770c31e1284a571dad92db9998e9c1ab2d",
+      "bytes": 21305
+    },
+    {
+      "path": "raw/fetchkeep-http/live-rfc9110-http-semantics.r1.json",
+      "sha256": "2fadb6b2e8de687564c11e97106dab940871631ae6706d3cd0787ae0c6d3c2a7",
+      "bytes": 763683
+    },
+    {
+      "path": "raw/fetchkeep-http/live-rfc9110-http-semantics.r1.md",
+      "sha256": "adb708f940243f554422c111db72f50759f845ebda478c2fd6577056ec0a6ef7",
+      "bytes": 752216
+    },
+    {
+      "path": "raw/fetchkeep-http/live-rfc9110-http-semantics.r2.json",
+      "sha256": "4ec7f68f17b2ae0aaef295befbcb33e251027fce90afc53fcd60901e8eac9192",
+      "bytes": 763683
+    },
+    {
+      "path": "raw/fetchkeep-http/live-rfc9110-http-semantics.r2.md",
+      "sha256": "adb708f940243f554422c111db72f50759f845ebda478c2fd6577056ec0a6ef7",
+      "bytes": 752216
+    },
+    {
+      "path": "raw/fetchkeep-http/live-rfc9110-http-semantics.r3.json",
+      "sha256": "d9a13735ba57c51b08b9ab141b47cef20e8bb4edc2a5dfd13f80031427ba303c",
+      "bytes": 763681
+    },
+    {
+      "path": "raw/fetchkeep-http/live-rfc9110-http-semantics.r3.md",
+      "sha256": "adb708f940243f554422c111db72f50759f845ebda478c2fd6577056ec0a6ef7",
+      "bytes": 752216
+    },
+    {
+      "path": "raw/fetchkeep-http/live-rfc9309-pdf.r1.json",
+      "sha256": "2f9220d986b059cd6bd75946f8446663859cb4fb0b715ffcb2a2ba050361c737",
+      "bytes": 24708
+    },
+    {
+      "path": "raw/fetchkeep-http/live-rfc9309-pdf.r1.md",
+      "sha256": "7776759fef86a4ebf133f6473d0b04ee77f6d8427f4d616c12d5192cc71e8e61",
+      "bytes": 22421
+    },
+    {
+      "path": "raw/fetchkeep-http/live-rfc9309-pdf.r2.json",
+      "sha256": "a57d8affe66b64c425f4fea46d63349e45b1f361421ec5188914508b79b08d95",
+      "bytes": 24706
+    },
+    {
+      "path": "raw/fetchkeep-http/live-rfc9309-pdf.r2.md",
+      "sha256": "7776759fef86a4ebf133f6473d0b04ee77f6d8427f4d616c12d5192cc71e8e61",
+      "bytes": 22421
+    },
+    {
+      "path": "raw/fetchkeep-http/live-rfc9309-pdf.r3.json",
+      "sha256": "98f81f7c2f9bb7527c488984d9e4841b50571bfa7619cf0fc57e3c0ac149d8be",
+      "bytes": 24706
+    },
+    {
+      "path": "raw/fetchkeep-http/live-rfc9309-pdf.r3.md",
+      "sha256": "7776759fef86a4ebf133f6473d0b04ee77f6d8427f4d616c12d5192cc71e8e61",
+      "bytes": 22421
+    },
+    {
+      "path": "raw/fetchkeep-http/live-rfc9309-txt.r1.json",
+      "sha256": "ea3ce9a5da0915a58ba1bd87411724679be2b78c17681198a2aa482e35799daf",
+      "bytes": 27805
+    },
+    {
+      "path": "raw/fetchkeep-http/live-rfc9309-txt.r1.md",
+      "sha256": "c28bd3fa4eab0eeb24966de5d71cded75c40485613347978f5359e8212aa2e53",
+      "bytes": 25253
+    },
+    {
+      "path": "raw/fetchkeep-http/live-rfc9309-txt.r2.json",
+      "sha256": "520b5469a3d06c736b1d38b778c3f1ec2fd6fca7ddc580ebb4d162c688183839",
+      "bytes": 27805
+    },
+    {
+      "path": "raw/fetchkeep-http/live-rfc9309-txt.r2.md",
+      "sha256": "c28bd3fa4eab0eeb24966de5d71cded75c40485613347978f5359e8212aa2e53",
+      "bytes": 25253
+    },
+    {
+      "path": "raw/fetchkeep-http/live-rfc9309-txt.r3.json",
+      "sha256": "0bfd6edd267308c92e4f21f230c88899f6fa941a55c2fbc3fce01964f380d958",
+      "bytes": 27807
+    },
+    {
+      "path": "raw/fetchkeep-http/live-rfc9309-txt.r3.md",
+      "sha256": "c28bd3fa4eab0eeb24966de5d71cded75c40485613347978f5359e8212aa2e53",
+      "bytes": 25253
+    },
+    {
+      "path": "raw/fetchkeep-http/live-rust-blog-1-0.r1.json",
+      "sha256": "7724e8056b53e62611bcb18eff8f617725e5dfaa7d414b76dcd5f2a8a394facc",
+      "bytes": 11121
+    },
+    {
+      "path": "raw/fetchkeep-http/live-rust-blog-1-0.r1.md",
+      "sha256": "f784f734b0a3cf073bd4661df4c9508f81e386be3d4074f48b0d54afa9a3830e",
+      "bytes": 9204
+    },
+    {
+      "path": "raw/fetchkeep-http/live-rust-blog-1-0.r2.json",
+      "sha256": "7f89448296a6df69b031b02d3031db2c334c7cfff238d7615533172d9e15289f",
+      "bytes": 11119
+    },
+    {
+      "path": "raw/fetchkeep-http/live-rust-blog-1-0.r2.md",
+      "sha256": "f784f734b0a3cf073bd4661df4c9508f81e386be3d4074f48b0d54afa9a3830e",
+      "bytes": 9204
+    },
+    {
+      "path": "raw/fetchkeep-http/live-rust-blog-1-0.r3.json",
+      "sha256": "50415f3b529c0127e2ef35f70509913688ee85202093ff8d5006d44863e7621b",
+      "bytes": 11118
+    },
+    {
+      "path": "raw/fetchkeep-http/live-rust-blog-1-0.r3.md",
+      "sha256": "f784f734b0a3cf073bd4661df4c9508f81e386be3d4074f48b0d54afa9a3830e",
+      "bytes": 9204
+    },
+    {
+      "path": "raw/fetchkeep-http/live-rust-book-control-flow.r1.json",
+      "sha256": "c9e412560dcec195cb8659bfd23a70d4f17eb2eb6f1545bb7b3d608360441095",
+      "bytes": 22234
+    },
+    {
+      "path": "raw/fetchkeep-http/live-rust-book-control-flow.r1.md",
+      "sha256": "52e30106afdc4abdbf0fdff22d8974d6a8567324f7a4a2bb6916d4073082939a",
+      "bytes": 20023
+    },
+    {
+      "path": "raw/fetchkeep-http/live-rust-book-control-flow.r2.json",
+      "sha256": "7824613fb3cccf15ea20e1359292e12f0fc131c095fe3f882029636be7b59b21",
+      "bytes": 22233
+    },
+    {
+      "path": "raw/fetchkeep-http/live-rust-book-control-flow.r2.md",
+      "sha256": "52e30106afdc4abdbf0fdff22d8974d6a8567324f7a4a2bb6916d4073082939a",
+      "bytes": 20023
+    },
+    {
+      "path": "raw/fetchkeep-http/live-rust-book-control-flow.r3.json",
+      "sha256": "6f146446f228218776e28daca2782c4c3acd72fa5aa1d11f9adbcd5b6114a083",
+      "bytes": 22235
+    },
+    {
+      "path": "raw/fetchkeep-http/live-rust-book-control-flow.r3.md",
+      "sha256": "52e30106afdc4abdbf0fdff22d8974d6a8567324f7a4a2bb6916d4073082939a",
+      "bytes": 20023
+    },
+    {
+      "path": "raw/fetchkeep-http/live-wikipedia-chemical-elements.r1.json",
+      "sha256": "5f29c679dc526b7884fd39003ec2af97282543df506f5222640bf663bf4a7892",
+      "bytes": 98675
+    },
+    {
+      "path": "raw/fetchkeep-http/live-wikipedia-chemical-elements.r1.md",
+      "sha256": "14017227705f5376202d3fa5d4f2bbab7082ba44683b4bff77bebe104afbd8f5",
+      "bytes": 95074
+    },
+    {
+      "path": "raw/fetchkeep-http/live-wikipedia-chemical-elements.r2.json",
+      "sha256": "2d8058d8be60a32cd7dac953561006d7c3468e5713fb3a3d88f11fa1ed151018",
+      "bytes": 98673
+    },
+    {
+      "path": "raw/fetchkeep-http/live-wikipedia-chemical-elements.r2.md",
+      "sha256": "14017227705f5376202d3fa5d4f2bbab7082ba44683b4bff77bebe104afbd8f5",
+      "bytes": 95074
+    },
+    {
+      "path": "raw/fetchkeep-http/live-wikipedia-chemical-elements.r3.json",
+      "sha256": "cc2bd03b96d4184135f6fbf6ae54ce334ce0da9e7a6a40c14a356af439befd29",
+      "bytes": 98673
+    },
+    {
+      "path": "raw/fetchkeep-http/live-wikipedia-chemical-elements.r3.md",
+      "sha256": "14017227705f5376202d3fa5d4f2bbab7082ba44683b4bff77bebe104afbd8f5",
+      "bytes": 95074
+    },
+    {
+      "path": "raw/fetchkeep-http/live-wikipedia-markdown.r1.json",
+      "sha256": "065f13cd7f3fe03c518344687063b110c69c564761f41865d387893b2998ccdf",
+      "bytes": 58579
+    },
+    {
+      "path": "raw/fetchkeep-http/live-wikipedia-markdown.r1.md",
+      "sha256": "29653256fe4855e9c10d9f18a47019e1b66f8151c648cc6ca21d11828ada87ab",
+      "bytes": 55868
+    },
+    {
+      "path": "raw/fetchkeep-http/live-wikipedia-markdown.r2.json",
+      "sha256": "f6e7f7bd068253462aeb6d6d4f06ce50a5a3682a1fb7ae8c4b31e0153e66a651",
+      "bytes": 58584
+    },
+    {
+      "path": "raw/fetchkeep-http/live-wikipedia-markdown.r2.md",
+      "sha256": "29653256fe4855e9c10d9f18a47019e1b66f8151c648cc6ca21d11828ada87ab",
+      "bytes": 55868
+    },
+    {
+      "path": "raw/fetchkeep-http/live-wikipedia-markdown.r3.json",
+      "sha256": "6ea53c3623ed31a86dc779ab63b14ad798c8c9db21fc2d88cb604ecfc043cbfe",
+      "bytes": 58582
+    },
+    {
+      "path": "raw/fetchkeep-http/live-wikipedia-markdown.r3.md",
+      "sha256": "29653256fe4855e9c10d9f18a47019e1b66f8151c648cc6ca21d11828ada87ab",
+      "bytes": 55868
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-arxiv-attention-pdf.r1.json",
+      "sha256": "886ba7e5f75f7ae335185ed217203f9d60cda83a15838fbb5c94ad8f445b8dcb",
+      "bytes": 42861
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-arxiv-attention-pdf.r1.md",
+      "sha256": "27b28802e1082323857907127201e7ac6b2ef4add4eca4b01c091d0d368399d8",
+      "bytes": 40027
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-arxiv-attention-pdf.r2.json",
+      "sha256": "fe6c2e40bfc7f47638368cffd032e6bc2dead8cc43faa86cb0dac60fb8ca4cbd",
+      "bytes": 42860
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-arxiv-attention-pdf.r2.md",
+      "sha256": "27b28802e1082323857907127201e7ac6b2ef4add4eca4b01c091d0d368399d8",
+      "bytes": 40027
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-arxiv-attention-pdf.r3.json",
+      "sha256": "8f7fbf610c2fa003e5cd2cb014554d0150592e5672adb62b2df4e6f83f88bdc7",
+      "bytes": 42860
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-arxiv-attention-pdf.r3.md",
+      "sha256": "27b28802e1082323857907127201e7ac6b2ef4add4eca4b01c091d0d368399d8",
+      "bytes": 40027
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-books-toscrape.r1.json",
+      "sha256": "b5ace32c1eadfc335ad9b5d3ae762684dde476888ee6b03677ed18cc7ff187cd",
+      "bytes": 10536
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-books-toscrape.r1.md",
+      "sha256": "69e336f9648e819d7d3edddd7bf338e4cc61a73e787e5f70cf4fcfa7f011a796",
+      "bytes": 8606
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-books-toscrape.r2.json",
+      "sha256": "fdd05f0b11eb6c02210763131493fcedd01153ec61af501c1ce0ca74d5b696c1",
+      "bytes": 10536
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-books-toscrape.r2.md",
+      "sha256": "69e336f9648e819d7d3edddd7bf338e4cc61a73e787e5f70cf4fcfa7f011a796",
+      "bytes": 8606
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-books-toscrape.r3.json",
+      "sha256": "74a45247d81572d30c7832fdac2dde536861281e678a0bbb4fe8160da7af8f97",
+      "bytes": 10536
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-books-toscrape.r3.md",
+      "sha256": "69e336f9648e819d7d3edddd7bf338e4cc61a73e787e5f70cf4fcfa7f011a796",
+      "bytes": 8606
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-crates-io-serde.r1.json",
+      "sha256": "3c1886a37640363f20afb43c52fa3dafc8455dd2b9e4179010ac31ed3251d235",
+      "bytes": 5840
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-crates-io-serde.r1.md",
+      "sha256": "0f6a310ab4d622ce87fd761efd943b941538b5579a18a1190c3fd32e8228e9bd",
+      "bytes": 4007
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-crates-io-serde.r2.json",
+      "sha256": "bb12767378f4bb8cdf45b6a03416df112b43ca29f4750d72e0a69e7bf09f8737",
+      "bytes": 5850
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-crates-io-serde.r2.md",
+      "sha256": "0f6a310ab4d622ce87fd761efd943b941538b5579a18a1190c3fd32e8228e9bd",
+      "bytes": 4007
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-crates-io-serde.r3.json",
+      "sha256": "e893d016c0b17c1340dba32cf2112f4de45dcd0d45a79b7d1feb52a3ef93d5bd",
+      "bytes": 3380
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-crates-io-serde.r3.md",
+      "sha256": "4d6bfd66df328b13dd977f1529a5adfbb9d4e6d1f52558fb1e26626658d95026",
+      "bytes": 1589
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-example-com.r1.json",
+      "sha256": "dbd467e71d38d0c3c32dfd472679c50322ee4138632e005b677e8184aadb2131",
+      "bytes": 3019
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-example-com.r1.md",
+      "sha256": "4e2bdc3e81e6284cd9553eb66643d7a22d5f6bd5424581ec72c2ca7d2119cf4f",
+      "bytes": 1360
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-example-com.r2.json",
+      "sha256": "ca0301f413f2a3fd020233e458724f04bfa4ee8b6101688357f1be921bca1cc4",
+      "bytes": 3020
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-example-com.r2.md",
+      "sha256": "4e2bdc3e81e6284cd9553eb66643d7a22d5f6bd5424581ec72c2ca7d2119cf4f",
+      "bytes": 1360
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-example-com.r3.json",
+      "sha256": "f4c0b192cc41c85f5da0b13486691defa1d8763b1e500d6a20ba10dc4524274b",
+      "bytes": 3018
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-example-com.r3.md",
+      "sha256": "4e2bdc3e81e6284cd9553eb66643d7a22d5f6bd5424581ec72c2ca7d2119cf4f",
+      "bytes": 1360
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-github-flask-readme.r1.json",
+      "sha256": "8315865873e2a7e23dc2b19336d0f040e620f090ff7afd3ab01ae59b4809ad51",
+      "bytes": 19575
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-github-flask-readme.r1.md",
+      "sha256": "2cd57abe16b3e98a028310deae77d1c4db99d329aeb56b4a4c299e7385f62bb6",
+      "bytes": 17470
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-github-flask-readme.r2.json",
+      "sha256": "a448ba5c8a89a1dab52e2c2facbce77630cc4bad088157615be4cac4d10d5d1b",
+      "bytes": 19572
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-github-flask-readme.r2.md",
+      "sha256": "a3ceddf9d141bffad7c6b5f7b19e43649ae077a8eeab2e2d0433609c115ab4cb",
+      "bytes": 17468
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-github-flask-readme.r3.json",
+      "sha256": "edd76e84573ff1c524ad30135ad553e10e03cb0714d0feed9dafb1f91d8cea49",
+      "bytes": 16570
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-github-flask-readme.r3.md",
+      "sha256": "fbc6461287833268a26eb61d35090fbf09ab795ce8dc01b776e2d3fa6f461f1c",
+      "bytes": 14513
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-go-effective-go.r1.json",
+      "sha256": "f0ea2d5cbc43d7edc8150b41f93e3201a857638da3c75894e36c7848a61cb789",
+      "bytes": 110859
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-go-effective-go.r1.md",
+      "sha256": "7f48686418972ce5168517855b2ccd27adfa9737de979fb2cc0343a4dba570e0",
+      "bytes": 106617
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-go-effective-go.r2.json",
+      "sha256": "6b7f7d3e6e4715b18c8378e392a8c01f04f39d15525ec046f213a076ace595da",
+      "bytes": 110855
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-go-effective-go.r2.md",
+      "sha256": "7f48686418972ce5168517855b2ccd27adfa9737de979fb2cc0343a4dba570e0",
+      "bytes": 106617
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-go-effective-go.r3.json",
+      "sha256": "a66eafaa131bc06cc719634f2b9ed1b5d34052760fda8b32f1a6c7c519ceaf5e",
+      "bytes": 110856
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-go-effective-go.r3.md",
+      "sha256": "7f48686418972ce5168517855b2ccd27adfa9737de979fb2cc0343a4dba570e0",
+      "bytes": 106617
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-hn-dropbox-thread.r1.json",
+      "sha256": "8e520821c107270a77a85e0d6a294b1b63600dc9c911ba82392f61b84c68cfeb",
+      "bytes": 54771
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-hn-dropbox-thread.r1.md",
+      "sha256": "b5f23436b5b0155ccb1ad06457ba636a14ad7872f237a625bce8650a6d25ad0d",
+      "bytes": 50917
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-hn-dropbox-thread.r2.json",
+      "sha256": "cf40fa56231629c03930d53bc0ed59ecc4db355bf22e658141e2db29ddb04d1a",
+      "bytes": 54769
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-hn-dropbox-thread.r2.md",
+      "sha256": "b5f23436b5b0155ccb1ad06457ba636a14ad7872f237a625bce8650a6d25ad0d",
+      "bytes": 50917
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-hn-dropbox-thread.r3.json",
+      "sha256": "5b4f26ffa2c767fda9f6bbc22ef4a34207d8c34647112b9ddf10c7ee5fadcb19",
+      "bytes": 54770
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-hn-dropbox-thread.r3.md",
+      "sha256": "b5f23436b5b0155ccb1ad06457ba636a14ad7872f237a625bce8650a6d25ad0d",
+      "bytes": 50917
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-hn-guidelines.r1.json",
+      "sha256": "53461b3b0e42b82d47ddd71a99f6669626459ff36d5f2e4ecb50a36b7ea49e4c",
+      "bytes": 7205
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-hn-guidelines.r1.md",
+      "sha256": "7e07e2ce56e64d19a5cae1c4d1b8ff1cff6f4ff31d46554b9d638a70399fb551",
+      "bytes": 5422
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-hn-guidelines.r2.json",
+      "sha256": "7b6ee50629bd8b8a702c7aedd9f3f3b18e0473c6546630606004c747e42c93a0",
+      "bytes": 7204
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-hn-guidelines.r2.md",
+      "sha256": "7e07e2ce56e64d19a5cae1c4d1b8ff1cff6f4ff31d46554b9d638a70399fb551",
+      "bytes": 5422
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-hn-guidelines.r3.json",
+      "sha256": "ff076882b7fb79b913a29fce6201395e24aadc9bf98141bc451850e0d8638786",
+      "bytes": 7204
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-hn-guidelines.r3.md",
+      "sha256": "7e07e2ce56e64d19a5cae1c4d1b8ff1cff6f4ff31d46554b9d638a70399fb551",
+      "bytes": 5422
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-iana-http-status-codes.r1.json",
+      "sha256": "ddf2d20343758bc679f2d9d778d04d2f90e4f49d0628959a8e6e25f8bc2c85fc",
+      "bytes": 9633
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-iana-http-status-codes.r1.md",
+      "sha256": "dc00669812e613a4ce9c5fd143382bfffa27c30cceef07a2df548aabdb5d9b36",
+      "bytes": 7561
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-iana-http-status-codes.r2.json",
+      "sha256": "905b16df86df7f7d97617f4ff0a429dd3d960a8c2f2749ccba436bb2dac132a8",
+      "bytes": 9632
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-iana-http-status-codes.r2.md",
+      "sha256": "dc00669812e613a4ce9c5fd143382bfffa27c30cceef07a2df548aabdb5d9b36",
+      "bytes": 7561
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-iana-http-status-codes.r3.json",
+      "sha256": "8d36987c52edfe305c18028e45d18a3c9a877d911571d4c6ca70b8c7ac4af566",
+      "bytes": 9632
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-iana-http-status-codes.r3.md",
+      "sha256": "dc00669812e613a4ce9c5fd143382bfffa27c30cceef07a2df548aabdb5d9b36",
+      "bytes": 7561
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-mdn-array-map.r1.json",
+      "sha256": "e0afac9afbe6f29c965688d01b4878022fcce394e70c14c263a2b40d97556e95",
+      "bytes": 12012
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-mdn-array-map.r1.md",
+      "sha256": "022548e285cf91cdb1a3ff931f1ae4a787253f26efa35f3439c647cebc386585",
+      "bytes": 9974
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-mdn-array-map.r2.json",
+      "sha256": "ffc0dc7134f253444102fedd5f73da953e8a05b6900252388165a6adc1822cde",
+      "bytes": 12010
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-mdn-array-map.r2.md",
+      "sha256": "022548e285cf91cdb1a3ff931f1ae4a787253f26efa35f3439c647cebc386585",
+      "bytes": 9974
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-mdn-array-map.r3.json",
+      "sha256": "de10df81cc9fb938a1bfd372398c84ab0e2dc5719f2c8e89ce666ec836f7758a",
+      "bytes": 12011
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-mdn-array-map.r3.md",
+      "sha256": "022548e285cf91cdb1a3ff931f1ae4a787253f26efa35f3439c647cebc386585",
+      "bytes": 9974
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-nodejs-path.r1.json",
+      "sha256": "4c77fd7ea442e7a469c206392513e1743cc5ba1b9533155340abfcc7d1e3893f",
+      "bytes": 22865
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-nodejs-path.r1.md",
+      "sha256": "d5cbde64bd5ef1de9cc9e1eb57178b220f783affcbd2a79c87958ddbbfc518ab",
+      "bytes": 20388
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-nodejs-path.r2.json",
+      "sha256": "952b7567938cd6fc1b3c6424d7985a7f8779ac5a3f3e49097b973d04fe8e8d58",
+      "bytes": 22867
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-nodejs-path.r2.md",
+      "sha256": "d5cbde64bd5ef1de9cc9e1eb57178b220f783affcbd2a79c87958ddbbfc518ab",
+      "bytes": 20388
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-nodejs-path.r3.json",
+      "sha256": "94504fa3d6fec142701dd354f9de1afc4591f52748bf9b4e909a14caf469572c",
+      "bytes": 22864
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-nodejs-path.r3.md",
+      "sha256": "d5cbde64bd5ef1de9cc9e1eb57178b220f783affcbd2a79c87958ddbbfc518ab",
+      "bytes": 20388
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-paulgraham-great-work.r1.json",
+      "sha256": "958604abaa8ed4de31f20ec11e1a5568121336ef50f222a2481213ae1cd6970c",
+      "bytes": 75092
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-paulgraham-great-work.r1.md",
+      "sha256": "0569b4eb807f5b577a526e1577a20c112b8c544604493f3a2bd86c91fbd43cbc",
+      "bytes": 73196
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-paulgraham-great-work.r2.json",
+      "sha256": "a0ed777a213cd37d0fb252f28da3702e24c4262bede13e587ca69bff41fa4bee",
+      "bytes": 75089
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-paulgraham-great-work.r2.md",
+      "sha256": "0569b4eb807f5b577a526e1577a20c112b8c544604493f3a2bd86c91fbd43cbc",
+      "bytes": 73196
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-paulgraham-great-work.r3.json",
+      "sha256": "0dcc8392c3b7bbeb16f7be61cd9ca3b4145e67229e9bc535ac8cdfab08e9e41c",
+      "bytes": 75089
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-paulgraham-great-work.r3.md",
+      "sha256": "0569b4eb807f5b577a526e1577a20c112b8c544604493f3a2bd86c91fbd43cbc",
+      "bytes": 73196
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-python-json.r1.json",
+      "sha256": "962df06c3bf5488678b7d11a31258f869d091382abcac5b5ebb92843e5a861b4",
+      "bytes": 36105
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-python-json.r1.md",
+      "sha256": "309a055568b50d2852e85cabc96d30a6f753369c33790cfccbe583310a36935a",
+      "bytes": 33356
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-python-json.r2.json",
+      "sha256": "9b104c019ee57e40c98fa5fe6b79a4a9f866f97eb17541059f2847e1dc5fdada",
+      "bytes": 36104
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-python-json.r2.md",
+      "sha256": "309a055568b50d2852e85cabc96d30a6f753369c33790cfccbe583310a36935a",
+      "bytes": 33356
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-python-json.r3.json",
+      "sha256": "bbf652a45f4fb3f8bac64a0797e897584835604e3249a492e6a8fabc60da1e77",
+      "bytes": 36103
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-python-json.r3.md",
+      "sha256": "309a055568b50d2852e85cabc96d30a6f753369c33790cfccbe583310a36935a",
+      "bytes": 33356
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-python-library-index.r1.json",
+      "sha256": "7ee02f8e8960b8a113d8bd4a781260c796b8889b71abf28c8fd72e9a15231949",
+      "bytes": 30987
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-python-library-index.r1.md",
+      "sha256": "6e24043a4e56140df5ab4f095f96c14afa1d538a06b872f5e264df93ecbfa8d1",
+      "bytes": 28951
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-python-library-index.r2.json",
+      "sha256": "50d6bd5bca46eb6f63e4d2018a2ba3e60a885c67f5138294e70ae4eb311ddc8f",
+      "bytes": 30986
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-python-library-index.r2.md",
+      "sha256": "6e24043a4e56140df5ab4f095f96c14afa1d538a06b872f5e264df93ecbfa8d1",
+      "bytes": 28951
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-python-library-index.r3.json",
+      "sha256": "96c7c51057a4b0d3011f46f994a4eaebd251b4d8b81c7e5462688aefb5d6052e",
+      "bytes": 30985
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-python-library-index.r3.md",
+      "sha256": "6e24043a4e56140df5ab4f095f96c14afa1d538a06b872f5e264df93ecbfa8d1",
+      "bytes": 28951
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-quotes-toscrape-js-delayed.r1.json",
+      "sha256": "be5b3552622e5d78a42c966b4888e033568a3c51dbf7f01f7df80682d212d996",
+      "bytes": 1804
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-quotes-toscrape-js-delayed.r1.md",
+      "sha256": "d7c1a70dbfa0b0cdda9322886c337d0a704c573a9367720ba239b2043098dbc5",
+      "bytes": 94
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-quotes-toscrape-js-delayed.r2.json",
+      "sha256": "493669add9133dba2130e72096dd03fd870c96c2757d8c2cf4fcb15b19b53fff",
+      "bytes": 1803
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-quotes-toscrape-js-delayed.r2.md",
+      "sha256": "d7c1a70dbfa0b0cdda9322886c337d0a704c573a9367720ba239b2043098dbc5",
+      "bytes": 94
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-quotes-toscrape-js-delayed.r3.json",
+      "sha256": "315d2726ae265dc277db1c00e93e1ab20112aa0ace048eca5df2f8aa13c48d96",
+      "bytes": 1803
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-quotes-toscrape-js-delayed.r3.md",
+      "sha256": "d7c1a70dbfa0b0cdda9322886c337d0a704c573a9367720ba239b2043098dbc5",
+      "bytes": 94
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-quotes-toscrape-js.r1.json",
+      "sha256": "107c8afc8fed160fc8999a181cda1c32788632d32f1ab8ca632e8fedee7cc253",
+      "bytes": 3296
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-quotes-toscrape-js.r1.md",
+      "sha256": "feaf72ee78ff0cec76c98d3d85a7df69e3e55a4d2c021598e76e527eaf333434",
+      "bytes": 1566
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-quotes-toscrape-js.r2.json",
+      "sha256": "d0ebd129e0c33819669141449fcaafc5521cb16d003a2aa9d832dc0447eba444",
+      "bytes": 3293
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-quotes-toscrape-js.r2.md",
+      "sha256": "feaf72ee78ff0cec76c98d3d85a7df69e3e55a4d2c021598e76e527eaf333434",
+      "bytes": 1566
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-quotes-toscrape-js.r3.json",
+      "sha256": "eb71bbe3fc787777f0a70730cbed2db1e6d54e2603a6ccdb4838904d6eb763e7",
+      "bytes": 3295
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-quotes-toscrape-js.r3.md",
+      "sha256": "feaf72ee78ff0cec76c98d3d85a7df69e3e55a4d2c021598e76e527eaf333434",
+      "bytes": 1566
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-react-thinking-in-react.r1.json",
+      "sha256": "b59dcd2fe3447d7275f7707f99e5aea5629e5f8285a0e0c5ca5ca233427e8be6",
+      "bytes": 16006
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-react-thinking-in-react.r1.md",
+      "sha256": "d500d54e9322dd9d19a774a6c2a4a786731b8e68b5c2c11b79c806dd02d64d88",
+      "bytes": 14033
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-react-thinking-in-react.r2.json",
+      "sha256": "cabbea637d1ce2a484af76bb841bce2140bc11d86c5ad2bb23463c27328b71b3",
+      "bytes": 16005
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-react-thinking-in-react.r2.md",
+      "sha256": "d500d54e9322dd9d19a774a6c2a4a786731b8e68b5c2c11b79c806dd02d64d88",
+      "bytes": 14033
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-react-thinking-in-react.r3.json",
+      "sha256": "b3ffd920902d017cd75562d635a4a3c18d4b90c40a4a20ccc5107a34b073f7f6",
+      "bytes": 16008
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-react-thinking-in-react.r3.md",
+      "sha256": "d500d54e9322dd9d19a774a6c2a4a786731b8e68b5c2c11b79c806dd02d64d88",
+      "bytes": 14033
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-rfc9110-http-semantics.r1.json",
+      "sha256": "646167635149cc06022a2029fc2c9a222d15a4bac162cac6f8a789263d2a4175",
+      "bytes": 764577
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-rfc9110-http-semantics.r1.md",
+      "sha256": "acf2702244abdf4bb4344783ed54998ea4e36caf225725d35b674057d204a8e9",
+      "bytes": 752999
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-rfc9110-http-semantics.r2.json",
+      "sha256": "f29d1e95ba66b97814a7ce42d885755accdec71c447beb8f08ea2db922a8369e",
+      "bytes": 764573
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-rfc9110-http-semantics.r2.md",
+      "sha256": "acf2702244abdf4bb4344783ed54998ea4e36caf225725d35b674057d204a8e9",
+      "bytes": 752999
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-rfc9110-http-semantics.r3.json",
+      "sha256": "bca428759c4526ebf1b1c2486d362b1e3a9d76d56001e1a44a5dc704e797b7f5",
+      "bytes": 764582
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-rfc9110-http-semantics.r3.md",
+      "sha256": "acf2702244abdf4bb4344783ed54998ea4e36caf225725d35b674057d204a8e9",
+      "bytes": 752999
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-rfc9309-pdf.r1.json",
+      "sha256": "116563f5377730efd9f95bf0213d32cf6ae272a45377ac2da09ebae0a339a124",
+      "bytes": 25110
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-rfc9309-pdf.r1.md",
+      "sha256": "7776759fef86a4ebf133f6473d0b04ee77f6d8427f4d616c12d5192cc71e8e61",
+      "bytes": 22421
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-rfc9309-pdf.r2.json",
+      "sha256": "bac1c4ec956ea56dae1f81552baa16f4be44a5159e92d0a120bb76a9a5dd3572",
+      "bytes": 25111
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-rfc9309-pdf.r2.md",
+      "sha256": "7776759fef86a4ebf133f6473d0b04ee77f6d8427f4d616c12d5192cc71e8e61",
+      "bytes": 22421
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-rfc9309-pdf.r3.json",
+      "sha256": "8bd910d1398d6f31c75aed32cb3b7938eaa117b00c4b774cb3b9fdaa61622069",
+      "bytes": 25110
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-rfc9309-pdf.r3.md",
+      "sha256": "7776759fef86a4ebf133f6473d0b04ee77f6d8427f4d616c12d5192cc71e8e61",
+      "bytes": 22421
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-rfc9309-txt.r1.json",
+      "sha256": "fba51542e8667c61cb6380117c99c7fea3357c6ab83f2bed439afe119138e69a",
+      "bytes": 28198
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-rfc9309-txt.r1.md",
+      "sha256": "c28bd3fa4eab0eeb24966de5d71cded75c40485613347978f5359e8212aa2e53",
+      "bytes": 25253
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-rfc9309-txt.r2.json",
+      "sha256": "89a3fb2a09a7a27f92cb1a89d287e1fa905f099f1c66648d8a6b5a038ea2fb36",
+      "bytes": 28200
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-rfc9309-txt.r2.md",
+      "sha256": "c28bd3fa4eab0eeb24966de5d71cded75c40485613347978f5359e8212aa2e53",
+      "bytes": 25253
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-rfc9309-txt.r3.json",
+      "sha256": "72719ad229938f64e1a78c8a9cf8330b50932eef5028648923ab4e7c7473d0fb",
+      "bytes": 28195
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-rfc9309-txt.r3.md",
+      "sha256": "c28bd3fa4eab0eeb24966de5d71cded75c40485613347978f5359e8212aa2e53",
+      "bytes": 25253
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-rust-blog-1-0.r1.json",
+      "sha256": "cd0e465e18b16ba90246a6f55761d0d430beeff7b405db3955ac7b42cb7c7237",
+      "bytes": 11218
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-rust-blog-1-0.r1.md",
+      "sha256": "f784f734b0a3cf073bd4661df4c9508f81e386be3d4074f48b0d54afa9a3830e",
+      "bytes": 9204
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-rust-blog-1-0.r2.json",
+      "sha256": "aca65f611fdf5a52a6529d49ea28260b5f5f53bfe5d74f3ee43c0e2390e08cd5",
+      "bytes": 11215
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-rust-blog-1-0.r2.md",
+      "sha256": "f784f734b0a3cf073bd4661df4c9508f81e386be3d4074f48b0d54afa9a3830e",
+      "bytes": 9204
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-rust-blog-1-0.r3.json",
+      "sha256": "0c764ed2422eb98c34dd39ea85db6bfa61e3ec10ffee85000e273313feed2bb6",
+      "bytes": 11217
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-rust-blog-1-0.r3.md",
+      "sha256": "f784f734b0a3cf073bd4661df4c9508f81e386be3d4074f48b0d54afa9a3830e",
+      "bytes": 9204
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-rust-book-control-flow.r1.json",
+      "sha256": "28b1ca44c11957c680d6a757c6b042c8aec32caadf9ef04db09b7ef945a3df88",
+      "bytes": 34674
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-rust-book-control-flow.r1.md",
+      "sha256": "8b64266e04d1ba0619864274ebab9c6372187b825e57809f18e746393bd490a5",
+      "bytes": 32242
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-rust-book-control-flow.r2.json",
+      "sha256": "162c4065f75cbf672fd3a836f4c356a716390cf6c41b1584dde656cca1ad8bcf",
+      "bytes": 34667
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-rust-book-control-flow.r2.md",
+      "sha256": "8b64266e04d1ba0619864274ebab9c6372187b825e57809f18e746393bd490a5",
+      "bytes": 32242
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-rust-book-control-flow.r3.json",
+      "sha256": "abf8a028d2ff1dc2796ccfedf30a1ccbe58d928d18ada1cccbab5124e4565127",
+      "bytes": 34667
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-rust-book-control-flow.r3.md",
+      "sha256": "8b64266e04d1ba0619864274ebab9c6372187b825e57809f18e746393bd490a5",
+      "bytes": 32242
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-wikipedia-chemical-elements.r1.json",
+      "sha256": "2efefd19e8eec9a37e87e760b9d03deab03d3ee94db2edf06b575c3273f47b6f",
+      "bytes": 100415
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-wikipedia-chemical-elements.r1.md",
+      "sha256": "ebdb199b59acc4c6634c951e45f4282abaee8f37969647295442d7b62dec9041",
+      "bytes": 96448
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-wikipedia-chemical-elements.r2.json",
+      "sha256": "01a1fdeb3c383a9e5d9a80d039bfc92a6e0da3775b6e6ffcdc8088227d637e7e",
+      "bytes": 100414
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-wikipedia-chemical-elements.r2.md",
+      "sha256": "ebdb199b59acc4c6634c951e45f4282abaee8f37969647295442d7b62dec9041",
+      "bytes": 96448
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-wikipedia-chemical-elements.r3.json",
+      "sha256": "7d62a65413c380e977754169bbe941542b7a8054cdf53de206b8aba7327b2153",
+      "bytes": 100416
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-wikipedia-chemical-elements.r3.md",
+      "sha256": "ebdb199b59acc4c6634c951e45f4282abaee8f37969647295442d7b62dec9041",
+      "bytes": 96448
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-wikipedia-markdown.r1.json",
+      "sha256": "847efb7bba8576d62b72508c9ec14fe36a1aa224fa5927de121c9c41eb32c49f",
+      "bytes": 59333
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-wikipedia-markdown.r1.md",
+      "sha256": "fd0d1cf7a7bfb9715ebcd98890c7f0c57e83fcd560764e6c5411ddcea3c76722",
+      "bytes": 56424
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-wikipedia-markdown.r2.json",
+      "sha256": "a78d1b7f4ad200a82ab4bd012bdda2fa14f4c449d4db7dd0eeafbdac954951e0",
+      "bytes": 59329
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-wikipedia-markdown.r2.md",
+      "sha256": "fd0d1cf7a7bfb9715ebcd98890c7f0c57e83fcd560764e6c5411ddcea3c76722",
+      "bytes": 56424
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-wikipedia-markdown.r3.json",
+      "sha256": "264b0bfb0350f33e1e16f74797909b9826929c2b029fe87d83c79e0e6e3e98bc",
+      "bytes": 59331
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-wikipedia-markdown.r3.md",
+      "sha256": "fd0d1cf7a7bfb9715ebcd98890c7f0c57e83fcd560764e6c5411ddcea3c76722",
+      "bytes": 56424
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-arxiv-attention-pdf.r1.json",
+      "sha256": "3c66e7c2acd6f720766996941b3b6cfa4dd5d1ca07d3c731747b5efe4e8f30dc",
+      "bytes": 41421
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-arxiv-attention-pdf.r1.md",
+      "sha256": "e76f03d904094646c835897a736f539391fe4bf33cc9ea6c2895e613d8c8305d",
+      "bytes": 39874
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-arxiv-attention-pdf.r2.json",
+      "sha256": "0736bf9bd9fd994450551d71699b0202b6268e62de07b7784e0c2332538d3f20",
+      "bytes": 41421
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-arxiv-attention-pdf.r2.md",
+      "sha256": "e76f03d904094646c835897a736f539391fe4bf33cc9ea6c2895e613d8c8305d",
+      "bytes": 39874
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-arxiv-attention-pdf.r3.json",
+      "sha256": "621068ab630ff10f8cf00324f51de67003580482339f5f158636822653be2ab6",
+      "bytes": 41421
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-arxiv-attention-pdf.r3.md",
+      "sha256": "e76f03d904094646c835897a736f539391fe4bf33cc9ea6c2895e613d8c8305d",
+      "bytes": 39874
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-books-toscrape.r1.json",
+      "sha256": "f12f11893e8346578ee4e16d586b9e4615e1c50ae2e932919565bbd4c4a7d874",
+      "bytes": 10182
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-books-toscrape.r1.md",
+      "sha256": "0c3b6d3951adb589c628f3d2d6024c55bad800a3e912f060ea6f544e6da7a790",
+      "bytes": 9242
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-books-toscrape.r2.json",
+      "sha256": "f4f6d8980334acf8e662a95113e0a4b28681110a1b06f003600644ca68f44e00",
+      "bytes": 10182
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-books-toscrape.r2.md",
+      "sha256": "0c3b6d3951adb589c628f3d2d6024c55bad800a3e912f060ea6f544e6da7a790",
+      "bytes": 9242
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-books-toscrape.r3.json",
+      "sha256": "ce281eb6368b8a68a049b4c493548c2e661f53b813e5ef37eac03975c25efd40",
+      "bytes": 10182
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-books-toscrape.r3.md",
+      "sha256": "0c3b6d3951adb589c628f3d2d6024c55bad800a3e912f060ea6f544e6da7a790",
+      "bytes": 9242
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-crates-io-serde.r1.json",
+      "sha256": "8c29bd9c28e4c16ddf306e1f6dce28a0fc7f1a2e235166c8eef442ab74dacf0a",
+      "bytes": 515
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-crates-io-serde.r1.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-crates-io-serde.r2.json",
+      "sha256": "8c29bd9c28e4c16ddf306e1f6dce28a0fc7f1a2e235166c8eef442ab74dacf0a",
+      "bytes": 515
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-crates-io-serde.r2.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-crates-io-serde.r3.json",
+      "sha256": "8c29bd9c28e4c16ddf306e1f6dce28a0fc7f1a2e235166c8eef442ab74dacf0a",
+      "bytes": 515
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-crates-io-serde.r3.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-example-com.r1.json",
+      "sha256": "bc5bf1dc5112f4c23c1e62a12eabacca3f6da4fd02164e9201647cb0f21a4b44",
+      "bytes": 1874
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-example-com.r1.md",
+      "sha256": "57bcc03e2e3cb6d4b4d0873f0ca69e0b1df880a71a71cfeae7f56f52f92917ca",
+      "bytes": 1342
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-example-com.r2.json",
+      "sha256": "f9962b8f73a09e6fd85b164bf9cbb06eaa97a6158370f2396eb590f573e24de0",
+      "bytes": 1874
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-example-com.r2.md",
+      "sha256": "57bcc03e2e3cb6d4b4d0873f0ca69e0b1df880a71a71cfeae7f56f52f92917ca",
+      "bytes": 1342
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-example-com.r3.json",
+      "sha256": "4184832243b21a76a6fa6fd959d9ba380e606042184ec9b2aa0baba536d1cd67",
+      "bytes": 1874
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-example-com.r3.md",
+      "sha256": "57bcc03e2e3cb6d4b4d0873f0ca69e0b1df880a71a71cfeae7f56f52f92917ca",
+      "bytes": 1342
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-github-flask-readme.r1.json",
+      "sha256": "7c8f13a7b878e7f69f9160f1cc0ac9cc39eae9843385469e926b4c35dfe97d00",
+      "bytes": 12772
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-github-flask-readme.r1.md",
+      "sha256": "4c3eaf40d7245506c189b4582c17eb93fb924acbc15b3cb3df6a730167bece9b",
+      "bytes": 7851
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-github-flask-readme.r2.json",
+      "sha256": "df23ec82e5b36bb3581b3ca02d37166f8da4b35bafc3e6ed1cbaf6bf587d840d",
+      "bytes": 12772
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-github-flask-readme.r2.md",
+      "sha256": "4c3eaf40d7245506c189b4582c17eb93fb924acbc15b3cb3df6a730167bece9b",
+      "bytes": 7851
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-github-flask-readme.r3.json",
+      "sha256": "bcb965518394766fcffc2fa1279f0bf9cb0a0764c761bfc5ec74b234c738d47b",
+      "bytes": 12817
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-github-flask-readme.r3.md",
+      "sha256": "4c3eaf40d7245506c189b4582c17eb93fb924acbc15b3cb3df6a730167bece9b",
+      "bytes": 7851
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-go-effective-go.r1.json",
+      "sha256": "06873389eab79e75e005df842ad60a48095eb9c167205d19ac9ba3a501e4863b",
+      "bytes": 109844
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-go-effective-go.r1.md",
+      "sha256": "ba910c7d8f8cd88ca6d1502675a3ccee5522d65960715aab511c9cf7759973fb",
+      "bytes": 106269
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-go-effective-go.r2.json",
+      "sha256": "3fa257c8b768c2d0440fb470ab25f33a7a29197ce9fd7a2d9f1e33f493e0365e",
+      "bytes": 109844
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-go-effective-go.r2.md",
+      "sha256": "ba910c7d8f8cd88ca6d1502675a3ccee5522d65960715aab511c9cf7759973fb",
+      "bytes": 106269
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-go-effective-go.r3.json",
+      "sha256": "b10ccb3872168965158a207228f92801d243503ec350706c553112c24715bb6d",
+      "bytes": 109844
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-go-effective-go.r3.md",
+      "sha256": "ba910c7d8f8cd88ca6d1502675a3ccee5522d65960715aab511c9cf7759973fb",
+      "bytes": 106269
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-hn-dropbox-thread.r1.json",
+      "sha256": "beb23e4b639b098b34c8ad8be99aea9c228225ab5aa23d77ce7866de5d1523a6",
+      "bytes": 63282
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-hn-dropbox-thread.r1.md",
+      "sha256": "f05a044fdbb0e23a83e913fc2e76b550c284dbd3d7afaec08805d4182340ab44",
+      "bytes": 61928
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-hn-dropbox-thread.r2.json",
+      "sha256": "da9e21ff6070c496241567bb63ed8118f102bb16d8580f01275cd52bb6b99cab",
+      "bytes": 63282
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-hn-dropbox-thread.r2.md",
+      "sha256": "f05a044fdbb0e23a83e913fc2e76b550c284dbd3d7afaec08805d4182340ab44",
+      "bytes": 61928
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-hn-dropbox-thread.r3.json",
+      "sha256": "e060937579d345adccf38f90088437c3e3007197305a5f57ca3004c212c5452a",
+      "bytes": 63282
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-hn-dropbox-thread.r3.md",
+      "sha256": "f05a044fdbb0e23a83e913fc2e76b550c284dbd3d7afaec08805d4182340ab44",
+      "bytes": 61928
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-hn-guidelines.r1.json",
+      "sha256": "328c648a21eb999f30a6a37dfe5b29bbaf59ffaa7f8217e4234df7bcf0c8b297",
+      "bytes": 5797
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-hn-guidelines.r1.md",
+      "sha256": "696fb64241846fe09fe79819716e3125d205baa48a0bb0cee70afdb0e27e7212",
+      "bytes": 5205
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-hn-guidelines.r2.json",
+      "sha256": "eedddb991195863059ab608e796b007189af5f988f6f17181aebeab213b382dd",
+      "bytes": 5797
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-hn-guidelines.r2.md",
+      "sha256": "696fb64241846fe09fe79819716e3125d205baa48a0bb0cee70afdb0e27e7212",
+      "bytes": 5205
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-hn-guidelines.r3.json",
+      "sha256": "f723d4c2c507ff0199342d3242bc7f80d13e7884e16058a6d242353fa864ae61",
+      "bytes": 5797
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-hn-guidelines.r3.md",
+      "sha256": "696fb64241846fe09fe79819716e3125d205baa48a0bb0cee70afdb0e27e7212",
+      "bytes": 5205
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-iana-http-status-codes.r1.json",
+      "sha256": "1529f48480b19f85045fc81f37cb96cc431b27184fa304cc427a161340f052da",
+      "bytes": 8885
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-iana-http-status-codes.r1.md",
+      "sha256": "9f63d4b1dea52f0a157989e2d9e0269fa91f59714df2bbfd22fadef29007ef7b",
+      "bytes": 8111
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-iana-http-status-codes.r2.json",
+      "sha256": "4a4603251c83978821306c8060f6230742ff53b950432ddf61e60fdcfb3491a0",
+      "bytes": 8885
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-iana-http-status-codes.r2.md",
+      "sha256": "9f63d4b1dea52f0a157989e2d9e0269fa91f59714df2bbfd22fadef29007ef7b",
+      "bytes": 8111
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-iana-http-status-codes.r3.json",
+      "sha256": "0e6d3aedd4a589757e7b6426a3c46969e7ff93cc65619c4f816c202c044ff7c6",
+      "bytes": 8885
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-iana-http-status-codes.r3.md",
+      "sha256": "9f63d4b1dea52f0a157989e2d9e0269fa91f59714df2bbfd22fadef29007ef7b",
+      "bytes": 8111
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-mdn-array-map.r1.json",
+      "sha256": "9d711865d5ee51318e92a965c16bac8561f3973be16fb07509e7ea7967781f97",
+      "bytes": 19501
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-mdn-array-map.r1.md",
+      "sha256": "7acc547f9781a16440f7b3bf4bff2f7011297b53850f4dcf5df6bf9dbf65395b",
+      "bytes": 17348
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-mdn-array-map.r2.json",
+      "sha256": "e3b33ea6d4f007b49631d8ed6a275abeb045883f2366df2c8c45368a2279aa7d",
+      "bytes": 15243
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-mdn-array-map.r2.md",
+      "sha256": "ea3f0484e88c889690b1bdcf8124fe5d34f22f095c00900107eed33e0af3a0c5",
+      "bytes": 13337
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-mdn-array-map.r3.json",
+      "sha256": "cb23940a678fe75ae55271e7264f285e208c4dfba44f540b52e8584f55a200d7",
+      "bytes": 15243
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-mdn-array-map.r3.md",
+      "sha256": "ea3f0484e88c889690b1bdcf8124fe5d34f22f095c00900107eed33e0af3a0c5",
+      "bytes": 13337
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-nodejs-path.r1.json",
+      "sha256": "f813611b89d9b9b97d5e33157ed5118405587e42295741c6fd2a864708851cb6",
+      "bytes": 29814
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-nodejs-path.r1.md",
+      "sha256": "981220c5f2dc884ae38d1adea3e3009473b0194c6de5161bc0fd076ef2a95c0c",
+      "bytes": 28270
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-nodejs-path.r2.json",
+      "sha256": "f10c8a4832f87bd5865a64037d92e17de7ee815cd70a51f764cc53a3d43d366e",
+      "bytes": 29814
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-nodejs-path.r2.md",
+      "sha256": "981220c5f2dc884ae38d1adea3e3009473b0194c6de5161bc0fd076ef2a95c0c",
+      "bytes": 28270
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-nodejs-path.r3.json",
+      "sha256": "57340f8ad20b8e63e1ae2194fb32b52a00bdfe21cf8e97502f1516f830605d6a",
+      "bytes": 29814
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-nodejs-path.r3.md",
+      "sha256": "981220c5f2dc884ae38d1adea3e3009473b0194c6de5161bc0fd076ef2a95c0c",
+      "bytes": 28270
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-paulgraham-great-work.r1.json",
+      "sha256": "1d69d87340061efa05b6c0a26db2fa307365adb4f94eafa0db8922db3dc3df05",
+      "bytes": 71335
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-paulgraham-great-work.r1.md",
+      "sha256": "43573cd76d47bf7af123eb4596621d9b00cc49ee7003950e00c2c559059ea01a",
+      "bytes": 69994
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-paulgraham-great-work.r2.json",
+      "sha256": "9ccb33e3922cbf78e8ab5c165378f5db4bb656425dca0caf388ad995f124d758",
+      "bytes": 71335
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-paulgraham-great-work.r2.md",
+      "sha256": "43573cd76d47bf7af123eb4596621d9b00cc49ee7003950e00c2c559059ea01a",
+      "bytes": 69994
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-paulgraham-great-work.r3.json",
+      "sha256": "23922dc0a7eb3b73be4d25e9eec2d85cc0d1f414363b014ce2644e71790dbfbd",
+      "bytes": 71515
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-paulgraham-great-work.r3.md",
+      "sha256": "d625d0b78adefd1841132dc2026ba4c93c3498bca3ca5d3d30f6d78df954b876",
+      "bytes": 70171
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-python-json.r1.json",
+      "sha256": "0c6e38b5b9d1520d0d78557a7bbe1fd7f08633ef6a1d638b250138a25e3892a9",
+      "bytes": 46704
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-python-json.r1.md",
+      "sha256": "85424be065245afaf2e229a988dc62eb1f1f5addc6bd9f6efb70c98ceb715473",
+      "bytes": 42814
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-python-json.r2.json",
+      "sha256": "ef411a5cced8ab0cf92076cdd1fbbb7bacf58fe3d3a44feac5fa249cda68f2bf",
+      "bytes": 46704
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-python-json.r2.md",
+      "sha256": "85424be065245afaf2e229a988dc62eb1f1f5addc6bd9f6efb70c98ceb715473",
+      "bytes": 42814
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-python-json.r3.json",
+      "sha256": "597d4749d5cb9bbcbd7012e8c40f1fccce849c98b3a768e35fba369f6495d775",
+      "bytes": 46704
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-python-json.r3.md",
+      "sha256": "85424be065245afaf2e229a988dc62eb1f1f5addc6bd9f6efb70c98ceb715473",
+      "bytes": 42814
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-python-library-index.r1.json",
+      "sha256": "8758ab5e1e8df3e5fce772765719ed3cd777d03c9e6d621e720b1240b1c06349",
+      "bytes": 38330
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-python-library-index.r1.md",
+      "sha256": "f7fc074d09e68fee7bddfc0f11333a11e2dee6bcf9e7f31db55534aebbbac257",
+      "bytes": 35301
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-python-library-index.r2.json",
+      "sha256": "d9659ab40b64324bb533c6084937310f52fe1db1dbd343a1d96d9bc23885b3ee",
+      "bytes": 38330
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-python-library-index.r2.md",
+      "sha256": "f7fc074d09e68fee7bddfc0f11333a11e2dee6bcf9e7f31db55534aebbbac257",
+      "bytes": 35301
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-python-library-index.r3.json",
+      "sha256": "a43076abff5347ee7d8f5bbadfeb9ff906b77f86008649c6232db12178a0c3eb",
+      "bytes": 38330
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-python-library-index.r3.md",
+      "sha256": "f7fc074d09e68fee7bddfc0f11333a11e2dee6bcf9e7f31db55534aebbbac257",
+      "bytes": 35301
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-quotes-toscrape-js-delayed.r1.json",
+      "sha256": "8bf4e65cd7245f826dac45264ddf6b41524570f2063faabbcec907a22a67faad",
+      "bytes": 624
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-quotes-toscrape-js-delayed.r1.md",
+      "sha256": "b47d369782f9cd2b49960b97dcfec3fcdd878d9e3755e4bf4cfc049946fc4ee8",
+      "bytes": 143
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-quotes-toscrape-js-delayed.r2.json",
+      "sha256": "b5dba049a39f31f21f8f2a644a11bc9b957a90b71166b64114d9cb61d04eee19",
+      "bytes": 624
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-quotes-toscrape-js-delayed.r2.md",
+      "sha256": "b47d369782f9cd2b49960b97dcfec3fcdd878d9e3755e4bf4cfc049946fc4ee8",
+      "bytes": 143
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-quotes-toscrape-js-delayed.r3.json",
+      "sha256": "43d715d0902d83db23f1efbaefdf89a40231d9d2abe2e9b1658bfe2ae5c157c7",
+      "bytes": 624
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-quotes-toscrape-js-delayed.r3.md",
+      "sha256": "b47d369782f9cd2b49960b97dcfec3fcdd878d9e3755e4bf4cfc049946fc4ee8",
+      "bytes": 143
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-quotes-toscrape-js.r1.json",
+      "sha256": "9a8cca43cd58e6af39aae935c76fbe010ab2bb0bdae0ed5676f657c02daa18ae",
+      "bytes": 2120
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-quotes-toscrape-js.r1.md",
+      "sha256": "3b909d2a7c59e21a8dc3fc09142fcad7e10cbaec12daf85e4a26a8efd7e5d04a",
+      "bytes": 1615
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-quotes-toscrape-js.r2.json",
+      "sha256": "3422d9b55c0fb613634fe1046fe9edc26ab1bc767fa321e8a6f0e906dd2a3e6c",
+      "bytes": 2120
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-quotes-toscrape-js.r2.md",
+      "sha256": "3b909d2a7c59e21a8dc3fc09142fcad7e10cbaec12daf85e4a26a8efd7e5d04a",
+      "bytes": 1615
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-quotes-toscrape-js.r3.json",
+      "sha256": "80227a094f1d93d2204bf7724ae0b2b87654309d1cc04dfb28acb6e6802aaf6c",
+      "bytes": 2120
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-quotes-toscrape-js.r3.md",
+      "sha256": "3b909d2a7c59e21a8dc3fc09142fcad7e10cbaec12daf85e4a26a8efd7e5d04a",
+      "bytes": 1615
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-react-thinking-in-react.r1.json",
+      "sha256": "2bd70e78d3669afd885180713a5b9220c48dbebac547411b412fa815505c8b87",
+      "bytes": 28022
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-react-thinking-in-react.r1.md",
+      "sha256": "51ec9ddfc7d6fbed09827e1adb2bceac02d7de7b9dc3499d987f7cb85a3c0de2",
+      "bytes": 25346
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-react-thinking-in-react.r2.json",
+      "sha256": "1d36354c116a7bf9aa804935e51f0607dcb5f78eae547e4b8f71ab66ce425dcc",
+      "bytes": 28022
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-react-thinking-in-react.r2.md",
+      "sha256": "51ec9ddfc7d6fbed09827e1adb2bceac02d7de7b9dc3499d987f7cb85a3c0de2",
+      "bytes": 25346
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-react-thinking-in-react.r3.json",
+      "sha256": "11d990626fcc99d4cce766e27cbe70068a3e2b0a4b1b74d89e23f7637c68aaeb",
+      "bytes": 28022
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-react-thinking-in-react.r3.md",
+      "sha256": "51ec9ddfc7d6fbed09827e1adb2bceac02d7de7b9dc3499d987f7cb85a3c0de2",
+      "bytes": 25346
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-rfc9110-http-semantics.r1.json",
+      "sha256": "3327898210421f4229dc1a631940fb74bbb698e40b82546ea7ea202ccf3b9b5d",
+      "bytes": 784784
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-rfc9110-http-semantics.r1.md",
+      "sha256": "b36e8734ce60d5ba99fdf259e605a0bec44ab0da8bffeec2aa9f6ea40ebd4546",
+      "bytes": 770651
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-rfc9110-http-semantics.r2.json",
+      "sha256": "aa39be33a81299604e8212ed60024989f1ce11ab16acc096f71d3d620d7032be",
+      "bytes": 784784
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-rfc9110-http-semantics.r2.md",
+      "sha256": "b36e8734ce60d5ba99fdf259e605a0bec44ab0da8bffeec2aa9f6ea40ebd4546",
+      "bytes": 770651
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-rfc9110-http-semantics.r3.json",
+      "sha256": "7588eaec4702eae881c04f1a906c8a746b631acad2a362c588e2b80269bc9207",
+      "bytes": 785605
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-rfc9110-http-semantics.r3.md",
+      "sha256": "136ebdbb12a7721fcf72efa4797dbdd96b358472515b0f657c27ef84a1613ad0",
+      "bytes": 771445
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-rfc9309-pdf.r1.json",
+      "sha256": "f527ec0e346ddd63f72521eb4668f2de18d45285b65227fc18b673d697abe8fc",
+      "bytes": 25887
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-rfc9309-pdf.r1.md",
+      "sha256": "707a26a693719992cf0bff6e56d9673487208efdf1564c218923851b6c529923",
+      "bytes": 24824
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-rfc9309-pdf.r2.json",
+      "sha256": "28b5e66ea7fa024d92a8002a6493b48955ac0081a2c4bf6d6c2c1f5dc0227873",
+      "bytes": 25887
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-rfc9309-pdf.r2.md",
+      "sha256": "707a26a693719992cf0bff6e56d9673487208efdf1564c218923851b6c529923",
+      "bytes": 24824
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-rfc9309-pdf.r3.json",
+      "sha256": "0d5c63cbc547c6614596bc8425c4320030993919e5e1fd48dd36dbdae9bb3e33",
+      "bytes": 25887
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-rfc9309-pdf.r3.md",
+      "sha256": "707a26a693719992cf0bff6e56d9673487208efdf1564c218923851b6c529923",
+      "bytes": 24824
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-rfc9309-txt.r1.json",
+      "sha256": "cc742dc771a546fd6bbd67581b97b86c07e18a90c17f472daa9905b01e0a64aa",
+      "bytes": 26425
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-rfc9309-txt.r1.md",
+      "sha256": "1f3a8a5d5c660312b1e3de513d9d4a9411fd2f3404e54d1c5d3d7701e916d8fb",
+      "bytes": 25262
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-rfc9309-txt.r2.json",
+      "sha256": "ecee57b952e5554459fbdca434575e6fc21b08eacadf37f709f5e108d278e112",
+      "bytes": 26425
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-rfc9309-txt.r2.md",
+      "sha256": "1f3a8a5d5c660312b1e3de513d9d4a9411fd2f3404e54d1c5d3d7701e916d8fb",
+      "bytes": 25262
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-rfc9309-txt.r3.json",
+      "sha256": "f306511f80f5b135b9d0558c1d16cf55b19eef25a95787b82493e9e27d5828ad",
+      "bytes": 26425
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-rfc9309-txt.r3.md",
+      "sha256": "1f3a8a5d5c660312b1e3de513d9d4a9411fd2f3404e54d1c5d3d7701e916d8fb",
+      "bytes": 25262
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-rust-blog-1-0.r1.json",
+      "sha256": "1b526401a7a5407fffa358f9b33833a481591aa5a576344ca94faa4554678209",
+      "bytes": 11859
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-rust-blog-1-0.r1.md",
+      "sha256": "59012327b790d2d483d3390a2c6fe5cb59ff9cea5c700f9eacd3134b480fb9ee",
+      "bytes": 9914
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-rust-blog-1-0.r2.json",
+      "sha256": "c2e4e1c8b08e45582f01f98d2f412d2a28d133a3bb1b904cc3120366bf1a60bf",
+      "bytes": 11859
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-rust-blog-1-0.r2.md",
+      "sha256": "59012327b790d2d483d3390a2c6fe5cb59ff9cea5c700f9eacd3134b480fb9ee",
+      "bytes": 9914
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-rust-blog-1-0.r3.json",
+      "sha256": "5431f3ccdadf4a23618bdb29558ba4a860fa6616314b634093e75bfa83e90fca",
+      "bytes": 11859
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-rust-blog-1-0.r3.md",
+      "sha256": "59012327b790d2d483d3390a2c6fe5cb59ff9cea5c700f9eacd3134b480fb9ee",
+      "bytes": 9914
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-rust-book-control-flow.r1.json",
+      "sha256": "ad5542cc6cc1b4ba899442180f20394b6b261ed42d0f515b3b97f9c8342d1b76",
+      "bytes": 20024
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-rust-book-control-flow.r1.md",
+      "sha256": "d3c02a1158c4eb652d34b419ac9d52de40cc98460c067bf773d93f14b01dc281",
+      "bytes": 19027
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-rust-book-control-flow.r2.json",
+      "sha256": "720bbb57f31ce18c719f0876f6368a6757b036c130ad35dce75811fb08b8657a",
+      "bytes": 20024
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-rust-book-control-flow.r2.md",
+      "sha256": "d3c02a1158c4eb652d34b419ac9d52de40cc98460c067bf773d93f14b01dc281",
+      "bytes": 19027
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-rust-book-control-flow.r3.json",
+      "sha256": "d5420c883d83c9ab48d8f414cf3cf1997090f7ef21df6de2e803114ab74dcdd7",
+      "bytes": 20024
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-rust-book-control-flow.r3.md",
+      "sha256": "d3c02a1158c4eb652d34b419ac9d52de40cc98460c067bf773d93f14b01dc281",
+      "bytes": 19027
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-wikipedia-chemical-elements.r1.json",
+      "sha256": "a0f08bdbcf2ad00224e8be8dcccb3cf4457e9ba9ae454e450517fcffb204d0e3",
+      "bytes": 109026
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-wikipedia-chemical-elements.r1.md",
+      "sha256": "5ef2f8a699d5965a05e58d5504c17e2be3de8643f4bfceedc5e55d8d1322199c",
+      "bytes": 105111
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-wikipedia-chemical-elements.r2.json",
+      "sha256": "782054aee76a00681e0213c7fb224902d08ffc8bd79f73ca8efe1d86d8c804b6",
+      "bytes": 109613
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-wikipedia-chemical-elements.r2.md",
+      "sha256": "c1c64492cffab31255613dbc67c9d525ef57dba752a38ef8d252dd61860d540d",
+      "bytes": 105681
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-wikipedia-chemical-elements.r3.json",
+      "sha256": "20cc2964b83b465b45353fde6d7305d232b9d9bead3e1105bd8c9c4d56ca8cf1",
+      "bytes": 80260
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-wikipedia-chemical-elements.r3.md",
+      "sha256": "cb49af71186ac01a85a96d9ad53ab1ebcd83ef857763bc6aa3bf34891f24a659",
+      "bytes": 77224
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-wikipedia-markdown.r1.json",
+      "sha256": "c536399d63040fe2fe4ba8d311566b61723d286c3ea2abb1c82f957e4b97b62d",
+      "bytes": 57073
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-wikipedia-markdown.r1.md",
+      "sha256": "fde57bd6741a0e843b2fdbf67ebd523c152b894de7722d350cf057224bce1fd0",
+      "bytes": 54532
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-wikipedia-markdown.r2.json",
+      "sha256": "c3ffe6284aeffa0947bcaff1dafeff23f3d5ebb9cd81369b66ef7911e2d9f896",
+      "bytes": 67964
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-wikipedia-markdown.r2.md",
+      "sha256": "ede3e6d846232aa2e0cb6d9b8c1e8aa5280e502083e6dbc36e6ab0cc844c9693",
+      "bytes": 65245
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-wikipedia-markdown.r3.json",
+      "sha256": "b5c276fac8d736a5a64fc0201eba16810fc2616a59be05351e7aff062c697ec2",
+      "bytes": 57073
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-wikipedia-markdown.r3.md",
+      "sha256": "fde57bd6741a0e843b2fdbf67ebd523c152b894de7722d350cf057224bce1fd0",
+      "bytes": 54532
+    }
+  ]
+}

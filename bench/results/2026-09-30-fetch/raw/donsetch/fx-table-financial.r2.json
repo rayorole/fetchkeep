@@ -1,0 +1,11 @@
+{
+  "text": "# Quarterly results for the ferry cooperative | Northwind Journal\nhttp://172.31.172.243:39953/data/ferry-results.html\n\n# Quarterly results for the ferry cooperative\n\nThe cooperative carried more passengers than in any previous quarter, but fuel costs rose faster than fares.\n\n| Line item | Q1 | Q2 | Change |\n| --- | --- | --- | --- |\n| Passenger fares | 1,204,000 | 1,388,500 | +15.3% |\n| Fuel | 402,100 | 497,900 | +23.8% |\n| Crew wages | 511,000 | 519,400 | +1.6% |\n| Operating surplus | 290,900 | 371,200 | +27.6% |\n\nMembers will vote on a fare adjustment at the annual meeting.",
+  "structured": {
+    "changed": "unchanged",
+    "content_kind": "Page",
+    "content_ok": true,
+    "lang": "en",
+    "url": "http://172.31.172.243:39953/data/ferry-results.html"
+  },
+  "isError": false
+}

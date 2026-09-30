@@ -1,0 +1,125 @@
+{
+  "reason": "Raw outputs of live third-party websites are not redistributed. Hashes allow comparison with a rerun.",
+  "files": [
+    {
+      "path": "raw/donsetch/live-crawl-quotes.r1.json",
+      "sha256": "612ca7bde700cdffda96d7a2df06d5d7e32965e1bb490829558138798f73073f",
+      "bytes": 25634
+    },
+    {
+      "path": "raw/donsetch/live-crawl-quotes.r1.md",
+      "sha256": "8b6954ebbabed20d08f3a0fc32a16ac1084832461fed52c9f6d5444387fd1151",
+      "bytes": 22296
+    },
+    {
+      "path": "raw/donsetch/live-crawl-quotes.r2.json",
+      "sha256": "b317533a5349a647fa5577c52aca1a212a9f57a414f8c87f548d42e104800ca7",
+      "bytes": 24285
+    },
+    {
+      "path": "raw/donsetch/live-crawl-quotes.r2.md",
+      "sha256": "27a14b5f9fd53964987e2debbab0ce4f5f6df24fe3cd76b33bfb4a55297229a7",
+      "bytes": 20789
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-crawl-quotes.r1.json",
+      "sha256": "f73653c2e2632f3b3aabf17fb60ce19003e497e1f54dc34f2dc9e8d6dc781b46",
+      "bytes": 7924
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-crawl-quotes.r1.md",
+      "sha256": "6a02871c14a1c40eb3ad75ba6924e7276a4ad2f84f2cb47f724a4f9ee42cd231",
+      "bytes": 35447
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-crawl-quotes.r2.json",
+      "sha256": "7a143a8ca683e04a606589a118a83877a5e8e63cf77cac2d48ebe6a99122408a",
+      "bytes": 7926
+    },
+    {
+      "path": "raw/fetchkeep-auto/live-crawl-quotes.r2.md",
+      "sha256": "6a02871c14a1c40eb3ad75ba6924e7276a4ad2f84f2cb47f724a4f9ee42cd231",
+      "bytes": 35447
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-crawl-quotes.r1.json",
+      "sha256": "881e3fa5b301efa4126396bbe255437212338557dffe1d0a888874accccf460e",
+      "bytes": 7931
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-crawl-quotes.r1.md",
+      "sha256": "6a02871c14a1c40eb3ad75ba6924e7276a4ad2f84f2cb47f724a4f9ee42cd231",
+      "bytes": 35447
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-crawl-quotes.r2.json",
+      "sha256": "b1a4a31a2cbf6141f3b970e960b4fac90021cba86662546964f582090c1c5c58",
+      "bytes": 7931
+    },
+    {
+      "path": "raw/fetchkeep-chromium/live-crawl-quotes.r2.md",
+      "sha256": "6a02871c14a1c40eb3ad75ba6924e7276a4ad2f84f2cb47f724a4f9ee42cd231",
+      "bytes": 35447
+    },
+    {
+      "path": "raw/fetchkeep-http/live-crawl-quotes.r1.json",
+      "sha256": "e8969f69b4f6bf298298f1fcfb16cdc5a139849701a044b7bd1b5d6dd476fb69",
+      "bytes": 7926
+    },
+    {
+      "path": "raw/fetchkeep-http/live-crawl-quotes.r1.md",
+      "sha256": "6a02871c14a1c40eb3ad75ba6924e7276a4ad2f84f2cb47f724a4f9ee42cd231",
+      "bytes": 35447
+    },
+    {
+      "path": "raw/fetchkeep-http/live-crawl-quotes.r2.json",
+      "sha256": "a69a425c4cdcd1fe1db19759b89d0b38bfd6765799bdbf1c6d2fef68a496e9bc",
+      "bytes": 7926
+    },
+    {
+      "path": "raw/fetchkeep-http/live-crawl-quotes.r2.md",
+      "sha256": "6a02871c14a1c40eb3ad75ba6924e7276a4ad2f84f2cb47f724a4f9ee42cd231",
+      "bytes": 35447
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-crawl-quotes.r1.json",
+      "sha256": "2aa95e4445a6fa77f71416208ee9eae10eb8a83a6d0df20a27e450f8968cac0e",
+      "bytes": 7932
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-crawl-quotes.r1.md",
+      "sha256": "6a02871c14a1c40eb3ad75ba6924e7276a4ad2f84f2cb47f724a4f9ee42cd231",
+      "bytes": 35447
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-crawl-quotes.r2.json",
+      "sha256": "9d64fb4f8f0dd70423b4e14766c49b636b5baf13a0152d41606c3ad2b83849bd",
+      "bytes": 7932
+    },
+    {
+      "path": "raw/fetchkeep-lightpanda/live-crawl-quotes.r2.md",
+      "sha256": "6a02871c14a1c40eb3ad75ba6924e7276a4ad2f84f2cb47f724a4f9ee42cd231",
+      "bytes": 35447
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-crawl-quotes.r1.json",
+      "sha256": "13af6fd05454b44d24b33e49fc43c7ffeea834255cc6e9ea70366b3dd291f0e7",
+      "bytes": 253
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-crawl-quotes.r1.md",
+      "sha256": "39b3027028a8be553a75aa221544ca0edfe5d81dfb43403045c3ff837af49d16",
+      "bytes": 36419
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-crawl-quotes.r2.json",
+      "sha256": "7f1fa23bd8d13bbb29688495f1535efa33581d231e852fd40a7e62f546ec93f6",
+      "bytes": 252
+    },
+    {
+      "path": "raw/firecrawl-selfhost/live-crawl-quotes.r2.md",
+      "sha256": "3265bd80c9e9d4ec88dbfccb5aec442f4b7ebeb1c7766e5b962889fa67ec543a",
+      "bytes": 36419
+    }
+  ]
+}

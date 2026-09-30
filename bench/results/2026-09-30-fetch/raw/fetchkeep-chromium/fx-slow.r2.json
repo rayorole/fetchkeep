@@ -1,0 +1,65 @@
+{
+  "status": "success",
+  "tool": "web_fetch",
+  "document": {
+    "id": "d_ef664e4becd746c9",
+    "version": 1,
+    "ref": "fk:d_ef664e4becd746c9@1",
+    "requestedUrl": "http://172.31.172.243:39953/slow/2500",
+    "finalUrl": "http://172.31.172.243:39953/slow/2500",
+    "title": "Slow page",
+    "contentType": "text/html",
+    "httpStatus": 200,
+    "fetchedAt": "2026-09-30T16:55:28.872Z",
+    "contentHash": "c9e99b416f2ea358d1ad9c5603d42ae48646068b04910fcdf3a8d18115eb7e21",
+    "rawHash": "0a5c6799b890bfac8f06b968c715c7262dc535a6840fa47dc4493e399885c75f",
+    "extractorVersion": "fk-extract/1",
+    "strategy": "structural",
+    "backend": "chromium",
+    "saved": true,
+    "unchanged": true
+  },
+  "content": {
+    "format": "markdown",
+    "text": "# Slow page\n\nThis page was deliberately slow to respond, by 2500 milliseconds."
+  },
+  "backend": {
+    "mode": "chromium",
+    "used": "chromium",
+    "escalated": false,
+    "attempts": [
+      {
+        "backend": "chromium",
+        "outcome": "success",
+        "httpStatus": 200,
+        "durationMs": 3550.852237999992
+      }
+    ]
+  },
+  "truncation": {
+    "truncated": false,
+    "reasons": [],
+    "totalChars": 78,
+    "returnedChars": 78,
+    "offset": 0,
+    "nextOffset": null
+  },
+  "timings": {
+    "browserLaunchMs": 0,
+    "navigateMs": 3517.8,
+    "renderMs": 3544.7,
+    "extractMs": 2.7,
+    "subrequests": 1,
+    "subrequestsBlocked": 0,
+    "totalMs": 3551.2
+  },
+  "warnings": [],
+  "citation": {
+    "ref": "fk:d_ef664e4becd746c9@1",
+    "url": "http://172.31.172.243:39953/slow/2500",
+    "title": "Slow page",
+    "fetchedAt": "2026-09-30T16:55:28.872Z",
+    "version": 1,
+    "contentHash": "c9e99b416f2ea358d1ad9c5603d42ae48646068b04910fcdf3a8d18115eb7e21"
+  }
+}
