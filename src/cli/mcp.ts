@@ -6,14 +6,14 @@ import { createMcpServer } from "../mcp/server.js";
  * Runs the MCP server over stdio. stdout is reserved for JSON-RPC: every console method is redirected to stderr
  * before the service is created, so no library can corrupt the protocol stream.
  */
-export async function runMcpStdio(makeService: () => Fetchkeep): Promise<void> {
+export async function runMcpStdio(makeService: () => Promise<Fetchkeep>): Promise<void> {
   const toStderr = (...args: unknown[]) => process.stderr.write(`${args.map((a) => (typeof a === "string" ? a : JSON.stringify(a))).join(" ")}\n`);
   console.log = toStderr;
   console.info = toStderr;
   console.debug = toStderr;
   console.warn = toStderr;
 
-  const fk = makeService();
+  const fk = await makeService();
   const server = createMcpServer(fk);
   const transport = new StdioServerTransport();
   let closing = false;
