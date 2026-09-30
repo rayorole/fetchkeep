@@ -55,6 +55,11 @@ const INLINE: Record<string, true> = {
   SUP: true, TIME: true, U: true, VAR: true, WBR: true, DEL: true, INS: true, STRIKE: true, FONT: true, TT: true, BIG: true,
 };
 const SKIP: Record<string, true> = { HR: true, BR: true, HEAD: true, TITLE: true };
+/** Above these element counts Readability is not run (see extractHtml). */
+export const READABILITY_MAX_ELEMENTS = 10_000;
+export const READABILITY_SEMANTIC_MAX_ELEMENTS = 5_000;
+const PERMALINK_TEXT: Record<string, true> = { "": true, "¶": true, "#": true, "§": true, "🔗": true, "⚓": true, "link": true };
+const TITLE_SEPARATORS = [" | ", " - ", " — ", " – ", " · ", " :: "];
 
 export interface HtmlExtractOptions {
   /** URL the HTML was served from (after redirects); used to resolve relative links. */
@@ -71,6 +76,8 @@ export function extractHtml(html: string, opts: HtmlExtractOptions): ExtractedDo
   absolutize(document, baseUrl);
   const outlinks = collectOutlinks(document);
   for (const el of [...document.querySelectorAll(ALWAYS_REMOVE)]) el.remove();
+  removePermalinks(document);
+  const elementCount = document.querySelectorAll("*").length;
 
   // Candidate 1: structural main-content extraction.
   const { root: structural, semantic } = structuralRoot(document);
@@ -80,24 +87,31 @@ export function extractHtml(html: string, opts: HtmlExtractOptions): ExtractedDo
   let readable: Element | null = null;
   let byline: string | undefined;
   let readableTitle: string | undefined;
-  try {
-    const copy = parseHTML(html).document;
-    absolutize(copy, baseUrl);
-    for (const el of [...copy.querySelectorAll(ALWAYS_REMOVE)]) el.remove();
-    for (const h of copy.querySelectorAll("h1")) h.setAttribute("data-fk-h1", "");
-    if (isProbablyReaderable(copy as unknown as Document, { minContentLength: 140, minScore: 20 })) {
-      const article = new Readability<Element>(copy as unknown as Document, {
-        keepClasses: true,
-        charThreshold: 200,
-        serializer: (n) => n as Element,
-      }).parse();
-      readable = article?.content ?? null;
-      if (readable) restoreH1(readable);
-      byline = article?.byline ?? undefined;
-      readableTitle = article?.title ? normalizeText(article.title) : undefined;
+  // Readability's scoring is super-linear: on very large pages (specifications, long references) it costs seconds
+  // and hundreds of MB. It is skipped above READABILITY_MAX_ELEMENTS, and above READABILITY_SEMANTIC_MAX_ELEMENTS
+  // when the page marks its main content (<main>/<article>), where the structural result is reliable.
+  const runReadability = elementCount <= (semantic ? READABILITY_SEMANTIC_MAX_ELEMENTS : READABILITY_MAX_ELEMENTS);
+  if (runReadability) {
+    try {
+      const copy = parseHTML(html).document;
+      absolutize(copy, baseUrl);
+      for (const el of [...copy.querySelectorAll(ALWAYS_REMOVE)]) el.remove();
+      removePermalinks(copy);
+      for (const h of copy.querySelectorAll("h1")) h.setAttribute("data-fk-h1", "");
+      if (isProbablyReaderable(copy as unknown as Document, { minContentLength: 140, minScore: 20 })) {
+        const article = new Readability<Element>(copy as unknown as Document, {
+          keepClasses: true,
+          charThreshold: 200,
+          serializer: (n) => n as Element,
+        }).parse();
+        readable = article?.content ?? null;
+        if (readable) restoreH1(readable);
+        byline = article?.byline ?? undefined;
+        readableTitle = article?.title ? normalizeText(article.title) : undefined;
+      }
+    } catch (err) {
+      warnings.push(`readability failed: ${(err as Error).message}`);
     }
-  } catch (err) {
-    warnings.push(`readability failed: ${(err as Error).message}`);
   }
 
   const sStats = domStats(structural);
@@ -113,7 +127,9 @@ export function extractHtml(html: string, opts: HtmlExtractOptions): ExtractedDo
 
   const raw = walkBlocks(chosen, td);
   // Readability drops an <h1> that duplicates the title; restore it (or the page title) as the level-1 heading.
-  const headingTitle = (useReadability ? meta.h1 || readableTitle : undefined) || meta.title;
+  const headingTitle =
+    (useReadability ? meta.h1 || (readableTitle && headingFromTitle(readableTitle, meta.siteName)) : undefined) ||
+    headingFromTitle(meta.title, meta.siteName);
   if (headingTitle && !raw.some((b) => b.type === "heading" && b.level === 1)) {
     raw.unshift({ type: "heading", level: 1, text: headingTitle, markdown: `# ${headingTitle}` });
   }
@@ -387,6 +403,32 @@ function toMarkdown(el: Element, td: TurndownService): string {
   const wrapper = el.ownerDocument.createElement("div");
   wrapper.appendChild(el.cloneNode(true));
   return td.turndown(wrapper as unknown as HTMLElement).trim();
+}
+
+/** Removes heading permalink anchors (`¶`, `#`, `§`, icon-only links to a fragment of the same page). */
+function removePermalinks(document: Document): void {
+  for (const a of [...document.querySelectorAll("h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, a.headerlink, a.anchor, a.hash-link, a.anchorjs-link")]) {
+    const href = a.getAttribute("href") ?? "";
+    const text = normalizeText(a.textContent ?? "").toLowerCase();
+    if (href.includes("#") && PERMALINK_TEXT[text] && !a.querySelector("img[alt]:not([alt=''])")) a.remove();
+  }
+}
+
+/**
+ * Heading text derived from a page title: drops a trailing site name (`Title | Site`), either matching og:site_name or
+ * short (≤ 4 words) when the remaining title is at least as long.
+ */
+export function headingFromTitle(title: string, siteName?: string): string {
+  for (const sep of TITLE_SEPARATORS) {
+    const i = title.lastIndexOf(sep);
+    if (i <= 0) continue;
+    const head = title.slice(0, i).trim();
+    const tail = title.slice(i + sep.length).trim();
+    const matchesSite = siteName !== undefined && tail.toLowerCase() === siteName.toLowerCase();
+    const words = (s: string) => s.split(/\s+/).filter(Boolean).length;
+    if (matchesSite || (words(tail) <= 4 && words(head) >= words(tail))) return head;
+  }
+  return title;
 }
 
 /** Readability demotes every `<h1>` to `<h2>`; undo that using the marker set before parsing. */

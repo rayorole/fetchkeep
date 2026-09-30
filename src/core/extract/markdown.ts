@@ -78,7 +78,7 @@ export function codeText(pre: Element): string {
   return (pre.textContent ?? "").replace(/\r\n?/g, "\n").replace(/^\n+/, "").replace(/\s+$/, "");
 }
 
-const LANG_RE = /(?:^|\s)(?:language|lang|highlight-source|highlight|brush:?)-([\w+#.-]+)/i;
+const LANG_RE = /(?:^|\s)(?:(?:language|lang|highlight-source|highlight)-|brush:\s*)([\w+#.-]+)/i;
 
 export function codeLanguage(pre: Element): string {
   const candidates = [pre, pre.querySelector("code"), pre.parentElement];

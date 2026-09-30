@@ -216,7 +216,8 @@ export class LightpandaProvider implements BrowserProvider {
     if (c && c.exitCode === null) {
       const exited = once(c, "exit");
       c.kill();
-      await Promise.race([exited, sleep(2000)]);
+      // Lightpanda does not always exit promptly on SIGTERM; it holds no state worth a graceful shutdown.
+      await Promise.race([exited, sleep(300)]);
       if (c.exitCode === null) c.kill("SIGKILL");
     }
   }

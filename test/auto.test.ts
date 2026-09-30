@@ -7,6 +7,7 @@ import { shouldEscalate } from "../src/core/heuristics.js";
 import { Envelope } from "../src/core/schema.js";
 import { Fetchkeep } from "../src/core/service.js";
 import { FakeBrowser } from "./support/fake-browser.js";
+import { makePdf } from "./support/pdf.js";
 import { html, startServer, type TestServer } from "./support/server.js";
 import { tempHome } from "./support/service.js";
 
@@ -16,7 +17,9 @@ const ARTICLE = `<html><head><title>Doc</title><script>analytics()</script></hea
 
 let srv: TestServer;
 beforeAll(async () => {
-  srv = await startServer({ "/spa": html(SPA), "/article": html(ARTICLE), "/forbidden": html("<p>Checking your browser…</p>", 403), "/gone": html("gone", 404) });
+  srv = await startServer({ "/spa": html(SPA), "/article": html(ARTICLE), "/forbidden": html("<p>Checking your browser…</p>", 403), "/gone": html("gone", 404),
+    "/doc.pdf": (_q, res) => void res.writeHead(200, { "content-type": "application/pdf" }).end(makePdf([[{ text: "Quarterly tide report" }]], "Tides")),
+  });
 });
 afterAll(() => srv.close());
 const u = (p: string) => `http://localhost:${srv.port}${p}`;
@@ -116,6 +119,20 @@ describe("auto mode", () => {
     expect(http.backend!.attempts).toHaveLength(1);
     await fk.close();
     expect(srv.hits.get("/spa")).toBeGreaterThan(0);
+  });
+
+  it("fetches non-HTML resources over HTTP in explicit browser modes", async () => {
+    const chromium = new FakeBrowser("chromium", { html: "", contentType: "application/pdf" });
+    const fk = service(home, [chromium]);
+    const env = Envelope.parse(await fk.fetch({ url: u("/doc.pdf"), mode: "chromium" }));
+    await fk.close();
+    expect(env.status).toBe("success");
+    expect(env.document).toMatchObject({ backend: "http", strategy: "pdf" });
+    expect(env.content!.text).toContain("Quarterly tide report");
+    expect(env.backend!.attempts.map((a) => [a.backend, a.outcome, a.errorCode])).toEqual([
+      ["chromium", "failed", "unsupported_content_type"],
+      ["http", "success", undefined],
+    ]);
   });
 
   it("reports an unavailable browser without trying it", async () => {
