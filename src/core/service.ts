@@ -1,8 +1,9 @@
 import { sliceMarkdown } from "./budget.js";
+import { runCrawl, type CrawlInput } from "./crawl.js";
 import type { FetchkeepConfig } from "./config.js";
 import { errorEnvelope, roundTimings } from "./envelope.js";
-import { FetchkeepError } from "./errors.js";
-import { retrieve } from "./fetch.js";
+import { FetchkeepError, toFetchkeepError } from "./errors.js";
+import { retrieve, type RetrieveResult } from "./fetch.js";
 import { sha256 } from "./hash.js";
 import { HttpClient } from "./http.js";
 import { NetworkPolicy } from "./netpolicy.js";
@@ -81,18 +82,21 @@ export class Fetchkeep {
     return signal ? AbortSignal.any([t, signal]) : t;
   }
 
+  /** Validates the URL and runs the backend(s) for it. Never throws; failures are returned in `error`. */
+  async retrievePage(url: string, mode: FetchMode, signal: AbortSignal): Promise<RetrieveResult> {
+    try {
+      this.policy.checkUrl(url);
+      return await retrieve({ http: this.http }, { url, mode, signal, limits: this.config.limits });
+    } catch (err) {
+      return { page: null, backend: { mode, used: null, escalated: false, attempts: [] }, error: toFetchkeepError(err, signal), warnings: [] };
+    }
+  }
+
   async fetch(input: FetchInput): Promise<Envelope> {
     const started = performance.now();
     const signal = this.deadline(input.timeoutMs, input.signal);
     const mode = input.mode ?? "auto";
-    let result;
-    try {
-      this.policy.checkUrl(input.url);
-      result = await retrieve({ http: this.http }, { url: input.url, mode, signal, limits: this.config.limits });
-    } catch (err) {
-      return errorEnvelope("web_fetch", err, { timings: roundTimings({ totalMs: performance.now() - started }) }, signal);
-    }
-    const { page, backend, error, warnings } = result;
+    const { page, backend, error, warnings } = await this.retrievePage(input.url, mode, signal);
     if (!page) {
       return errorEnvelope("web_fetch", error, { backend, warnings, timings: roundTimings({ totalMs: performance.now() - started }) }, signal);
     }
@@ -151,6 +155,11 @@ export class Fetchkeep {
     };
     if (save) env.citation = citationFor(document);
     return env;
+  }
+
+  /** Bounded crawl; see {@link runCrawl}. */
+  crawl(input: CrawlInput): Promise<Envelope> {
+    return runCrawl(this, input);
   }
 
   read(input: ReadInput): Envelope {

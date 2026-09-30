@@ -223,10 +223,14 @@ export class Store {
         | { id: string; latest_version: number }
         | undefined;
       const docId = doc?.id ?? docIdFor(key);
+      if (!doc) {
+        this.db.prepare("INSERT INTO documents(id, url, created_at, updated_at, latest_version) VALUES (?, ?, ?, ?, 0)").run(docId, key, now, now);
+        doc = { id: docId, latest_version: 0 };
+      }
       for (const alias of new Set([normalizeUrl(page.requestedUrl), ...page.redirects.map((r) => normalizeUrl(r.url))])) {
         if (alias !== key) this.db.prepare("INSERT OR IGNORE INTO aliases(url, doc_id) VALUES (?, ?)").run(alias, docId);
       }
-      if (doc) {
+      if (doc.latest_version > 0) {
         const latest = this.db
           .prepare("SELECT content_hash FROM versions WHERE doc_id = ? AND version = ?")
           .get(doc.id, doc.latest_version) as { content_hash: string } | undefined;
@@ -235,9 +239,6 @@ export class Store {
           this.db.prepare("UPDATE documents SET updated_at = ? WHERE id = ?").run(now, doc.id);
           return { docId: doc.id, version: doc.latest_version, unchanged: true, contentHash };
         }
-      } else {
-        this.db.prepare("INSERT INTO documents(id, url, created_at, updated_at, latest_version) VALUES (?, ?, ?, ?, 0)").run(docId, key, now, now);
-        doc = { id: docId, latest_version: 0 };
       }
       const version = doc.latest_version + 1;
 

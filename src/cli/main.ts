@@ -7,6 +7,7 @@ import { FetchkeepError } from "../core/errors.js";
 import { FETCH_MODES } from "../core/schema.js";
 import type { Envelope, FetchMode } from "../core/schema.js";
 import { Fetchkeep } from "../core/service.js";
+import { CrawlRepo } from "../core/store/crawls.js";
 import { renderEnvelope } from "../mcp/render.js";
 import { VERSION } from "../version.js";
 import { runDoctor } from "./doctor.js";
@@ -163,6 +164,61 @@ export function buildProgram(): Command {
           ...(o.in ? { target: o.in } : {}),
         }),
       ),
+    );
+
+  program
+    .command("crawl")
+    .description("bounded crawl (same origin by default) that saves every page")
+    .argument("[url]", "start URL (omit with --resume)")
+    .option("-p, --max-pages <n>", "maximum pages to fetch", int("max-pages"))
+    .option("-d, --max-depth <n>", "maximum link depth from the start URL", int("max-depth"))
+    .option("--include <pattern>", "only paths matching glob (/docs/**) or /regex/ (repeatable)", collect)
+    .option("--exclude <pattern>", "skip paths matching glob or /regex/ (repeatable)", collect)
+    .option("--any-origin", "follow links to other origins")
+    .option("--no-robots", "ignore robots.txt (only for sites you operate)")
+    .option("--delay <ms>", "minimum delay between requests to one origin", int("delay"))
+    .option("--concurrency <n>", "parallel fetches (1-8)", int("concurrency"))
+    .addOption(new Option("--sitemap <mode>", "use sitemaps").choices(["include", "skip", "only"]))
+    .addOption(new Option("-m, --mode <mode>", "backend per page").choices([...FETCH_MODES]))
+    .option("-t, --timeout <ms>", "overall deadline for this run", int("timeout"))
+    .option("--page-timeout <ms>", "deadline per page", int("page-timeout"))
+    .option("--resume <crawlId>", "continue a stopped crawl")
+    .action(
+      (
+        url: string | undefined,
+        o: {
+          maxPages?: number; maxDepth?: number; include?: string[]; exclude?: string[]; anyOrigin?: boolean; robots: boolean; delay?: number;
+          concurrency?: number; sitemap?: "include" | "skip" | "only"; mode?: FetchMode; timeout?: number; pageTimeout?: number; resume?: string;
+        },
+      ) =>
+        run(g(), (fk, signal) => {
+          if (!url && !o.resume) throw new FetchkeepError("invalid_argument", "Give a start URL or --resume <crawlId>");
+          return fk.crawl({
+            signal,
+            ...(url ? { url } : {}),
+            ...(o.resume ? { resume: o.resume } : {}),
+            ...(o.maxPages !== undefined ? { maxPages: o.maxPages } : {}),
+            ...(o.maxDepth !== undefined ? { maxDepth: o.maxDepth } : {}),
+            ...(o.include ? { include: o.include } : {}),
+            ...(o.exclude ? { exclude: o.exclude } : {}),
+            ...(o.anyOrigin ? { sameOrigin: false } : {}),
+            ...(o.robots === false ? { respectRobots: false } : {}),
+            ...(o.delay !== undefined ? { delayMs: o.delay } : {}),
+            ...(o.concurrency !== undefined ? { concurrency: o.concurrency } : {}),
+            ...(o.sitemap ? { sitemap: o.sitemap } : {}),
+            ...(o.mode ? { mode: o.mode } : {}),
+            ...(o.timeout !== undefined ? { timeoutMs: o.timeout } : {}),
+            ...(o.pageTimeout !== undefined ? { pageTimeoutMs: o.pageTimeout } : {}),
+          });
+        }),
+    );
+
+  program
+    .command("crawls")
+    .description("list recent crawls")
+    .option("-n, --limit <n>", "maximum crawls", int("limit"), 20)
+    .action((o: { limit: number }) =>
+      run(g(), (fk) => ({ status: "success", tool: "crawls", data: { crawls: new CrawlRepo(fk.store.db).list(o.limit) }, timings: {}, warnings: [] })),
     );
 
   program

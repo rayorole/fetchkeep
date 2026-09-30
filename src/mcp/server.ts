@@ -87,5 +87,32 @@ export function createMcpServer(fk: Fetchkeep): McpServer {
     async (args, extra) => toResult(await fk.search({ ...args, signal: extra.signal })),
   );
 
+  server.registerTool(
+    "web_crawl",
+    {
+      title: "Crawl a site (bounded)",
+      description:
+        "Breadth-first crawl from a start URL, same origin by default, respecting robots.txt and pacing. Every page is saved " +
+        "and can then be searched with web_search and read with web_read. Returns counts, a page list with refs and an explicit stopReason " +
+        "(exhausted, page_limit, depth_limit, deadline, cancelled, root_failed). Resume a stopped crawl with resume=<crawlId>.",
+      inputSchema: {
+        url: z.string().optional(),
+        resume: z.string().optional(),
+        maxPages: z.number().int().min(1).max(10_000).optional(),
+        maxDepth: z.number().int().min(0).max(20).optional(),
+        include: z.array(z.string()).optional().describe("Glob (/docs/**) or /regex/ path patterns to include"),
+        exclude: z.array(z.string()).optional(),
+        sameOrigin: z.boolean().optional(),
+        sitemap: z.enum(["include", "skip", "only"]).optional(),
+        mode: z.enum(FETCH_MODES).optional(),
+        delayMs: z.number().int().min(0).max(60_000).optional(),
+        concurrency: z.number().int().min(1).max(8).optional(),
+        timeoutMs: z.number().int().min(1000).max(3_600_000).optional().describe("Deadline for this run (default 300000)"),
+      },
+      annotations: { readOnlyHint: false, openWorldHint: true },
+    },
+    async (args, extra) => toResult(await fk.crawl({ ...args, signal: extra.signal })),
+  );
+
   return server;
 }

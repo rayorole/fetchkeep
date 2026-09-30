@@ -84,6 +84,32 @@ CREATE TRIGGER IF NOT EXISTS blocks_ad AFTER DELETE ON blocks BEGIN
   INSERT INTO blocks_fts(blocks_fts, rowid, text, title) VALUES ('delete', old.rowid, old.text, old.title);
 END;
 
+-- Crawl jobs and their frontier. Persisted so an interrupted crawl can resume without refetching finished pages.
+CREATE TABLE IF NOT EXISTS crawls (
+  id TEXT PRIMARY KEY,
+  root_url TEXT NOT NULL,
+  options_json TEXT NOT NULL,
+  status TEXT NOT NULL,
+  stop_reason TEXT,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS crawl_urls (
+  crawl_id TEXT NOT NULL REFERENCES crawls(id) ON DELETE CASCADE,
+  url TEXT NOT NULL,
+  depth INTEGER NOT NULL,
+  seq INTEGER NOT NULL,
+  state TEXT NOT NULL,
+  reason TEXT,
+  doc_id TEXT,
+  version INTEGER,
+  content_hash TEXT,
+  source TEXT NOT NULL,
+  PRIMARY KEY (crawl_id, url)
+);
+CREATE INDEX IF NOT EXISTS crawl_urls_state ON crawl_urls(crawl_id, state, depth, seq);
+
 CREATE INDEX IF NOT EXISTS versions_fetched ON versions(fetched_at);
 CREATE INDEX IF NOT EXISTS aliases_doc ON aliases(doc_id);
 CREATE INDEX IF NOT EXISTS versions_snapshot ON versions(snapshot_hash);
