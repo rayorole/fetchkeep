@@ -1,6 +1,7 @@
 import type { FetchkeepConfig } from "../core/config.js";
 import type { NetworkPolicy } from "../core/netpolicy.js";
 import { ChromiumProvider } from "./chromium.js";
+import { LightpandaProvider } from "./lightpanda.js";
 import { BrowserPool } from "./pool.js";
 import type { BrowserAvailability, BrowserName, BrowserProvider } from "./provider.js";
 
@@ -18,7 +19,16 @@ export class Browsers {
         config.chromium.enabled
           ? new ChromiumProvider({ channel: config.chromium.channel, executablePath: config.chromium.executablePath, sandbox: config.chromium.sandbox })
           : null,
-      ].filter((p): p is ChromiumProvider => p !== null);
+        config.lightpanda.enabled
+          ? new LightpandaProvider({
+              endpoint: config.lightpanda.endpoint,
+              executablePath: config.lightpanda.executablePath,
+              executableArgs: config.lightpanda.executableArgs,
+              // Lightpanda's own blocking cannot express allow-lists; with exceptions, interception alone enforces the policy.
+              blockPrivateNetworks: policy.strict,
+            })
+          : null,
+      ].filter((p): p is ChromiumProvider | LightpandaProvider => p !== null);
     for (const p of list) this.pools.set(p.name, new BrowserPool(p, config.maxConcurrency, config.idleMs));
   }
 

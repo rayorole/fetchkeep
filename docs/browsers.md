@@ -50,6 +50,9 @@ npm install playwright-core            # next to fetchkeep (global: npm i -g pla
 npx playwright-core install --only-shell chromium
 ```
 
+On Linux the headless shell needs a few system libraries (`libnss3`, `libnspr4`, `libasound2`); install them with
+`sudo npx playwright-core install-deps chromium-headless-shell` or your package manager.
+
 Enable it:
 
 ```sh
@@ -65,7 +68,8 @@ export FETCHKEEP_CHROMIUM_CHANNEL=chrome      # or msedge
 export FETCHKEEP_CHROMIUM_EXECUTABLE="/path/to/chrome"
 ```
 
-Isolation, verified by `npm run test:browser` (`test/browser/chromium.browser.test.ts`):
+Isolation, verified by `npm run test:browser` (`test/browser/chromium.browser.test.ts`; passing on Windows 11 and on
+Ubuntu 24.04/WSL2 with headless shell 153.0.8010.12, playwright-core 1.63.0, sandbox enabled):
 
 - One browser process is launched lazily and reused; it uses a temporary automation profile created by
   Playwright, never the user's profile, cookies or extensions.
@@ -83,6 +87,64 @@ Isolation, verified by `npm run test:browser` (`test/browser/chromium.browser.te
 Residual risk: Chromium resolves DNS itself after the policy check, so a hostile DNS server could still race a
 rebinding answer. For untrusted input, prefer `http` or run Fetchkeep in a network namespace without internal
 access. See [security.md](security.md).
+
+## Lightpanda (experimental)
+
+[Lightpanda](https://github.com/lightpanda-io/browser) is a headless browser written in Zig with V8. It has no
+graphical rendering and implements a subset of browser APIs, so some sites will not work. Fetchkeep talks to it
+over CDP with `puppeteer-core`; it does **not** assume Playwright compatibility.
+
+Verified with nightly `1.0.0-nightly.9929+e774f9bba` (`lightpanda-x86_64-linux`, SHA-256
+`16ee4443e34d09c522d8c416c6096bcd5a3dffd56706b7a8e2d7d0b1172ecc62`) on Ubuntu 24.04 (WSL2):
+
+| Check (`test/browser/lightpanda.browser.test.ts`) | Result |
+|---|---|
+| DOM + JavaScript + `fetch()`/XHR rendering, auto escalation | pass |
+| Subrequest to a blocked address intercepted (never reaches the server) | pass |
+| Cookies / `localStorage` isolated between renders | pass |
+| Deadline honoured; next render works | pass — note Lightpanda fires `load` without waiting for images, so the never-loading image fixture does not time out as it does in Chromium |
+| Navigation to blocked address refused | pass |
+| Telemetry disabled (`LIGHTPANDA_DISABLE_TELEMETRY=true` in the spawned process environment) | verified via `/proc/<pid>/environ` |
+| Process stopped on close / idle | verified |
+
+Install (Linux x86_64 / aarch64, macOS; **no native Windows build** — run it in WSL2):
+
+```sh
+npm install puppeteer-core
+curl -L -o lightpanda https://github.com/lightpanda-io/browser/releases/download/nightly/lightpanda-x86_64-linux
+chmod +x lightpanda
+export FETCHKEEP_LIGHTPANDA_EXECUTABLE="$PWD/lightpanda"   # Fetchkeep spawns `lightpanda serve` on demand
+# or run it yourself and connect:
+#   LIGHTPANDA_DISABLE_TELEMETRY=true ./lightpanda serve --host 127.0.0.1 --port 9222
+#   export FETCHKEEP_LIGHTPANDA_ENDPOINT=ws://127.0.0.1:9222
+```
+
+Windows: WSL2's default NAT networking forwards `localhost` ports from WSL to Windows, so an endpoint started in WSL
+is reachable as `ws://127.0.0.1:9222` from Windows, but Lightpanda inside WSL resolves `localhost` to the WSL VM,
+not to Windows. Set `"executablePath": "wsl"` with `"executableArgs": ["-d", "Ubuntu", "--", "/home/you/lightpanda"]`
+to let Fetchkeep spawn it (it adds `LIGHTPANDA_DISABLE_TELEMETRY` to `WSLENV`). Running Fetchkeep itself inside WSL is
+simpler and is what the benchmark does.
+
+Behaviour and safety:
+
+- When Fetchkeep spawns Lightpanda it binds to `127.0.0.1` on a free port, sets `LIGHTPANDA_DISABLE_TELEMETRY=true`
+  (Lightpanda otherwise sends usage telemetry to `telemetry.lightpanda.io`), and passes `--block-private-networks`
+  when the policy allows no private destination. With `allowHosts`/`allowCidrs`, CDP request interception alone
+  enforces the policy (Lightpanda's flag cannot express allow-lists). For a user-supplied endpoint, telemetry and
+  flags are the user's responsibility.
+- Each render uses its own CDP connection and browser context.
+- Lightpanda provides **no process sandbox**. Page JavaScript runs in the Lightpanda process with its network
+  access. Only use it for arbitrary sites inside an external sandbox (container, VM, WSL).
+- Licensing: Lightpanda is AGPL-3.0-only. Fetchkeep does not bundle, download or redistribute it; see
+  [research.md](research.md#licensing-implications) for what that does and does not settle.
+- Performance: no speed or memory claims are made here; see the benchmark report for measurements.
+
+| Setting | Env | Default |
+|---|---|---|
+| `browser.lightpanda.enabled` | `FETCHKEEP_LIGHTPANDA` (implied by the two below) | `false` |
+| `browser.lightpanda.endpoint` | `FETCHKEEP_LIGHTPANDA_ENDPOINT` | — |
+| `browser.lightpanda.executablePath` | `FETCHKEEP_LIGHTPANDA_EXECUTABLE` | — |
+| `browser.lightpanda.executableArgs` | — | `[]` |
 
 ## Configuration reference
 
