@@ -5,6 +5,8 @@ import { Fetchkeep } from "../../src/core/service.js";
 import { jsFixtures } from "../support/js-fixtures.js";
 import { startServer, type TestServer } from "../support/server.js";
 import { tempHome } from "../support/service.js";
+import { readinessCases } from "./readiness-cases.js";
+import { readinessFixtures } from "./readiness-fixtures.js";
 
 // Opt-in: `FETCHKEEP_TEST_LIGHTPANDA=/path/to/lightpanda npm run test:browser` (Linux/macOS, or inside WSL2).
 const executable = process.env.FETCHKEEP_TEST_LIGHTPANDA;
@@ -16,7 +18,7 @@ let fk: Fetchkeep;
 
 suite("Lightpanda backend (experimental)", () => {
   beforeAll(async () => {
-    srv = await startServer(jsFixtures());
+    srv = await startServer({ ...jsFixtures(), ...readinessFixtures() });
     fk = new Fetchkeep(
       loadConfig({
         env: {},
@@ -34,6 +36,8 @@ suite("Lightpanda backend (experimental)", () => {
     cleanup();
   });
   const u = (p: string) => `http://localhost:${srv.port}${p}`;
+
+  readinessCases(() => fk, u, "lightpanda");
 
   it("renders JavaScript + XHR content via auto escalation", async () => {
     const env = Envelope.parse(await fk.fetch({ url: u("/js/app") }));

@@ -5,9 +5,10 @@ import { once } from "node:events";
 import { basename } from "node:path";
 import { setTimeout as sleep } from "node:timers/promises";
 import type * as Puppeteer from "puppeteer-core";
-import type { Browser, HTTPRequest } from "puppeteer-core";
+import type { Browser, BrowserContext, HTTPRequest, Page } from "puppeteer-core";
 import { FetchkeepError, toFetchkeepError } from "../core/errors.js";
 import type { BrowserAvailability, BrowserProvider, RenderRequest, RenderResult, RequestStats } from "./provider.js";
+import { inspectDocument, waitForContent } from "./readiness.js";
 
 export interface LightpandaOptions {
   /** CDP endpoint of a running `lightpanda serve`, e.g. `ws://127.0.0.1:9222`. */
@@ -92,11 +93,10 @@ export class LightpandaProvider implements BrowserProvider {
     return { available: false, detail: `No Lightpanda endpoint or executable configured. ${INSTALL_HINT}` };
   }
 
-  private async ensureEndpoint(deadline: number): Promise<{ endpoint: string; launchMs: number }> {
-    if (this.opts.endpoint) return { endpoint: this.opts.endpoint, launchMs: 0 };
-    if (this.endpoint && this.running) return { endpoint: this.endpoint, launchMs: 0 };
+  private async ensureEndpoint(deadline: number): Promise<string> {
+    if (this.opts.endpoint) return this.opts.endpoint;
+    if (this.endpoint && this.running) return this.endpoint;
     if (!this.opts.executablePath) throw new FetchkeepError("browser_unavailable", "No Lightpanda endpoint or executable configured", { hint: INSTALL_HINT });
-    const t0 = performance.now();
     const port = await freePort();
     const args = [
       ...this.opts.executableArgs,
@@ -137,23 +137,34 @@ export class LightpandaProvider implements BrowserProvider {
       throw new FetchkeepError(e.code, `${e.message}${stderr ? `: ${stderr.trim().split("\n").slice(-3).join(" | ")}` : ""}`, e.hint ? { hint: e.hint } : {});
     }
     this.endpoint = `ws://127.0.0.1:${port}`;
-    return { endpoint: this.endpoint, launchMs: performance.now() - t0 };
+    return this.endpoint;
   }
 
   async render(req: RenderRequest): Promise<RenderResult> {
+    req.signal.throwIfAborted();
     const started = performance.now();
     const pp = await loadPuppeteer();
     if (!pp) throw new FetchkeepError("browser_unavailable", "puppeteer-core is not installed", { hint: INSTALL_HINT });
-    const { endpoint, launchMs } = await this.ensureEndpoint(req.deadline);
+    const endpoint = await this.ensureEndpoint(req.deadline);
     const stats: RequestStats = { total: 0, blocked: 0, failed: 0 };
     let browser: Browser | null = null;
-    const onAbort = () => void browser?.disconnect().catch(() => undefined);
+    let context: BrowserContext | null = null;
+    let page: Page | null = null;
+    const closeContext = async () => {
+      await (context ? context.close() : page?.close())?.catch(() => undefined);
+    };
+    const onAbort = () => {
+      void closeContext();
+      void browser?.disconnect().catch(() => undefined);
+    };
     req.signal.addEventListener("abort", onAbort, { once: true });
     try {
       // One CDP connection per render: Lightpanda isolates state per connection/browser context.
-      browser = await pp.connect({ browserWSEndpoint: endpoint, protocolTimeout: Math.max(1000, req.deadline - Date.now()) });
-      const context = await browser.createBrowserContext().catch(() => null);
-      const page = context ? await context.newPage() : await browser.newPage();
+      browser = await pp.connect({ browserWSEndpoint: endpoint, protocolTimeout: Math.max(1, req.deadline - Date.now()) });
+      req.signal.throwIfAborted();
+      context = await browser.createBrowserContext().catch(() => null);
+      page = context ? await context.newPage() : await browser.newPage();
+      req.signal.throwIfAborted();
       await page.setUserAgent({ userAgent: req.userAgent }).catch(() => undefined);
       await page.setRequestInterception(true);
       page.on("request", (r: HTTPRequest) => {
@@ -173,10 +184,15 @@ export class LightpandaProvider implements BrowserProvider {
       });
       page.on("requestfailed", () => stats.failed++);
       const navStart = performance.now();
-      const response = await page.goto(req.url, { waitUntil: "load", timeout: Math.max(500, req.deadline - Date.now()) });
-      const settle = Math.min(req.settleMs, Math.max(0, req.deadline - Date.now() - 250));
-      if (settle > 0) await sleep(settle, undefined, { signal: req.signal });
-      let html = await page.content();
+      const launchMs = navStart - started;
+      const response = await page.goto(req.url, { waitUntil: "load", timeout: Math.max(1, req.deadline - Date.now()) });
+      const readinessStart = performance.now();
+      const navigateMs = readinessStart - navStart;
+      const loadedPage = page;
+      await waitForContent(() => loadedPage.evaluate(inspectDocument, false), req);
+      const serializeStart = performance.now();
+      const readinessMs = serializeStart - readinessStart;
+      let { html } = await page.evaluate(inspectDocument, true);
       let truncated = false;
       if (Buffer.byteLength(html) > req.maxBytes) {
         html = Buffer.from(html).subarray(0, req.maxBytes).toString("utf8");
@@ -190,9 +206,8 @@ export class LightpandaProvider implements BrowserProvider {
         html,
         truncated,
         requests: stats,
-        timings: { launchMs, navigateMs: performance.now() - navStart, totalMs: performance.now() - started },
+        timings: { launchMs, navigateMs, readinessMs, serializeMs: performance.now() - serializeStart, totalMs: performance.now() - started },
       };
-      await (context ? context.close() : page.close()).catch(() => undefined);
       return result;
     } catch (err) {
       if (req.signal.aborted) throw toFetchkeepError(err, req.signal);
@@ -205,6 +220,7 @@ export class LightpandaProvider implements BrowserProvider {
       throw new FetchkeepError("browser_failed", `Lightpanda render failed: ${msg.split("\n")[0]}`, { cause: err });
     } finally {
       req.signal.removeEventListener("abort", onAbort);
+      await closeContext();
       await browser?.disconnect().catch(() => undefined);
     }
   }

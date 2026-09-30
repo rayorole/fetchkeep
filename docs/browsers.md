@@ -46,6 +46,27 @@ Computed from the HTTP response only, deterministically:
 After a successful render, the rendered result is used unless it contains less text than the HTTP result.
 Override per request with `mode`.
 
+## Readiness and rendered content
+
+After the document's `load` event, both backends observe the primary content rather than waiting for network
+idleness. `browser.settleMs` is the **minimum observation time**, not an additional sleep after another wait.
+The default is 500 ms; setting it to zero removes that minimum, not the bounded readiness check.
+
+A snapshot can proceed when meaningful primary/composed content is stable for 100 ms and no obvious loading
+indicator remains. Sparse or loading content is observed for at most `max(settleMs, 2000)` ms, shortened by the
+shared request deadline with a 250 ms serialization reserve. Background requests do not themselves hold up a
+complete page. This cannot predict arbitrary late timers or guarantee that every asynchronous task has finished.
+
+Serialization includes nested **open** shadow roots and assigned slot content, without duplicating unassigned
+light-DOM children or modifying the live page. Closed shadow roots remain inaccessible. Stored snapshots represent
+this composed content; they are not a screenshot or an archive of all browser resources.
+
+Fetch envelopes expose `launchMs` (availability, launch/connection and context setup), `navigateMs`, `readinessMs`,
+`serializeMs`, `extractMs`, and `saveMs`. Successful attempts' measured phases accumulate across fallback.
+`renderMs` overlaps the browser phases; HTTP `firstByteMs` is a subset of `downloadMs`. Do not add those overlapping
+diagnostics to a phase total. Failed-attempt durations remain in `backend.attempts`; their unavailable phase
+breakdowns are not invented. End-to-end `totalMs` also includes uninstrumented orchestration.
+
 ## Chromium (Playwright)
 
 Install only the library and the headless shell (≈115 MiB download, no full Chrome, no Firefox/WebKit):
@@ -158,7 +179,7 @@ Behaviour and safety:
 | `browser.preferred` | `FETCHKEEP_BROWSER` | `chromium` |
 | `browser.maxConcurrency` | — | `2` |
 | `browser.idleMs` | — | `60000` |
-| `browser.settleMs` (extra wait after `load`) | — | `500` |
+| `browser.settleMs` (minimum post-`load` content observation) | — | `500` |
 | `browser.chromium.enabled` | `FETCHKEEP_CHROMIUM` | `false` |
 | `browser.chromium.channel` | `FETCHKEEP_CHROMIUM_CHANNEL` | Playwright headless shell |
 | `browser.chromium.executablePath` | `FETCHKEEP_CHROMIUM_EXECUTABLE` | — |

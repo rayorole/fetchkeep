@@ -1,10 +1,14 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
+import { chromium } from "playwright-core";
+import { inspectDocument } from "../../src/browser/readiness.js";
 import { loadConfig } from "../../src/core/config.js";
 import { Envelope } from "../../src/core/schema.js";
 import { Fetchkeep } from "../../src/core/service.js";
 import { jsFixtures } from "../support/js-fixtures.js";
 import { startServer, type TestServer } from "../support/server.js";
 import { tempHome } from "../support/service.js";
+import { readinessCases } from "./readiness-cases.js";
+import { readinessFixtures } from "./readiness-fixtures.js";
 
 // Opt-in: `npm run test:browser`. Needs playwright-core and `npx playwright-core install --only-shell chromium`.
 let srv: TestServer;
@@ -12,7 +16,7 @@ const { home, cleanup } = tempHome();
 let fk: Fetchkeep;
 
 beforeAll(async () => {
-  srv = await startServer(jsFixtures());
+  srv = await startServer({ ...jsFixtures(), ...readinessFixtures() });
   fk = new Fetchkeep(
     loadConfig({ env: {}, overrides: { home, network: { allowHosts: ["localhost"] }, browser: { chromium: { enabled: true }, settleMs: 300 } } }),
   );
@@ -25,6 +29,8 @@ afterAll(async () => {
 const u = (p: string) => `http://localhost:${srv.port}${p}`;
 
 describe("Chromium backend", () => {
+  readinessCases(() => fk, u, "chromium");
+
   it("is reported available by doctor-style checks", async () => {
     expect(await fk.browsers.availability("chromium")).toMatchObject({ available: true });
   });
@@ -62,6 +68,32 @@ describe("Chromium backend", () => {
     expect(env.error?.code).toBe("timeout");
     // The pool recovers: the next render works.
     expect((await fk.fetch({ url: u("/js/state"), mode: "chromium", save: false })).status).toBe("success");
+  });
+
+  it("serializes shadow content without mutating the live DOM or invoking custom element lifecycle hooks", async () => {
+    const browser = await chromium.launch();
+    try {
+      const page = await browser.newPage();
+      await page.goto(u("/readiness/shadow"));
+      await page.evaluate(() => {
+        const event = () => {
+          document.documentElement.dataset.events = String(Number(document.documentElement.dataset.events ?? 0) + 1);
+        };
+        customElements.define("code-example", class extends HTMLElement {
+          constructor() { super(); event(); }
+          connectedCallback() { event(); }
+          disconnectedCallback() { event(); }
+        });
+      });
+      const before = await page.content();
+      const rendered = await page.evaluate(inspectDocument, true);
+      expect(rendered.html).toContain("const shadowAnswer = 44;");
+      expect(await page.content()).toBe(before);
+      expect(await page.evaluate(() => document.querySelector("code-example")!.shadowRoot!.querySelector("nested-code")!.shadowRoot!.textContent))
+        .toContain("const shadowAnswer = 44;");
+    } finally {
+      await browser.close();
+    }
   });
 
   it("refuses navigation to blocked addresses", async () => {
